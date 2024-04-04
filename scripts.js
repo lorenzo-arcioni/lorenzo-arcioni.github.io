@@ -56,7 +56,7 @@ var education = `<ul class="education-list" style="list-style: none; padding: 10
 var experience_1 = `<ul class="experience-list" style="padding-right: 30px;padding-left: 30px;">
 <li class="experience-item">
     <span class="details">
-        <p calss="experience_where" style="font-weight: bold; flex: 1; font-size: 20px">Sapienza - Computer Science department</p>
+        <p calss="experience_where" style="font-weight: bold; flex: 1; font-size: 20px">Sapienza University of Rome - Computer Science department</p>
         <p calss="experience_what"  style="font-weight: normal; flex: 1; padding-bottom: 10px; padding-top: 10px;font-size: 16px; font-weight: bold">Internship</p>
         <p calss="experience_how"   style="font-weight: normal; flex: 1; font-size: 16px;">Development of a parallel algorithm capable of running third-party annotation software (Diamond or BLAST) in parallel mode. Leveraging data parallelism makes it possible to execute such software in a distributed manner, greatly enhancing the efficiency of transcriptome annotation processes. During the internship, various automation scripts were developed to make the parallel annotation process as user-friendly as possible. The software is also capable of consolidating the results of partial annotations into a single final file, which is identical to the final file we would have obtained using traditional annotation software.</p>
     </span>
