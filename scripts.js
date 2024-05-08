@@ -92,7 +92,7 @@ var project_3 = `<h3 style="font-size: 20px; padding-right: 30px;padding-left: 3
 `;
 
 var publication_1 = `<h3 style="font-size: 20px;">HPC-T-Annotator: an HPC tool for de novo transcriptome assembly annotation</h3>
-<p>IEEE/ACM Transactions on Computational Biology and Bioinformatics (pending review)</p>
+<p>BMC Bioinformatics (pending review)</p>
 `;
 
 var certification_1 = `<h3 style="font-size: 20px;">Introduction to Machine Learning <a href="https://drive.google.com/file/d/1_KthHpXzeT6ec5f_kKwvx20SOzrhyjc1/view" class="button"></a></h3>
@@ -110,23 +110,26 @@ var certification_3 = `<h3 style="font-size: 20px;">Python Basics <a href="https
 var certification_4 = `<h3 style="font-size: 20px;">CISCO CCNA</h3>
 <p style="font-size: 16px; margin-top: -10px;">Cisco Networking Academy, issued Sep 2019</p>
 `;
-// Esegui le funzioni in parallelo utilizzando Promise.all()
-Promise.all([Writer(about,      20, "demo"),
-             Writer(education,  2, "education_p"), 
-             Writer(experience_1, 2, "experience_p"), 
-             Writer(project_1,  1, "project_1"), 
-             Writer(project_2,  5, "project_2"),
-             Writer(project_3,  1, "project_3"),
-             Writer(publication_1, 1, "publication_1"),
-             Writer(certification_1, 1, "certification_1"),
-             Writer(certification_2, 1, "certification_2"),
-             Writer(certification_3, 1, "certification_3"),
-             Writer(certification_4, 1, "certification_4")
-  ])
-  .then((risultati) => {
-    console.log("Tutte le funzioni sono state completate:");
-    console.log(risultati); // Contiene i risultati delle due funzioni
-  })
-  .catch((errore) => {
-    console.error("Si è verificato un errore:", errore);
-});
+
+function onLoad(){
+  // Esegui le funzioni in parallelo utilizzando Promise.all()
+  Promise.all([Writer(about,      20, "demo"),
+              Writer(education,  2, "education_p"), 
+              Writer(experience_1, 2, "experience_p"), 
+              Writer(project_1,  1, "project_1"), 
+              Writer(project_2,  5, "project_2"),
+              Writer(project_3,  1, "project_3"),
+              Writer(publication_1, 1, "publication_1"),
+              Writer(certification_1, 1, "certification_1"),
+              Writer(certification_2, 1, "certification_2"),
+              Writer(certification_3, 1, "certification_3"),
+              Writer(certification_4, 1, "certification_4")
+    ])
+    .then((risultati) => {
+      console.log("Tutte le funzioni sono state completate:");
+      console.log(risultati); // Contiene i risultati delle due funzioni
+    })
+    .catch((errore) => {
+      console.error("Si è verificato un errore:", errore);
+  });
+}
