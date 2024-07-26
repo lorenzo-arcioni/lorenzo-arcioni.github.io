@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VF7D8E2FE3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-VF7D8E2FE3');
+</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../../../fav-icon.png">
+    <link rel="stylesheet" href="../../../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="../../../scripts.js" defer></script>
+
+    <script>
+        MathJax = {
+          tex: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+    <style type="text/css">
+
+        p {
+            font-size: 20px;
+        }
+
+        h3 {
+            font-size: 23px;
+        }
+
+        h2 {
+            font-size: 26px;
+        }
+        h4 {
+            font-size: 22px;
+        }
+        code {
+            font-size: 20px;
+            background-color: #1f1f1e;
+        }
+        ol,ul {
+            font-size: 20px;
+            margin-left: 40px;
+        }
+        pre {
+            background-color: #1f1f1e;
+        }
+    </style>
+
+    <title>Lorenzo Arcioni</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="container">
+                <div class="profile">
+                    <img src="../../../lorenzoarcioni.png" alt="Immagine del profilo" class="profile-img">
+                    <div class="name">
+                        <h1 style="font-size: 32px;">Lorenzo Arcioni</h1>
+                        <p class="subtitle" style="font-size: 20px;">Machine Learning Engineer | Data Scientist</p>
+                        <p class="mobile_subtitle" style="font-size: 20px;">Machine Learning Engineer<br><br>Data Scientist</p>
+                        <div class="social">
+                            <a href="https://www.linkedin.com/in/lorenzo-arcioni-216b921b5/" target="_blank"><i class="fa fa-linkedin"></i></a>
+                            <a href="https://github.com/lorenzo-arcioni" target="_blank"><i class="fa fa-github"></i></a>
+                            <a href="https://www.kaggle.com/lorenzoarcioni" target="_blank"><strong>K</strong></a>
+                            <a href="https://www.instagram.com/lorenzo_arcioni/" target="_blank"><i class="fa fa-instagram"></i></a>
+                            <a href="https://medium.com/@lorenzo.arcioni2000/" target="_blank"><i class="fa fa-medium"></i></a>
+                        </div>
+                    </div>
+                    <div class="blog-link"><p><a href="../../../index.html"><u>Home</u></a></p></div>
+                </div>
+                <hr>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <h2>Algoritmo Euclideo Esteso</h2>
+            <p>L'Algoritmo Euclideo Esteso è un'estensione dell'Algoritmo Euclideo che non solo calcola il massimo comune divisore (MCD) di due interi \(A\) e \(B\), ma trova anche i coefficienti dell'identità di Bézout, che sono gli interi \(x\) e \(y\) tali che \(Ax + By = \text{MCD}(A, B)\).</p>
+            <br>
+            <h3>Descrizione dell'Algoritmo</h3>
+            <p>L'Algoritmo Euclideo Esteso può essere descritto utilizzando i seguenti passaggi:</p>
+            <br>
+            <ol style="margin-left:40px;">
+                <li>Inizia con due numeri interi positivi \(A\) e \(B\), dove \(A \geq B\).</li>
+                <li>Esegui i passaggi dell'Algoritmo Euclideo per trovare il MCD di \(A\) e \(B\).</li>
+                <li>Contemporaneamente, calcola i coefficienti \(x\) e \(y\) tali che \(Ax + By = \text{MCD}(A, B)\).</li>
+                <li>Aggiorna \(x\) e \(y\) utilizzando le relazioni ricorsive derivate dai passaggi dell'Algoritmo Euclideo.</li>
+            </ol>
+            <br>
+            <h3>Rappresentazione Matematica</h3>
+            <p>L'Algoritmo Euclideo Esteso può essere rappresentato matematicamente come:</p>
+            <br>
+            <p>
+                \[
+                \begin{aligned}
+                &\text{Dato } A \text{ e } B, \text{ con } A \geq B: \\
+                &\text{1. Se } B = 0, \text{ allora } \text{MCD}(A, B) = A \text{ e } x = 1, y = 0. \\
+                &\text{2. Altrimenti, eseguire l'Algoritmo Euclideo:} \\
+                &\hspace{20px} A = BQ + R \text{, dove } R = A \mod B \\
+                &\hspace{20px} \text{MCD}(A, B) = \text{MCD}(B, R) \\
+                &\hspace{20px} \text{Trova ricorsivamente i coefficienti } x_1 \text{ e } y_1 \text{ tali che } Bx_1 + Ry_1 = \text{MCD}(B, R) \\
+                &\hspace{20px} \text{Imposta } x = y_1 \text{ e } y = x_1 - Qy_1 \\
+                &\text{3. Restituisci } \text{MCD}(A, B), x \text{ e } y.
+                \end{aligned}
+                \]
+            </p>
+    
+            <h3>Esempio</h3>
+            <p>Troviamo il MCD e i coefficienti di Bézout di \(A = 252\) e \(B = 105\) utilizzando l'Algoritmo Euclideo Esteso:</p>
+            <br>
+            <ol style="margin-left:40px;">
+                <li>Inizia con \(A = 252\) e \(B = 105\).</li>
+                <li>Calcola \(252 \mod 105 = 42\). \(252 = 105 \times 2 + 42\).</li>
+                <li>Calcola \(105 \mod 42 = 21\). \(105 = 42 \times 2 + 21\).</li>
+                <li>Calcola \(42 \mod 21 = 0\). \(42 = 21 \times 2 + 0\).</li>
+                <li>Sostituisci all'indietro per trovare \(x\) e \(y\):<br>
+                    \(21 = 105 - 42 \times 2\)<br>
+                    \(42 = 252 - 105 \times 2\)<br>
+                    Quindi, \(21 = 105 - 2(252 - 105 \times 2) = 105 \times 5 - 252 \times 2\).<br>
+                    Così, \(x = -2\) e \(y = 5\).
+                </li>
+            </ol>
+            <br>
+            <p>Pertanto, il MCD di 252 e 105 è 21, con i coefficienti di Bézout \(x = -2\) e \(y = 5\), tali che \(252(-2) + 105(5) = 21\).</p>
+            <hr>
+            <br>
+            <h3>Comprendere l'Algoritmo Euclideo Esteso</h3>
+            <p>L'Algoritmo Euclideo Esteso utilizza le seguenti proprietà chiave:</p>
+            <br>
+            <ul>
+                <li>Estende l'Algoritmo Euclideo tracciando i coefficienti \(x\) e \(y\) nell'identità di Bézout.</li>
+                <li>L'algoritmo mantiene la relazione \(Ax + By = \text{MCD}(A, B)\) durante tutti i suoi passaggi.</li>
+                <li>Permette il calcolo degli inversi modulari, fondamentali in molti algoritmi crittografici, incluso RSA.</li>
+            </ul>
+            <br>
+            <h4>Dimostrazioni</h4>
+            <p>Possiamo dimostrare la correttezza dell'algoritmo attraverso dimostrazioni:</p>
+            <br>
+            <ul>
+                <li><strong>Prova dell'Identità di Bézout:</strong> Per interi \(A\) e \(B\), con MCD \(d\), esistono interi \(x\) e \(y\) tali che \(Ax + By = d\). Questo è mostrato dal processo iterativo di sostituzione all'indietro dai passaggi dell'Algoritmo Euclideo. \(\square\)</li>
+                <br>
+                <li><strong>Prova che l'Algoritmo Produce Coefficienti Correttamente:</strong><br><br>
+                    <p>Per induzione sui passaggi dell'Algoritmo Euclideo:</p>
+                    <br>
+                    <p>1. Caso Base: Se \(B = 0\), allora \(d = A\), e i coefficienti sono \(x = 1\) e \(y = 0\), che soddisfano \(Ax + By = d\).</p>
+                    <br>
+                    <p>2. Passo Induttivo: Supponiamo per \(B\) e \(R = A \mod B\), abbiamo \(Bx_1 + Ry_1 = \text{MCD}(B, R)\). Allora, dall'Algoritmo Euclideo, \(R = A - BQ\), sostituendo, otteniamo:</p>
+                    <br>
+                    <p>\(\text{MCD}(A, B) = Bx_1 + (A - BQ)y_1 = Ay_1 + B(x_1 - Qy_1)\).</p>
+                    <br>
+                    <p>Quindi, i nuovi coefficienti \(x = y_1\) e \(y = x_1 - Qy_1\) soddisfano \(Ax + By = \text{MCD}(A, B)\). \(\square\)</p>
+                </li>
+            </ul>
+            <br>
+            <p>Ora che abbiamo dimostrato la validità dell'algoritmo, dobbiamo dimostrare che l'algoritmo termina in un numero finito di passaggi.</p>
+            <br>
+            <ul>
+                <li><strong>Prova che l'Algoritmo Termina in un Numero Finito di Passaggi:</strong><br><br>
+                    <p>Poiché l'Algoritmo Euclideo Esteso segue gli stessi passaggi dell'Algoritmo Euclideo per trovare il MCD, termina in un numero finito di passaggi come dimostrato per l'Algoritmo Euclideo. \(\square\)</p>
+                </li>
+            </ul>
+            <br>
+            <p>L'Algoritmo Euclideo Esteso è essenziale per risolvere le equazioni diofantee lineari e trovare gli inversi modulari, che sono vitali in applicazioni crittografiche come l'algoritmo di crittografia RSA.</p>
+            <br>
+        </div>
+    </main>    
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Lorenzo Arcioni. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

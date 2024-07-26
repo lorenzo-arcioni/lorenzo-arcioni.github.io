@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VF7D8E2FE3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-VF7D8E2FE3');
+</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../../../fav-icon.png">
+    <link rel="stylesheet" href="../../../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="../../../scripts.js" defer></script>
+
+    <script>
+        MathJax = {
+          tex: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+    <style type="text/css">
+
+        p {
+            font-size: 20px;
+        }
+
+        h3 {
+            font-size: 23px;
+        }
+
+        h2 {
+            font-size: 26px;
+        }
+        h4 {
+            font-size: 22px;
+        }
+        code {
+            font-size: 20px;
+            background-color: #1f1f1e;
+        }
+        ol,ul {
+            font-size: 20px;
+            margin-left: 40px;
+        }
+        pre {
+            background-color: #1f1f1e;
+        }
+    </style>
+
+    <title>Lorenzo Arcioni</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="container">
+                <div class="profile">
+                    <img src="../../../lorenzoarcioni.png" alt="Immagine del profilo" class="profile-img">
+                    <div class="name">
+                        <h1 style="font-size: 32px;">Lorenzo Arcioni</h1>
+                        <p class="subtitle" style="font-size: 20px;">Machine Learning Engineer | Data Scientist</p>
+                        <p class="mobile_subtitle" style="font-size: 20px;">Machine Learning Engineer<br><br>Data Scientist</p>
+                        <div class="social">
+                            <a href="https://www.linkedin.com/in/lorenzo-arcioni-216b921b5/" target="_blank"><i class="fa fa-linkedin"></i></a>
+                            <a href="https://github.com/lorenzo-arcioni" target="_blank"><i class="fa fa-github"></i></a>
+                            <a href="https://www.kaggle.com/lorenzoarcioni" target="_blank"><strong>K</strong></a>
+                            <a href="https://www.instagram.com/lorenzo_arcioni/" target="_blank"><i class="fa fa-instagram"></i></a>
+                            <a href="https://medium.com/@lorenzo.arcioni2000/" target="_blank"><i class="fa fa-medium"></i></a>
+                        </div>
+                    </div>
+                    <div class="blog-link"><p><a href="../../../index.html"><u>Home</u></a></p></div>
+                </div>
+                <hr>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+    
+            <h1>Algoritmo del Massimo Comune Divisore</h1>
+            <h2>Definizione del Problema</h2>
+            <p>Sviluppa un algoritmo per calcolare il Massimo Comune Divisore (MCD) di due numeri interi dati. Dati due numeri interi non negativi \(a\) e \(b\) (dove \(a \geq b\)), trova il loro MCD. Il MCD di due numeri interi è il più grande intero che divide sia \(a\) che \(b\) senza lasciare resto.</p>
+    
+            <br>
+    
+            <h2>Soluzione</h2>
+            <p>L'algoritmo di Euclide è un metodo ben noto per calcolare il MCD di due numeri. L'algoritmo si basa sul principio che il MCD di due numeri divide anche la loro differenza.</p>
+            <br>
+    
+            <p>L'algoritmo di Euclide può essere rappresentato matematicamente come:</p>
+            <br>
+            <p>
+                \[
+                MCD(a, b) = \begin{cases} 
+                |a| & \text{se } b = 0 \\
+                MCD(b, a \mod b) & \text{se } b \neq 0 
+                \end{cases}
+                \]
+            </p>
+    
+            <br>
+            <h2>Scenario del Mondo Reale (1)</h2>
+            <p>Nell'analisi degli investimenti, gli analisti finanziari spesso confrontano diverse aziende utilizzando rapporti finanziari. Un rapporto comune è il rapporto debito/patrimonio netto, che misura la leva finanziaria di un'azienda. Per una segnalazione accurata e concisa, è utile presentare questi rapporti nella loro forma più semplice.</p>
+            <br>
+            <p>Consideriamo un analista finanziario che valuta il rapporto debito/patrimonio netto di un'azienda:</p>
+            <br>
+            <ul>
+                <li>L'azienda ha un debito totale di 84 milioni di dollari.</li>
+                <li>Il patrimonio netto totale dell'azienda è di 120 milioni di dollari.</li>
+            </ul>
+            <br>
+            <p>Il rapporto debito/patrimonio netto può essere rappresentato come una frazione del debito dell'azienda sul suo patrimonio netto, che è:</p>
+            <p>\[
+            \frac{84}{120}.
+            \]</p>
+    
+            <br>
+            <p>Dati due numeri interi, numeratore \(a\) e denominatore \(b\), vogliamo semplificare la frazione \(\frac{a}{b}\) in modo che il massimo comune divisore (MCD) di \(a\) e \(b\) sia 1. Questo significa ridurre la frazione dividendo sia il numeratore che il denominatore per il loro MCD.
+            </p>
+            <br>
+    
+            <h3>Trova il MCD usando l'algoritmo di Euclide:</h3>
+            <ul>
+                <li>Sia \( a = 84 \)</li>
+                <li>Sia \( b = 120 \)</li>
+                <li>Calcola \( 120 \mod 84 = 36 \)</li>
+                <li>Calcola \( 84 \mod 36 = 12 \)</li>
+                <li>Calcola \( 36 \mod 12 = 0 \)</li>
+                <li>Poiché il resto è ora 0, il MCD è 12.</li>
+            </ul>
+    
+            <br>
+            <h3>Semplifica la Frazione:</h3>
+            <ul>
+                <li>\( \text{MCD}(84, 120) = 12 \)</li>
+                <li>Numeratore semplificato: \( \frac{84}{12} = 7 \)</li>
+                <li>Denominatore semplificato: \( \frac{120}{12} = 10 \)</li>
+                <li>Frazione semplificata: \( \frac{7}{10} \)</li>
+            </ul>
+    
+            <br>
+            <p>Il rapporto debito/patrimonio netto semplificato è \( \frac{7}{10} \) (o 70%), indicando che per ogni $10 di patrimonio netto, l'azienda ha $7 di debito. Questo rapporto semplificato fornisce una comprensione più chiara della leva finanziaria dell'azienda.</p>
+    
+            <br>
+            <h2>Scenario del Mondo Reale (2)</h2>
+            <p>Hai un pezzo di stoffa di 20 metri di lunghezza e 16 metri di larghezza. Qual è il numero minimo di asciugamani quadrati di dimensioni uguali che possono essere tagliati da questo pezzo di stoffa senza sprecare alcuna stoffa?</p>
+            <br>
+            <h3>Soluzione</h3>
+            <p>La misura di un lato dell'asciugamano quadrato richiesto è \(MCD(20,16) = 4\) metri. L'area di un asciugamano quadrato è \(4^2 = 16 m^2\). L'area del pezzo di stoffa intero è \(20 \cdot 16 = 320 m^2\).
+    
+                Il numero minimo di asciugamani possibili è:
+    
+                \[
+                    \frac{320 m^2}{16 m^2} = 20 \text{ asciugamani}.
+                \]
+            </p>
+            <br>
+        </div>
+    </main>    
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Lorenzo Arcioni. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

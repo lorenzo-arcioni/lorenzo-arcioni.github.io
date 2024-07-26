@@ -34,7 +34,7 @@
         <nav>
             <div class="container">
                 <div class="profile">
-                    <img src="../lorenzoarcioni.jpg" alt="Immagine del profilo" class="profile-img">
+                    <img src="../lorenzoarcioni.png" alt="Immagine del profilo" class="profile-img">
                     <div class="name">
                         <h1 style="font-size: 32px;">Lorenzo Arcioni</h1>
                         <p class="subtitle" style="font-size: 20px;">Machine Learning Engineer | Data Scientist</p>
@@ -58,6 +58,6 @@
     
     <section>
         <div class="container">
-            <h2>Table of Contents</h2>
+            <h2>Contenuti</h2>
             <h3>Build in progress...</h3>
             

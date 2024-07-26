@@ -33,7 +33,7 @@ write_toc () {
             echo "${indent}    <li style=\"padding-bottom: 20px; font-weight: bold; font-size: 20px;\">$(echo ${file:3 } | tr '_' ' ')</li>" >> "${path}"
             # Chiamata ricorsiva con profondità incrementata
             write_toc "${dir}/${file}" $((depth + 1))
-        else if [ -f "${file}" ] && [[ $file != *.txt ]] && [[ $file != "blog.html" ]] && [[ $file != *.sh ]]; then
+        else if [ -f "${file}" ] && [[ $file != *.txt ]] && [[ $file != "blog.html" ]] && [[ $file != *.sh ]] && [[ $file != \!* ]]; then
             echo "${indent}    <li style=\"padding-bottom: 20px; font-size: 18px;\"><a href=\"" $dir/$file "\">$(echo ${file:3: -5} | tr '_' ' ')</a></li>" >> "${path}"
             fi
         fi

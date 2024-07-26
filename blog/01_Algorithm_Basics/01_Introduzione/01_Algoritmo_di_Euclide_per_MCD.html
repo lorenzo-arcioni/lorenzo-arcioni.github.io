@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VF7D8E2FE3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-VF7D8E2FE3');
+</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../../../fav-icon.png">
+    <link rel="stylesheet" href="../../../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="../../../scripts.js" defer></script>
+
+    <script>
+        MathJax = {
+          tex: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+    <style type="text/css">
+
+        p {
+            font-size: 20px;
+        }
+
+        h3 {
+            font-size: 23px;
+        }
+
+        h2 {
+            font-size: 26px;
+        }
+        h4 {
+            font-size: 22px;
+        }
+        code {
+            font-size: 20px;
+            background-color: #1f1f1e;
+        }
+        ol,ul {
+            font-size: 20px;
+            margin-left: 40px;
+        }
+        pre {
+            background-color: #1f1f1e;
+        }
+    </style>
+
+    <title>Lorenzo Arcioni</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="container">
+                <div class="profile">
+                    <img src="../../../lorenzoarcioni.png" alt="Immagine del profilo" class="profile-img">
+                    <div class="name">
+                        <h1 style="font-size: 32px;">Lorenzo Arcioni</h1>
+                        <p class="subtitle" style="font-size: 20px;">Machine Learning Engineer | Data Scientist</p>
+                        <p class="mobile_subtitle" style="font-size: 20px;">Machine Learning Engineer<br><br>Data Scientist</p>
+                        <div class="social">
+                            <a href="https://www.linkedin.com/in/lorenzo-arcioni-216b921b5/" target="_blank"><i class="fa fa-linkedin"></i></a>
+                            <a href="https://github.com/lorenzo-arcioni" target="_blank"><i class="fa fa-github"></i></a>
+                            <a href="https://www.kaggle.com/lorenzoarcioni" target="_blank"><strong>K</strong></a>
+                            <a href="https://www.instagram.com/lorenzo_arcioni/" target="_blank"><i class="fa fa-instagram"></i></a>
+                            <a href="https://medium.com/@lorenzo.arcioni2000/" target="_blank"><i class="fa fa-medium"></i></a>
+                        </div>
+                    </div>
+                    <div class="blog-link"><p><a href="../../../index.html"><u>Home</u></a></p></div>
+                </div>
+                <hr>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <h2>Algoritmo Euclideo per il MCD</h2>
+            <p>L'algoritmo Euclideo per il MCD è un metodo per trovare il massimo comune divisore di due numeri, che è il numero più grande che divide entrambi senza lasciare un resto. Questo algoritmo si basa sul principio che il MCD di due numeri divide anche la loro differenza.</p>
+            <br>
+            <h3>Descrizione dell'Algoritmo</h3>
+            <p>L'algoritmo Euclideo può essere descritto utilizzando i seguenti passaggi:</p>
+            <br>
+            <ol style="margin-left:40px;">
+                <li>Data una coppia di numeri interi positivi \(A\) e \(B\), con \(A \geq B\).</li>
+                <li>Dividi \(A\) per \(B\) e ottieni il resto \(R\). (Usa \(A \mod B\) per ottenere il resto)</li>
+                <li>Sostituisci \(A\) con \(B\) e \(B\) con \(R\).</li>
+                <li>Ripeti il processo fino a quando \(R = 0\).</li>
+                <li>Il MCD è il resto non nullo nell'ultimo passo in cui il resto è diverso da zero.</li>
+            </ol>
+            <br>
+            <h3>Rappresentazione Matematica</h3>
+            <p>L'algoritmo Euclideo può essere rappresentato matematicamente come:</p>
+            <br>
+            <p>
+                \[
+                \text{MCD}(A, B) = \begin{cases} 
+                A & \text{se } B = 0 \\
+                \text{MCD}(B, A \mod B) & \text{se } B \neq 0 
+                \end{cases}
+                \]
+            </p>
+    
+            <h3>Esempio</h3>
+            <p>Troviamo il MCD di \(252\) e \(105\) utilizzando l'algoritmo Euclideo:</p>
+            <br>
+            <ol style="margin-left:40px;">
+                <li>\(A = 252\), \(B = 105\)</li>
+                <li>\(252 \mod 105 = 42\) (resto)</li>
+                <li>Sostituisci \(A\) con 105 e \(B\) con 42.</li>
+                <li>\(105 \mod 42 = 21\) (resto)</li>
+                <li>Sostituisci \(A\) con 42 e \(B\) con 21.</li>
+                <li>\(42 \mod 21 = 0\) (resto)</li>
+            </ol>
+            <br>
+            <p>Poiché il resto è ora 0, il MCD di 252 e 105 è 21.</p>
+            <hr>
+            <br>
+            <h3>Comprendere l'Algoritmo Euclideo</h3>
+            <p>L'Algoritmo Euclideo utilizza le seguenti proprietà chiave:</p>
+            <br>
+            <ul>
+                <li>\(\text{MCD}(A,0) = A\)</li>
+                <li>Se \(A = B \cdot Q + R\) e \(B \neq 0\), allora \(\text{MCD}(A, B) = \text{MCD}(B, R)\), dove \(Q\) è un intero e \(R\) è un intero compreso tra 0 e \(B-1\)</li>
+            </ul>
+            <br>
+            <p>Queste proprietà ci permettono di trovare il MCD in vari scenari. L'algoritmo riduce iterativamente problemi complessi in problemi più semplici fino a raggiungere una soluzione. Le dimostrazioni convalidano l'efficacia dell'algoritmo.</p>
+            <br>
+            <h4>Dimostrazioni</h4>
+            <p>Possiamo dimostrare la correttezza dell'algoritmo attraverso le seguenti dimostrazioni:</p>
+            <br>
+            <ul>
+                <li><strong>Prova che \(\text{MCD}(A,0) = A\)</strong>: Il numero più grande che può dividere esattamente \(A\) è \(A\). Tutti i numeri interi dividono esattamente 0, rendendo \(A\) il massimo comune divisore. \(\square\)</li>
+                <br>
+                <li><strong>Prova che \(\text{MCD}(A, B) = \text{MCD}(B, R)\) e \(\text{MCD}(A, B) = \text{MCD}(B, A)\)</strong>:<br><br>
+                    <p>Consideriamo il \(\text{MCD}(A, B)\), dove \(A\) e \(B\) sono interi, \(R\) rappresenta il resto quando \(A\) è diviso per \(B\), espresso come \(R = A \mod B\). Questo resto \(R\) può essere calcolato come \(R = A - QB\), dove \(Q\) è il quoziente di \(A\) diviso per \(B\), o \(Q = \frac{A}{B}\).</p>
+                    <br>
+                    <p>In questa prova, usiamo il fatto che se \(A \ | \ B\) e \(A \ | \ C\), allora \(A \ | \ (xB + yC)\). Possiamo pensarlo in questo modo: se possiamo dividere \(B\) in pezzi di \(A\) e se possiamo dividere \(C\) in pezzi di \(A\), allora possiamo dividere \(xB + yC\) in pezzi di \(A\).</p>
+                    <br>
+                    <p>Consideriamo \( M = \text{MCD}(A, B) \) e \( N = \text{MCD}(B, R) \). Poiché \( M \) divide sia \( A \) che \( B \), deve anche dividere \( R = A - BQ \). Questo dimostra che \( M \) è un divisore comune di \( B \) e \( R \), quindi deve essere \( \leq N \), il loro massimo comune divisore. Allo stesso modo, poiché \( N \) divide sia \( B \) che \( R \), deve dividere \( A = BQ + R \), quindi \( N \leq M \). Poiché \( M \leq N \) e \( N \leq M \), abbiamo \( M = N \).</p>
+                    <br>
+                    <p>Questo implica anche che \(\text{MCD}(A, B) = \text{MCD}(B, A)\). \(\square\)</p>
+                </li>
+            </ul>
+            <br>
+            <p>Ora che abbiamo dimostrato la validità dell'algoritmo, dobbiamo dimostrare che l'algoritmo termina in un numero finito di passaggi.</p>
+            <br>
+            <ul>
+                <li><strong>Prova che l'algoritmo termina in un numero finito di passaggi:</strong><br><br>
+                    <p>Dato che ad ogni passo \(A\) è diviso per \(B\), il resto \(A \mod B = R\) è strettamente minore di \(B\). Ad ogni iterazione, l'algoritmo sostituisce \(A\) con \(B\) e \(B\) con \(R\). Dato che \(A \leq B\) e \(B < R\), ad ogni passo abbiamo un numero strettamente minore di \(B\). Pertanto, l'algoritmo termina in un numero finito di passaggi. \(\square\)</p>
+                </li>
+            </ul>
+            <br>
+            <p>L'algoritmo Euclideo è uno dei più efficienti per trovare il massimo comune divisore di due numeri. È anche cruciale nell'algoritmo di crittografia RSA. Esiste anche una versione estesa dell'algoritmo che può essere trovata nell'<a href="./02_Extended_Euclidean_Algorithm.html">Algoritmo Euclideo Esteso</a>.</p>
+            <br>
+        </div>
+    </main>
+    
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Lorenzo Arcioni. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

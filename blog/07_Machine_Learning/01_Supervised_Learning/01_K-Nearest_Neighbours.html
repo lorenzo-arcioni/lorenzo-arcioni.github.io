@@ -63,7 +63,7 @@
         <nav>
             <div class="container">
                 <div class="profile">
-                    <img src="../../../lorenzoarcioni.jpg" alt="Immagine del profilo" class="profile-img">
+                    <img src="../../../lorenzoarcioni.png" alt="Immagine del profilo" class="profile-img">
                     <div class="name">
                         <h1 style="font-size: 32px;">Lorenzo Arcioni</h1>
                         <p class="subtitle" style="font-size: 20px;">Machine Learning Engineer | Data Scientist</p>
@@ -85,100 +85,68 @@
 
     <main>
         <div class="container">
-            <h2>k-Nearest Neighbors (kNN) Algorithm</h2>
-            <p>The k-Nearest Neighbors (kNN) algorithm is a simple, yet powerful, supervised machine learning algorithm used for classification and regression tasks. It classifies a data point based on how its neighbors are classified.</p>
+            <h2>k-Nearest Neighbors (kNN)</h2>
+            <p>L'algoritmo dei k-nearest neighbors (kNN) è uno degli algoritmi più semplici e intuitivi da implementare per la classificazione e la regressione. Questo algoritmo si basa sul principio che i dati simili tendono a essere vicini nello spazio delle caratteristiche. Utilizzando la vicinanza tra i punti dati, kNN determina la classe o il valore di un nuovo campione analizzando i k punti dati più vicini (detti vicini) nel dataset di addestramento.</p>
+
+            <p>La semplicità dell'algoritmo kNN risiede nella sua mancanza di una fase esplicita di addestramento: tutte le operazioni computazionali vengono eseguite solo quando si fa una previsione. Per questo motivo, kNN è spesso definito un algoritmo di apprendimento pigro (lazy learning), in contrapposizione agli algoritmi di apprendimento attivo (eager learning) che costruiscono modelli predittivi durante la fase di addestramento.</p>
+
             <br>
-            <h3>Algorithm Description</h3>
-            <p>The k-Nearest Neighbors algorithm can be described using the following steps:</p>
+            <h3>Descrizione dell'algoritmo</h3>
+            <p>Il processo generale dell'algoritmo kNN può essere descritto con i seguenti passaggi:</p>
             <br>
             <ol style="margin-left:40px;">
-                <li>Choose the number \(k\) of neighbors to consider.</li>
-                <li>Calculate the distance between the query-instance and all the training samples.</li>
-                <li>Select the \(k\) training samples that are closest to the query-instance.</li>
-                <li>For classification: Assign the query-instance to the class most common among its \(k\) nearest neighbors.<br>
-                    For regression: Return the average of the values of its \(k\) nearest neighbors.</li>
+                <li>Scegliere il numero di vicini k.</li>
+                <li>Calcolare la distanza tra il nuovo punto e tutti i punti nel dataset di addestramento.</li>
+                <li>Ordinare le distanze in ordine crescente e selezionare i k punti più vicini.</li>
+                <li>Per la classificazione, assegnare al nuovo punto la classe più frequente tra i k vicini. Per la regressione, assegnare al nuovo punto la media dei valori dei k vicini.</li>
             </ol>
             <br>
-            <h3>Mathematical Representation</h3>
-            <p>The kNN algorithm can be mathematically represented as follows. Consider a set of initial (training) data</p>
-            <br>
-            <p>
-                \[
-                S = \{(x_1, y_1), \ldots, (x_n, y_n)\}
-                \]
-            </p>
+            <h3>Definizione formale</h3>
+            <p>Per formalizzare matematicamente l'algoritmo k-Nearest Neighbors (kNN), consideriamo un dataset di addestramento \( \mathcal{D} = \{(\mathbf{x}_i, y_i)\}_{i=1}^N \), dove \( \mathbf{x}_i \in \mathbb{R}^d \) rappresenta un vettore di lunghezza \( d \) (un punto dati con \( d \) caratteristiche) e \( y_i \in \mathbb{R} \) (o \( y_i \in \{1, \ldots, C\} \) dove \(C \in \mathbb{N}\), per la classificazione) rappresenta un'istanza della variabile target associata.</p>
 
-            <p>Given an input \(\bar{x}\), let</p>
-            <p>
-                \[
-                i' = \arg \min_{i=1, \ldots, n} \| \bar{x} - x_i \|_2
-                \]
-            </p>
-            <p>and define the nearest neighbor (NN) estimator as</p>
-            <p>
-                \[
-                \hat{f}(\bar{x}) = y_{i'}
-                \]
-            </p>
-            
-            <p>where \(N_k(\mathbf{x})\) represents the set of the \(k\) nearest neighbors of \(\mathbf{x}\) and \(y_i\) are the corresponding target values.</p>
-
-            <h3>Example</h3>
-            <p>Let's classify a new data point using the kNN algorithm:</p>
+            <p>Assumiamo di aver osservato un insieme di \( n \) punti dati diversi. Queste osservazioni sono chiamate dati di addestramento perché li utilizziamo per addestrare il nostro modello su come stimare una funzione che ci permette di formalizzare la realtà di interesse. Lasciamo che \( x_{i,j} \) rappresenti il valore del \( j \)-esimo predittore, o input, per l'osservazione \( i \), dove \( i = 1, 2, \ldots, n \) e \( j = 1, 2, \ldots, d \). Di conseguenza, sia \( y_i \) la variabile di risposta per l'osservazione \( i \). I nostri dati di addestramento consistono in \( \{(\mathbf{x}_1, y_1), (\mathbf{x}_2, y_2), \ldots, (\mathbf{x}_n, y_n)\} \), dove \( \mathbf{x}_i = (x_{i,1}, x_{i,2}, \ldots, x_{i,d})^T \).</p>
             <br>
-            <ol style="margin-left:40px;">
-                <li>Choose \(k = 3\).</li>
-                <li>Calculate the distance between the new data point and all the existing data points in the dataset.</li>
-                <li>Identify the 3 data points closest to the new data point.</li>
-                <li>Assign the new data point to the class that is most frequent among these 3 closest data points.</li>
-            </ol>
-            <br>
-            <p>For example, if the three nearest neighbors have the following classes: {A, B, A}, then the new data point will be classified as class A.</p>
-<hr>
-<br>
-            <h3>Understanding the kNN Algorithm</h3>
-            <p>The kNN algorithm relies on the following key properties:</p>
-            <br>
+            <h3>Considerazioni sulla Scelta di k</h3>
+            <p>La scelta del valore di k è cruciale per le prestazioni dell'algoritmo:</p>
             <ul>
-                <li>It is non-parametric, meaning it makes no assumptions about the underlying data distribution.</li>
-                <li>It is a lazy learning algorithm, which means it does not build a model until a query is made.</li>
-                <li>The choice of \(k\) significantly impacts the performance of the algorithm.</li>
+                <li>Con k troppo piccolo, l'algoritmo può essere sensibile al rumore nei dati.</li>
+                <li>Con k troppo grande, l'algoritmo può includere troppi punti che non sono realmente vicini.</li>
             </ul>
             <br>
-            <h4>Distance Metrics</h4>
-            <p>Common distance metrics used in kNN include:</p>
-            <br>
+            <h3>Metriche di Distanza</h3>
+            <p>Le metriche di distanza più comuni utilizzate nel kNN sono:</p>
             <ul>
-                <li><strong>Euclidean Distance:</strong>
-                    \[
-                    d(\mathbf{x}, \mathbf{y}) = \sqrt{\sum_{i=1}^{n} (x_i - y_i)^2}
-                    \]
-                </li>
-                <li><strong>Manhattan Distance:</strong>
-                    \[
-                    d(\mathbf{x}, \mathbf{y}) = \sum_{i=1}^{n} |x_i - y_i|
-                    \]
-                </li>
-                <li><strong>Minkowski Distance:</strong>
-                    \[
-                    d(\mathbf{x}, \mathbf{y}) = \left(\sum_{i=1}^{n} |x_i - y_i|^p\right)^{1/p}
-                    \]
-                </li>
+                <li>Distanza Euclidea: \[ d(\mathbf{x}, \mathbf{y}) = \sqrt{\sum_{i=1}^{n} (x_i - y_i)^2} \]</li>
+                <li>Distanza di Manhattan: \[ d(\mathbf{x}, \mathbf{y}) = \sum_{i=1}^{n} |x_i - y_i| \]</li>
+                <li>Distanza di Minkowski: \[ d(\mathbf{x}, \mathbf{y}) = \left( \sum_{i=1}^{n} |x_i - y_i|^p \right)^{1/p} \]</li>
             </ul>
             <br>
-            <h4>Choosing the Value of \(k\)</h4>
-            <p>The value of \(k\) affects the algorithm's performance:</p>
-            <br>
+            <h3>Vantaggi e Svantaggi</h3>
+            <p>Vantaggi dell'algoritmo kNN:</p>
             <ul>
-                <li><strong>Small \(k\):</strong> Can lead to overfitting and a noisy model.</li>
-                <li><strong>Large \(k\):</strong> Can lead to underfitting and a biased model.</li>
-                <li>Typically, \(k\) is chosen through cross-validation.</li>
+                <li>Semplice da implementare.</li>
+                <li>Non richiede una fase di addestramento esplicita.</li>
+                <li>Adatto a problemi sia di classificazione che di regressione.</li>
             </ul>
             <br>
-            <p>The kNN algorithm is simple yet effective and is widely used in various applications, including image recognition, recommendation systems, and more.</p>
+            <p>Svantaggi dell'algoritmo kNN:</p>
+            <ul>
+                <li>Prestazioni dipendenti dalla scelta della metrica di distanza.</li>
+                <li>Richiede spazio di memoria significativo per memorizzare tutti i dati di addestramento.</li>
+                <li>Il tempo di predizione può essere elevato per dataset molto grandi.</li>
+            </ul>
             <br>
+            <h3>Applicazioni</h3>
+            <p>L'algoritmo kNN viene utilizzato in diverse applicazioni, tra cui:</p>
+            <ul>
+                <li>Riconoscimento di immagini.</li>
+                <li>Sistemi di raccomandazione.</li>
+                <li>Riconoscimento di modelli.</li>
+                <li>Rilevamento di anomalie.</li>
+            </ul>
         </div>
     </main>
+    
 
     <footer>
         <div class="container">
