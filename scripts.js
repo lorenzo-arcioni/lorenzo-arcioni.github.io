@@ -38,7 +38,7 @@ var education = `<ul class="education-list" style="list-style: none; padding: 10
         <p style="font-weight: normal; flex: 1;">Bachelor's Degree in Computer Science</p>
     </span>
     <span class="dates" style="flex: 1;">
-        110/110 cum laude<br>
+        110/110 with honors<br>
         2023
     </span>
 </li>

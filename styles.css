@@ -50,8 +50,8 @@ h2 {
     margin-right: 50px;
 
     animation:
-        entrance 3s ease-in-out,
-        bounce 3s infinite;
+        entrance 4s ease-in-out,
+        bounce 4s infinite;
 }
 
 @keyframes entrance {
@@ -171,6 +171,10 @@ h2 {
 
 .social a:nth-child(4) {
     animation-delay: 1.5s;
+}
+
+.social a:nth-child(5) {
+    animation-delay: 2.0s;
 }
 
 .profile {

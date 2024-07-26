@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VF7D8E2FE3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-VF7D8E2FE3');
+</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../../../fav-icon.png">
+    <link rel="stylesheet" href="../../../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="../../../scripts.js" defer></script>
+
+    <script>
+        MathJax = {
+          tex: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+    <style type="text/css">
+
+        p {
+            font-size: 20px;
+        }
+
+        h3 {
+            font-size: 23px;
+        }
+
+        h2 {
+            font-size: 26px;
+        }
+        h4 {
+            font-size: 22px;
+        }
+        code {
+            font-size: 20px;
+            background-color: #1f1f1e;
+        }
+        ol,ul {
+            font-size: 20px;
+            margin-left: 40px;
+        }
+        pre {
+            background-color: #1f1f1e;
+        }
+    </style>
+
+    <title>Lorenzo Arcioni</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="container">
+                <div class="profile">
+                    <img src="../../../lorenzoarcioni.jpg" alt="Immagine del profilo" class="profile-img">
+                    <div class="name">
+                        <h1 style="font-size: 32px;">Lorenzo Arcioni</h1>
+                        <p class="subtitle" style="font-size: 20px;">Machine Learning Engineer | Data Scientist</p>
+                        <p class="mobile_subtitle" style="font-size: 20px;">Machine Learning Engineer<br><br>Data Scientist</p>
+                        <div class="social">
+                            <a href="https://www.linkedin.com/in/lorenzo-arcioni-216b921b5/" target="_blank"><i class="fa fa-linkedin"></i></a>
+                            <a href="https://github.com/lorenzo-arcioni" target="_blank"><i class="fa fa-github"></i></a>
+                            <a href="https://www.kaggle.com/lorenzoarcioni" target="_blank"><strong>K</strong></a>
+                            <a href="https://www.instagram.com/lorenzo_arcioni/" target="_blank"><i class="fa fa-instagram"></i></a>
+                            <a href="https://medium.com/@lorenzo.arcioni2000/" target="_blank"><i class="fa fa-medium"></i></a>
+                        </div>
+                    </div>
+                    <div class="blog-link"><p><a href="../../../index.html"><u>Home</u></a></p></div>
+                </div>
+                <hr>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <h2>k-Nearest Neighbors (kNN) Algorithm</h2>
+            <p>The k-Nearest Neighbors (kNN) algorithm is a simple, yet powerful, supervised machine learning algorithm used for classification and regression tasks. It classifies a data point based on how its neighbors are classified.</p>
+            <br>
+            <h3>Algorithm Description</h3>
+            <p>The k-Nearest Neighbors algorithm can be described using the following steps:</p>
+            <br>
+            <ol style="margin-left:40px;">
+                <li>Choose the number \(k\) of neighbors to consider.</li>
+                <li>Calculate the distance between the query-instance and all the training samples.</li>
+                <li>Select the \(k\) training samples that are closest to the query-instance.</li>
+                <li>For classification: Assign the query-instance to the class most common among its \(k\) nearest neighbors.<br>
+                    For regression: Return the average of the values of its \(k\) nearest neighbors.</li>
+            </ol>
+            <br>
+            <h3>Mathematical Representation</h3>
+            <p>The kNN algorithm can be mathematically represented as follows. Consider a set of initial (training) data</p>
+            <br>
+            <p>
+                \[
+                S = \{(x_1, y_1), \ldots, (x_n, y_n)\}
+                \]
+            </p>
+
+            <p>Given an input \(\bar{x}\), let</p>
+            <p>
+                \[
+                i' = \arg \min_{i=1, \ldots, n} \| \bar{x} - x_i \|_2
+                \]
+            </p>
+            <p>and define the nearest neighbor (NN) estimator as</p>
+            <p>
+                \[
+                \hat{f}(\bar{x}) = y_{i'}
+                \]
+            </p>
+            
+            <p>where \(N_k(\mathbf{x})\) represents the set of the \(k\) nearest neighbors of \(\mathbf{x}\) and \(y_i\) are the corresponding target values.</p>
+
+            <h3>Example</h3>
+            <p>Let's classify a new data point using the kNN algorithm:</p>
+            <br>
+            <ol style="margin-left:40px;">
+                <li>Choose \(k = 3\).</li>
+                <li>Calculate the distance between the new data point and all the existing data points in the dataset.</li>
+                <li>Identify the 3 data points closest to the new data point.</li>
+                <li>Assign the new data point to the class that is most frequent among these 3 closest data points.</li>
+            </ol>
+            <br>
+            <p>For example, if the three nearest neighbors have the following classes: {A, B, A}, then the new data point will be classified as class A.</p>
+<hr>
+<br>
+            <h3>Understanding the kNN Algorithm</h3>
+            <p>The kNN algorithm relies on the following key properties:</p>
+            <br>
+            <ul>
+                <li>It is non-parametric, meaning it makes no assumptions about the underlying data distribution.</li>
+                <li>It is a lazy learning algorithm, which means it does not build a model until a query is made.</li>
+                <li>The choice of \(k\) significantly impacts the performance of the algorithm.</li>
+            </ul>
+            <br>
+            <h4>Distance Metrics</h4>
+            <p>Common distance metrics used in kNN include:</p>
+            <br>
+            <ul>
+                <li><strong>Euclidean Distance:</strong>
+                    \[
+                    d(\mathbf{x}, \mathbf{y}) = \sqrt{\sum_{i=1}^{n} (x_i - y_i)^2}
+                    \]
+                </li>
+                <li><strong>Manhattan Distance:</strong>
+                    \[
+                    d(\mathbf{x}, \mathbf{y}) = \sum_{i=1}^{n} |x_i - y_i|
+                    \]
+                </li>
+                <li><strong>Minkowski Distance:</strong>
+                    \[
+                    d(\mathbf{x}, \mathbf{y}) = \left(\sum_{i=1}^{n} |x_i - y_i|^p\right)^{1/p}
+                    \]
+                </li>
+            </ul>
+            <br>
+            <h4>Choosing the Value of \(k\)</h4>
+            <p>The value of \(k\) affects the algorithm's performance:</p>
+            <br>
+            <ul>
+                <li><strong>Small \(k\):</strong> Can lead to overfitting and a noisy model.</li>
+                <li><strong>Large \(k\):</strong> Can lead to underfitting and a biased model.</li>
+                <li>Typically, \(k\) is chosen through cross-validation.</li>
+            </ul>
+            <br>
+            <p>The kNN algorithm is simple yet effective and is widely used in various applications, including image recognition, recommendation systems, and more.</p>
+            <br>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Lorenzo Arcioni. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

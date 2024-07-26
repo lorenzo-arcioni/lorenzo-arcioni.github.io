@@ -1,0 +1,12 @@
+        
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Lorenzo Arcioni. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

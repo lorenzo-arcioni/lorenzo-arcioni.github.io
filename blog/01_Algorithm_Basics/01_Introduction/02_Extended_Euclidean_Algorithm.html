@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VF7D8E2FE3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-VF7D8E2FE3');
+</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../../../fav-icon.png">
+    <link rel="stylesheet" href="../../../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="../../../scripts.js" defer></script>
+
+    <script>
+        MathJax = {
+          tex: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+    <style type="text/css">
+
+        p {
+            font-size: 20px;
+        }
+
+        h3 {
+            font-size: 23px;
+        }
+
+        h2 {
+            font-size: 26px;
+        }
+        h4 {
+            font-size: 22px;
+        }
+        code {
+            font-size: 20px;
+            background-color: #1f1f1e;
+        }
+        ol,ul {
+            font-size: 20px;
+            margin-left: 40px;
+        }
+        pre {
+            background-color: #1f1f1e;
+        }
+    </style>
+
+    <title>Lorenzo Arcioni</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="container">
+                <div class="profile">
+                    <img src="../../../lorenzoarcioni.jpg" alt="Immagine del profilo" class="profile-img">
+                    <div class="name">
+                        <h1 style="font-size: 32px;">Lorenzo Arcioni</h1>
+                        <p class="subtitle" style="font-size: 20px;">Machine Learning Engineer | Data Scientist</p>
+                        <p class="mobile_subtitle" style="font-size: 20px;">Machine Learning Engineer<br><br>Data Scientist</p>
+                        <div class="social">
+                            <a href="https://www.linkedin.com/in/lorenzo-arcioni-216b921b5/" target="_blank"><i class="fa fa-linkedin"></i></a>
+                            <a href="https://github.com/lorenzo-arcioni" target="_blank"><i class="fa fa-github"></i></a>
+                            <a href="https://www.kaggle.com/lorenzoarcioni" target="_blank"><strong>K</strong></a>
+                            <a href="https://www.instagram.com/lorenzo_arcioni/" target="_blank"><i class="fa fa-instagram"></i></a>
+                            <a href="https://medium.com/@lorenzo.arcioni2000/" target="_blank"><i class="fa fa-medium"></i></a>
+                        </div>
+                    </div>
+                    <div class="blog-link"><p><a href="../../../index.html"><u>Home</u></a></p></div>
+                </div>
+                <hr>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <h2>Extended Euclidean Algorithm</h2>
+            <p>The Extended Euclidean Algorithm is an extension of the Euclidean Algorithm that not only computes the greatest common divisor (GCD) of two integers \(A\) and \(B\), but also finds the coefficients of Bézout's identity, which are the integers \(x\) and \(y\) such that \(Ax + By = \text{GCD}(A, B)\).</p>
+            <br>
+            <h3>Algorithm Description</h3>
+            <p>The Extended Euclidean Algorithm can be described using the following steps:</p>
+            <br>
+            <ol style="margin-left:40px;">
+                <li>Start with two positive integers \(A\) and \(B\), where \(A \geq B\).</li>
+                <li>Perform the Euclidean Algorithm steps to find the GCD of \(A\) and \(B\).</li>
+                <li>Simultaneously, compute the coefficients \(x\) and \(y\) such that \(Ax + By = \text{GCD}(A, B)\).</li>
+                <li>Update \(x\) and \(y\) using the recursive relationships derived from the Euclidean Algorithm steps.</li>
+            </ol>
+            <br>
+            <h3>Mathematical Representation</h3>
+            <p>The Extended Euclidean Algorithm can be mathematically represented as:</p>
+            <br>
+            <p>
+                \[
+                \begin{aligned}
+                &\text{Given } A \text{ and } B, \text{ with } A \geq B: \\
+                &\text{1. If } B = 0, \text{ then } \text{GCD}(A, B) = A \text{ and } x = 1, y = 0. \\
+                &\text{2. Otherwise, perform the Euclidean Algorithm:} \\
+                &\hspace{20px} A = BQ + R \text{, where } R = A \mod B \\
+                &\hspace{20px} \text{GCD}(A, B) = \text{GCD}(B, R) \\
+                &\hspace{20px} \text{Recursively find coefficients } x_1 \text{ and } y_1 \text{ such that } Bx_1 + Ry_1 = \text{GCD}(B, R) \\
+                &\hspace{20px} \text{Set } x = y_1 \text{ and } y = x_1 - Qy_1 \\
+                &\text{3. Return } \text{GCD}(A, B), x, \text{ and } y.
+                \end{aligned}
+                \]
+            </p>
+
+            <h3>Example</h3>
+            <p>Let's find the GCD and Bézout coefficients of \(A = 252\) and \(B = 105\) using the Extended Euclidean Algorithm:</p>
+            <br>
+            <ol style="margin-left:40px;">
+                <li>Start with \(A = 252\) and \(B = 105\).</li>
+                <li>Compute \(252 \mod 105 = 42\). \(252 = 105 \times 2 + 42\).</li>
+                <li>Compute \(105 \mod 42 = 21\). \(105 = 42 \times 2 + 21\).</li>
+                <li>Compute \(42 \mod 21 = 0\). \(42 = 21 \times 2 + 0\).</li>
+                <li>Back-substitute to find \(x\) and \(y\):<br>
+                    \(21 = 105 - 42 \times 2\)<br>
+                    \(42 = 252 - 105 \times 2\)<br>
+                    So, \(21 = 105 - 2(252 - 105 \times 2) = 105 \times 5 - 252 \times 2\).<br>
+                    Thus, \(x = -2\) and \(y = 5\).
+                </li>
+            </ol>
+            <br>
+            <p>Hence, the GCD of 252 and 105 is 21, with Bézout coefficients \(x = -2\) and \(y = 5\), such that \(252(-2) + 105(5) = 21\).</p>
+<hr>
+<br>
+            <h3>Understanding the Extended Euclidean Algorithm</h3>
+            <p>The Extended Euclidean Algorithm utilizes the following key properties:</p>
+            <br>
+            <ul>
+                <li>It extends the Euclidean Algorithm by tracking the coefficients \(x\) and \(y\) in Bézout's identity.</li>
+                <li>The algorithm maintains the relationship \(Ax + By = \text{GCD}(A, B)\) throughout its steps.</li>
+                <li>It allows the computation of modular inverses, crucial in many cryptographic algorithms, including RSA.</li>
+            </ul>
+            <br>
+            <h4>Proofs</h4>
+            <p>We can demonstrate the correctness of the algorithm through proofs:</p>
+            <br>
+            <ul>
+                <li><strong>Proof of Bézout's Identity:</strong> For integers \(A\) and \(B\), with GCD \(d\), there exist integers \(x\) and \(y\) such that \(Ax + By = d\). This is shown by the iterative process of back-substitution from the Euclidean Algorithm steps. \(\square\)</li>
+                <br>
+                <li><strong>Proof that the Algorithm Produces Correct Coefficients:</strong><br><br>
+                    <p>By induction on the steps of the Euclidean Algorithm:</p>
+                    <br>
+                    <p>1. Base Case: If \(B = 0\), then \(d = A\), and the coefficients are \(x = 1\) and \(y = 0\), satisfying \(Ax + By = d\).</p>
+                    <br>
+                    <p>2. Inductive Step: Suppose for \(B\) and \(R = A \mod B\), we have \(Bx_1 + Ry_1 = \text{GCD}(B, R)\). Then, from the Euclidean Algorithm, \(R = A - BQ\), substituting, we get:</p>
+                    <br>
+                    <p>\(\text{GCD}(A, B) = Bx_1 + (A - BQ)y_1 = Ay_1 + B(x_1 - Qy_1)\).</p>
+                    <br>
+                    <p>Thus, the new coefficients \(x = y_1\) and \(y = x_1 - Qy_1\) satisfy \(Ax + By = \text{GCD}(A, B)\). \(\square\)</p>
+                </li>
+            </ul>
+            <br>
+            <p>Now that we have demonstrated the validity of the algorithm, we must demonstrate that the algorithm finishes in a finite number of steps.</p>
+            <br>
+            <ul>
+                <li><strong>Proof that the Algorithm Finishes in a Finite Number of Steps:</strong><br><br>
+                    <p>Since the Extended Euclidean Algorithm follows the same steps as the Euclidean Algorithm for finding the GCD, it terminates in a finite number of steps as proven for the Euclidean Algorithm. \(\square\)</p>
+                </li>
+            </ul>
+            <br>
+            <p>The Extended Euclidean Algorithm is essential for solving linear Diophantine equations and finding modular inverses, which are vital in cryptographic applications like the RSA encryption algorithm.</p>
+            <br>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Lorenzo Arcioni. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

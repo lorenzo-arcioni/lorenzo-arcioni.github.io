@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VF7D8E2FE3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-VF7D8E2FE3');
+</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../../../fav-icon.png">
+    <link rel="stylesheet" href="../../../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="../../../scripts.js" defer></script>
+
+    <script>
+        MathJax = {
+          tex: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+    <style type="text/css">
+
+        p {
+            font-size: 20px;
+        }
+
+        h3 {
+            font-size: 23px;
+        }
+
+        h2 {
+            font-size: 26px;
+        }
+        h4 {
+            font-size: 22px;
+        }
+        code {
+            font-size: 20px;
+            background-color: #1f1f1e;
+        }
+        ol,ul {
+            font-size: 20px;
+            margin-left: 40px;
+        }
+        pre {
+            background-color: #1f1f1e;
+        }
+    </style>
+
+    <title>Lorenzo Arcioni</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="container">
+                <div class="profile">
+                    <img src="../../../lorenzoarcioni.jpg" alt="Immagine del profilo" class="profile-img">
+                    <div class="name">
+                        <h1 style="font-size: 32px;">Lorenzo Arcioni</h1>
+                        <p class="subtitle" style="font-size: 20px;">Machine Learning Engineer | Data Scientist</p>
+                        <p class="mobile_subtitle" style="font-size: 20px;">Machine Learning Engineer<br><br>Data Scientist</p>
+                        <div class="social">
+                            <a href="https://www.linkedin.com/in/lorenzo-arcioni-216b921b5/" target="_blank"><i class="fa fa-linkedin"></i></a>
+                            <a href="https://github.com/lorenzo-arcioni" target="_blank"><i class="fa fa-github"></i></a>
+                            <a href="https://www.kaggle.com/lorenzoarcioni" target="_blank"><strong>K</strong></a>
+                            <a href="https://www.instagram.com/lorenzo_arcioni/" target="_blank"><i class="fa fa-instagram"></i></a>
+                            <a href="https://medium.com/@lorenzo.arcioni2000/" target="_blank"><i class="fa fa-medium"></i></a>
+                        </div>
+                    </div>
+                    <div class="blog-link"><p><a href="../../../index.html"><u>Home</u></a></p></div>
+                </div>
+                <hr>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+            <h2>Euclidean GCD Algorithm</h2>
+            <p>The Euclidean GCD algorithm is a method for finding the greatest common divisor of two numbers, which is the largest number that divides both of them without leaving a remainder. This algorithm is based on the principle that the GCD of two numbers also divides their difference.</p>
+            <br>
+            <h3>Algorithm Description</h3>
+            <p>The Euclidean algorithm can be described using the following steps:</p>
+            <br>
+            <ol style="margin-left:40px;">
+                <li>Given two positive integers \(A\) and \(B\), with \(A \geq B\).</li>
+                <li>Divide \(A\) by \(B\) and get the remainder \(R\). (Use \(A \mod B\) to get the remainder)</li>
+                <li>Replace \(A\) with \(B\) and \(B\) with \(R\).</li>
+                <li>Repeat the process until \(R = 0\).</li>
+                <li>The GCD is the non-zero remainder in the last non-zero remainder step.</li>
+            </ol>
+            <br>
+            <h3>Mathematical Representation</h3>
+            <p>The Euclidean algorithm can be mathematically represented as:</p>
+            <br>
+            <p>
+                \[
+                GCD(A, B) = \begin{cases} 
+                A & \text{if } B = 0 \\
+                GCD(B, A \mod B) & \text{if } B \neq 0 
+                \end{cases}
+                \]
+            </p>
+
+            <h3>Example</h3>
+            <p>Let's find the GCD of \(252\) and \(105\) using the Euclidean algorithm:</p>
+            <br>
+            <ol style="margin-left:40px;">
+                <li>\(A = 252\), \(B = 105\)</li>
+                <li>\(252 \mod 105 = 42\) (remainder)</li>
+                <li>Replace \(A\) with 105 and \(B\) with 42.</li>
+                <li>\(105 \mod 42 = 21\) (remainder)</li>
+                <li>Replace \(A\) with 42 and \(B\) with 21.</li>
+                <li>\(42 \mod 21 = 0\) (remainder)</li>
+            </ol>
+            <br>
+            <p>Since the remainder is now 0, the GCD of 252 and 105 is 21.</p>
+<hr>
+<br>
+            <h3>Understanding the Euclidean Algorithm</h3>
+            <p>The Euclidean Algorithm utilizes the following key properties:</p>
+            <br>
+            <ul>
+                <li>GCD(\(A,0\)) = \(A\)</li>
+                <li>If \(A = B \cdot Q + R\) and \(B \neq 0\), then GCD(\(A,B\)) = GCD(\(B,R\)), where \(Q\) is an integer and \(R\) is an integer between 0 and \(B-1\)</li>
+            </ul>
+            <br>
+            <p>These properties enable us to find the GCD in various scenarios. The algorithm iteratively reduces complex problems into simpler ones until a solution is reached. Proofs validate the algorithm's effectiveness.</p>
+            <br>
+            <h4>Proofs</h4>
+            <p>We can demonstrate the correctness of the algorithm through proofs:</p>
+            <br>
+            <ul>
+                <li><strong>Proof that \(GCD(A,0)\) = \(A\)</strong>: The largest integer that can evenly divide \(A\) is \(A\). All integers evenly divide 0, making \(A\) the greatest common divisor. \(\square\)</li>
+                <br>
+                <li><strong>Proof that GCD(\(A,B\)) = GCD(\(B,R\)) and GCD(\(A,B\)) = GCD(\(B,A\))</strong>:<br><br>
+                    <p>Considering the  GCD(\(A, B\)), where \(A\) and \(B\) are integers, \(R\) represents the remainder when \(A\) is divided by \(B\), expressed as \(R = A \mod B\). 
+                       This remainder \(R\) can be calculated as \(R = A - QB\), where \(Q\) is the quotient of \(A\) divided by \(B\), or \(Q = \frac{A}{B}\).</p>
+                    <br>
+                    <p>In this proof, we use the fact that if \(A \ | \ B\) and \(A \ | \ C\), then \(A \ | \ (xB + yC)\). We can think it in this way: if we can divide \(B\) in chunks of \(A\) 
+                       and if we can divide \(C\) in chunks of \(A\), then we can divide \(xB + yC\) in chunks of \(A\).</p>
+                    <br>
+                    <p>Let \( M = \text{GCD}(A, B) \) and \( N = \text{GCD}(B, R) \). Since \( M \) divides both \( A \) and \( B \), it must also divide \( R = A - BQ \). 
+                       This shows that \( M \) is a common divisor of \( B \) and \( R \), so it must be \( \leq N \), their greatest common divisor. 
+                       Likewise, since \( N \) divides both \( B \) and \( R \), it must divide \( A = BQ + R \), so \( N \leq M \). Since \( M \leq N \) and \( N \leq M \), we have \( M = N \).</p>
+                    <br>
+                    <p>This implies also \(GCD(A,B)\) = \(GCD(B,A)\). \(\square\)</p>
+                </li>
+            </ul>
+            <br>
+            <p>Now that we have demonstrated the validity of the algorithm, we must demonstrate that the algorithm finishes in a finite number of steps.</p>
+            <br>
+            <ul>
+                <li><strong>Proof that the algorithm finishes in a finite number of steps</strong>:
+                    <br>
+                    <br>
+                    <p>Given that at each step \(A\) is divided by \(B\), the remainder \(A \mod B = R\) is strictly smaller than \(B\). At each iteration, the algorithm replace \(A\) with \(B\) and \(B\) with \(R\). Given that 
+                    \(A \leq B\) and \(B < R\), at each step, we have a strictly smaller number than \(B\). Therefore, the algorithm finishes in a finite number of steps. \(\square\)</p>
+                </li>
+            </ul>
+            <br>
+            <p>The Euclidean algorithm is one of the most efficient algorithms for finding the greatest common divisor of two numbers. 
+               It is also crucial in <a href="../Basic/03_RSA_Encryption_Algorithm.html">RSA encryption algorithm</a>. There is also an extended version of the algorithm that can be found in the <a href="./02_Extended_Euclidean_Algorithm.html">Extended Euclidean Algorithm</a>.</p>
+            <br>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Lorenzo Arcioni. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
