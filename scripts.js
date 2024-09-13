@@ -123,7 +123,7 @@ locale, rendendolo accessibile per l'elaborazione post-dataset biologici con fac
 <br><br></p><a class="project_link_icon" href="https://github.com/lorenzo-arcioni/BioSwiftAnalytics" target="_blank"><i class="fa fa-github"></i></a>
 </p>`;
 
-var publication_1 = `<h3 style="font-size: 20px;"><a href="https://www.bmc.com/blogs/2023/02/10/hpc-t-annotator-an-hpc-tool-for-de-novo-transcriptome-assembly-annotation/">
+var publication_1 = `<h3 style="font-size: 20px;"><a href="https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-024-05887-3">
 HPC-T-Annotator: an HPC tool for de novo transcriptome assembly annotation</a></h3>
 <p>BMC Bioinformatics, 2024</p>
 `;
