@@ -17,7 +17,7 @@ function Writer(text, speed, id) {
 }
 
 var about = "Appassionato delle infinite possibilità all'intersezione tra la Data Science, " +
-            "il Machine Learning e la Bioinformatica. Sono una persona esperta di tecnologia con " +
+            "il Machine Learning e la Bioinformatica. Sono un esperto di tecnologia con " +
             "un profondo interesse nella risoluzione di problemi complessi tramite approcci " +
             "innovativi. Con una solida esperienza in calcolo parallelo, sviluppo di algoritmi " +
             "e una profonda affezione per i sistemi operativi Linux, eccello in ambienti che " +
