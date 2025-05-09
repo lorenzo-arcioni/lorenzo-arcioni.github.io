@@ -424,13 +424,127 @@ body {
   transform: translateY(-50%);
 }
 
+/* Aumenta dimensione foto profilo nella versione desktop */
+header.text-center img.rounded-full {
+  width: 300px;  /* Dimensione aumentata rispetto ai 40px originali */
+  height: 300px;
+  object-fit: cover;
+}
+
 /* Allineamento responsive */
 @media (max-width: 768px) {
+  /* Riduzione padding generale */
   .prose ul {
-    padding-left: 1.5rem;
+    padding-left: 1rem;
+  }
+  .prose li {
+    padding-left: 1rem;
   }
   
-  .prose li {
-    padding-left: 1.2rem;
+  /* Riduzione padding per tutte le card */
+  .category-card {
+    padding: 1rem 0.75rem;
+  }
+  
+  /* Riduzione padding per card specifiche */
+  .project-card, 
+  .publication-card, 
+  .cert-card, 
+  .course-card, 
+  .bg-white.p-8 {
+    padding: 1rem !important;
+  }
+  
+  /* Riduzione padding interno degli elementi nelle card */
+  .project-card > div, 
+  .publication-card > div,
+  .exp-item,
+  .edu-item {
+    gap: 0.75rem;
+  }
+  
+  /* Riduzione margini tra elementi */
+  .space-y-10 > * + * {
+    margin-top: 1.5rem;
+  }
+  
+  /* Riduzione padding degli elementi di intestazione */
+  header.text-center {
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Riduzione padding per i contenitori principali */
+  .container.mx-auto {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+  
+  /* Dimensione foto profilo per tablet - dimensione aumentata */
+  header.text-center img.rounded-full {
+    width:  200px;
+    height: 200px;
+  }
+  
+  /* Ottimizzazione delle immagini per riempire completamente i contenitori */
+  .image-link-box img,
+  .course-card img,
+  .publication-card img,
+  img.object-cover {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  
+  /* Assicurati che i contenitori delle immagini abbiano altezza sufficiente */
+  .image-link-box,
+  .image-link-box > div,
+  .course-card img {
+    height: 200px !important;
+    min-height: 200px;
+  }
+  
+  /* Gestione specifica per le card dei progetti su mobile */
+  .project-card .flex-col.md\:flex-row {
+    flex-direction: column !important;
+  }
+  
+  .project-card .md\:w-4\/5,
+  .project-card .md\:w-1\/4,
+  .publication-card .md\:w-3\/4,
+  .publication-card .md\:w-1\/4 {
+    width: 100% !important;
+  }
+  
+  /* Assicurati che le immagini nei progetti abbiano una dimensione adeguata */
+  .project-card .image-link-box,
+  .project-card .image-link-box > div {
+    margin-top: 1rem;
+    height: 180px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Riduzione ulteriore per smartphone piccoli */
+  .category-card,
+  .project-card, 
+  .publication-card, 
+  .cert-card, 
+  .course-card, 
+  .bg-white.p-8 {
+    padding: 0.75rem !important;
+  }
+  
+  /* Dimensione immagini per schermi molto piccoli */
+  .image-link-box,
+  .image-link-box > div,
+  .course-card img {
+    height: 160px !important;
+  }
+  
+  /* Dimensione foto profilo per schermi molto piccoli - dimensione aumentata */
+  header.text-center img.rounded-full {
+    width:  200px;
+    height: 200px;
   }
 }
