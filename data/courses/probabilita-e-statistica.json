@@ -1,0 +1,605 @@
+{
+  "title": "Probabilità e Statistica",
+  "description": "Corso completo su probabilità e statistica: dai fondamenti teorici alle applicazioni pratiche",
+  "full_description": "Questo corso completo ti guiderà attraverso i fondamenti della probabilità e della statistica, partendo dagli spazi campionari e dagli assiomi della probabilità fino ad arrivare alla statistica inferenziale e agli intervalli di confidenza.\n\nIl corso bilancia rigorosamente teoria e pratica: imparerai a calcolare probabilità in contesti combinatori, a lavorare con variabili casuali discrete e continue, a comprendere le leggi dei grandi numeri e il teorema del limite centrale, e ad applicare tecniche di statistica descrittiva e inferenziale. Include numerosi esercizi pratici su ogni argomento. Ideale per studenti universitari, data scientist e chiunque voglia costruire una solida base matematica per il machine learning e l'analisi dei dati.",
+  "instructor": "Lorenzo Arcioni",
+  "instructor_bio": "Machine Learning Engineer e Data Scientist con oltre 5 anni di esperienza. Specializzato in Python, Machine Learning e formazione tecnica avanzata.",
+  "instructor_image": "/images/profile.jpeg",
+  "duration": "10 settimane",
+  "level": "Intermedio",
+  "category": "Mathematics & Statistics",
+  "price": "€599",
+  "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Standard_deviation_diagram.svg/1200px-Standard_deviation_diagram.svg.png",
+  "learning_objectives": [
+    {
+      "objective": "Teoria della probabilità",
+      "description": "Spazi campionari, assiomi, probabilità condizionata e teorema di Bayes"
+    },
+    {
+      "objective": "Analisi combinatoria",
+      "description": "Permutazioni, disposizioni, coefficienti binomiali e multinomiali"
+    },
+    {
+      "objective": "Variabili casuali discrete e continue",
+      "description": "Distribuzione, aspettazione, varianza e variabili notevoli"
+    },
+    {
+      "objective": "Leggi fondamentali",
+      "description": "Legge dei grandi numeri e teorema del limite centrale"
+    },
+    {
+      "objective": "Statistica descrittiva",
+      "description": "Istogrammi, misure di posizione, varianza campionaria e correlazione"
+    },
+    {
+      "objective": "Statistica inferenziale",
+      "description": "Stima di massima verosimiglianza e intervalli di confidenza"
+    }
+  ],
+  "prerequisites": [
+    {
+      "title": "Analisi matematica di base",
+      "description": "Calcolo differenziale e integrale: derivate, integrali, limiti",
+      "is_required": true
+    },
+    {
+      "title": "Algebra lineare di base",
+      "description": "Matrici, vettori, operazioni fondamentali",
+      "is_required": false
+    },
+    {
+      "title": "Logica e teoria degli insiemi",
+      "description": "Operazioni insiemistiche, logica booleana",
+      "is_required": true
+    }
+  ],
+  "modules": [
+    {
+      "id": 1,
+      "title": "Fondamenti di Probabilità",
+      "description": "Spazi campionari, assiomi e probabilità equiprobabile",
+      "estimated_hours": "8 ore",
+      "lessons": [
+        {
+          "id": 1,
+          "title": "Introduzione alla probabilità",
+          "description": "Cos'è la probabilità e perché studiarla",
+          "duration": "30 min",
+          "is_free": true
+        },
+        {
+          "id": 2,
+          "title": "Spazi campionari",
+          "description": "Definizione, esempi e rappresentazione",
+          "duration": "50 min",
+          "is_free": true
+        },
+        {
+          "id": 3,
+          "title": "Operazioni insiemistiche",
+          "description": "Unione, intersezione, complemento e differenza tra eventi",
+          "duration": "50 min",
+          "is_free": false
+        },
+        {
+          "id": 4,
+          "title": "Assiomi della probabilità",
+          "description": "Gli assiomi di Kolmogorov e le loro conseguenze",
+          "duration": "60 min",
+          "is_free": false
+        },
+        {
+          "id": 5,
+          "title": "Spazi campionari equiprobabili",
+          "description": "Calcolo della probabilità con esiti ugualmente probabili",
+          "duration": "50 min",
+          "is_free": false
+        },
+        {
+          "id": 6,
+          "title": "Esercizi: fondamenti di probabilità",
+          "description": "Applicazioni pratiche su spazi campionari e assiomi",
+          "duration": "60 min",
+          "is_free": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Analisi Combinatoria",
+      "description": "Tecniche di conteggio per il calcolo delle probabilità",
+      "estimated_hours": "8 ore",
+      "lessons": [
+        {
+          "id": 7,
+          "title": "Principio fondamentale del calcolo combinatorio",
+          "description": "Regola del prodotto e della somma",
+          "duration": "45 min",
+          "is_free": false
+        },
+        {
+          "id": 8,
+          "title": "Disposizioni e disposizioni semplici",
+          "description": "Con e senza ripetizione: definizioni ed esempi",
+          "duration": "50 min",
+          "is_free": false
+        },
+        {
+          "id": 9,
+          "title": "Permutazioni",
+          "description": "Permutazioni semplici e con ripetizione",
+          "duration": "45 min",
+          "is_free": false
+        },
+        {
+          "id": 10,
+          "title": "Coefficiente binomiale e multinomiale",
+          "description": "Combinazioni, triangolo di Pascal, coefficienti multinomiali",
+          "duration": "60 min",
+          "is_free": false
+        },
+        {
+          "id": 11,
+          "title": "Campionamento da urne",
+          "description": "Modelli con e senza reimmissione, urne con uno o due tipi di palline",
+          "duration": "55 min",
+          "is_free": false
+        },
+        {
+          "id": 12,
+          "title": "Problema dei cappelli e permutazioni casuali",
+          "description": "Derangements e problemi classici con permutazioni casuali",
+          "duration": "50 min",
+          "is_free": false
+        },
+        {
+          "id": 13,
+          "title": "Esercizi: analisi combinatoria",
+          "description": "Problemi di conteggio applicati alla probabilità",
+          "duration": "75 min",
+          "is_free": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Probabilità Condizionata e Teorema di Bayes",
+      "description": "Aggiornamento delle probabilità alla luce di nuove informazioni",
+      "estimated_hours": "8 ore",
+      "lessons": [
+        {
+          "id": 14,
+          "title": "Probabilità condizionata",
+          "description": "Definizione, interpretazione e proprietà",
+          "duration": "55 min",
+          "is_free": false
+        },
+        {
+          "id": 15,
+          "title": "Regola del prodotto",
+          "description": "Calcolo della probabilità di intersezioni di eventi",
+          "duration": "50 min",
+          "is_free": false
+        },
+        {
+          "id": 16,
+          "title": "Legge della probabilità totale",
+          "description": "Partizionamento dello spazio campionario",
+          "duration": "55 min",
+          "is_free": false
+        },
+        {
+          "id": 17,
+          "title": "Teorema di Bayes",
+          "description": "Inversione della probabilità condizionata, applicazioni",
+          "duration": "65 min",
+          "is_free": false
+        },
+        {
+          "id": 18,
+          "title": "Esercizi: probabilità condizionata e Bayes",
+          "description": "Problemi diagnostici, aggiornamento bayesiano",
+          "duration": "75 min",
+          "is_free": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Indipendenza e Prove di Bernoulli",
+      "description": "Indipendenza tra eventi e modelli di prove ripetute",
+      "estimated_hours": "8 ore",
+      "lessons": [
+        {
+          "id": 19,
+          "title": "Indipendenza tra eventi",
+          "description": "Definizione, proprietà e differenza con incompatibilità",
+          "duration": "55 min",
+          "is_free": false
+        },
+        {
+          "id": 20,
+          "title": "Prove di Bernoulli",
+          "description": "Schemi bernoulliani: successo e insuccesso in prove indipendenti",
+          "duration": "55 min",
+          "is_free": false
+        },
+        {
+          "id": 21,
+          "title": "Successioni di eventi crescenti e decrescenti",
+          "description": "Continuità della probabilità, limiti di successioni di eventi",
+          "duration": "50 min",
+          "is_free": false
+        },
+        {
+          "id": 22,
+          "title": "Probabilità di tutti i successi e primo successo",
+          "description": "Calcolo della probabilità di k successi e del primo successo",
+          "duration": "50 min",
+          "is_free": false
+        },
+        {
+          "id": 23,
+          "title": "Esercizi: indipendenza e Bernoulli",
+          "description": "Problemi con schemi bernoulliani e successioni di eventi",
+          "duration": "70 min",
+          "is_free": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Variabili Casuali Discrete",
+      "description": "Modellare fenomeni aleatori con variabili discrete",
+      "estimated_hours": "8 ore",
+      "lessons": [
+        {
+          "id": 24,
+          "title": "Variabili casuali e funzione di distribuzione",
+          "description": "Definizione formale, proprietà della CDF",
+          "duration": "55 min",
+          "is_free": false
+        },
+        {
+          "id": 25,
+          "title": "Densità discreta",
+          "description": "Probability mass function e relazione con la CDF",
+          "duration": "50 min",
+          "is_free": false
+        },
+        {
+          "id": 26,
+          "title": "Aspettazione (valore atteso)",
+          "description": "Definizione, calcolo e proprietà lineari",
+          "duration": "55 min",
+          "is_free": false
+        },
+        {
+          "id": 27,
+          "title": "Distribuzione Binomiale",
+          "description": "Derivazione, parametri, media e varianza",
+          "duration": "55 min",
+          "is_free": false
+        },
+        {
+          "id": 28,
+          "title": "Distribuzione di Poisson e limite della Binomiale",
+          "description": "La Poisson come approssimazione della Binomiale per n grande",
+          "duration": "60 min",
+          "is_free": false
+        },
+        {
+          "id": 29,
+          "title": "Distribuzione Ipergeometrica",
+          "description": "Campionamento senza reimmissione, media e varianza",
+          "duration": "50 min",
+          "is_free": false
+        },
+        {
+          "id": 30,
+          "title": "Esercizi: variabili discrete",
+          "description": "Problemi con Binomiale, Poisson e Ipergeometrica",
+          "duration": "75 min",
+          "is_free": false
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Variabili Casuali Continue",
+      "description": "Valore atteso, varianza e distribuzioni continue notevoli",
+      "estimated_hours": "8 ore",
+      "lessons": [
+        {
+          "id": 31,
+          "title": "Somma di valori attesi",
+          "description": "Linearità dell'aspettazione e applicazioni",
+          "duration": "45 min",
+          "is_free": false
+        },
+        {
+          "id": 32,
+          "title": "Variabili casuali continue",
+          "description": "Densità di probabilità (PDF) e funzione di distribuzione cumulata",
+          "duration": "60 min",
+          "is_free": false
+        },
+        {
+          "id": 33,
+          "title": "Valore atteso e varianza per variabili continue",
+          "description": "Calcolo integrale, proprietà della varianza",
+          "duration": "55 min",
+          "is_free": false
+        },
+        {
+          "id": 34,
+          "title": "Distribuzione Uniforme",
+          "description": "Definizione, media, varianza e applicazioni",
+          "duration": "45 min",
+          "is_free": false
+        },
+        {
+          "id": 35,
+          "title": "Distribuzione Gaussiana (Normale)",
+          "description": "Proprietà, standardizzazione, tavole, regola 68-95-99.7",
+          "duration": "65 min",
+          "is_free": false
+        },
+        {
+          "id": 36,
+          "title": "Distribuzione Esponenziale",
+          "description": "Proprietà di assenza di memoria, media e varianza",
+          "duration": "50 min",
+          "is_free": false
+        },
+        {
+          "id": 37,
+          "title": "Esercizi: variabili continue",
+          "description": "Problemi con Uniforme, Gaussiana ed Esponenziale",
+          "duration": "80 min",
+          "is_free": false
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Vettori Casuali e Condizionamento",
+      "description": "Leggi congiunte, indipendenza, covarianza e valore atteso condizionato",
+      "estimated_hours": "12 ore",
+      "lessons": [
+        {
+          "id": 38,
+          "title": "Leggi congiunte di variabili casuali",
+          "description": "Distribuzione congiunta, marginali e loro relazione",
+          "duration": "60 min",
+          "is_free": false
+        },
+        {
+          "id": 39,
+          "title": "Aspettazione di funzioni di più variabili",
+          "description": "Calcolo del valore atteso di g(X, Y)",
+          "duration": "50 min",
+          "is_free": false
+        },
+        {
+          "id": 40,
+          "title": "Variabili casuali indipendenti",
+          "description": "Definizione, caratterizzazione e conseguenze",
+          "duration": "55 min",
+          "is_free": false
+        },
+        {
+          "id": 41,
+          "title": "Aspettazione del prodotto e covarianza",
+          "description": "E[XY] per variabili indipendenti, definizione e proprietà della covarianza",
+          "duration": "60 min",
+          "is_free": false
+        },
+        {
+          "id": 42,
+          "title": "Somma di variabili casuali indipendenti",
+          "description": "Casi notevoli (Binomiale, Gaussiana, Poisson) e convoluzione",
+          "duration": "65 min",
+          "is_free": false
+        },
+        {
+          "id": 43,
+          "title": "Densità e distribuzione condizionata",
+          "description": "Definizione formale ed esempi applicativi",
+          "duration": "55 min",
+          "is_free": false
+        },
+        {
+          "id": 44,
+          "title": "Valore atteso condizionato",
+          "description": "Definizione, proprietà e calcolo tramite condizionamento",
+          "duration": "60 min",
+          "is_free": false
+        },
+        {
+          "id": 45,
+          "title": "Varianza condizionata",
+          "description": "Definizione e formula della varianza totale",
+          "duration": "55 min",
+          "is_free": false
+        },
+        {
+          "id": 46,
+          "title": "Esercizi: vettori casuali e condizionamento",
+          "description": "Problemi su leggi congiunte, covarianza e valore atteso condizionato",
+          "duration": "100 min",
+          "is_free": false
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Leggi Asintotiche",
+      "description": "Disuguaglianze, legge dei grandi numeri e teorema del limite centrale",
+      "estimated_hours": "7 ore",
+      "lessons": [
+        {
+          "id": 47,
+          "title": "Disuguaglianza di Markov",
+          "description": "Enunciato, dimostrazione ed esempi applicativi",
+          "duration": "50 min",
+          "is_free": false
+        },
+        {
+          "id": 48,
+          "title": "Disuguaglianza di Chebyshev",
+          "description": "Enunciato, dimostrazione tramite Markov ed esempi",
+          "duration": "55 min",
+          "is_free": false
+        },
+        {
+          "id": 49,
+          "title": "Legge dei grandi numeri",
+          "description": "LGN debole e forte: enunciati e interpretazione",
+          "duration": "60 min",
+          "is_free": false
+        },
+        {
+          "id": 50,
+          "title": "Teorema del limite centrale",
+          "description": "Enunciato, interpretazione e applicazioni pratiche",
+          "duration": "65 min",
+          "is_free": false
+        },
+        {
+          "id": 51,
+          "title": "Esercizi: leggi asintotiche",
+          "description": "Applicazione di Chebyshev, LGN e TLC a problemi concreti",
+          "duration": "70 min",
+          "is_free": false
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "title": "Statistica Descrittiva e Inferenziale",
+      "description": "Analisi dei dati, stima e intervalli di confidenza",
+      "estimated_hours": "11 ore",
+      "lessons": [
+        {
+          "id": 52,
+          "title": "Statistica descrittiva: istogrammi",
+          "description": "Costruzione, interpretazione e classi di frequenza",
+          "duration": "50 min",
+          "is_free": false
+        },
+        {
+          "id": 53,
+          "title": "Misure di posizione",
+          "description": "Media campionaria, moda e mediana campionaria",
+          "duration": "55 min",
+          "is_free": false
+        },
+        {
+          "id": 54,
+          "title": "Varianza campionaria",
+          "description": "Definizione, correzione di Bessel e interpretazione",
+          "duration": "50 min",
+          "is_free": false
+        },
+        {
+          "id": 55,
+          "title": "Dati bivariati e coefficiente di correlazione",
+          "description": "Scatter plot, correlazione di Pearson, correlazione vs causalità",
+          "duration": "60 min",
+          "is_free": false
+        },
+        {
+          "id": 56,
+          "title": "Stima di massima verosimiglianza: Bernoulli",
+          "description": "Likelihood, log-likelihood e stima MLE per dati Bernoulli i.i.d.",
+          "duration": "60 min",
+          "is_free": false
+        },
+        {
+          "id": 57,
+          "title": "Stima di massima verosimiglianza: Gaussiana e Poisson",
+          "description": "MLE per media e varianza gaussiana, MLE per il parametro Poisson",
+          "duration": "60 min",
+          "is_free": false
+        },
+        {
+          "id": 58,
+          "title": "Intervalli di confidenza: varianza nota",
+          "description": "IC per la media con dati Gaussiani i.i.d. e varianza nota",
+          "duration": "60 min",
+          "is_free": false
+        },
+        {
+          "id": 59,
+          "title": "Intervalli di confidenza: varianza incognita",
+          "description": "Distribuzione t di Student e IC con varianza incognita",
+          "duration": "65 min",
+          "is_free": false
+        },
+        {
+          "id": 60,
+          "title": "Esercizi: statistica descrittiva e inferenziale",
+          "description": "Problemi su MLE, IC e analisi descrittiva di dataset reali",
+          "duration": "90 min",
+          "is_free": false
+        }
+      ]
+    }
+  ],
+  "certification": true,
+  "certificate_description": "Certificato digitale verificabile che attesta il completamento del corso e la padronanza dei fondamenti di probabilità e statistica.",
+  "target_audience": [
+    "Studenti universitari di ingegneria, matematica, informatica o economia",
+    "Data scientist e machine learning engineer che vogliono colmare gap teorici",
+    "Programmatori che vogliono costruire fondamenta solide per ML e AI",
+    "Autodidatti con background tecnico che vogliono imparare statistica rigorosa",
+    "Chiunque voglia comprendere l'incertezza e prendere decisioni basate sui dati"
+  ],
+  "tools_required": [
+    "Computer (Windows, Mac o Linux)",
+    "Python 3.8+",
+    "Librerie: NumPy, SciPy, Matplotlib",
+    "IDE o editor (VS Code, PyCharm)",
+    "Jupyter Notebook (consigliato)",
+    "4GB RAM minimo"
+  ],
+  "average_rating": 4.8,
+  "reviews": [
+    {
+      "student_name": "Francesca Martini",
+      "rating": 5,
+      "date": "20 gennaio 2025",
+      "comment": "Finalmente un corso che spiega la probabilità con rigore matematico senza essere inaccessibile. Le sezioni su Bayes e sul teorema del limite centrale sono eccellenti. Ora capisco davvero i fondamenti statistici del machine learning.",
+      "verified": true
+    },
+    {
+      "student_name": "Luca Bianchi",
+      "rating": 5,
+      "date": "10 gennaio 2025",
+      "comment": "Corso imprescindibile per chi vuole fare data science seriamente. La progressione dagli assiomi della probabilità fino agli intervalli di confidenza è logica e ben strutturata. Gli esercizi sono calibrati alla perfezione.",
+      "verified": true
+    },
+    {
+      "student_name": "Sara Romano",
+      "rating": 4,
+      "date": "3 gennaio 2025",
+      "comment": "Ottimo corso, molto completo. La parte sul condizionamento e il valore atteso condizionato era quella che più mi mancava. Alcune lezioni su dynamic programming potrebbero essere più dettagliate, ma nel complesso è eccellente. Lo consiglio a tutti.",
+      "verified": true
+    },
+    {
+      "student_name": "Marco Esposito",
+      "rating": 5,
+      "date": "18 dicembre 2024",
+      "comment": "Venivo da un background di ingegneria e avevo lacune enormi sulla statistica inferenziale. Questo corso ha colmato tutto. La spiegazione della massima verosimiglianza è la più chiara che abbia mai trovato. Ora applico queste tecniche ogni giorno al lavoro.",
+      "verified": true
+    },
+    {
+      "student_name": "Elena Conti",
+      "rating": 5,
+      "date": "5 dicembre 2024",
+      "comment": "La sezione sull'analisi combinatoria e i problemi di probabilità classici (cappelli, urne) è fantastica. Gli esercizi sono tanti e variegati. Il modulo sulle leggi asintotiche mi ha finalmente fatto capire perché il TLC è così fondamentale.",
+      "verified": true
+    }
+  ]
+}

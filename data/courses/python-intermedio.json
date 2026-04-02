@@ -1,0 +1,770 @@
+{
+  "title": "Programmazione in Python - Intermedio",
+  "description": "Corso avanzato di Python: dal programmatore base all'esperto del linguaggio",
+  "full_description": "Dopo aver appreso le basi di Python, il passo successivo è padroneggiare le caratteristiche avanzate del linguaggio stesso: dalla programmazione funzionale ai metaclass, dalla gestione avanzata della memoria ai pattern di concorrenza nativi di Python.\n\nQuesto corso intermedio si concentra esclusivamente sulle funzionalità avanzate di Python come linguaggio di programmazione, approfondendo il modello a oggetti, i meccanismi interni, le tecniche di metaprogrammazione e le caratteristiche che distinguono Python dagli altri linguaggi.\n\nImparerai a sfruttare appieno il potenziale di Python attraverso decoratori, generatori, context manager, descriptor, metaclass e molto altro. Comprenderai come funziona Python 'sotto il cofano' e scriverai codice più elegante, efficiente e pythonic. Include anche un modulo dedicato alla ricorsione avanzata, con trampolining, divide and conquer e problemi classici.\n\nIdeale per chi ha completato un corso base e vuole diventare un esperto di Python, acquisendo una comprensione profonda del linguaggio che servirà come fondamenta solide per qualsiasi specializzazione futura.",
+  "instructor": "Lorenzo Arcioni",
+  "instructor_bio": "Machine Learning Engineer e Data Scientist con oltre 5 anni di esperienza. Specializzato in Python, Machine Learning e formazione tecnica avanzata.",
+  "instructor_image": "/images/profile.jpeg",
+  "duration": "13 settimane",
+  "level": "Intermedio",
+  "category": "Programmazione",
+  "price": "€499",
+  "image_url": "https://www.python.org/static/community_logos/python-logo-master-v3-TM.png",
+  "learning_objectives": [
+    {
+      "objective": "Programmazione funzionale",
+      "description": "Padroneggiare decoratori, generatori, closure e higher-order functions"
+    },
+    {
+      "objective": "Metaprogrammazione",
+      "description": "Utilizzare metaclass, descriptor, type() e dynamic class creation"
+    },
+    {
+      "objective": "OOP avanzato",
+      "description": "Abstract base classes, protocol, mixin, method resolution order"
+    },
+    {
+      "objective": "Gestione memoria",
+      "description": "Reference counting, garbage collection, weak references e performance"
+    },
+    {
+      "objective": "Ricorsione avanzata",
+      "description": "Tail recursion, trampolining, divide and conquer e problemi classici"
+    },
+    {
+      "objective": "Concorrenza Python",
+      "description": "GIL, threading, multiprocessing e asyncio"
+    },
+    {
+      "objective": "Type system avanzato",
+      "description": "Type hints avanzati, generics, protocols e structural typing"
+    },
+    {
+      "objective": "Python internals",
+      "description": "Bytecode, execution model, namespace e scope resolution"
+    }
+  ],
+  "prerequisites": [
+    {
+      "title": "Python base",
+      "description": "Variabili, strutture dati, funzioni, OOP base, file I/O",
+      "is_required": true
+    },
+    {
+      "title": "Esperienza pratica di coding",
+      "description": "Almeno 20-30 ore di coding in Python",
+      "is_required": true
+    },
+    {
+      "title": "Familiarità con il terminale",
+      "description": "Uso confidenziale del terminale e degli strumenti di sviluppo",
+      "is_required": true
+    },
+    {
+      "title": "Inglese tecnico base",
+      "description": "Per leggere la documentazione ufficiale Python",
+      "is_required": false
+    }
+  ],
+  "modules": [
+    {
+      "id": 1,
+      "title": "Python Avanzato - Fondamenta",
+      "description": "Consolidamento e tecniche avanzate del linguaggio",
+      "estimated_hours": "4 ore",
+      "lessons": [
+        {
+          "id": 1,
+          "title": "Recap e assessment",
+          "description": "Review concetti fondamentali e setup ambiente professionale",
+          "duration": "30 min",
+          "is_free": true
+        },
+        {
+          "id": 2,
+          "title": "Python execution model",
+          "description": "Come Python esegue il codice, bytecode, dis module e performance implications",
+          "duration": "45 min",
+          "is_free": true
+        },
+        {
+          "id": 3,
+          "title": "Namespace e scope avanzato",
+          "description": "LEGB rule approfondita, globals(), locals() e scope resolution dettagliata",
+          "duration": "40 min",
+          "is_free": false
+        },
+        {
+          "id": 4,
+          "title": "Comprehensions e generator expressions",
+          "description": "List/dict/set comprehensions avanzate, nested comprehensions e memory efficiency",
+          "duration": "45 min",
+          "is_free": false
+        },
+        {
+          "id": 5,
+          "title": "Unpacking avanzato",
+          "description": "Extended iterable unpacking, nested unpacking, dictionary unpacking",
+          "duration": "35 min",
+          "is_free": false
+        },
+        {
+          "id": 6,
+          "title": "Esercizi: Python idioms",
+          "description": "Scrivere codice pythonic, refactoring di codice non-pythonic",
+          "duration": "45 min",
+          "is_free": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Ricorsione Avanzata",
+      "description": "Pensare ricorsivamente ad alto livello",
+      "estimated_hours": "5 ore",
+      "lessons": [
+        {
+          "id": 7,
+          "title": "Ricorsione: ripasso e approfondimento",
+          "description": "Base case, recursive case, call stack e visualizzazione",
+          "duration": "50 min",
+          "is_free": false
+        },
+        {
+          "id": 8,
+          "title": "Tail recursion e ottimizzazione",
+          "description": "Tail recursion, limiti di ricorsione in Python e come aggirarli",
+          "duration": "45 min",
+          "is_free": false
+        },
+        {
+          "id": 9,
+          "title": "Trampolining",
+          "description": "Implementare il trampolining per simulare tail call optimization in Python",
+          "duration": "50 min",
+          "is_free": false
+        },
+        {
+          "id": 10,
+          "title": "Divide and conquer",
+          "description": "Paradigma ricorsivo potente: merge sort, binary search e varianti",
+          "duration": "55 min",
+          "is_free": false
+        },
+        {
+          "id": 11,
+          "title": "Backtracking",
+          "description": "Esplorare lo spazio delle soluzioni: N-queen, sudoku, permutazioni",
+          "duration": "55 min",
+          "is_free": false
+        },
+        {
+          "id": 12,
+          "title": "Ricorsione vs iterazione",
+          "description": "Confronto prestazionale, memoization e quando preferire l'una all'altra",
+          "duration": "40 min",
+          "is_free": false
+        },
+        {
+          "id": 13,
+          "title": "Esercizi: problemi ricorsivi classici",
+          "description": "Fibonacci, torri di Hanoi, permutazioni, flood fill",
+          "duration": "85 min",
+          "is_free": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Programmazione Funzionale",
+      "description": "Paradigma funzionale in Python",
+      "estimated_hours": "6 ore",
+      "lessons": [
+        {
+          "id": 14,
+          "title": "First-class functions",
+          "description": "Funzioni come oggetti, higher-order functions, callback pattern",
+          "duration": "40 min",
+          "is_free": false
+        },
+        {
+          "id": 15,
+          "title": "Closure in profondità",
+          "description": "Meccanismo delle closure, free variables, factory functions, __closure__",
+          "duration": "50 min",
+          "is_free": false
+        },
+        {
+          "id": 16,
+          "title": "Decoratori",
+          "description": "Anatomia, function wrapping, functools.wraps, decoratori parametrizzati e stacking",
+          "duration": "70 min",
+          "is_free": false
+        },
+        {
+          "id": 17,
+          "title": "Partial application e currying",
+          "description": "functools.partial, currying manuale e use cases pratici",
+          "duration": "35 min",
+          "is_free": false
+        },
+        {
+          "id": 18,
+          "title": "Map, filter, reduce",
+          "description": "Trasformazioni funzionali, functools.reduce, lazy evaluation",
+          "duration": "40 min",
+          "is_free": false
+        },
+        {
+          "id": 19,
+          "title": "Progetto: Functional pipeline system",
+          "description": "Pipeline con decoratori, composizione funzioni, lazy evaluation chain",
+          "duration": "60 min",
+          "is_free": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Iteratori e Generatori",
+      "description": "Lazy evaluation e iterazione avanzata",
+      "estimated_hours": "5 ore",
+      "lessons": [
+        {
+          "id": 20,
+          "title": "Iterator protocol",
+          "description": "__iter__ e __next__, iteratori custom, StopIteration, iter() con sentinel",
+          "duration": "45 min",
+          "is_free": false
+        },
+        {
+          "id": 21,
+          "title": "Generatori",
+          "description": "yield approfondito, generator state, yield from, subgenerators",
+          "duration": "60 min",
+          "is_free": false
+        },
+        {
+          "id": 22,
+          "title": "Coroutines e yield expressions",
+          "description": "send(), throw(), close(), two-way communication, priming coroutines",
+          "duration": "55 min",
+          "is_free": false
+        },
+        {
+          "id": 23,
+          "title": "itertools deep dive",
+          "description": "Infinite iterators, combinatoric iterators, terminating iterators",
+          "duration": "50 min",
+          "is_free": false
+        },
+        {
+          "id": 24,
+          "title": "Generator performance",
+          "description": "Memory efficiency, lazy evaluation benefits, infinite sequences",
+          "duration": "35 min",
+          "is_free": false
+        },
+        {
+          "id": 25,
+          "title": "Progetto: Data processing pipeline",
+          "description": "Chained generators, stream processing, memory-efficient operations",
+          "duration": "55 min",
+          "is_free": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "OOP Avanzato",
+      "description": "Object-oriented programming in profondità",
+      "estimated_hours": "6 ore",
+      "lessons": [
+        {
+          "id": 26,
+          "title": "Magic methods completi",
+          "description": "__new__ vs __init__, comparison operators, arithmetic overloading, container emulation",
+          "duration": "70 min",
+          "is_free": false
+        },
+        {
+          "id": 27,
+          "title": "Properties e descriptors",
+          "description": "@property approfondito, descriptor protocol, __get__/__set__/__delete__",
+          "duration": "65 min",
+          "is_free": false
+        },
+        {
+          "id": 28,
+          "title": "Method resolution order (MRO)",
+          "description": "C3 linearization, super() mechanism, multiple inheritance, diamond problem",
+          "duration": "50 min",
+          "is_free": false
+        },
+        {
+          "id": 29,
+          "title": "Abstract base classes",
+          "description": "abc module, @abstractmethod, virtual subclasses, collections.abc",
+          "duration": "45 min",
+          "is_free": false
+        },
+        {
+          "id": 30,
+          "title": "Dataclasses e named tuples",
+          "description": "@dataclass, field specifications, frozen instances, collections.namedtuple",
+          "duration": "40 min",
+          "is_free": false
+        },
+        {
+          "id": 31,
+          "title": "Mixin pattern",
+          "description": "Mixin design, composition vs inheritance, multiple mixin classes",
+          "duration": "35 min",
+          "is_free": false
+        },
+        {
+          "id": 32,
+          "title": "Progetto: Framework OOP custom",
+          "description": "Design class hierarchy, implementare protocols, magic methods, abstract interfaces",
+          "duration": "75 min",
+          "is_free": false
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Metaprogrammazione",
+      "description": "Codice che genera codice",
+      "estimated_hours": "6 ore",
+      "lessons": [
+        {
+          "id": 33,
+          "title": "type() e dynamic class creation",
+          "description": "type() come metaclass, dynamic class creation, modifying classes at runtime",
+          "duration": "50 min",
+          "is_free": false
+        },
+        {
+          "id": 34,
+          "title": "Metaclasses",
+          "description": "Cosa sono, __new__ e __init__ in metaclasses, __prepare__, custom metaclasses",
+          "duration": "75 min",
+          "is_free": false
+        },
+        {
+          "id": 35,
+          "title": "Class decorators",
+          "description": "Decorating classes, class vs metaclass approach, registration patterns",
+          "duration": "45 min",
+          "is_free": false
+        },
+        {
+          "id": 36,
+          "title": "__getattribute__ e __getattr__",
+          "description": "Attribute access customization, proxy objects, evitare la recursion",
+          "duration": "50 min",
+          "is_free": false
+        },
+        {
+          "id": 37,
+          "title": "exec() e eval()",
+          "description": "Dynamic code execution, security considerations, compile() e code objects",
+          "duration": "40 min",
+          "is_free": false
+        },
+        {
+          "id": 38,
+          "title": "Import system manipulation",
+          "description": "Import hooks, sys.modules, custom importers, __import__",
+          "duration": "35 min",
+          "is_free": false
+        },
+        {
+          "id": 39,
+          "title": "Progetto: ORM semplificato",
+          "description": "Metaclass per model definition, descriptor per fields, query building dinamico",
+          "duration": "65 min",
+          "is_free": false
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Context Managers e Resource Management",
+      "description": "Gestione risorse professionale",
+      "estimated_hours": "4 ore",
+      "lessons": [
+        {
+          "id": 40,
+          "title": "Context manager protocol",
+          "description": "__enter__ e __exit__, exception handling, multiple context managers",
+          "duration": "45 min",
+          "is_free": false
+        },
+        {
+          "id": 41,
+          "title": "contextlib module",
+          "description": "@contextmanager, generator-based context managers, ExitStack, suppress",
+          "duration": "50 min",
+          "is_free": false
+        },
+        {
+          "id": 42,
+          "title": "Resource management patterns",
+          "description": "RAII pattern in Python, cleanup strategies, nested resources, error handling",
+          "duration": "40 min",
+          "is_free": false
+        },
+        {
+          "id": 43,
+          "title": "Async context managers",
+          "description": "__aenter__ e __aexit__, async with statement, async resource management",
+          "duration": "45 min",
+          "is_free": false
+        },
+        {
+          "id": 44,
+          "title": "Progetto: Custom context managers suite",
+          "description": "Transaction manager, timing context, temporary state manager, connection pool",
+          "duration": "60 min",
+          "is_free": false
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Memory Management e Performance",
+      "description": "Comprendere Python internals",
+      "estimated_hours": "5 ore",
+      "lessons": [
+        {
+          "id": 45,
+          "title": "Reference counting",
+          "description": "Come funziona, sys.getrefcount(), reference cycles, weak references",
+          "duration": "50 min",
+          "is_free": false
+        },
+        {
+          "id": 46,
+          "title": "Garbage collection",
+          "description": "gc module, generational GC, collection triggers, finalization, memory profiling",
+          "duration": "55 min",
+          "is_free": false
+        },
+        {
+          "id": 47,
+          "title": "Object internals",
+          "description": "Object memory layout, __slots__, sys.getsizeof, interning, identity vs equality",
+          "duration": "45 min",
+          "is_free": false
+        },
+        {
+          "id": 48,
+          "title": "Performance optimization",
+          "description": "timeit, cProfile, common pitfalls, loop optimization, string concatenation",
+          "duration": "60 min",
+          "is_free": false
+        },
+        {
+          "id": 49,
+          "title": "Python C API introduction",
+          "description": "CPython architecture, C extensions overview, ctypes basics",
+          "duration": "35 min",
+          "is_free": false
+        },
+        {
+          "id": 50,
+          "title": "Esercizi: performance tuning",
+          "description": "Profiling codice esistente, identificare bottlenecks, before/after benchmarks",
+          "duration": "55 min",
+          "is_free": false
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "title": "Type System Avanzato",
+      "description": "Type hints e static typing",
+      "estimated_hours": "4 ore",
+      "lessons": [
+        {
+          "id": 51,
+          "title": "Type hints fundamentals",
+          "description": "PEP 484, typing module, Optional, Union, type aliases",
+          "duration": "40 min",
+          "is_free": false
+        },
+        {
+          "id": 52,
+          "title": "Generics",
+          "description": "TypeVar, generic classes, generic functions, bounded type variables, variance",
+          "duration": "50 min",
+          "is_free": false
+        },
+        {
+          "id": 53,
+          "title": "Protocols e structural typing",
+          "description": "Protocol class, duck typing statico, runtime checkable protocols vs ABC",
+          "duration": "55 min",
+          "is_free": false
+        },
+        {
+          "id": 54,
+          "title": "Advanced typing",
+          "description": "Literal, Final, Callable, TypedDict, Annotated, ParamSpec",
+          "duration": "50 min",
+          "is_free": false
+        },
+        {
+          "id": 55,
+          "title": "Static type checking con mypy",
+          "description": "mypy usage, type checking workflow, configuration, gradual typing",
+          "duration": "45 min",
+          "is_free": false
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "title": "Concurrency in Python",
+      "description": "Threading, multiprocessing e asyncio",
+      "estimated_hours": "5 ore",
+      "lessons": [
+        {
+          "id": 56,
+          "title": "Global Interpreter Lock (GIL)",
+          "description": "Cos'è il GIL, perché esiste, implicazioni performance, futuro del GIL",
+          "duration": "50 min",
+          "is_free": false
+        },
+        {
+          "id": 57,
+          "title": "Threading",
+          "description": "threading module, Lock, RLock, Semaphore, Event, deadlocks, thread-local data",
+          "duration": "60 min",
+          "is_free": false
+        },
+        {
+          "id": 58,
+          "title": "Multiprocessing",
+          "description": "Process vs Thread, Process Pool, IPC, shared memory, Manager objects",
+          "duration": "55 min",
+          "is_free": false
+        },
+        {
+          "id": 59,
+          "title": "Asyncio fundamentals",
+          "description": "Async/await, event loop, coroutines, Tasks e Futures, asyncio.gather",
+          "duration": "70 min",
+          "is_free": false
+        },
+        {
+          "id": 60,
+          "title": "concurrent.futures",
+          "description": "Executor interface, ThreadPoolExecutor, ProcessPoolExecutor, as_completed",
+          "duration": "45 min",
+          "is_free": false
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "title": "Debugging e Introspection",
+      "description": "Tecniche avanzate di debugging",
+      "estimated_hours": "4 ore",
+      "lessons": [
+        {
+          "id": 61,
+          "title": "Introspection tools",
+          "description": "inspect module, Signature, source code inspection, stack frames",
+          "duration": "50 min",
+          "is_free": false
+        },
+        {
+          "id": 62,
+          "title": "Debugging avanzato",
+          "description": "pdb approfondito, breakpoint conditions, post-mortem debugging, remote debugging",
+          "duration": "60 min",
+          "is_free": false
+        },
+        {
+          "id": 63,
+          "title": "Logging avanzato",
+          "description": "logging module, handlers, formatters, logger hierarchy, structured logging",
+          "duration": "50 min",
+          "is_free": false
+        },
+        {
+          "id": 64,
+          "title": "Traceback e exception analysis",
+          "description": "traceback module, sys.exc_info(), exception chaining, custom exception handling",
+          "duration": "40 min",
+          "is_free": false
+        },
+        {
+          "id": 65,
+          "title": "Esercizi: debug challenge",
+          "description": "Debug di codice complesso, race conditions, memory leaks, performance issues",
+          "duration": "60 min",
+          "is_free": false
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "title": "Advanced Python Patterns",
+      "description": "Pattern avanzati pythonic",
+      "estimated_hours": "5 ore",
+      "lessons": [
+        {
+          "id": 66,
+          "title": "Singleton e creational patterns",
+          "description": "Singleton implementations, Borg pattern, module pattern, factory pattern",
+          "duration": "50 min",
+          "is_free": false
+        },
+        {
+          "id": 67,
+          "title": "Strategy e behavioral patterns",
+          "description": "Strategy con first-class functions, command pattern, observer con decorators",
+          "duration": "55 min",
+          "is_free": false
+        },
+        {
+          "id": 68,
+          "title": "Plugin architecture",
+          "description": "Plugin system design, entry points, dynamic loading, plugin registration",
+          "duration": "50 min",
+          "is_free": false
+        },
+        {
+          "id": 69,
+          "title": "DSL (Domain Specific Languages)",
+          "description": "Internal DSL in Python, method chaining, operator overloading per DSL",
+          "duration": "55 min",
+          "is_free": false
+        },
+        {
+          "id": 70,
+          "title": "Progetto: Mini framework",
+          "description": "Design pattern combination, plugin system, configuration DSL, extensibility",
+          "duration": "70 min",
+          "is_free": false
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "title": "Progetto Finale - Python Core",
+      "description": "Capstone project su Python puro",
+      "estimated_hours": "7 ore",
+      "lessons": [
+        {
+          "id": 71,
+          "title": "Project planning",
+          "description": "Scelta progetto, requirements, architecture design",
+          "duration": "50 min",
+          "is_free": false
+        },
+        {
+          "id": 72,
+          "title": "Design phase",
+          "description": "Class hierarchy, pattern selection, API design, metaprogramming opportunities",
+          "duration": "60 min",
+          "is_free": false
+        },
+        {
+          "id": 73,
+          "title": "Core implementation",
+          "description": "Metaclasses, decoratori custom, context managers, generators, magic methods, type hints",
+          "duration": "150 min",
+          "is_free": false
+        },
+        {
+          "id": 74,
+          "title": "Advanced features",
+          "description": "Concurrency, resource management, error handling robusto, performance optimization",
+          "duration": "90 min",
+          "is_free": false
+        },
+        {
+          "id": 75,
+          "title": "Testing e debugging",
+          "description": "Unit testing completo, edge cases, profiling, memory testing",
+          "duration": "60 min",
+          "is_free": false
+        },
+        {
+          "id": 76,
+          "title": "Documentation e polish",
+          "description": "Docstrings completi, type annotations, README tecnico, code examples",
+          "duration": "50 min",
+          "is_free": false
+        },
+        {
+          "id": 77,
+          "title": "Presentazione finale",
+          "description": "Code walkthrough, design decisions, challenges e soluzioni, lessons learned",
+          "duration": "40 min",
+          "is_free": false
+        }
+      ]
+    }
+  ],
+  "certification": true,
+  "certificate_description": "Certificato digitale verificabile 'Python Advanced Developer' che attesta il completamento del corso e la padronanza delle caratteristiche avanzate del linguaggio Python.",
+  "target_audience": [
+    "Sviluppatori Python junior che vogliono padroneggiare il linguaggio",
+    "Programmatori da altri linguaggi che vogliono expertise Python",
+    "Chi ha completato il corso Python base e vuole approfondire",
+    "Sviluppatori che si preparano a ruoli senior Python",
+    "Autodidatti che vogliono colmare gap teorici sugli internals di Python",
+    "Chiunque voglia comprendere Python in profondità prima di specializzarsi in ML, web dev o DevOps"
+  ],
+  "tools_required": [
+    "Computer (Windows, Mac o Linux)",
+    "Python 3.10+",
+    "IDE con debugging (VS Code o PyCharm)",
+    "Git per version control",
+    "4GB RAM minimo (8GB raccomandati)",
+    "Connessione internet"
+  ],
+  "average_rating": 4.9,
+  "reviews": [
+    {
+      "student_name": "Davide Moretti",
+      "rating": 5,
+      "date": "15 gennaio 2025",
+      "comment": "Finalmente un corso che tratta Python in profondità. Ho usato Python per anni senza capire davvero metaclassi, descriptor e il GIL. Ora mi sento un programmatore Python completo. Il modulo sulla ricorsione avanzata con il trampolining è stato una rivelazione.",
+      "verified": true
+    },
+    {
+      "student_name": "Chiara Valentini",
+      "rating": 5,
+      "date": "8 gennaio 2025",
+      "comment": "Il modulo sulla metaprogrammazione vale da solo il prezzo del corso. Costruire un ORM semplificato con metaclassi mi ha fatto capire come funzionano internamente SQLAlchemy e Django ORM. Il progetto finale è impegnativo ma estremamente formativo.",
+      "verified": true
+    },
+    {
+      "student_name": "Andrea Ferrara",
+      "rating": 5,
+      "date": "22 dicembre 2024",
+      "comment": "Ottima progressione dagli internals di Python fino ai design pattern avanzati. La sezione su concurrency e GIL mi ha chiarito dubbi che avevo da anni. Gli esercizi di debug challenge sono davvero tosti ma si impara moltissimo.",
+      "verified": true
+    },
+    {
+      "student_name": "Valentina Greco",
+      "rating": 4,
+      "date": "10 dicembre 2024",
+      "comment": "Corso molto denso e tecnico, esattamente quello che cercavo. Alcune lezioni sui generatori e le coroutine richiedono più visioni per assorbire tutto, ma le spiegazioni sono precise. Il modulo sulla ricorsione avanzata con backtracking e divide and conquer è completo e ben strutturato.",
+      "verified": true
+    },
+    {
+      "student_name": "Stefano Ricci",
+      "rating": 5,
+      "date": "1 dicembre 2024",
+      "comment": "Ho già lavorato con Python per 2 anni ma questo corso mi ha aperto un mondo. Il type system avanzato con i Protocol e mypy ha cambiato il modo in cui scrivo codice. Lo consiglio a chiunque voglia smettere di 'usare' Python e cominciare a 'padroneggiarlo'.",
+      "verified": true
+    }
+  ]
+}
