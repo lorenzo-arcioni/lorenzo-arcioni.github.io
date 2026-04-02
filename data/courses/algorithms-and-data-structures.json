@@ -1,0 +1,834 @@
+{
+  "title": "Algorithms and Data Structures",
+  "description": "Corso completo su algoritmi e strutture dati: fondamentali per ogni programmatore",
+  "full_description": "Questo corso completo ti fornirà una solida comprensione degli algoritmi e delle strutture dati fondamentali che ogni programmatore dovrebbe conoscere. Partendo dalle basi (array, linked list) arriverai a strutture complesse (alberi, grafi, hash tables) e algoritmi avanzati (dynamic programming, greedy algorithms).\n\nIl corso bilancia teoria e pratica: capirai la complessità computazionale (Big O), imparerai a scegliere la struttura dati giusta per ogni problema, e implementerai tutto in Python. Include centinaia di esercizi pratici e problemi in stile LeetCode/HackerRank per prepararti a interview tecniche. Ideale per chi vuole diventare un programmatore migliore, prepararsi a interview, o costruire fondamenta solide per algoritmi più avanzati in ML e AI.",
+  "instructor": "Lorenzo Arcioni",
+  "instructor_bio": "Machine Learning Engineer e Data Scientist con oltre 5 anni di esperienza. Specializzato in Python, Machine Learning e formazione tecnica avanzata.",
+  "instructor_image": "/images/profile.jpeg",
+  "duration": "12 settimane",
+  "level": "Intermedio",
+  "category": "Computer Science",
+  "price": "€699",
+  "image_url": "https://media.geeksforgeeks.org/wp-content/cdn-uploads/20230807133054/Data-structure-algorithm.png",
+  "learning_objectives": [
+    {
+      "objective": "Strutture dati fondamentali",
+      "description": "Array, linked list, stack, queue, hash table, tree, graph"
+    },
+    {
+      "objective": "Algoritmi di sorting e searching",
+      "description": "Quick sort, merge sort, binary search, e varianti"
+    },
+    {
+      "objective": "Big O notation",
+      "description": "Analizzare e ottimizzare complessità algoritmi"
+    },
+    {
+      "objective": "Dynamic programming",
+      "description": "Risolvere problemi complessi con memoization"
+    },
+    {
+      "objective": "Graph algorithms",
+      "description": "BFS, DFS, Dijkstra, minimum spanning tree"
+    },
+    {
+      "objective": "Problem solving",
+      "description": "Approccio sistematico a problemi algoritmici"
+    }
+  ],
+  "prerequisites": [
+    {
+      "title": "Python intermedio",
+      "description": "Buona conoscenza di Python: OOP, funzioni, liste",
+      "is_required": true
+    },
+    {
+      "title": "Logica di programmazione",
+      "description": "Esperienza con loop, condizioni, recursione",
+      "is_required": true
+    },
+    {
+      "title": "Matematica di base",
+      "description": "Algebra, logaritmi, logica booleana",
+      "is_required": false
+    }
+  ],
+  "modules": [
+    {
+      "id": 1,
+      "title": "Introduzione e Complessità",
+      "description": "Analisi algoritmi e Big O",
+      "estimated_hours": "5 ore",
+      "lessons": [
+        {
+          "id": 1,
+          "title": "Perché algoritmi e strutture dati",
+          "description": "Importanza nella programmazione moderna",
+          "duration": "30 min",
+          "is_free": true
+        },
+        {
+          "id": 2,
+          "title": "Big O notation",
+          "description": "Misurare efficienza algoritmi",
+          "duration": "60 min",
+          "is_free": true
+        },
+        {
+          "id": 3,
+          "title": "Time complexity",
+          "description": "O(1), O(n), O(log n), O(n²)",
+          "duration": "50 min",
+          "is_free": false
+        },
+        {
+          "id": 4,
+          "title": "Space complexity",
+          "description": "Memoria usata dagli algoritmi",
+          "duration": "40 min",
+          "is_free": false
+        },
+        {
+          "id": 5,
+          "title": "Best, average, worst case",
+          "description": "Analizzare scenari diversi",
+          "duration": "45 min",
+          "is_free": false
+        },
+        {
+          "id": 6,
+          "title": "Esercizi pratici",
+          "description": "Calcolare complessità di codice",
+          "duration": "45 min",
+          "is_free": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Array e Strings",
+      "description": "Strutture dati fondamentali",
+      "estimated_hours": "6 ore",
+      "lessons": [
+        {
+          "id": 7,
+          "title": "Array: operazioni base",
+          "description": "Access, insertion, deletion, traversal",
+          "duration": "45 min",
+          "is_free": false
+        },
+        {
+          "id": 8,
+          "title": "Dynamic arrays",
+          "description": "Come funzionano Python lists",
+          "duration": "40 min",
+          "is_free": false
+        },
+        {
+          "id": 9,
+          "title": "Two pointers technique",
+          "description": "Pattern comune per array problems",
+          "duration": "50 min",
+          "is_free": false
+        },
+        {
+          "id": 10,
+          "title": "Sliding window",
+          "description": "Ottimizzare ricerche in subarrays",
+          "duration": "50 min",
+          "is_free": false
+        },
+        {
+          "id": 11,
+          "title": "String manipulation",
+          "description": "Pattern matching, substring problems",
+          "duration": "45 min",
+          "is_free": false
+        },
+        {
+          "id": 12,
+          "title": "Esercizi: array problems",
+          "description": "LeetCode-style practice",
+          "duration": "90 min",
+          "is_free": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Linked Lists",
+      "description": "Liste concatenate e varianti",
+      "estimated_hours": "5 ore",
+      "lessons": [
+        {
+          "id": 13,
+          "title": "Singly linked list",
+          "description": "Implementazione da zero",
+          "duration": "55 min",
+          "is_free": false
+        },
+        {
+          "id": 14,
+          "title": "Doubly linked list",
+          "description": "Liste con puntatori bidirezionali",
+          "duration": "45 min",
+          "is_free": false
+        },
+        {
+          "id": 15,
+          "title": "Operazioni comuni",
+          "description": "Insert, delete, reverse, detect cycle",
+          "duration": "60 min",
+          "is_free": false
+        },
+        {
+          "id": 16,
+          "title": "Fast and slow pointers",
+          "description": "Floyd's cycle detection",
+          "duration": "45 min",
+          "is_free": false
+        },
+        {
+          "id": 17,
+          "title": "Esercizi: linked list problems",
+          "description": "Problemi classici",
+          "duration": "75 min",
+          "is_free": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Stack e Queue",
+      "description": "Strutture LIFO e FIFO",
+      "estimated_hours": "5 ore",
+      "lessons": [
+        {
+          "id": 18,
+          "title": "Stack: implementazione",
+          "description": "LIFO con array e linked list",
+          "duration": "45 min",
+          "is_free": false
+        },
+        {
+          "id": 19,
+          "title": "Stack applications",
+          "description": "Expression evaluation, parentheses matching",
+          "duration": "50 min",
+          "is_free": false
+        },
+        {
+          "id": 20,
+          "title": "Queue: implementazione",
+          "description": "FIFO structure",
+          "duration": "45 min",
+          "is_free": false
+        },
+        {
+          "id": 21,
+          "title": "Circular queue e deque",
+          "description": "Varianti avanzate",
+          "duration": "45 min",
+          "is_free": false
+        },
+        {
+          "id": 22,
+          "title": "Priority queue",
+          "description": "Introduzione (implementazione con heap dopo)",
+          "duration": "40 min",
+          "is_free": false
+        },
+        {
+          "id": 23,
+          "title": "Esercizi: stack e queue",
+          "description": "Problemi pratici",
+          "duration": "70 min",
+          "is_free": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Recursion",
+      "description": "Pensare ricorsivamente",
+      "estimated_hours": "6 ore",
+      "lessons": [
+        {
+          "id": 24,
+          "title": "Recursion basics",
+          "description": "Base case, recursive case",
+          "duration": "50 min",
+          "is_free": false
+        },
+        {
+          "id": 25,
+          "title": "Call stack visualization",
+          "description": "Come funziona la ricorsione",
+          "duration": "45 min",
+          "is_free": false
+        },
+        {
+          "id": 26,
+          "title": "Backtracking",
+          "description": "Esplorare tutte le soluzioni",
+          "duration": "60 min",
+          "is_free": false
+        },
+        {
+          "id": 27,
+          "title": "Divide and conquer",
+          "description": "Pattern ricorsivo potente",
+          "duration": "55 min",
+          "is_free": false
+        },
+        {
+          "id": 28,
+          "title": "Tail recursion",
+          "description": "Ottimizzazione ricorsione",
+          "duration": "40 min",
+          "is_free": false
+        },
+        {
+          "id": 29,
+          "title": "Esercizi: recursion problems",
+          "description": "Fibonacci, towers of Hanoi, permutations",
+          "duration": "90 min",
+          "is_free": false
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Sorting Algorithms",
+      "description": "Algoritmi di ordinamento",
+      "estimated_hours": "7 ore",
+      "lessons": [
+        {
+          "id": 30,
+          "title": "Bubble sort",
+          "description": "Algoritmo semplice O(n²)",
+          "duration": "40 min",
+          "is_free": false
+        },
+        {
+          "id": 31,
+          "title": "Selection sort e insertion sort",
+          "description": "Altri algoritmi O(n²)",
+          "duration": "50 min",
+          "is_free": false
+        },
+        {
+          "id": 32,
+          "title": "Merge sort",
+          "description": "Divide and conquer O(n log n)",
+          "duration": "60 min",
+          "is_free": false
+        },
+        {
+          "id": 33,
+          "title": "Quick sort",
+          "description": "Partizionamento e ricorsione",
+          "duration": "65 min",
+          "is_free": false
+        },
+        {
+          "id": 34,
+          "title": "Heap sort",
+          "description": "Sorting con heap (preview)",
+          "duration": "50 min",
+          "is_free": false
+        },
+        {
+          "id": 35,
+          "title": "Counting sort e Radix sort",
+          "description": "Non-comparison sorts",
+          "duration": "45 min",
+          "is_free": false
+        },
+        {
+          "id": 36,
+          "title": "Confronto algoritmi",
+          "description": "Quando usare quale",
+          "duration": "40 min",
+          "is_free": false
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Searching Algorithms",
+      "description": "Trovare elementi efficientemente",
+      "estimated_hours": "4 ore",
+      "lessons": [
+        {
+          "id": 37,
+          "title": "Linear search",
+          "description": "Ricerca sequenziale O(n)",
+          "duration": "30 min",
+          "is_free": false
+        },
+        {
+          "id": 38,
+          "title": "Binary search",
+          "description": "Ricerca dicotomica O(log n)",
+          "duration": "55 min",
+          "is_free": false
+        },
+        {
+          "id": 39,
+          "title": "Binary search variants",
+          "description": "First occurrence, last occurrence",
+          "duration": "50 min",
+          "is_free": false
+        },
+        {
+          "id": 40,
+          "title": "Binary search su answer space",
+          "description": "Applicazioni creative",
+          "duration": "45 min",
+          "is_free": false
+        },
+        {
+          "id": 41,
+          "title": "Esercizi: searching problems",
+          "description": "LeetCode binary search",
+          "duration": "60 min",
+          "is_free": false
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Hash Tables",
+      "description": "Struttura dati per O(1) lookup",
+      "estimated_hours": "6 ore",
+      "lessons": [
+        {
+          "id": 42,
+          "title": "Hash function",
+          "description": "Come funziona l'hashing",
+          "duration": "50 min",
+          "is_free": false
+        },
+        {
+          "id": 43,
+          "title": "Collision resolution",
+          "description": "Chaining, open addressing",
+          "duration": "55 min",
+          "is_free": false
+        },
+        {
+          "id": 44,
+          "title": "Python dictionaries",
+          "description": "Implementazione e uso",
+          "duration": "45 min",
+          "is_free": false
+        },
+        {
+          "id": 45,
+          "title": "Hash set",
+          "description": "Set per membership testing",
+          "duration": "40 min",
+          "is_free": false
+        },
+        {
+          "id": 46,
+          "title": "Applications",
+          "description": "Caching, counting, grouping",
+          "duration": "50 min",
+          "is_free": false
+        },
+        {
+          "id": 47,
+          "title": "Esercizi: hash table problems",
+          "description": "Two sum, anagram grouping",
+          "duration": "80 min",
+          "is_free": false
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "title": "Trees",
+      "description": "Strutture dati gerarchiche",
+      "estimated_hours": "8 ore",
+      "lessons": [
+        {
+          "id": 48,
+          "title": "Binary tree basics",
+          "description": "Nodi, root, leaves, height",
+          "duration": "50 min",
+          "is_free": false
+        },
+        {
+          "id": 49,
+          "title": "Tree traversals",
+          "description": "Inorder, preorder, postorder, level-order",
+          "duration": "65 min",
+          "is_free": false
+        },
+        {
+          "id": 50,
+          "title": "Binary Search Tree (BST)",
+          "description": "Proprietà e operazioni",
+          "duration": "60 min",
+          "is_free": false
+        },
+        {
+          "id": 51,
+          "title": "BST operations",
+          "description": "Insert, delete, search",
+          "duration": "55 min",
+          "is_free": false
+        },
+        {
+          "id": 52,
+          "title": "Balanced trees intro",
+          "description": "AVL, Red-Black (overview)",
+          "duration": "45 min",
+          "is_free": false
+        },
+        {
+          "id": 53,
+          "title": "Heap",
+          "description": "Min-heap, max-heap, priority queue",
+          "duration": "60 min",
+          "is_free": false
+        },
+        {
+          "id": 54,
+          "title": "Trie",
+          "description": "Prefix tree per stringhe",
+          "duration": "50 min",
+          "is_free": false
+        },
+        {
+          "id": 55,
+          "title": "Esercizi: tree problems",
+          "description": "LCA, path sum, validation",
+          "duration": "95 min",
+          "is_free": false
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "title": "Graphs",
+      "description": "Rappresentazione e algoritmi",
+      "estimated_hours": "9 ore",
+      "lessons": [
+        {
+          "id": 56,
+          "title": "Graph basics",
+          "description": "Vertices, edges, directed vs undirected",
+          "duration": "45 min",
+          "is_free": false
+        },
+        {
+          "id": 57,
+          "title": "Graph representations",
+          "description": "Adjacency matrix, adjacency list",
+          "duration": "50 min",
+          "is_free": false
+        },
+        {
+          "id": 58,
+          "title": "Breadth-First Search (BFS)",
+          "description": "Traversal a livelli",
+          "duration": "60 min",
+          "is_free": false
+        },
+        {
+          "id": 59,
+          "title": "Depth-First Search (DFS)",
+          "description": "Traversal in profondità",
+          "duration": "60 min",
+          "is_free": false
+        },
+        {
+          "id": 60,
+          "title": "Topological sort",
+          "description": "Ordinamento DAG",
+          "duration": "55 min",
+          "is_free": false
+        },
+        {
+          "id": 61,
+          "title": "Dijkstra's algorithm",
+          "description": "Shortest path",
+          "duration": "65 min",
+          "is_free": false
+        },
+        {
+          "id": 62,
+          "title": "Union-Find",
+          "description": "Disjoint set per connectivity",
+          "duration": "55 min",
+          "is_free": false
+        },
+        {
+          "id": 63,
+          "title": "Minimum Spanning Tree",
+          "description": "Kruskal, Prim algorithms",
+          "duration": "60 min",
+          "is_free": false
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "title": "Dynamic Programming",
+      "description": "Ottimizzazione con memoization",
+      "estimated_hours": "8 ore",
+      "lessons": [
+        {
+          "id": 64,
+          "title": "DP introduction",
+          "description": "Cos'è e quando usarlo",
+          "duration": "50 min",
+          "is_free": false
+        },
+        {
+          "id": 65,
+          "title": "Memoization (top-down)",
+          "description": "Cachare risultati ricorsione",
+          "duration": "60 min",
+          "is_free": false
+        },
+        {
+          "id": 66,
+          "title": "Tabulation (bottom-up)",
+          "description": "Costruire soluzione iterativamente",
+          "duration": "60 min",
+          "is_free": false
+        },
+        {
+          "id": 67,
+          "title": "1D DP problems",
+          "description": "Fibonacci, climbing stairs, house robber",
+          "duration": "70 min",
+          "is_free": false
+        },
+        {
+          "id": 68,
+          "title": "2D DP problems",
+          "description": "Longest common subsequence, edit distance",
+          "duration": "75 min",
+          "is_free": false
+        },
+        {
+          "id": 69,
+          "title": "Knapsack problem",
+          "description": "0/1 knapsack e varianti",
+          "duration": "65 min",
+          "is_free": false
+        },
+        {
+          "id": 70,
+          "title": "DP patterns",
+          "description": "Come riconoscere problemi DP",
+          "duration": "50 min",
+          "is_free": false
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "title": "Greedy Algorithms",
+      "description": "Scelte locali ottimali",
+      "estimated_hours": "5 ore",
+      "lessons": [
+        {
+          "id": 71,
+          "title": "Greedy approach",
+          "description": "Quando funziona e quando no",
+          "duration": "45 min",
+          "is_free": false
+        },
+        {
+          "id": 72,
+          "title": "Activity selection",
+          "description": "Problema classico greedy",
+          "duration": "50 min",
+          "is_free": false
+        },
+        {
+          "id": 73,
+          "title": "Interval problems",
+          "description": "Meeting rooms, merge intervals",
+          "duration": "55 min",
+          "is_free": false
+        },
+        {
+          "id": 74,
+          "title": "Huffman coding",
+          "description": "Compressione ottimale",
+          "duration": "55 min",
+          "is_free": false
+        },
+        {
+          "id": 75,
+          "title": "Greedy vs DP",
+          "description": "Confronto e quando usare quale",
+          "duration": "45 min",
+          "is_free": false
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "title": "Advanced Topics",
+      "description": "Algoritmi e pattern avanzati",
+      "estimated_hours": "6 ore",
+      "lessons": [
+        {
+          "id": 76,
+          "title": "Bit manipulation",
+          "description": "Operazioni bitwise, tricks",
+          "duration": "55 min",
+          "is_free": false
+        },
+        {
+          "id": 77,
+          "title": "Matrix algorithms",
+          "description": "Rotation, spiral traversal",
+          "duration": "50 min",
+          "is_free": false
+        },
+        {
+          "id": 78,
+          "title": "Design patterns",
+          "description": "Iterator, LRU cache, median finder",
+          "duration": "65 min",
+          "is_free": false
+        },
+        {
+          "id": 79,
+          "title": "String matching",
+          "description": "KMP algorithm basics",
+          "duration": "55 min",
+          "is_free": false
+        },
+        {
+          "id": 80,
+          "title": "Problem solving strategies",
+          "description": "Come affrontare nuovi problemi",
+          "duration": "50 min",
+          "is_free": false
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "title": "Interview Preparation",
+      "description": "Prepararsi a interview tecniche",
+      "estimated_hours": "8 ore",
+      "lessons": [
+        {
+          "id": 81,
+          "title": "Interview process overview",
+          "description": "Cosa aspettarsi",
+          "duration": "40 min",
+          "is_free": false
+        },
+        {
+          "id": 82,
+          "title": "Problem solving framework",
+          "description": "UMPIRE method",
+          "duration": "50 min",
+          "is_free": false
+        },
+        {
+          "id": 83,
+          "title": "Mock interview 1",
+          "description": "Easy-medium problems",
+          "duration": "90 min",
+          "is_free": false
+        },
+        {
+          "id": 84,
+          "title": "Mock interview 2",
+          "description": "Medium-hard problems",
+          "duration": "90 min",
+          "is_free": false
+        },
+        {
+          "id": 85,
+          "title": "Common patterns cheatsheet",
+          "description": "Pattern recognition guide",
+          "duration": "45 min",
+          "is_free": false
+        },
+        {
+          "id": 86,
+          "title": "Study plan",
+          "description": "Come continuare a praticare",
+          "duration": "35 min",
+          "is_free": false
+        },
+        {
+          "id": 87,
+          "title": "Final tips e risorse",
+          "description": "LeetCode, HackerRank, books",
+          "duration": "30 min",
+          "is_free": false
+        }
+      ]
+    }
+  ],
+  "certification": true,
+  "certificate_description": "Certificato digitale verificabile che attesta il completamento del corso e la padronanza di algoritmi e strutture dati fondamentali.",
+  "target_audience": [
+    "Programmatori che vogliono migliorare problem solving",
+    "Candidati a interview tecniche (FAANG, startups)",
+    "Computer Science students",
+    "Self-taught developers che vogliono colmare gap",
+    "Chiunque voglia diventare un programmatore migliore"
+  ],
+  "tools_required": [
+    "Computer (Windows, Mac o Linux)",
+    "Python 3.8+",
+    "IDE o editor (VS Code, PyCharm)",
+    "Jupyter Notebook (opzionale)",
+    "4GB RAM minimo",
+    "Conoscenza solida di Python"
+  ],
+  "average_rating": 4.8,
+"reviews": [
+  {
+    "student_name": "Tommaso Ferretti",
+    "rating": 5,
+    "date": "13 dicembre 2024",
+    "comment": "Preparazione perfetta per interview tecniche. Ho fatto colloqui con varie aziende tech e questo corso mi ha preparato benissimo. Gli esercizi in stile LeetCode sono ottimi per fare pratica. La spiegazione di dynamic programming finalmente mi è chiara. Ho ricevuto offerte da 3 aziende!",
+    "verified": true
+  },
+  {
+    "student_name": "Alessia Parisi",
+    "rating": 5,
+    "date": "6 dicembre 2024",
+    "comment": "Ero autodidatta e avevo grandi gap su algoritmi e strutture dati. Questo corso ha risolto tutto. La progressione è logica, gli esercizi sono ben calibrati. La sezione su grafi e DP è spiegata in modo cristallino. Ora affronto problemi algoritmici con sicurezza.",
+    "verified": true
+  },
+  {
+    "student_name": "Riccardo Messina",
+    "rating": 5,
+    "date": "29 novembre 2024",
+    "comment": "Corso fondamentale per ogni programmatore serio. Non solo teoria ma tanta pratica con centinaia di problemi. Le spiegazioni di Big O e complessità sono le migliori che abbia trovato. Il modulo su interview preparation mi ha dato un framework per affrontare qualsiasi problema.",
+    "verified": true
+  },
+  {
+    "student_name": "Monica Silvestri",
+    "rating": 4,
+    "date": "22 novembre 2024",
+    "comment": "Ottimo corso, molto completo. Copre tutte le strutture dati e algoritmi fondamentali. Alcune parti sono impegnative (specialmente DP e grafi) ma Lorenzo spiega con chiarezza. Gli esercizi sono tanti e ben organizzati. Avrei preferito più esempi di interview mock, ma nel complesso eccellente.",
+    "verified": true
+  },
+  {
+    "student_name": "Diego Palmieri",
+    "rating": 5,
+    "date": "15 novembre 2024",
+    "comment": "Finalmente ho capito algoritmi e strutture dati! Venivo da bootcamp che li copriva superficialmente. Questo corso è rigoroso ma accessibile. Implementare tutto da zero in Python mi ha fatto capire veramente come funzionano le cose. Essenziale per developer che vogliono crescere professionalmente.",
+    "verified": true
+  }
+]
+}

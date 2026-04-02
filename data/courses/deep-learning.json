@@ -1,0 +1,676 @@
+{
+  "title": "Deep Learning",
+  "description": "Corso completo su Deep Learning: teoria, implementazione e applicazioni avanzate",
+  "full_description": "Questo corso approfondito ti guiderà attraverso il mondo del Deep Learning, dalle fondamenta teoriche alle applicazioni più avanzate. Imparerai non solo a utilizzare framework come TensorFlow e PyTorch, ma a comprendere profondamente come funzionano le reti neurali, quando applicarle e come ottimizzarle.\n\nIl corso copre architetture fondamentali (MLP, CNN, RNN, Transformer), tecniche avanzate di training, regularization, optimization, e include progetti pratici su computer vision, NLP e time series. Perfetto per chi vuole specializzarsi in Deep Learning o per data scientists che vogliono aggiungere neural networks al loro toolkit.",
+  "instructor": "Lorenzo Arcioni",
+  "instructor_bio": "Machine Learning Engineer e Data Scientist con oltre 5 anni di esperienza. Specializzato in Python, Machine Learning e formazione tecnica avanzata.",
+  "instructor_image": "/images/profile.jpeg",
+  "duration": "12 settimane",
+  "level": "Avanzato",
+  "category": "Deep Learning",
+  "price": "€899",
+  "image_url": "https://miro.medium.com/v2/resize:fit:1200/1*ZB6H4HuF58VcMOWbdpcRxQ.png",
+  "learning_objectives": [
+    {
+      "objective": "Neural Networks Theory",
+      "description": "Backpropagation, gradient descent, optimization algorithms"
+    },
+    {
+      "objective": "CNN Mastery",
+      "description": "Architetture moderne per computer vision"
+    },
+    {
+      "objective": "RNN e Transformers",
+      "description": "Modelli per sequenze e NLP"
+    },
+    {
+      "objective": "Advanced Training",
+      "description": "Regularization, normalization, advanced optimization"
+    },
+    {
+      "objective": "Framework Expertise",
+      "description": "TensorFlow/Keras e PyTorch"
+    },
+    {
+      "objective": "Production Deployment",
+      "description": "Portare modelli DL in produzione"
+    }
+  ],
+  "prerequisites": [
+    {
+      "title": "Machine Learning solido",
+      "description": "Esperienza con supervised/unsupervised learning",
+      "is_required": true
+    },
+    {
+      "title": "Python avanzato",
+      "description": "NumPy, pandas, matplotlib",
+      "is_required": true
+    },
+    {
+      "title": "Matematica per ML",
+      "description": "Algebra lineare, calcolo, probabilità",
+      "is_required": true
+    }
+  ],
+  "modules": [
+    {
+      "id": 1,
+      "title": "Foundations of Deep Learning",
+      "description": "Teoria e fondamenti matematici",
+      "estimated_hours": "8 ore",
+      "lessons": [
+        {
+          "id": 1,
+          "title": "Storia e evoluzione del Deep Learning",
+          "description": "Da perceptron a GPT",
+          "duration": "30 min",
+          "is_free": true
+        },
+        {
+          "id": 2,
+          "title": "Neural Networks: architettura base",
+          "description": "Layers, weights, biases, activations",
+          "duration": "50 min",
+          "is_free": false
+        },
+        {
+          "id": 3,
+          "title": "Forward propagation",
+          "description": "Come le reti fanno predizioni",
+          "duration": "45 min",
+          "is_free": false
+        },
+        {
+          "id": 4,
+          "title": "Loss functions",
+          "description": "MSE, Cross-entropy, custom losses",
+          "duration": "40 min",
+          "is_free": false
+        },
+        {
+          "id": 5,
+          "title": "Backpropagation deep dive",
+          "description": "Chain rule e calcolo gradienti",
+          "duration": "60 min",
+          "is_free": false
+        },
+        {
+          "id": 6,
+          "title": "Gradient descent variants",
+          "description": "SGD, Mini-batch, momentum",
+          "duration": "45 min",
+          "is_free": false
+        },
+        {
+          "id": 7,
+          "title": "Primo neural network da zero",
+          "description": "Implementare NN senza framework",
+          "duration": "70 min",
+          "is_free": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "TensorFlow e Keras",
+      "description": "Mastery del framework principale",
+      "estimated_hours": "6 ore",
+      "lessons": [
+        {
+          "id": 8,
+          "title": "TensorFlow 2.x ecosystem",
+          "description": "Keras, TF Data, TF Serving",
+          "duration": "40 min",
+          "is_free": false
+        },
+        {
+          "id": 9,
+          "title": "Sequential API",
+          "description": "Modelli semplici e veloci",
+          "duration": "35 min",
+          "is_free": false
+        },
+        {
+          "id": 10,
+          "title": "Functional API",
+          "description": "Architetture complesse e multi-input",
+          "duration": "45 min",
+          "is_free": false
+        },
+        {
+          "id": 11,
+          "title": "Custom layers e models",
+          "description": "Estendere Keras per casi avanzati",
+          "duration": "50 min",
+          "is_free": false
+        },
+        {
+          "id": 12,
+          "title": "Callbacks e training loop",
+          "description": "ModelCheckpoint, EarlyStopping, custom callbacks",
+          "duration": "45 min",
+          "is_free": false
+        },
+        {
+          "id": 13,
+          "title": "TensorBoard",
+          "description": "Visualizzare training e debugging",
+          "duration": "40 min",
+          "is_free": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Convolutional Neural Networks",
+      "description": "Deep Learning per Computer Vision",
+      "estimated_hours": "10 ore",
+      "lessons": [
+        {
+          "id": 14,
+          "title": "CNN Architecture",
+          "description": "Conv layers, pooling, fully connected",
+          "duration": "50 min",
+          "is_free": false
+        },
+        {
+          "id": 15,
+          "title": "Convolution mathematics",
+          "description": "Filters, stride, padding, output size",
+          "duration": "45 min",
+          "is_free": false
+        },
+        {
+          "id": 16,
+          "title": "Classic architectures",
+          "description": "LeNet, AlexNet, VGG",
+          "duration": "55 min",
+          "is_free": false
+        },
+        {
+          "id": 17,
+          "title": "Residual Networks (ResNet)",
+          "description": "Skip connections per reti profonde",
+          "duration": "50 min",
+          "is_free": false
+        },
+        {
+          "id": 18,
+          "title": "Inception e EfficientNet",
+          "description": "Architetture moderne ottimizzate",
+          "duration": "45 min",
+          "is_free": false
+        },
+        {
+          "id": 19,
+          "title": "Transfer Learning",
+          "description": "Fine-tuning modelli pre-trained",
+          "duration": "55 min",
+          "is_free": false
+        },
+        {
+          "id": 20,
+          "title": "Data augmentation avanzata",
+          "description": "Tecniche per aumentare dataset",
+          "duration": "40 min",
+          "is_free": false
+        },
+        {
+          "id": 21,
+          "title": "Progetto: Image Classification",
+          "description": "Classificare immagini custom dataset",
+          "duration": "90 min",
+          "is_free": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Advanced Training Techniques",
+      "description": "Ottimizzare performance e convergenza",
+      "estimated_hours": "7 ore",
+      "lessons": [
+        {
+          "id": 22,
+          "title": "Weight initialization",
+          "description": "Xavier, He, strategie moderne",
+          "duration": "40 min",
+          "is_free": false
+        },
+        {
+          "id": 23,
+          "title": "Batch Normalization",
+          "description": "Stabilizzare e accelerare training",
+          "duration": "45 min",
+          "is_free": false
+        },
+        {
+          "id": 24,
+          "title": "Layer Normalization e varianti",
+          "description": "Group Norm, Instance Norm",
+          "duration": "35 min",
+          "is_free": false
+        },
+        {
+          "id": 25,
+          "title": "Advanced optimizers",
+          "description": "Adam, AdamW, RAdam, Lookahead",
+          "duration": "50 min",
+          "is_free": false
+        },
+        {
+          "id": 26,
+          "title": "Learning rate scheduling",
+          "description": "Step decay, cosine annealing, warm-up",
+          "duration": "45 min",
+          "is_free": false
+        },
+        {
+          "id": 27,
+          "title": "Regularization techniques",
+          "description": "Dropout, L1/L2, DropConnect",
+          "duration": "40 min",
+          "is_free": false
+        },
+        {
+          "id": 28,
+          "title": "Mixed precision training",
+          "description": "FP16 per velocizzare training",
+          "duration": "35 min",
+          "is_free": false
+        },
+        {
+          "id": 29,
+          "title": "Debugging neural networks",
+          "description": "Diagnosticare problemi comuni",
+          "duration": "50 min",
+          "is_free": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Recurrent Neural Networks",
+      "description": "Modelli per sequenze temporali",
+      "estimated_hours": "8 ore",
+      "lessons": [
+        {
+          "id": 30,
+          "title": "RNN fundamentals",
+          "description": "Perché servono per sequenze",
+          "duration": "40 min",
+          "is_free": false
+        },
+        {
+          "id": 31,
+          "title": "Vanishing/exploding gradients",
+          "description": "Problemi nell'allenare RNN",
+          "duration": "45 min",
+          "is_free": false
+        },
+        {
+          "id": 32,
+          "title": "LSTM architecture",
+          "description": "Gates, cell state, hidden state",
+          "duration": "60 min",
+          "is_free": false
+        },
+        {
+          "id": 33,
+          "title": "GRU",
+          "description": "Alternativa semplificata a LSTM",
+          "duration": "40 min",
+          "is_free": false
+        },
+        {
+          "id": 34,
+          "title": "Bidirectional RNN",
+          "description": "Catturare contesto futuro e passato",
+          "duration": "35 min",
+          "is_free": false
+        },
+        {
+          "id": 35,
+          "title": "Sequence-to-sequence",
+          "description": "Encoder-decoder per traduzione",
+          "duration": "50 min",
+          "is_free": false
+        },
+        {
+          "id": 36,
+          "title": "Attention mechanism",
+          "description": "Introduzione all'attenzione",
+          "duration": "55 min",
+          "is_free": false
+        },
+        {
+          "id": 37,
+          "title": "Progetto: Time Series Forecasting",
+          "description": "Predire serie temporali con LSTM",
+          "duration": "75 min",
+          "is_free": false
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Transformers e Attention",
+      "description": "L'architettura che ha rivoluzionato NLP",
+      "estimated_hours": "8 ore",
+      "lessons": [
+        {
+          "id": 38,
+          "title": "Self-attention mechanism",
+          "description": "Come funziona l'attenzione",
+          "duration": "55 min",
+          "is_free": false
+        },
+        {
+          "id": 39,
+          "title": "Multi-head attention",
+          "description": "Catturare relazioni diverse",
+          "duration": "50 min",
+          "is_free": false
+        },
+        {
+          "id": 40,
+          "title": "Transformer architecture",
+          "description": "Encoder-decoder con attention",
+          "duration": "60 min",
+          "is_free": false
+        },
+        {
+          "id": 41,
+          "title": "Positional encoding",
+          "description": "Dare senso dell'ordine ai Transformer",
+          "duration": "40 min",
+          "is_free": false
+        },
+        {
+          "id": 42,
+          "title": "BERT e varianti",
+          "description": "Bidirectional encoder representations",
+          "duration": "50 min",
+          "is_free": false
+        },
+        {
+          "id": 43,
+          "title": "GPT architecture",
+          "description": "Decoder-only per generazione",
+          "duration": "45 min",
+          "is_free": false
+        },
+        {
+          "id": 44,
+          "title": "Vision Transformers (ViT)",
+          "description": "Transformers per immagini",
+          "duration": "45 min",
+          "is_free": false
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "title": "PyTorch",
+      "description": "Alternative framework per ricerca",
+      "estimated_hours": "6 ore",
+      "lessons": [
+        {
+          "id": 45,
+          "title": "PyTorch vs TensorFlow",
+          "description": "Quando usare uno o l'altro",
+          "duration": "30 min",
+          "is_free": false
+        },
+        {
+          "id": 46,
+          "title": "Tensors e autograd",
+          "description": "Fondamenti PyTorch",
+          "duration": "45 min",
+          "is_free": false
+        },
+        {
+          "id": 47,
+          "title": "nn.Module",
+          "description": "Costruire modelli PyTorch",
+          "duration": "50 min",
+          "is_free": false
+        },
+        {
+          "id": 48,
+          "title": "Training loop customization",
+          "description": "Controllo completo sul training",
+          "duration": "55 min",
+          "is_free": false
+        },
+        {
+          "id": 49,
+          "title": "DataLoader e Dataset",
+          "description": "Gestire dati efficientemente",
+          "duration": "45 min",
+          "is_free": false
+        },
+        {
+          "id": 50,
+          "title": "Progetto comparativo",
+          "description": "Stesso modello TensorFlow vs PyTorch",
+          "duration": "75 min",
+          "is_free": false
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Advanced Applications",
+      "description": "GANs, Autoencoders, e oltre",
+      "estimated_hours": "7 ore",
+      "lessons": [
+        {
+          "id": 51,
+          "title": "Autoencoders",
+          "description": "Dimensionality reduction con NN",
+          "duration": "50 min",
+          "is_free": false
+        },
+        {
+          "id": 52,
+          "title": "Variational Autoencoders (VAE)",
+          "description": "Generazione probabilistica",
+          "duration": "55 min",
+          "is_free": false
+        },
+        {
+          "id": 53,
+          "title": "Generative Adversarial Networks",
+          "description": "GANs: generatore vs discriminatore",
+          "duration": "60 min",
+          "is_free": false
+        },
+        {
+          "id": 54,
+          "title": "Training GANs",
+          "description": "Mode collapse e stabilità",
+          "duration": "50 min",
+          "is_free": false
+        },
+        {
+          "id": 55,
+          "title": "Object Detection",
+          "description": "YOLO, R-CNN, architetture moderne",
+          "duration": "55 min",
+          "is_free": false
+        },
+        {
+          "id": 56,
+          "title": "Semantic Segmentation",
+          "description": "U-Net e varianti",
+          "duration": "45 min",
+          "is_free": false
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "title": "Model Optimization e Deployment",
+      "description": "Portare modelli in produzione",
+      "estimated_hours": "6 ore",
+      "lessons": [
+        {
+          "id": 57,
+          "title": "Model compression",
+          "description": "Ridurre dimensione mantenendo performance",
+          "duration": "45 min",
+          "is_free": false
+        },
+        {
+          "id": 58,
+          "title": "Quantization",
+          "description": "INT8 inference per velocità",
+          "duration": "50 min",
+          "is_free": false
+        },
+        {
+          "id": 59,
+          "title": "Pruning",
+          "description": "Rimuovere pesi non necessari",
+          "duration": "40 min",
+          "is_free": false
+        },
+        {
+          "id": 60,
+          "title": "Knowledge distillation",
+          "description": "Trasferire conoscenza da model grande a piccolo",
+          "duration": "45 min",
+          "is_free": false
+        },
+        {
+          "id": 61,
+          "title": "ONNX e model export",
+          "description": "Portabilità tra framework",
+          "duration": "40 min",
+          "is_free": false
+        },
+        {
+          "id": 62,
+          "title": "TensorFlow Serving e TorchServe",
+          "description": "Deploy in produzione",
+          "duration": "50 min",
+          "is_free": false
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "title": "Capstone Project",
+      "description": "Progetto finale end-to-end",
+      "estimated_hours": "12 ore",
+      "lessons": [
+        {
+          "id": 63,
+          "title": "Project selection",
+          "description": "Scegliere problema e approccio",
+          "duration": "40 min",
+          "is_free": false
+        },
+        {
+          "id": 64,
+          "title": "Data preparation",
+          "description": "Raccolta e preprocessing dati",
+          "duration": "90 min",
+          "is_free": false
+        },
+        {
+          "id": 65,
+          "title": "Baseline model",
+          "description": "Implementare primo modello",
+          "duration": "100 min",
+          "is_free": false
+        },
+        {
+          "id": 66,
+          "title": "Experimentation",
+          "description": "Provare architetture diverse",
+          "duration": "150 min",
+          "is_free": false
+        },
+        {
+          "id": 67,
+          "title": "Optimization",
+          "description": "Hyperparameter tuning e regularization",
+          "duration": "100 min",
+          "is_free": false
+        },
+        {
+          "id": 68,
+          "title": "Deployment preparation",
+          "description": "Ottimizzare per produzione",
+          "duration": "80 min",
+          "is_free": false
+        },
+        {
+          "id": 69,
+          "title": "Final presentation",
+          "description": "Presentare risultati e decisioni",
+          "duration": "60 min",
+          "is_free": false
+        }
+      ]
+    }
+  ],
+  "certification": true,
+  "certificate_description": "Certificato digitale verificabile che attesta il completamento del corso avanzato e le competenze specialistiche acquisite in Deep Learning.",
+  "target_audience": [
+    "Data Scientists che vogliono specializzarsi in DL",
+    "ML Engineers",
+    "Ricercatori in AI",
+    "Computer Vision / NLP specialists",
+    "Professionisti che lavorano con neural networks"
+  ],
+  "tools_required": [
+    "Computer con GPU (consigliato)",
+    "Python 3.8+",
+    "TensorFlow 2.x e PyTorch",
+    "Google Colab Pro (per GPU cloud)",
+    "16GB RAM minimo (32GB consigliato)",
+    "Esperienza solida con ML e Python"
+  ],
+  "average_rating": 4.9,
+"reviews": [
+  {
+    "student_name": "Luca Galli",
+    "rating": 5,
+    "date": "14 dicembre 2024",
+    "comment": "Il corso più completo su Deep Learning che abbia mai visto. Copre tutto: CNN, RNN, Transformers, GANs. La spiegazione di backpropagation è la migliore che abbia trovato. I progetti sono sfidanti ma ti preparano per il mondo reale. Ora lavoro come Deep Learning Engineer.",
+    "verified": true
+  },
+  {
+    "student_name": "Simona Rizzo",
+    "rating": 5,
+    "date": "7 dicembre 2024",
+    "comment": "Corso avanzato ma spiegato magistralmente. La sezione su Transformers è aggiornata e dettagliata. Apprezzo molto la copertura sia di TensorFlow che PyTorch. I moduli su optimization e regularization sono oro per chi vuole davvero padroneggiare il training di reti neurali.",
+    "verified": true
+  },
+  {
+    "student_name": "Paolo Mancini",
+    "rating": 5,
+    "date": "30 novembre 2024",
+    "comment": "Venivo da un corso base di ML e questo mi ha portato a un livello completamente nuovo. La teoria è approfondita ma sempre con esempi pratici. Il capstone project mi ha dato un portfolio piece che ha impressionato ai colloqui. Investimento che si ripaga subito.",
+    "verified": true
+  },
+  {
+    "student_name": "Laura Gentile",
+    "rating": 4,
+    "date": "23 novembre 2024",
+    "comment": "Contenuto eccellente e molto denso. Serve una GPU per alcuni progetti (ho usato Colab Pro). La parte su deployment è particolarmente utile. Unico suggerimento: sarebbe bello avere più esercizi su debugging di neural networks. Nel complesso, altamente raccomandato.",
+    "verified": true
+  },
+  {
+    "student_name": "Matteo Pagano",
+    "rating": 5,
+    "date": "16 novembre 2024",
+    "comment": "Il miglior corso su Deep Learning in italiano, forse anche migliori di alcuni in inglese che ho provato. Lorenzo va in profondità senza perdere chiarezza. La progressione dai fondamenti alle architetture moderne è perfetta. Dopo questo corso mi sento sicuro di affrontare qualsiasi progetto DL.",
+    "verified": true
+  }
+]
+}

@@ -1,0 +1,733 @@
+{
+  "title": "Natural Language Processing (NLP)",
+  "description": "Corso completo su NLP: da text processing classico a Transformers e Large Language Models",
+  "full_description": "Questo corso completo ti guiderà attraverso l'intero ecosistema del Natural Language Processing. Partendo dalle tecniche classiche di text processing (tokenization, stemming, TF-IDF), passerai ai modelli di deep learning (RNN, LSTM) fino alle architetture transformer moderne (BERT, GPT) e Large Language Models.\n\nIl corso bilancia teoria e pratica: imparerai come funzionano gli algoritmi NLP ma soprattutto li applicherai a problemi reali come sentiment analysis, named entity recognition, text generation, question answering e chatbot. Include progetti hands-on con Hugging Face, spaCy e framework moderni. Ideale per chi vuole specializzarsi in NLP o per data scientists che lavorano con dati testuali.",
+  "instructor": "Lorenzo Arcioni",
+  "instructor_bio": "Machine Learning Engineer e Data Scientist con oltre 5 anni di esperienza. Specializzato in Python, Machine Learning e formazione tecnica avanzata.",
+  "instructor_image": "/images/profile.jpeg",
+  "duration": "10 settimane",
+  "level": "Intermedio/Avanzato",
+  "category": "Natural Language Processing",
+  "price": "€799",
+  "image_url": "https://www.freelancinggig.com/blog/wp-content/uploads/2019/10/NLP-in-Artificial-Intelligence.jpg",
+  "learning_objectives": [
+    {
+      "objective": "Text preprocessing",
+      "description": "Tokenization, cleaning, normalization con NLTK e spaCy"
+    },
+    {
+      "objective": "Traditional NLP",
+      "description": "Bag of Words, TF-IDF, word embeddings (Word2Vec, GloVe)"
+    },
+    {
+      "objective": "Deep Learning per NLP",
+      "description": "RNN, LSTM, GRU per sequence modeling"
+    },
+    {
+      "objective": "Transformers",
+      "description": "BERT, GPT, T5 e architetture moderne"
+    },
+    {
+      "objective": "Hugging Face ecosystem",
+      "description": "Utilizzare e fine-tuning modelli pre-trained"
+    },
+    {
+      "objective": "Progetti reali",
+      "description": "Sentiment analysis, NER, chatbot, text generation"
+    }
+  ],
+  "prerequisites": [
+    {
+      "title": "Python avanzato",
+      "description": "Ottima conoscenza di Python e manipolazione dati",
+      "is_required": true
+    },
+    {
+      "title": "Machine Learning",
+      "description": "Esperienza con algoritmi ML classici",
+      "is_required": true
+    },
+    {
+      "title": "Deep Learning basics",
+      "description": "Familiarità con neural networks",
+      "is_required": true
+    }
+  ],
+  "modules": [
+    {
+      "id": 1,
+      "title": "Introduzione a NLP",
+      "description": "Fondamenti e text preprocessing",
+      "estimated_hours": "6 ore",
+      "lessons": [
+        {
+          "id": 1,
+          "title": "Cos'è NLP e applicazioni",
+          "description": "Panoramica del campo e use cases",
+          "duration": "30 min",
+          "is_free": true
+        },
+        {
+          "id": 2,
+          "title": "Challenges in NLP",
+          "description": "Ambiguità, context, linguaggio naturale",
+          "duration": "35 min",
+          "is_free": true
+        },
+        {
+          "id": 3,
+          "title": "Text preprocessing pipeline",
+          "description": "Lowercasing, punctuation, noise removal",
+          "duration": "45 min",
+          "is_free": false
+        },
+        {
+          "id": 4,
+          "title": "Tokenization",
+          "description": "Word, sentence, subword tokenization",
+          "duration": "40 min",
+          "is_free": false
+        },
+        {
+          "id": 5,
+          "title": "Stemming e Lemmatization",
+          "description": "Ridurre parole alla forma base",
+          "duration": "40 min",
+          "is_free": false
+        },
+        {
+          "id": 6,
+          "title": "Stop words e text normalization",
+          "description": "Rimuovere parole comuni, normalizzare",
+          "duration": "35 min",
+          "is_free": false
+        },
+        {
+          "id": 7,
+          "title": "Setup: NLTK e spaCy",
+          "description": "Librerie essenziali per NLP",
+          "duration": "35 min",
+          "is_free": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Traditional NLP Techniques",
+      "description": "Approcci classici pre-deep learning",
+      "estimated_hours": "7 ore",
+      "lessons": [
+        {
+          "id": 8,
+          "title": "Bag of Words (BoW)",
+          "description": "Rappresentazione più semplice del testo",
+          "duration": "40 min",
+          "is_free": false
+        },
+        {
+          "id": 9,
+          "title": "TF-IDF",
+          "description": "Term Frequency-Inverse Document Frequency",
+          "duration": "50 min",
+          "is_free": false
+        },
+        {
+          "id": 10,
+          "title": "N-grams",
+          "description": "Catturare contesto locale",
+          "duration": "40 min",
+          "is_free": false
+        },
+        {
+          "id": 11,
+          "title": "Text classification classico",
+          "description": "Naive Bayes, SVM per testo",
+          "duration": "55 min",
+          "is_free": false
+        },
+        {
+          "id": 12,
+          "title": "Part-of-Speech (POS) tagging",
+          "description": "Identificare ruoli grammaticali",
+          "duration": "45 min",
+          "is_free": false
+        },
+        {
+          "id": 13,
+          "title": "Named Entity Recognition (NER)",
+          "description": "Estrarre entità da testo",
+          "duration": "50 min",
+          "is_free": false
+        },
+        {
+          "id": 14,
+          "title": "Progetto: Sentiment analysis classico",
+          "description": "Classificare sentiment con TF-IDF",
+          "duration": "80 min",
+          "is_free": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Word Embeddings",
+      "description": "Rappresentazioni dense di parole",
+      "estimated_hours": "6 ore",
+      "lessons": [
+        {
+          "id": 15,
+          "title": "Da sparse a dense representations",
+          "description": "Perché embeddings funzionano meglio",
+          "duration": "35 min",
+          "is_free": false
+        },
+        {
+          "id": 16,
+          "title": "Word2Vec",
+          "description": "Skip-gram e CBOW models",
+          "duration": "60 min",
+          "is_free": false
+        },
+        {
+          "id": 17,
+          "title": "GloVe embeddings",
+          "description": "Global Vectors for word representation",
+          "duration": "45 min",
+          "is_free": false
+        },
+        {
+          "id": 18,
+          "title": "FastText",
+          "description": "Embeddings con subword information",
+          "duration": "40 min",
+          "is_free": false
+        },
+        {
+          "id": 19,
+          "title": "Embedding properties",
+          "description": "Analogies, similarity, visualization",
+          "duration": "45 min",
+          "is_free": false
+        },
+        {
+          "id": 20,
+          "title": "Using pre-trained embeddings",
+          "description": "Caricare e utilizzare embeddings esistenti",
+          "duration": "40 min",
+          "is_free": false
+        },
+        {
+          "id": 21,
+          "title": "Esercizio: embedding exploration",
+          "description": "Esplorare relationships negli embeddings",
+          "duration": "45 min",
+          "is_free": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Deep Learning per NLP",
+      "description": "RNN, LSTM per sequence modeling",
+      "estimated_hours": "8 ore",
+      "lessons": [
+        {
+          "id": 22,
+          "title": "Perché deep learning per NLP",
+          "description": "Vantaggi su approcci classici",
+          "duration": "35 min",
+          "is_free": false
+        },
+        {
+          "id": 23,
+          "title": "RNN architecture",
+          "description": "Recurrent Neural Networks per sequenze",
+          "duration": "50 min",
+          "is_free": false
+        },
+        {
+          "id": 24,
+          "title": "LSTM e GRU",
+          "description": "Catturare dipendenze long-term",
+          "duration": "60 min",
+          "is_free": false
+        },
+        {
+          "id": 25,
+          "title": "Bidirectional RNN",
+          "description": "Context da entrambe le direzioni",
+          "duration": "45 min",
+          "is_free": false
+        },
+        {
+          "id": 26,
+          "title": "Text classification con LSTM",
+          "description": "Sentiment analysis con deep learning",
+          "duration": "60 min",
+          "is_free": false
+        },
+        {
+          "id": 27,
+          "title": "Sequence-to-sequence",
+          "description": "Encoder-decoder per traduzione",
+          "duration": "55 min",
+          "is_free": false
+        },
+        {
+          "id": 28,
+          "title": "Attention mechanism",
+          "description": "Introduzione all'attenzione",
+          "duration": "50 min",
+          "is_free": false
+        },
+        {
+          "id": 29,
+          "title": "Progetto: Text generation con LSTM",
+          "description": "Generare testo character-level",
+          "duration": "85 min",
+          "is_free": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Transformers Revolution",
+      "description": "L'architettura che ha cambiato NLP",
+      "estimated_hours": "8 ore",
+      "lessons": [
+        {
+          "id": 30,
+          "title": "Transformer architecture",
+          "description": "Attention is all you need",
+          "duration": "65 min",
+          "is_free": false
+        },
+        {
+          "id": 31,
+          "title": "Self-attention mechanism",
+          "description": "Come funziona l'attenzione",
+          "duration": "55 min",
+          "is_free": false
+        },
+        {
+          "id": 32,
+          "title": "Multi-head attention",
+          "description": "Catturare relazioni diverse",
+          "duration": "50 min",
+          "is_free": false
+        },
+        {
+          "id": 33,
+          "title": "Positional encoding",
+          "description": "Dare senso dell'ordine ai transformer",
+          "duration": "40 min",
+          "is_free": false
+        },
+        {
+          "id": 34,
+          "title": "Encoder-only: BERT",
+          "description": "Bidirectional Encoder Representations",
+          "duration": "60 min",
+          "is_free": false
+        },
+        {
+          "id": 35,
+          "title": "Decoder-only: GPT",
+          "description": "Generative Pre-trained Transformer",
+          "duration": "55 min",
+          "is_free": false
+        },
+        {
+          "id": 36,
+          "title": "Encoder-decoder: T5",
+          "description": "Text-to-Text Transfer Transformer",
+          "duration": "45 min",
+          "is_free": false
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Hugging Face Ecosystem",
+      "description": "Utilizzare modelli transformer pre-trained",
+      "estimated_hours": "7 ore",
+      "lessons": [
+        {
+          "id": 37,
+          "title": "Introduzione Hugging Face",
+          "description": "Transformers library e Model Hub",
+          "duration": "40 min",
+          "is_free": false
+        },
+        {
+          "id": 38,
+          "title": "Pipeline API",
+          "description": "Utilizzo rapido per task comuni",
+          "duration": "45 min",
+          "is_free": false
+        },
+        {
+          "id": 39,
+          "title": "Tokenizers",
+          "description": "Preprocessing con tokenizers fast",
+          "duration": "50 min",
+          "is_free": false
+        },
+        {
+          "id": 40,
+          "title": "Caricare modelli pre-trained",
+          "description": "AutoModel, AutoTokenizer",
+          "duration": "45 min",
+          "is_free": false
+        },
+        {
+          "id": 41,
+          "title": "Fine-tuning BERT",
+          "description": "Adattare BERT a task specifico",
+          "duration": "70 min",
+          "is_free": false
+        },
+        {
+          "id": 42,
+          "title": "Datasets library",
+          "description": "Caricare e processare dataset",
+          "duration": "45 min",
+          "is_free": false
+        },
+        {
+          "id": 43,
+          "title": "Progetto: Text classification con BERT",
+          "description": "Fine-tuning su dataset custom",
+          "duration": "85 min",
+          "is_free": false
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Task-Specific Applications",
+      "description": "Applicare NLP a problemi reali",
+      "estimated_hours": "9 ore",
+      "lessons": [
+        {
+          "id": 44,
+          "title": "Sentiment Analysis avanzata",
+          "description": "Multi-class, aspect-based sentiment",
+          "duration": "60 min",
+          "is_free": false
+        },
+        {
+          "id": 45,
+          "title": "Named Entity Recognition moderna",
+          "description": "NER con transformer models",
+          "duration": "55 min",
+          "is_free": false
+        },
+        {
+          "id": 46,
+          "title": "Question Answering",
+          "description": "Extractive QA con BERT/RoBERTa",
+          "duration": "60 min",
+          "is_free": false
+        },
+        {
+          "id": 47,
+          "title": "Text Summarization",
+          "description": "Extractive vs Abstractive",
+          "duration": "55 min",
+          "is_free": false
+        },
+        {
+          "id": 48,
+          "title": "Machine Translation",
+          "description": "Seq2seq con transformers",
+          "duration": "50 min",
+          "is_free": false
+        },
+        {
+          "id": 49,
+          "title": "Text Generation",
+          "description": "Generare testo con GPT",
+          "duration": "55 min",
+          "is_free": false
+        },
+        {
+          "id": 50,
+          "title": "Zero-shot e Few-shot learning",
+          "description": "Prompt engineering basics",
+          "duration": "50 min",
+          "is_free": false
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Large Language Models",
+      "description": "LLMs e prompt engineering",
+      "estimated_hours": "6 ore",
+      "lessons": [
+        {
+          "id": 51,
+          "title": "Panoramica LLMs",
+          "description": "GPT-3, GPT-4, Claude, LLaMA",
+          "duration": "45 min",
+          "is_free": false
+        },
+        {
+          "id": 52,
+          "title": "Prompt engineering",
+          "description": "Tecniche per prompt efficaci",
+          "duration": "60 min",
+          "is_free": false
+        },
+        {
+          "id": 53,
+          "title": "Few-shot prompting",
+          "description": "Esempi nel prompt",
+          "duration": "45 min",
+          "is_free": false
+        },
+        {
+          "id": 54,
+          "title": "Chain-of-thought",
+          "description": "Reasoning step-by-step",
+          "duration": "50 min",
+          "is_free": false
+        },
+        {
+          "id": 55,
+          "title": "LangChain introduction",
+          "description": "Framework per LLM applications",
+          "duration": "55 min",
+          "is_free": false
+        },
+        {
+          "id": 56,
+          "title": "Retrieval Augmented Generation",
+          "description": "Combinare LLM con knowledge base",
+          "duration": "60 min",
+          "is_free": false
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "title": "Chatbot e Conversational AI",
+      "description": "Costruire assistenti conversazionali",
+      "estimated_hours": "7 ore",
+      "lessons": [
+        {
+          "id": 57,
+          "title": "Chatbot architecture",
+          "description": "Rule-based vs AI-powered",
+          "duration": "40 min",
+          "is_free": false
+        },
+        {
+          "id": 58,
+          "title": "Intent classification",
+          "description": "Capire intenzione utente",
+          "duration": "50 min",
+          "is_free": false
+        },
+        {
+          "id": 59,
+          "title": "Entity extraction",
+          "description": "Slot filling per dialogue",
+          "duration": "45 min",
+          "is_free": false
+        },
+        {
+          "id": 60,
+          "title": "Dialogue management",
+          "description": "State tracking e policy",
+          "duration": "55 min",
+          "is_free": false
+        },
+        {
+          "id": 61,
+          "title": "Response generation",
+          "description": "Template-based vs generative",
+          "duration": "50 min",
+          "is_free": false
+        },
+        {
+          "id": 62,
+          "title": "Rasa framework",
+          "description": "Open source conversational AI",
+          "duration": "60 min",
+          "is_free": false
+        },
+        {
+          "id": 63,
+          "title": "Progetto: Chatbot end-to-end",
+          "description": "Costruire chatbot funzionante",
+          "duration": "100 min",
+          "is_free": false
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "title": "Production e Best Practices",
+      "description": "NLP in produzione",
+      "estimated_hours": "5 ore",
+      "lessons": [
+        {
+          "id": 64,
+          "title": "Model optimization",
+          "description": "Distillation, quantization per NLP",
+          "duration": "50 min",
+          "is_free": false
+        },
+        {
+          "id": 65,
+          "title": "Serving transformer models",
+          "description": "Deployment strategies",
+          "duration": "45 min",
+          "is_free": false
+        },
+        {
+          "id": 66,
+          "title": "Handling multilingual text",
+          "description": "mBERT, XLM-R per multiple lingue",
+          "duration": "45 min",
+          "is_free": false
+        },
+        {
+          "id": 67,
+          "title": "Bias e fairness in NLP",
+          "description": "Identificare e mitigare bias",
+          "duration": "40 min",
+          "is_free": false
+        },
+        {
+          "id": 68,
+          "title": "Evaluation metrics",
+          "description": "BLEU, ROUGE, perplexity",
+          "duration": "40 min",
+          "is_free": false
+        },
+        {
+          "id": 69,
+          "title": "Monitoring NLP systems",
+          "description": "Performance tracking in produzione",
+          "duration": "40 min",
+          "is_free": false
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "title": "Capstone Project",
+      "description": "Progetto NLP completo",
+      "estimated_hours": "10 ore",
+      "lessons": [
+        {
+          "id": 70,
+          "title": "Project selection",
+          "description": "Scegliere task NLP interessante",
+          "duration": "30 min",
+          "is_free": false
+        },
+        {
+          "id": 71,
+          "title": "Data collection e annotation",
+          "description": "Creare dataset custom",
+          "duration": "90 min",
+          "is_free": false
+        },
+        {
+          "id": 72,
+          "title": "Baseline implementation",
+          "description": "Primo modello di riferimento",
+          "duration": "100 min",
+          "is_free": false
+        },
+        {
+          "id": 73,
+          "title": "Advanced modeling",
+          "description": "Fine-tuning transformer models",
+          "duration": "150 min",
+          "is_free": false
+        },
+        {
+          "id": 74,
+          "title": "Evaluation e optimization",
+          "description": "Migliorare performance",
+          "duration": "100 min",
+          "is_free": false
+        },
+        {
+          "id": 75,
+          "title": "Deployment",
+          "description": "API o web app funzionante",
+          "duration": "80 min",
+          "is_free": false
+        },
+        {
+          "id": 76,
+          "title": "Final presentation",
+          "description": "Demo e discussione risultati",
+          "duration": "60 min",
+          "is_free": false
+        }
+      ]
+    }
+  ],
+  "certification": true,
+  "certificate_description": "Certificato digitale verificabile che attesta il completamento del corso e le competenze specialistiche acquisite in Natural Language Processing.",
+  "target_audience": [
+    "Data Scientists che lavorano con testo",
+    "ML Engineers interessati a NLP",
+    "Sviluppatori di chatbot e assistenti virtuali",
+    "Ricercatori in NLP e computational linguistics",
+    "Professionisti che vogliono specializzarsi in NLP"
+  ],
+  "tools_required": [
+    "Computer (GPU consigliata per training)",
+    "Python 3.8+",
+    "Hugging Face Transformers, spaCy, NLTK",
+    "Google Colab per GPU cloud",
+    "16GB RAM minimo",
+    "Esperienza con ML e Deep Learning"
+  ],
+  "average_rating": 4.9,
+"reviews": [
+  {
+    "student_name": "Davide Moretti",
+    "rating": 5,
+    "date": "12 dicembre 2024",
+    "comment": "Probabilmente il miglior corso su NLP in italiano. La progressione da tecniche classiche a transformer è perfetta. La spiegazione di BERT e GPT è cristallina. Ho implementato un chatbot per la mia azienda grazie a questo corso. Valore incredibile per il prezzo.",
+    "verified": true
+  },
+  {
+    "student_name": "Chiara Romano",
+    "rating": 5,
+    "date": "5 dicembre 2024",
+    "comment": "Corso avanzato ma accessibile. Lorenzo riesce a spiegare concetti complessi come l'attention mechanism in modo comprensibile. La sezione su Hugging Face è oro puro - ora uso i modelli pre-trained con sicurezza. Progetti pratici eccellenti.",
+    "verified": true
+  },
+  {
+    "student_name": "Roberto Santoro",
+    "rating": 5,
+    "date": "29 novembre 2024",
+    "comment": "Ho una laurea in linguistica computazionale e questo corso mi ha aperto gli occhi sulle applicazioni pratiche moderne. Il modulo su LLM e prompt engineering è aggiornato e rilevante. La parte su RAG è stata particolarmente utile per il mio lavoro.",
+    "verified": true
+  },
+  {
+    "student_name": "Giulia Fontana",
+    "rating": 4,
+    "date": "22 novembre 2024",
+    "comment": "Contenuto di altissima qualità. Copre tutto dal text preprocessing ai transformer. Unico appunto: alcuni moduli sono molto densi e richiedono tempo per essere digeriti. Ma la profondità è anche il punto di forza del corso. Consigliato per chi vuole specializzarsi in NLP.",
+    "verified": true
+  },
+  {
+    "student_name": "Lorenzo Marchetti",
+    "rating": 5,
+    "date": "15 novembre 2024",
+    "comment": "Finalmente un corso che va oltre i tutorial superficiali. La teoria è bilanciata perfettamente con la pratica. Il progetto di sentiment analysis e quello sul chatbot sono stati sfidanti ma gratificanti. Ora lavoro come NLP Engineer grazie a questo corso.",
+    "verified": true
+  }
+]
+}
