@@ -128,7 +128,7 @@ const Header = () => {
           </div>
           
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-3 sm:mb-4 tracking-tight">
-            Lorenzo Arcionini
+            Lorenzo Arcioni
           </h1>
           
           <p className="text-lg text-gray-100 max-w-2xl mx-auto mb-6">
