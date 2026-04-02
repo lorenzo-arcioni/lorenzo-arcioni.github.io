@@ -1,0 +1,3874 @@
+
+
+
+=== src/components/ContactSection.jsx ===
+import React, { useEffect } from 'react';
+import { Mail, MessageCircle, Calendar } from 'lucide-react';
+
+const ContactSection = () => {
+  useEffect(() => {
+    // Carica lo script di Calendly
+    const script = document.createElement('script');
+    script.src = 'https://assets.calendly.com/assets/external/widget.js';
+    script.async = true;
+    document.body.appendChild(script);
+    
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
+  return (
+    <section className="section-container" id="contatti">
+      <h2 className="section-title">
+        <Mail className="text-gray-900" size={32} />
+        Contatti
+      </h2>
+      
+      <div className="space-y-6">
+        {/* Email */}
+        <a 
+          href="mailto:lorenzo.arcioni2000@gmail.com"
+          className="flex items-center gap-3 p-4 bg-blue-50 rounded-lg border border-blue-200 hover:border-blue-600 transition-colors"
+        >
+          <Mail className="text-blue-600" size={24} />
+          <span className="font-medium text-blue-900">lorenzo.arcioni2000@gmail.com</span>
+        </a>
+
+        {/* WhatsApp */}
+        <a 
+          href="https://wa.me/393296986474?text=Ciao%2C%20vorrei%20prenotare%20una%20consulenza."
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-3 p-4 bg-green-50 rounded-lg border border-green-200 hover:border-green-600 transition-colors"
+        >
+          <MessageCircle className="text-green-600" size={24} />
+          <span className="font-medium text-green-900">Apri la chat su WhatsApp</span>
+        </a>
+
+        {/* Calendly intro */}
+        <div className="bg-gray-50 border-l-4 border-gray-900 p-6 rounded-lg">
+          <div className="flex items-start gap-3">
+            <Calendar className="text-gray-900 flex-shrink-0 mt-1" size={24} />
+            <div>
+              <h3 className="font-semibold text-gray-900 mb-2">
+                Prenota una consulenza gratuita
+              </h3>
+              <p className="text-gray-700">
+                Puoi prenotare una <span className="font-semibold">consulenza gratuita</span> di 30 minuti direttamente 
+                dal calendario qui sotto. Scegli il giorno e l'orario che preferisci tra quelli disponibili!
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Calendly Widget */}
+        <div className="rounded-lg overflow-hidden border border-gray-200">
+          <div 
+            className="calendly-inline-widget" 
+            data-url="https://calendly.com/lorenzo-arcioni2000/30min?hide_gdpr_banner=1"
+            style={{ minWidth: '320px', height: '700px' }}
+          ></div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default ContactSection;
+
+=== src/components/ExperienceSection.jsx ===
+import React from 'react';
+import { Briefcase } from 'lucide-react';
+
+const ExperienceSection = () => {
+  const experiences = [
+    {
+      logo: '/images/machine-learn.png',
+      title: 'Machine Learn',
+      role: 'Founder and CEO',
+      period: '2024 - Presente',
+      description: 'Piattaforma di apprendimento per Machine Learning che unisce teoria accademica e pratica applicata. Gestisco progettazione contenuti, sviluppo esercizi interattivi in Python e implementazione full-stack della piattaforma.'
+    },
+    {
+      logo: '/images/logo.png',
+      title: 'Docente e Formatore',
+      role: 'Freelance - Python & Machine Learning',
+      period: '2023 - Presente',
+      description: 'Formazione specialistica in Python, Machine Learning e Data Science per studenti universitari, ricercatori e professionisti. Progettazione e conduzione di percorsi formativi personalizzati con focus su comprensione profonda e problem solving algoritmico.'
+    },
+    {
+      logo: 'https://mistertesi.it/wp-content/uploads/2019/06/La-Sapienza.png',
+      title: 'Università La Sapienza',
+      role: 'Software Engineer - Stage',
+      period: '2022 - 2023',
+      description: 'Sviluppo di algoritmo parallelo per annotazione genomica su sistemi HPC. Implementazione di pipeline distribuite per Diamond e BLAST, ottimizzando l\'efficienza dei processi di annotazione del trascrittoma con script di automazione.'
+    }
+  ];
+
+  return (
+    <section className="section-container" id="esperienze">
+      <h2 className="section-title">
+        <div className="icon-wrapper">
+          <Briefcase className="text-gray-900" size={36} />
+        </div>
+        Esperienze
+      </h2>
+
+      <div className="space-y-6">
+        {experiences.map((exp, index) => {
+          return (
+            <div key={index} className="p-6 bg-gray-50 rounded-lg flex gap-4">
+              <div className="flex-shrink-0">
+                <img 
+                  src={exp.logo} 
+                  alt={exp.title}
+                  className="w-20 h-20 object-contain rounded"
+                />
+              </div>
+              <div className="flex-1">
+                <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2 mb-3">
+                  <h3 className="text-lg font-semibold text-gray-900">
+                    {exp.title}
+                  </h3>
+                  <span className="text-sm text-gray-600">
+                    {exp.period}
+                  </span>
+                </div>
+                <p className="text-gray-700 font-medium mb-3">
+                  {exp.role}
+                </p>
+                <p className="text-gray-700 leading-relaxed">
+                  {exp.description}
+                </p>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </section>
+  );
+};
+
+export default ExperienceSection;
+
+=== src/components/ServicesHubSection.jsx ===
+import React from 'react';
+import { GraduationCap, Building2, Lightbulb } from 'lucide-react';
+
+const ServicesHubSection = ({ onNavigate }) => {
+  const services = [
+    {
+      id: 'corsi',
+      title: 'Corsi Online',
+      icon: GraduationCap,
+      description: 'Corsi completi su Machine Learning e Data Science disponibili online',
+      features: ['Video on-demand', 'Esercizi pratici', 'Certificato finale']
+    },
+    {
+      id: 'formazione-aziendale',
+      title: 'Formazione Aziendale',
+      icon: Building2,
+      description: 'Workshop e percorsi formativi personalizzati per aziende e team',
+      features: ['Corsi su misura', 'In presenza o online', 'Materiale incluso']
+    },
+    {
+      id: 'consulenze',
+      title: 'Consulenze',
+      icon: Lightbulb,
+      description: 'Supporto tecnico e strategico per progetti di Machine Learning e Data Science',
+      features: ['1-on-1 personalizzato', 'Code review', 'Architettura ML']
+    }
+  ];
+
+  return (
+    <section className="py-16 px-4">
+      <div className="max-w-6xl mx-auto">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            I Miei Servizi
+          </h2>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            Soluzioni formative e consulenziali personalizzate per ogni esigenza
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {services.map((service) => {
+            const Icon = service.icon;
+            return (
+              <button
+                key={service.id}
+                onClick={() => onNavigate(service.id)}
+                className="bg-gray-50 rounded-lg p-8 text-left border-2 border-gray-200 hover:border-gray-900 transition-colors"
+              >
+                <div className="mb-6">
+                  <div className="p-4 bg-white rounded-lg border border-gray-200 inline-block">
+                    <Icon className="text-gray-900 w-10 h-10" />
+                  </div>
+                </div>
+                
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                  {service.title}
+                </h3>
+                
+                <p className="text-gray-700 text-base leading-relaxed mb-6">
+                  {service.description}
+                </p>
+                
+                <ul className="space-y-2 mb-6">
+                  {service.features.map((feature, idx) => (
+                    <li key={idx} className="flex items-center gap-2 text-sm text-gray-700">
+                      <div className="w-1.5 h-1.5 rounded-full bg-gray-900"></div>
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+                
+                <div className="flex items-center text-gray-900 font-medium">
+                  <span>Scopri di più</span>
+                  <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </div>
+              </button>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default ServicesHubSection;
+
+=== src/components/CoursesPage.jsx ===
+import React from 'react';
+import { BookOpen, ArrowLeft, Users, Clock, Star, CheckCircle, Sparkles, Video, Podcast } from 'lucide-react';
+
+const CoursesPage = ({ onBack, onCourseSelect }) => {
+  const courses = [
+    {
+        id: 'ml-introduction',
+        title: 'Machine Learning: Introduzione',
+        description: 'Questo corso offre un\'introduzione ai concetti fondamentali e alle applicazioni del Machine Learning, partendo dalle basi fino ai concetti più avanzati.',
+        image: '/images/immagine-corso-machine-learning-introduzione.jpg',
+        available: false,
+        level: 'Principiante',
+        duration: '8 ore',
+        students: 'Prossimamente',
+        rating: null,
+        topics: ['Supervised Learning', 'Unsupervised Learning', 'Model Evaluation', 'Python Basics'],
+        type: 'asincrono',
+        platform: 'Udemy',
+        buttonText: 'Coming Soon'
+    },
+    {
+        id: 'ml-knn',
+        title: 'Machine Learning: Algoritmo K-Nearest Neighbors (KNN)',
+        description: 'Guida completa all\'algoritmo K-Nearest Neighbors (KNN), con approfondimenti teorici e implementazioni pratiche in Python usando Scikit-learn.',
+        image: '/images/immagine-corso-machine-learning-knn.jpg',
+        available: true,
+        link: 'https://www.udemy.com/course/machine-learning-algoritmo-k-nearest-neighbors-knn/?referralCode=44B387AEE00C4F8E0166',
+        level: 'Intermedio',
+        duration: '6 ore',
+        students: '150+',
+        rating: 4.8,
+        topics: ['KNN Algorithm', 'Distance Metrics', 'Scikit-learn', 'Hands-on Projects'],
+        type: 'asincrono',
+        platform: 'Udemy',
+        buttonText: 'Iscriviti Ora'
+    },
+    {
+        id: 'python-data-science',
+        title: 'Python per Data Science',
+        description: 'Corso pratico e intensivo su Python applicato alla Data Science, con focus su pandas, numpy, matplotlib e analisi esplorativa dei dati.',
+        image: 'https://www.mygreatlearning.com/blog/wp-content/uploads/2019/09/What-is-data-science-2.jpg',
+        available: true,
+        link: '#',
+        level: 'Principiante/Intermedio',
+        duration: '10 settimane',
+        students: '200+',
+        rating: 4.9,
+        topics: ['Manipolazione dati con Pandas', 'Calcolo numerico con NumPy', 'Visualizzazione dati', 'Analisi Esplorativa (EDA)'],
+        type: 'sincrono',
+        platform: 'Online Live',
+        buttonText: 'Scopri di più'
+    },
+    {
+        id: 'python-base',
+        title: 'Programmazione in Python - Base',
+        description: 'Corso completo di introduzione alla programmazione con Python',
+        image: 'https://www.python.org/static/community_logos/python-logo-master-v3-TM.png',
+        available: true,
+        link: '#',
+        level: 'Principiante',
+        duration: '13 settimane',
+        students: '5000+',
+        rating: 4.7,
+        topics: [
+            'Variabili e tipi di dati',
+            'Strutture di controllo',
+            'Funzioni',
+            'Programmazione orientata agli oggetti',
+            'Gestione file',
+            'Algoritmi di ricerca e ordinamento',
+            'Creazione di applicazioni pratiche',
+            'Progetti di portfolio'
+        ],
+        type: 'asincrono',
+        platform: 'Online Live',
+        buttonText: 'Scopri di più'
+    },
+    {
+        id: 'deep-learning',
+        title: 'Deep Learning',
+        description: 'Corso completo su Deep Learning: teoria, implementazione e applicazioni avanzate',
+        image: 'https://miro.medium.com/v2/resize:fit:1200/1*ZB6H4HuF58VcMOWbdpcRxQ.png',
+        available: true,
+        link: '#',
+        level: 'Avanzato',
+        duration: '12 settimane',
+        students: 'Nuovo',
+        rating: null,
+        topics: ['Neural Networks Theory', 'CNN Mastery', 'RNN e Transformers', 'Advanced Training'],
+        type: 'asincrono',
+        platform: 'Online',
+        buttonText: 'Scopri di più'
+    },
+    {
+        id: 'computer-vision',
+        title: 'Computer Vision',
+        description: 'Corso completo su Computer Vision: da image processing a deep learning per visione artificiale',
+        image: 'https://images.prismic.io/deepomatic/39df04f3-6712-4d1a-a840-bbfd4f5152d0_computer+vision.jpg?auto=compress,format',
+        available: true,
+        link: '#',
+        level: 'Intermedio/Avanzato',
+        duration: '10 settimane',
+        students: 'Nuovo',
+        rating: null,
+        topics: ['Image Processing', 'CNN', 'Object Detection', 'Image Segmentation'],
+        type: 'asincrono',
+        platform: 'Online',
+        buttonText: 'Scopri di più'
+    },
+    {
+        id: 'natural-language-processing',
+        title: 'Natural Language Processing (NLP)',
+        description: 'Corso completo su NLP: da text processing classico a Transformers e Large Language Models',
+        image: 'https://www.freelancinggig.com/blog/wp-content/uploads/2019/10/NLP-in-Artificial-Intelligence.jpg',
+        available: true,
+        link: '#',
+        level: 'Intermedio/Avanzato',
+        duration: '10 settimane',
+        students: 'Nuovo',
+        rating: null,
+        topics: ['Text preprocessing', 'Word Embeddings', 'Transformers', 'Hugging Face'],
+        type: 'asincrono',
+        platform: 'Online',
+        buttonText: 'Scopri di più'
+    },
+    {
+        id: 'math-for-ml',
+        title: 'Mathematics for Machine Learning',
+        description: 'Fondamenti matematici essenziali per comprendere e applicare Machine Learning e Deep Learning',
+        image: 'https://www.techslang.com/wp-content/uploads/2021/10/thinking-ai-humanoid-robot-analyzing-screen-mathematics-formula-science-e1634742458866.jpg',
+        available: true,
+        link: '#',
+        level: 'Intermedio',
+        duration: '8 settimane',
+        students: 'Nuovo',
+        rating: null,
+        topics: ['Algebra Lineare', 'Calcolo Differenziale', 'Probabilità e Statistica', 'Optimization'],
+        type: 'asincrono',
+        platform: 'Online',
+        buttonText: 'Scopri di più'
+    },
+    {
+        id: 'algorithms-and-data-structures',
+        title: 'Algorithms and Data Structures',
+        description: 'Corso completo su algoritmi e strutture dati: fondamentali per ogni programmatore',
+        image: 'https://media.geeksforgeeks.org/wp-content/cdn-uploads/20230807133054/Data-structure-algorithm.png',
+        available: true,
+        link: '#',
+        level: 'Intermedio',
+        duration: '12 settimane',
+        students: 'Nuovo',
+        rating: null,
+        topics: ['Strutture dati', 'Sorting & Searching', 'Big O notation', 'Dynamic Programming'],
+        type: 'asincrono',
+        platform: 'Online',
+        buttonText: 'Scopri di più'
+    }
+  ];
+
+  return (
+    <div className="min-h-screen bg-white">
+      <div className="container mx-auto px-3 sm:px-4 py-6 sm:py-12 max-w-6xl">
+        {/* Header */}
+        <div className="mb-8 sm:mb-12">
+          <button
+            onClick={onBack}
+            className="inline-flex items-center gap-2 text-gray-700 hover:text-gray-900 font-medium mb-4 sm:mb-6 text-sm sm:text-base"
+          >
+            <ArrowLeft className="w-4 h-4 sm:w-5 sm:h-5" />
+            Torna alla home
+          </button>
+          
+          <div className="flex items-center gap-3 sm:gap-4 mb-3 sm:mb-4">
+            <div className="p-2.5 sm:p-4 bg-gray-900 rounded-lg sm:rounded-xl">
+              <BookOpen className="text-white w-6 h-6 sm:w-10 sm:h-10" />
+            </div>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900">
+              Corsi Online
+            </h1>
+          </div>
+          <p className="text-base sm:text-lg text-gray-600 sm:ml-20">
+            Corsi completi su Machine Learning e Data Science, disponibili in formato sincrono e asincrono
+          </p>
+        </div>
+
+        {/* Courses Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
+          {courses.map((course, index) => (
+            <div 
+              key={index}
+              className="bg-gray-50 rounded-lg border border-gray-200 overflow-hidden"
+            >
+              {/* Image */}
+              <div className="relative h-48 sm:h-56 overflow-hidden">
+                <img 
+                  src={course.image}
+                  alt={course.title}
+                  className="w-full h-full object-cover"
+                  onError={(e) => {
+                    e.target.src = '/images/default-course.jpg';
+                  }}
+                />
+                {course.available && (
+                  <div className="absolute top-3 sm:top-4 right-3 sm:right-4 px-3 sm:px-4 py-1.5 sm:py-2 bg-green-700 text-white text-xs sm:text-sm font-semibold rounded-full flex items-center gap-1.5 sm:gap-2">
+                    <CheckCircle className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                    Disponibile
+                  </div>
+                )}
+                {!course.available && (
+                  <div className="absolute top-3 sm:top-4 right-3 sm:right-4 px-3 sm:px-4 py-1.5 sm:py-2 bg-gray-600 text-white text-xs sm:text-sm font-semibold rounded-full flex items-center gap-1.5 sm:gap-2">
+                    <Clock className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+                    Prossimamente
+                  </div>
+                )}
+                <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 right-3 sm:right-4 flex justify-between items-center">
+                  <span className="inline-block px-2.5 sm:px-3 py-1 bg-white text-gray-900 text-xs sm:text-sm font-semibold rounded-full">
+                    {course.level}
+                  </span>
+                  {course.platform && (
+                    <span className="inline-block px-2.5 sm:px-3 py-1 bg-blue-700 text-white text-xs sm:text-sm font-semibold rounded-full">
+                      {course.platform}
+                    </span>
+                  )}
+                </div>
+              </div>
+              
+              {/* Content */}
+              <div className="p-4 sm:p-6 bg-white">
+                <h3 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-2 sm:mb-3 leading-tight">
+                  {course.title}
+                </h3>
+                
+                <p className="text-sm sm:text-base text-gray-700 mb-3 sm:mb-4 leading-relaxed">
+                  {course.description}
+                </p>
+                
+                {/* Course Info */}
+                <div className="grid grid-cols-3 gap-2 sm:gap-3 mb-3 sm:mb-4">
+                  <div className="text-center p-2 sm:p-3 bg-gray-50 rounded-lg border border-gray-200">
+                    <Clock className="w-4 h-4 sm:w-5 sm:h-5 mx-auto mb-1 text-gray-700" />
+                    <div className="text-xs sm:text-sm text-gray-700 font-medium">{course.duration}</div>
+                  </div>
+                  <div className="text-center p-2 sm:p-3 bg-gray-50 rounded-lg border border-gray-200">
+                    <Users className="w-4 h-4 sm:w-5 sm:h-5 mx-auto mb-1 text-gray-700" />
+                    <div className="text-xs sm:text-sm text-gray-700 font-medium">{course.students}</div>
+                  </div>
+                  <div className="text-center p-2 sm:p-3 bg-gray-50 rounded-lg border border-gray-200">
+                    <Star className="w-4 h-4 sm:w-5 sm:h-5 mx-auto mb-1 text-gray-700" />
+                    <div className="text-xs sm:text-sm text-gray-700 font-medium">
+                      {course.rating ? `${course.rating} ★` : 'N/A'}
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Topics */}
+                {course.topics && course.topics.length > 0 && (
+                  <div className="mb-3 sm:mb-4">
+                    <div className="flex items-center gap-2 mb-2">
+                      <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-gray-700" />
+                      <span className="text-xs sm:text-sm font-semibold text-gray-900">Argomenti trattati:</span>
+                    </div>
+                    <div className="flex flex-wrap gap-1.5 sm:gap-2">
+                      {course.topics.map((topic, i) => (
+                        <span key={i} className="px-2 sm:px-3 py-0.5 sm:py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-medium border border-gray-200">
+                          {topic}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* Course Type */}
+                <div className="mb-4 sm:mb-5">
+                  <div className="flex items-center gap-2 mb-2">
+                    {course.type === 'sincrono' ? (
+                      <Video className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-gray-700" />
+                    ) : (
+                      <Podcast className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-gray-700" />
+                    )}
+                    <span className="text-xs sm:text-sm font-semibold text-gray-900">Modalità:</span>
+                  </div>
+                  <span className={`inline-block px-3 sm:px-4 py-1.5 sm:py-2 ${
+                    course.type === 'sincrono' 
+                      ? 'bg-purple-100 text-purple-800 border-purple-200' 
+                      : 'bg-blue-100 text-blue-800 border-blue-200'
+                  } border rounded-full text-xs sm:text-sm font-semibold`}>
+                    {course.type === 'sincrono' ? '🔴 Live - Sincrono' : '📼 On-Demand - Asincrono'}
+                  </span>
+                </div>
+                
+                {/* CTA Button */}
+                <div className="mt-4 sm:mt-6">
+                  {course.available ? (
+                    course.link && course.link !== '#' ? (
+                      <a 
+                        href={course.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block w-full text-center px-4 sm:px-6 py-3 sm:py-4 bg-gray-900 text-white text-sm sm:text-base font-semibold rounded-lg hover:bg-gray-800 transition-colors"
+                      >
+                        {course.buttonText}
+                      </a>
+                    ) : (
+                      <button
+                        onClick={() => onCourseSelect(course.id)}
+                        className="block w-full text-center px-4 sm:px-6 py-3 sm:py-4 bg-gray-900 text-white text-sm sm:text-base font-semibold rounded-lg hover:bg-gray-800 transition-colors"
+                      >
+                        {course.buttonText}
+                      </button>
+                    )
+                  ) : (
+                    <button 
+                      disabled
+                      className="w-full px-4 sm:px-6 py-3 sm:py-4 text-center text-sm sm:text-base font-semibold rounded-lg bg-gray-200 text-gray-500 cursor-not-allowed"
+                    >
+                      {course.buttonText}
+                    </button>
+                  )}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Info Banner */}
+        <div className="mt-8 sm:mt-12 bg-gray-50 rounded-lg p-4 sm:p-6 md:p-8 border-2 border-gray-200">
+          <div className="flex flex-col sm:flex-row items-start gap-3 sm:gap-4">
+            <div className="p-2.5 sm:p-3 bg-white rounded-lg border border-gray-200">
+              <Sparkles className="text-gray-900 w-6 h-6 sm:w-8 sm:h-8" />
+            </div>
+            <div>
+              <h3 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-2">
+                Approccio didattico unico
+              </h3>
+              <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
+                I miei corsi non si limitano a insegnare "come si fa": ti porto a capire davvero 
+                <span className="font-semibold text-gray-900"> "perché funziona"</span>. Con un metodo 
+                chiaro, rigoroso e completo, frutto di anni di studio teorico e pratica avanzata, 
+                ti aiuto a sviluppare una comprensione autentica e duratura del Machine Learning.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default CoursesPage;
+
+=== src/components/FeaturedCoursesSection.jsx ===
+import React, { useState } from 'react';
+import { BookOpen, Clock, Users, Star, TrendingUp, ArrowRight, Sparkles } from 'lucide-react';
+
+const FeaturedCoursesSection = ({ onCourseSelect }) => {
+  const [hoveredCard, setHoveredCard] = useState(null);
+
+  // Qui puoi facilmente scegliere quali corsi mostrare cambiando gli ID
+  const featuredCourseIds = [
+    'ml-knn',
+    'python-data-science', 
+    'deep-learning'
+  ];
+
+  // Database completo dei corsi (stesso dei file JSON)
+  const allCourses = [
+    {
+      id: 'ml-introduction',
+      title: 'Machine Learning: Introduzione',
+      description: 'Corso introduttivo ai concetti fondamentali del Machine Learning',
+      image: '/images/immagine-corso-machine-learning-introduzione.jpg',
+      available: false,
+      level: 'Principiante',
+      duration: '8 ore',
+      students: 'Prossimamente',
+      rating: null,
+      topics: ['Supervised Learning', 'Unsupervised Learning', 'Model Evaluation'],
+      type: 'asincrono',
+      platform: 'Udemy'
+    },
+    {
+      id: 'ml-knn',
+      title: 'Machine Learning: K-Nearest Neighbors',
+      description: 'Guida completa all\'algoritmo KNN con implementazioni pratiche',
+      image: '/images/immagine-corso-machine-learning-knn.jpg',
+      available: true,
+      link: 'https://www.udemy.com/course/machine-learning-algoritmo-k-nearest-neighbors-knn/?referralCode=44B387AEE00C4F8E0166',
+      level: 'Intermedio',
+      duration: '6 ore',
+      students: '150+',
+      rating: 4.8,
+      topics: ['KNN Algorithm', 'Distance Metrics', 'Scikit-learn'],
+      type: 'asincrono',
+      platform: 'Udemy',
+      featured: true
+    },
+    {
+      id: 'python-data-science',
+      title: 'Python per Data Science',
+      description: 'Corso pratico su Python applicato alla Data Science',
+      image: 'https://www.mygreatlearning.com/blog/wp-content/uploads/2019/09/What-is-data-science-2.jpg',
+      available: true,
+      link: '#',
+      level: 'Principiante/Intermedio',
+      duration: '10 settimane',
+      students: '200+',
+      rating: 4.9,
+      topics: ['Pandas', 'NumPy', 'Visualizzazione', 'EDA'],
+      type: 'sincrono',
+      platform: 'Online Live',
+      featured: true
+    },
+    {
+      id: 'deep-learning',
+      title: 'Deep Learning',
+      description: 'Corso completo su Deep Learning: teoria e applicazioni avanzate',
+      image: 'https://miro.medium.com/v2/resize:fit:1200/1*ZB6H4HuF58VcMOWbdpcRxQ.png',
+      available: true,
+      link: '#',
+      level: 'Avanzato',
+      duration: '12 settimane',
+      students: 'Nuovo',
+      rating: null,
+      topics: ['Neural Networks', 'CNN', 'RNN', 'Transformers'],
+      type: 'asincrono',
+      platform: 'Online',
+      featured: true
+    }
+  ];
+
+  // Filtra solo i corsi featured
+  const featuredCourses = allCourses.filter(course => 
+    featuredCourseIds.includes(course.id)
+  );
+
+  return (
+    <section className="py-16 px-4 relative overflow-hidden">
+      {/* Background decorative elements */}
+      <div className="absolute inset-0 opacity-5 pointer-events-none">
+        <div className="absolute top-10 left-10 w-64 h-64 bg-emerald-400 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-10 right-10 w-96 h-96 bg-emerald-500 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+      </div>
+
+      <div className="max-w-6xl mx-auto relative z-10">
+        {/* Header with animation */}
+        <div className="text-center mb-12 relative">
+          <div className="absolute inset-0 flex items-center justify-center opacity-10">
+            <Sparkles className="w-32 h-32 text-emerald-600 animate-pulse" />
+          </div>
+          
+          <div className="inline-block mb-4 px-6 py-2 bg-gradient-to-r from-emerald-400 to-emerald-600 text-white text-sm font-bold rounded-full animate-bounce shadow-lg">
+            🔥 I PIÙ RICHIESTI 🔥
+          </div>
+          
+          <div className="relative flex items-center justify-center gap-3 mb-4">
+            <div className="w-12 h-1 bg-gradient-to-r from-transparent via-emerald-500 to-transparent animate-pulse" />
+            <h2 className="text-4xl md:text-5xl font-black text-gray-900 bg-gradient-to-r from-emerald-600 to-emerald-800 bg-clip-text text-transparent">
+              Corsi in Evidenza
+            </h2>
+            <div className="w-12 h-1 bg-gradient-to-r from-transparent via-emerald-500 to-transparent animate-pulse" />
+          </div>
+          
+          <p className="text-xl text-gray-700 max-w-2xl mx-auto font-semibold">
+            ⭐ Oltre 500 studenti hanno già trasformato la loro carriera
+          </p>
+        </div>
+
+        {/* Courses Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+          {featuredCourses.map((course, index) => (
+            <div
+              key={course.id}
+              onMouseEnter={() => setHoveredCard(index)}
+              onMouseLeave={() => setHoveredCard(null)}
+              className="group relative cursor-pointer"
+              style={{
+                animation: `slideInUp 0.6s ease-out ${index * 0.15}s both`
+              }}
+            >
+              {/* Glow effect background */}
+              <div className="absolute -inset-1 bg-emerald-400 rounded-2xl blur-xl opacity-0 group-hover:opacity-75 transition-all duration-700" />
+              
+              {/* Main card */}
+              <div className="relative bg-white rounded-2xl border-4 border-emerald-300 overflow-hidden transition-all duration-500 hover:shadow-2xl hover:scale-105 hover:border-emerald-500 hover:-translate-y-2">
+                
+                {/* Animated shine effect */}
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-1000">
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-emerald-400/30 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-1000" />
+                </div>
+
+                {/* Floating particles effect */}
+                {hoveredCard === index && (
+                  <>
+                    <div className="absolute top-10 left-10 w-2 h-2 bg-emerald-400 rounded-full animate-ping" />
+                    <div className="absolute top-20 right-10 w-2 h-2 bg-emerald-500 rounded-full animate-ping" style={{ animationDelay: '0.2s' }} />
+                    <div className="absolute bottom-10 left-20 w-2 h-2 bg-emerald-600 rounded-full animate-ping" style={{ animationDelay: '0.4s' }} />
+                  </>
+                )}
+
+                {/* Ribbon "BESTSELLER" */}
+                <div className="absolute top-4 -right-12 rotate-45 z-20 w-40 bg-gradient-to-r from-yellow-400 to-yellow-500 text-center py-1 shadow-lg">
+                  <span className="text-xs font-black text-gray-900">⭐ BESTSELLER ⭐</span>
+                </div>
+                
+                {/* Image with overlay effects */}
+                <div className="relative h-48 overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-t from-emerald-900/80 via-emerald-900/30 to-transparent z-10" />
+                  
+                  {/* Animated gradient overlay on hover */}
+                  <div className={`absolute inset-0 bg-gradient-to-br from-emerald-400/0 to-emerald-600/0 z-10 transition-all duration-700 ${
+                    hoveredCard === index ? 'from-emerald-400/40 to-emerald-600/40' : ''
+                  }`} />
+                  
+                  <img 
+                    src={course.image}
+                    alt={course.title}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-125 group-hover:rotate-2"
+                    onError={(e) => {
+                      e.target.src = '/images/default-course.jpg';
+                    }}
+                  />
+                  
+                  {/* Floating badges with animation */}
+                  <div className="absolute top-3 left-3 z-20 flex flex-col gap-2">
+                    <span className="px-4 py-2 bg-gradient-to-r from-emerald-500 to-emerald-600 text-white text-xs font-black rounded-full shadow-xl animate-pulse border-2 border-white">
+                      🚀 POPOLARE
+                    </span>
+                    <span className="px-3 py-1 bg-white text-gray-900 text-xs font-bold rounded-full shadow-lg border-2 border-emerald-400">
+                      {course.level}
+                    </span>
+                  </div>
+
+                  {/* Platform badge with glow */}
+                  <div className="absolute bottom-3 right-3 z-20">
+                    <span className="relative inline-block px-4 py-2 bg-gradient-to-r from-blue-500 to-blue-600 text-xs font-bold rounded-full shadow-xl border-2 border-white">
+                      <span className="relative z-10 text-white">{course.platform}</span>
+                      <span className="absolute inset-0 rounded-full bg-blue-400 blur-md opacity-50 animate-pulse" />
+                    </span>
+                  </div>
+                </div>
+                
+                {/* Content with enhanced styling */}
+                <div className="relative p-6 bg-white">
+                  <h3 className="text-xl font-black text-gray-900 mb-3 line-clamp-2 group-hover:text-emerald-700 transition-colors leading-tight">
+                    {course.title}
+                  </h3>
+                  
+                  <p className="text-sm text-gray-700 mb-4 line-clamp-2 font-medium">
+                    {course.description}
+                  </p>
+                  
+                  {/* Stats with glowing effect */}
+                  <div className="grid grid-cols-3 gap-2 mb-4">
+                    <div className="relative text-center p-3 bg-gradient-to-br from-emerald-50 to-emerald-100 rounded-xl border-2 border-emerald-200 transition-all duration-300 group-hover:border-emerald-400 group-hover:shadow-lg overflow-hidden">
+                      <div className="absolute inset-0 bg-gradient-to-r from-emerald-400/0 via-emerald-400/20 to-emerald-400/0 translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-1000" />
+                      <Clock className="w-5 h-5 mx-auto mb-1 text-emerald-600" />
+                      <div className="text-xs text-gray-900 font-bold relative z-10">{course.duration}</div>
+                    </div>
+                    <div className="relative text-center p-3 bg-gradient-to-br from-emerald-50 to-emerald-100 rounded-xl border-2 border-emerald-200 transition-all duration-300 group-hover:border-emerald-400 group-hover:shadow-lg overflow-hidden">
+                      <div className="absolute inset-0 bg-gradient-to-r from-emerald-400/0 via-emerald-400/20 to-emerald-400/0 translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-1000" style={{ transitionDelay: '0.1s' }} />
+                      <Users className="w-5 h-5 mx-auto mb-1 text-emerald-600" />
+                      <div className="text-xs text-gray-900 font-bold relative z-10">{course.students}</div>
+                    </div>
+                    <div className="relative text-center p-3 bg-gradient-to-br from-emerald-50 to-emerald-100 rounded-xl border-2 border-emerald-200 transition-all duration-300 group-hover:border-emerald-400 group-hover:shadow-lg overflow-hidden">
+                      <div className="absolute inset-0 bg-gradient-to-r from-emerald-400/0 via-emerald-400/20 to-emerald-400/0 translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-1000" style={{ transitionDelay: '0.2s' }} />
+                      <Star className="w-5 h-5 mx-auto mb-1 text-yellow-500 fill-yellow-500" />
+                      <div className="text-xs text-gray-900 font-bold relative z-10">
+                        {course.rating ? `${course.rating} ★` : 'Nuovo'}
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Topics with animation */}
+                  <div className="flex flex-wrap gap-2 mb-5">
+                    {course.topics.slice(0, 3).map((topic, i) => (
+                      <span 
+                        key={i} 
+                        className="px-3 py-1 bg-gradient-to-r from-emerald-100 to-emerald-200 text-emerald-800 rounded-full text-xs font-bold border-2 border-emerald-300 transition-all duration-300 hover:scale-110 hover:shadow-lg"
+                        style={{ animation: `fadeInScale 0.5s ease-out ${0.8 + i * 0.1}s both` }}
+                      >
+                        {topic}
+                      </span>
+                    ))}
+                  </div>
+                  
+                  {/* CTA Button with extreme effects */}
+                  <button
+                    onClick={() => {
+                      if (course.link && course.link !== '#') {
+                        window.open(course.link, '_blank');
+                      } else {
+                        onCourseSelect(course.id);
+                      }
+                    }}
+                    className="relative w-full px-6 py-4 bg-gradient-to-r from-emerald-500 via-emerald-600 to-emerald-500 bg-size-200 bg-pos-0 hover:bg-pos-100 text-white text-base font-black rounded-xl transition-all duration-500 transform hover:scale-105 hover:shadow-2xl flex items-center justify-center gap-3 overflow-hidden group/btn"
+                  >
+                    {/* Animated background */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-emerald-600 via-emerald-500 to-emerald-600 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-500" />
+                    
+                    {/* Shine effect */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent translate-x-[-200%] group-hover/btn:translate-x-[200%] transition-transform duration-1000" />
+                    
+                    <span className="relative z-10 flex items-center gap-3">
+                      <Sparkles className="w-5 h-5" />
+                      INIZIA SUBITO
+                      <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover/btn:translate-x-2" />
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* CTA to all courses - Ultra appealing */}
+        <div className="text-center relative">
+          <button
+            onClick={() => onCourseSelect('all')}
+            className="relative inline-flex items-center gap-4 px-12 py-6 bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white text-xl font-black rounded-2xl transition-all duration-500 shadow-2xl hover:shadow-2xl hover:scale-105 transform overflow-hidden group border-4 border-emerald-400"
+          >
+            {/* Animated background shine */}
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-emerald-400/30 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-1000" />
+            
+            <BookOpen className="w-8 h-8 relative z-10" />
+            <span className="relative z-10 flex items-center gap-2">
+              Scopri TUTTI i Corsi
+              <Sparkles className="w-6 h-6 text-emerald-400" />
+            </span>
+            <ArrowRight className="w-8 h-8 relative z-10 transition-transform duration-300 group-hover:translate-x-3" />
+          </button>
+          
+          {/* Social proof text */}
+          <p className="mt-6 text-lg font-bold text-gray-700">
+            🎓 Unisciti a <span className="text-emerald-600 text-2xl">500+</span> studenti soddisfatti
+          </p>
+        </div>
+      </div>
+
+      <style>{`
+        @keyframes slideInUp {
+          from {
+            opacity: 0;
+            transform: translateY(40px) scale(0.95);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+          }
+        }
+        
+        @keyframes fadeInScale {
+          from {
+            opacity: 0;
+            transform: scale(0.8);
+          }
+          to {
+            opacity: 1;
+            transform: scale(1);
+          }
+        }
+        
+        .bg-size-200 {
+          background-size: 200% 100%;
+        }
+        
+        .bg-pos-0 {
+          background-position: 0% 0%;
+        }
+        
+        .bg-pos-100 {
+          background-position: 100% 0%;
+        }
+      `}</style>
+    </section>
+  );
+};
+
+export default FeaturedCoursesSection;
+
+=== src/components/ProjectsPage.jsx ===
+import React from 'react';
+import { Rocket, ExternalLink, ArrowLeft } from 'lucide-react';
+
+const ProjectsPage = ({ onBack }) => {
+  const projects = [
+    {
+      title: 'Identifying Age-Related Conditions (ICR)',
+      badge: 'Top 2% Kaggle - Medaglia d\'Argento',
+      badgeColor: 'bg-gray-300 text-gray-800',
+      description: `"ICR" è una competizione su Kaggle. Sono orgoglioso di condividere che ho ottenuto una Medaglia d'Argento, classificandomi nella top 2% della classifica della competizione. L'obiettivo della competizione è utilizzare il machine learning per prevedere se una persona ha una delle tre specifiche condizioni mediche.`,
+      image: '/images/project-icr.png',
+      link: 'https://github.com/lorenzo-arcioni/icr-identify-age-related-conditions',
+      tags: ['Machine Learning', 'Kaggle', 'Healthcare']
+    },
+    {
+      title: 'Water Potability',
+      description: `In questo studio, abbiamo condotto un'analisi di un dataset contenente varie caratteristiche relative alla qualità dell'acqua per determinarne la potabilità. Dopo aver analizzato il dataset, abbiamo utilizzato tecniche di machine learning per sviluppare un modello per predire la potabilità dell'acqua.`,
+      image: '/images/project-water.jpg',
+      link: 'https://github.com/lorenzo-arcioni/water-potability-analysis',
+      tags: ['Data Analysis', 'Classification', 'Environmental']
+    },
+    {
+      title: 'HPC-T-Annotator',
+      description: `HPC-T-Annotator è uno strumento avanzato progettato per parallelizzare l'annotazione del trascrittoma, riducendo drasticamente i tempi di attesa. Utilizza un'architettura HPC per l'annotazione parallela delle trascrizioni, gestendo simultaneamente più attività tramite un sistema a code.`,
+      image: '/images/project-hpc-t-annotator.jpeg',
+      link: 'https://github.com/lorenzo-arcioni/HPC-T-Annotator',
+      tags: ['HPC', 'Bioinformatics', 'Python']
+    },
+    {
+      title: 'BioSwiftAnalytics',
+      description: `BioSwiftAnalytics offre una suite di notebook Jupyter per semplificare l'analisi dei dati biologici. Grazie all'uso di Docker e Jupyter Notebook, garantisce un ambiente modulare e facilmente replicabile. Progettato per ricercatori, bioinformatici e biologi computazionali.`,
+      image: '/images/project-bioswift.jpeg',
+      link: 'https://github.com/lorenzo-arcioni/BioSwiftAnalytics',
+      tags: ['Bioinformatics', 'Docker', 'Jupyter']
+    },
+    {
+      title: 'Waste Image Classification',
+      description: `Approccio avanzato basato sull'apprendimento profondo per la classificazione dei rifiuti utilizzando il Real Waste Dataset. Grazie a tecniche di transfer learning, data augmentation e CNN personalizzate, proponiamo soluzioni innovative per questa importante sfida.`,
+      image: 'https://cdn-images-1.medium.com/max/800/1*iAOh8xMffpG_9Rzl2ZsYXw.png',
+      link: 'https://github.com/lorenzo-arcioni/waste-image-classification',
+      article: 'https://medium.com/@lorenzo.arcioni2000/deep-learning-per-la-classificazione-sul-dataset-realwaste-db6367f5ab19',
+      tags: ['Deep Learning', 'CNN', 'Computer Vision']
+    }
+  ];
+
+  return (
+    <div className="min-h-screen bg-white">
+      <div className="container mx-auto px-3 sm:px-4 py-6 sm:py-12 max-w-6xl">
+        {/* Header */}
+        <div className="mb-8 sm:mb-12">
+          <button
+            onClick={onBack}
+            className="inline-flex items-center gap-2 text-gray-700 hover:text-gray-900 font-medium mb-4 sm:mb-6 text-sm sm:text-base"
+          >
+            <ArrowLeft className="w-4 h-4 sm:w-5 sm:h-5" />
+            Torna alla home
+          </button>
+          
+          <div className="flex items-center gap-3 sm:gap-4 mb-3 sm:mb-4">
+            <div className="p-2.5 sm:p-4 bg-gray-900 rounded-lg">
+              <Rocket className="text-white w-6 h-6 sm:w-10 sm:h-10" />
+            </div>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900">
+              I Miei Progetti
+            </h1>
+          </div>
+          <p className="text-base sm:text-lg text-gray-600 sm:ml-20">
+            Una selezione dei miei progetti più significativi in Machine Learning e Data Science
+          </p>
+        </div>
+
+        {/* Hero Statement */}
+        <div className="mb-8 sm:mb-12 text-center space-y-4">
+          <p className="text-2xl md:text-3xl font-bold text-gray-900 leading-tight">
+            Dal codice alla soluzione: progetti che risolvono problemi reali
+          </p>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            Ogni progetto rappresenta un'opportunità per applicare teoria solida a sfide concrete
+          </p>
+        </div>
+
+        {/* Projects Grid */}
+        <div className="space-y-6 sm:space-y-8">
+          {projects.map((project, index) => (
+            <div 
+              key={index}
+              className="bg-gray-50 rounded-lg border border-gray-200 overflow-hidden"
+            >
+              <div className="flex flex-col">
+                {/* Image */}
+                <div className="relative overflow-hidden h-48 sm:h-56">
+                  <img 
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                
+                {/* Content */}
+                <div className="p-4 sm:p-6 md:p-8 bg-white">
+                  <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold text-gray-900 mb-3 sm:mb-4">
+                    {project.title}
+                  </h3>
+                  
+                  {project.badge && (
+                    <span className={`inline-block px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-semibold mb-3 sm:mb-4 ${project.badgeColor} border border-gray-300`}>
+                      {project.badge}
+                    </span>
+                  )}
+                  
+                  <p className="text-sm sm:text-base text-gray-700 leading-relaxed mb-4 sm:mb-6">
+                    {project.description}
+                  </p>
+                  
+                  {/* Tags */}
+                  <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-4 sm:mb-6">
+                    {project.tags.map((tag, i) => (
+                      <span key={i} className="px-2 sm:px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs sm:text-sm font-medium border border-blue-200">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                  
+                  {/* Buttons */}
+                  <div className="flex flex-col sm:flex-row flex-wrap gap-2 sm:gap-3">
+                    <a 
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center gap-2 px-4 sm:px-6 py-2.5 sm:py-3 bg-green-600 text-white text-sm sm:text-base font-semibold rounded-lg hover:bg-green-700 transition-colors"
+                    >
+                      Vedi su GitHub
+                      <ExternalLink className="w-4 h-4 sm:w-5 sm:h-5" />
+                    </a>
+                    
+                    {project.article && (
+                      <a 
+                        href={project.article}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center justify-center gap-2 px-4 sm:px-6 py-2.5 sm:py-3 bg-white border-2 border-gray-900 text-gray-900 text-sm sm:text-base font-semibold rounded-lg hover:bg-gray-50 transition-colors"
+                      >
+                        Leggi articolo
+                        <ExternalLink className="w-4 h-4 sm:w-5 sm:h-5" />
+                      </a>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Philosophy */}
+        <div className="mt-8 sm:mt-12 p-8 bg-gray-900 text-white rounded-lg">
+          <p className="text-lg leading-relaxed">
+            Ogni progetto è un'opportunità per trasformare teoria in pratica. Dal machine learning 
+            applicato alla sanità, all'High Performance Computing per la bioinformatica, fino alla 
+            computer vision per sfide ambientali: ogni soluzione è guidata da rigore metodologico 
+            e orientata a risultati concreti e misurabili.
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default ProjectsPage;
+
+=== src/components/CourseDetailPage.jsx ===
+import React, { useState, useEffect } from 'react';
+import { 
+  ArrowLeft, 
+  Clock, 
+  Users, 
+  BookOpen, 
+  Award, 
+  CheckCircle, 
+  PlayCircle, 
+  Lock,
+  Target,
+  AlertCircle,
+  Laptop,
+  Loader2,
+  Download,
+  X,
+  Star
+} from 'lucide-react';
+
+const CourseDetailPage = ({ courseId, onBack }) => {
+  const [courseData, setCourseData] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [showBrochureModal, setShowBrochureModal] = useState(false);
+  const [email, setEmail] = useState('');
+  const [acceptPrivacy, setAcceptPrivacy] = useState(false);
+  const [acceptNewsletter, setAcceptNewsletter] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitSuccess, setSubmitSuccess] = useState(false);
+
+  useEffect(() => {
+    const loadCourseData = async () => {
+      if (!courseId) {
+        setError('ID del corso non specificato');
+        setIsLoading(false);
+        return;
+      }
+      
+      try {
+        setIsLoading(true);
+        const response = await fetch(`/data/courses/${courseId}.json`);
+        
+        if (!response.ok) {
+          throw new Error('Corso non trovato');
+        }
+        
+        const data = await response.json();
+        setCourseData(data);
+      } catch (err) {
+        console.error('Error loading course:', err);
+        setError('Impossibile caricare il contenuto del corso.');
+      } finally {
+        setIsLoading(false);
+      }
+    };
+    
+    loadCourseData();
+  }, [courseId]);
+
+  const calculateTotalLessons = (modules) => 
+    modules?.reduce((total, m) => total + m.lessons.length, 0) || 0;
+
+  const handleBrochureSubmit = (e) => {
+    e.preventDefault();
+    
+    if (!acceptPrivacy) {
+      alert('Devi accettare i termini per il trattamento dei dati');
+      return;
+    }
+    
+    setIsSubmitting(true);
+    
+    // Simulate API call
+    setTimeout(() => {
+      console.log('Email submitted:', email);
+      console.log('Newsletter consent:', acceptNewsletter);
+      
+      setIsSubmitting(false);
+      setSubmitSuccess(true);
+      
+      // Close modal after 2 seconds and reset
+      setTimeout(() => {
+        setShowBrochureModal(false);
+        setSubmitSuccess(false);
+        setEmail('');
+        setAcceptPrivacy(false);
+        setAcceptNewsletter(false);
+      }, 2000);
+    }, 1000);
+  };
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-white flex justify-center items-center">
+        <div className="flex flex-col items-center gap-4">
+          <Loader2 className="h-12 w-12 animate-spin text-gray-700" />
+          <span className="text-lg text-gray-600">Caricamento corso...</span>
+        </div>
+      </div>
+    );
+  }
+
+  if (error || !courseData) {
+    return (
+      <div className="min-h-screen bg-white p-6">
+        <div className="max-w-4xl mx-auto">
+          <div className="bg-red-50 text-red-800 p-6 rounded-lg flex items-center gap-3 mb-6 border border-red-200">
+            <AlertCircle className="w-6 h-6" />
+            <span className="font-semibold">{error || 'Corso non trovato'}</span>
+          </div>
+          <button
+            onClick={onBack}
+            className="inline-flex items-center gap-2 px-6 py-3 bg-gray-900 text-white font-semibold rounded-lg hover:bg-gray-800 transition-colors"
+          >
+            <ArrowLeft className="w-5 h-5" />
+            Torna indietro
+          </button>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="min-h-screen bg-white">
+      {/* Brochure Modal */}
+      {showBrochureModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+          <div 
+            className="absolute inset-0 bg-black/50 backdrop-blur-sm"
+            onClick={() => !isSubmitting && setShowBrochureModal(false)}
+          ></div>
+          
+          <div className="relative bg-white rounded-lg p-6 sm:p-8 max-w-md w-full">
+            <button
+              onClick={() => !isSubmitting && setShowBrochureModal(false)}
+              className="absolute top-4 right-4 text-gray-400 hover:text-gray-600"
+              disabled={isSubmitting}
+            >
+              <X className="w-5 h-5" />
+            </button>
+            
+            {!submitSuccess ? (
+              <div>
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="p-3 bg-gray-100 rounded-lg">
+                    <Download className="w-6 h-6 text-gray-900" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-gray-900">
+                    Ottieni il programma
+                  </h3>
+                </div>
+                
+                <p className="text-gray-600 mb-6">
+                  Inserisci il tuo indirizzo email per ricevere il programma completo del corso.
+                </p>
+                
+                <div className="mb-4">
+                  <label htmlFor="email" className="block text-sm font-medium text-gray-900 mb-2">
+                    Email *
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent"
+                    placeholder="tua@email.com"
+                    disabled={isSubmitting}
+                  />
+                </div>
+                
+                <div className="mb-4 space-y-3">
+                  <div className="flex items-start gap-2">
+                    <input
+                      type="checkbox"
+                      id="privacy"
+                      checked={acceptPrivacy}
+                      onChange={(e) => setAcceptPrivacy(e.target.checked)}
+                      required
+                      className="mt-1 w-4 h-4 text-gray-900 border-gray-300 rounded focus:ring-gray-900"
+                      disabled={isSubmitting}
+                    />
+                    <label htmlFor="privacy" className="text-sm text-gray-700">
+                      Accetto i <span className="text-gray-900 underline font-medium cursor-pointer">termini per il trattamento dei dati</span> *
+                    </label>
+                  </div>
+                  
+                  <div className="flex items-start gap-2">
+                    <input
+                      type="checkbox"
+                      id="newsletter"
+                      checked={acceptNewsletter}
+                      onChange={(e) => setAcceptNewsletter(e.target.checked)}
+                      className="mt-1 w-4 h-4 text-gray-900 border-gray-300 rounded focus:ring-gray-900"
+                      disabled={isSubmitting}
+                    />
+                    <label htmlFor="newsletter" className="text-sm text-gray-700">
+                      Voglio iscrivermi alla mailing list per ricevere aggiornamenti e contenuti esclusivi
+                    </label>
+                  </div>
+                </div>
+                
+                <button
+                  onClick={handleBrochureSubmit}
+                  disabled={isSubmitting || !acceptPrivacy}
+                  className="w-full px-6 py-3 bg-gray-900 text-white font-semibold rounded-lg hover:bg-gray-800 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                >
+                  {isSubmitting ? (
+                    <>
+                      <Loader2 className="w-5 h-5 animate-spin" />
+                      Invio in corso...
+                    </>
+                  ) : (
+                    <>
+                      <Download className="w-5 h-5" />
+                      Scarica Brochure
+                    </>
+                  )}
+                </button>
+              </div>
+            ) : (
+              <div className="text-center py-8">
+                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <CheckCircle className="w-8 h-8 text-green-700" />
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                  Brochure Inviata!
+                </h3>
+                <p className="text-gray-600">
+                  Controlla la tua email per scaricare il programma.
+                </p>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
+
+      <div className="container mx-auto px-3 sm:px-4 py-6 sm:py-12 max-w-6xl">
+        <button
+          onClick={onBack}
+          className="inline-flex items-center gap-2 text-gray-700 hover:text-gray-900 font-medium mb-6 text-sm sm:text-base"
+        >
+          <ArrowLeft className="w-4 h-4 sm:w-5 sm:h-5" />
+          Torna ai corsi
+        </button>
+
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          {/* Main Content */}
+          <div className="lg:col-span-2 space-y-6">
+            <div className="space-y-4">
+              <div className="inline-block px-4 py-2 bg-green-100 text-green-800 rounded-full text-sm font-semibold border border-green-200">
+                {courseData.category}
+              </div>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900">
+                {courseData.title}
+              </h1>
+              <p className="text-gray-700 text-lg sm:text-xl">
+                {courseData.description}
+              </p>
+
+              <div className="flex flex-wrap gap-4 text-sm text-gray-600">
+                <div className="flex items-center gap-2">
+                  <Clock className="w-4 h-4" />
+                  {courseData.duration}
+                </div>
+                <div className="flex items-center gap-2">
+                  <Users className="w-4 h-4" />
+                  {courseData.level}
+                </div>
+                <div className="flex items-center gap-2">
+                  <BookOpen className="w-4 h-4" />
+                  {courseData.modules?.length || 0} moduli
+                </div>
+                <div className="flex items-center gap-2">
+                  <PlayCircle className="w-4 h-4" />
+                  {calculateTotalLessons(courseData.modules)} lezioni
+                </div>
+                {courseData.certification && (
+                  <div className="flex items-center gap-2">
+                    <Award className="w-4 h-4" />
+                    Certificato
+                  </div>
+                )}
+              </div>
+            </div>
+
+            {courseData.instructor && (
+              <div className="bg-gray-50 rounded-lg border border-gray-200 p-6">
+                <h2 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-4 flex items-center gap-2">
+                  <Users className="w-6 h-6 text-gray-700" />
+                  Il tuo istruttore
+                </h2>
+                <div className="flex gap-4 items-start">
+                  {courseData.instructor_image && (
+                    <img 
+                      src={courseData.instructor_image} 
+                      alt={courseData.instructor}
+                      className="w-16 h-16 rounded-full object-cover"
+                    />
+                  )}
+                  <div>
+                    <h3 className="font-semibold text-lg text-gray-900">
+                      {courseData.instructor}
+                    </h3>
+                    <p className="text-gray-700 mt-2 leading-relaxed">
+                      {courseData.instructor_bio}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {courseData.full_description && (
+              <div className="bg-gray-50 rounded-lg border border-gray-200 p-6">
+                <h2 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-4">
+                  Descrizione completa
+                </h2>
+                <p className="text-gray-700 leading-relaxed whitespace-pre-wrap">
+                  {courseData.full_description}
+                </p>
+              </div>
+            )}
+
+            {courseData.learning_objectives && courseData.learning_objectives.length > 0 && (
+              <div className="bg-gray-50 rounded-lg border border-gray-200 p-6">
+                <h2 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-4 flex items-center gap-2">
+                  <Target className="w-6 h-6 text-gray-700" />
+                  Cosa imparerai
+                </h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {courseData.learning_objectives.map((obj, index) => (
+                    <div key={index} className="flex items-start gap-3">
+                      <CheckCircle className="w-5 h-5 text-green-700 flex-shrink-0 mt-0.5" />
+                      <div>
+                        <span className="font-medium text-gray-900">
+                          {obj.objective}
+                        </span>
+                        {obj.description && (
+                          <p className="text-sm text-gray-600 mt-1">
+                            {obj.description}
+                          </p>
+                        )}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {courseData.modules && courseData.modules.length > 0 && (
+              <div className="bg-gray-50 rounded-lg border border-gray-200 p-6">
+                <h2 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-2 flex items-center gap-2">
+                  <BookOpen className="w-6 h-6 text-gray-700" />
+                  Programma del corso
+                </h2>
+                <p className="text-gray-600 mb-6">
+                  {courseData.modules.length} moduli • {calculateTotalLessons(courseData.modules)} lezioni
+                </p>
+                <div className="space-y-4">
+                  {courseData.modules.map((module, moduleIndex) => (
+                    <div key={module.id || moduleIndex} className="border-2 border-gray-200 rounded-lg p-4 sm:p-6 bg-white">
+                      <h3 className="font-semibold text-lg text-gray-900 mb-2">
+                        Modulo {moduleIndex + 1}: {module.title}
+                      </h3>
+                      <p className="text-gray-600 text-sm mb-3">
+                        {module.description}
+                      </p>
+                      <div className="flex gap-4 text-sm text-gray-600 mb-4">
+                        <span className="flex items-center gap-1">
+                          <Clock className="w-4 h-4" />
+                          {module.estimated_hours}
+                        </span>
+                        <span className="flex items-center gap-1">
+                          <PlayCircle className="w-4 h-4" />
+                          {module.lessons.length} lezioni
+                        </span>
+                      </div>
+
+                      <div className="space-y-2">
+                        {module.lessons.map((lesson, lessonIndex) => (
+                          <div 
+                            key={lesson.id || lessonIndex}
+                            className="flex items-start gap-3 bg-gray-50 p-3 rounded-lg border border-gray-200"
+                          >
+                            {lesson.is_free ? (
+                              <PlayCircle className="w-4 h-4 text-green-700 flex-shrink-0 mt-1" />
+                            ) : (
+                              <Lock className="w-4 h-4 text-gray-400 flex-shrink-0 mt-1" />
+                            )}
+                            <div className="flex-1">
+                              <div className="flex justify-between items-start">
+                                <span className="font-medium text-sm text-gray-900">
+                                  {lessonIndex + 1}. {lesson.title}
+                                </span>
+                                <span className="text-xs text-gray-600 ml-2">
+                                  {lesson.duration}
+                                </span>
+                              </div>
+                              <p className="text-xs text-gray-600 mt-1">
+                                {lesson.description}
+                              </p>
+                              {lesson.is_free && (
+                                <span className="inline-block mt-2 px-3 py-1 bg-green-100 text-green-800 rounded-full text-xs font-semibold border border-green-200">
+                                  Anteprima gratuita
+                                </span>
+                              )}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+
+          {/* Sidebar - sticky solo su lg+ */}
+          <div className="lg:col-span-1 space-y-6">
+            <div className="bg-gray-50 rounded-lg border border-gray-200 overflow-hidden lg:sticky lg:top-6">
+              {courseData.image_url && (
+                <div className="aspect-video overflow-hidden">
+                  <img 
+                    src={courseData.image_url}
+                    alt={courseData.title}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              )}
+              <div className="p-6">
+                <div className="text-3xl font-bold text-gray-900 mb-4">
+                  {courseData.price}
+                </div>
+                <button className="w-full px-6 py-4 bg-gray-900 text-white font-semibold rounded-lg hover:bg-gray-800 transition-colors mb-3">
+                  Iscriviti al corso
+                </button>
+                <button 
+                  onClick={() => setShowBrochureModal(true)}
+                  className="w-full px-6 py-4 bg-white text-gray-900 font-semibold rounded-lg border-2 border-gray-900 hover:bg-gray-50 transition-colors flex items-center justify-center gap-2 mb-4"
+                >
+                  <Download className="w-5 h-5" />
+                  Ottieni il programma
+                </button>
+                <div className="space-y-2 text-sm">
+                  <div className="flex items-center gap-2">
+                    <CheckCircle className="w-4 h-4 text-green-700" />
+                    Accesso a vita
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle className="w-4 h-4 text-green-700" />
+                    Materiali scaricabili
+                  </div>
+                  {courseData.certification && (
+                    <div className="flex items-center gap-2">
+                      <CheckCircle className="w-4 h-4 text-green-700" />
+                      Certificato incluso
+                    </div>
+                  )}
+                  <div className="flex items-center gap-2">
+                    <CheckCircle className="w-4 h-4 text-green-700" />
+                    Supporto Q&A
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {courseData.prerequisites && courseData.prerequisites.length > 0 && (
+              <div className="bg-gray-50 rounded-lg border border-gray-200 p-6">
+                <h3 className="font-semibold text-lg text-gray-900 mb-4 flex items-center gap-2">
+                  <AlertCircle className="w-5 h-5 text-orange-700" />
+                  Prerequisiti
+                </h3>
+                <div className="space-y-3">
+                  {courseData.prerequisites.map((prereq, index) => (
+                    <div key={index} className="flex items-start gap-2">
+                      <div className={`w-2 h-2 rounded-full mt-2 flex-shrink-0 ${
+                        prereq.is_required ? 'bg-red-600' : 'bg-yellow-600'
+                      }`} />
+                      <div>
+                        <span className="font-medium text-sm text-gray-900">
+                          {prereq.title}
+                        </span>
+                        <p className="text-xs text-gray-600 mt-1">
+                          {prereq.description}
+                        </p>
+                        {prereq.is_required && (
+                          <span className="inline-block mt-1 px-2 py-0.5 bg-red-100 text-red-800 rounded-full text-xs font-semibold border border-red-200">
+                            Obbligatorio
+                          </span>
+                        )}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {courseData.target_audience && courseData.target_audience.length > 0 && (
+              <div className="bg-gray-50 rounded-lg border border-gray-200 p-6">
+                <h3 className="font-semibold text-lg text-gray-900 mb-4 flex items-center gap-2">
+                  <Users className="w-5 h-5 text-blue-700" />
+                  A chi è rivolto
+                </h3>
+                <div className="space-y-2">
+                  {courseData.target_audience.map((audience, index) => (
+                    <div key={index} className="flex items-center gap-2">
+                      <CheckCircle className="w-4 h-4 text-blue-700" />
+                      <span className="text-sm text-gray-700">{audience}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {courseData.tools_required && courseData.tools_required.length > 0 && (
+              <div className="bg-gray-50 rounded-lg border border-gray-200 p-6">
+                <h3 className="font-semibold text-lg text-gray-900 mb-4 flex items-center gap-2">
+                  <Laptop className="w-5 h-5 text-purple-700" />
+                  Strumenti necessari
+                </h3>
+                <div className="space-y-2">
+                  {courseData.tools_required.map((tool, index) => (
+                    <div key={index} className="flex items-center gap-2">
+                      <CheckCircle className="w-4 h-4 text-green-700" />
+                      <span className="text-sm text-gray-700">{tool}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {courseData.certification && (
+              <div className="bg-gray-50 rounded-lg border border-gray-200 p-6">
+                <h3 className="font-semibold text-lg text-gray-900 mb-4 flex items-center gap-2">
+                  <Award className="w-5 h-5 text-amber-700" />
+                  Certificazione
+                </h3>
+                <div className="flex items-center gap-2 mb-2">
+                  <CheckCircle className="w-4 h-4 text-green-700" />
+                  <span className="text-sm font-medium text-gray-900">
+                    Certificato di completamento
+                  </span>
+                </div>
+                {courseData.certificate_description && (
+                  <p className="text-sm text-gray-600">
+                    {courseData.certificate_description}
+                  </p>
+                )}
+              </div>
+            )}
+          </div>
+        </div>
+
+        {/* Reviews Section */}
+        {courseData.reviews && courseData.reviews.length > 0 && (
+          <div className="mt-12 bg-gray-50 rounded-lg border border-gray-200 p-6 sm:p-8">
+            <div className="mb-8">
+              <h2 className="text-2xl sm:text-3xl font-semibold text-gray-900 mb-4">
+                Recensioni degli studenti
+              </h2>
+              
+              {courseData.average_rating && (
+                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 mb-6 pb-6 border-b border-gray-200">
+                  <div className="text-center">
+                    <div className="text-5xl font-bold text-gray-900 mb-2">
+                      {courseData.average_rating.toFixed(1)}
+                    </div>
+                    <div className="flex items-center justify-center gap-1 mb-1">
+                      {[1, 2, 3, 4, 5].map((star) => (
+                        <Star 
+                          key={star}
+                          className={`w-5 h-5 ${
+                            star <= Math.round(courseData.average_rating)
+                              ? 'fill-yellow-400 text-yellow-400'
+                              : 'text-gray-300'
+                          }`}
+                        />
+                      ))}
+                    </div>
+                    <div className="text-sm text-gray-600">
+                      {courseData.reviews.length} recensioni
+                    </div>
+                  </div>
+                  
+                  <div className="flex-1 w-full">
+                    {[5, 4, 3, 2, 1].map((rating) => {
+                      const count = courseData.reviews.filter(r => r.rating === rating).length;
+                      const percentage = (count / courseData.reviews.length) * 100;
+                      return (
+                        <div key={rating} className="flex items-center gap-3 mb-2">
+                          <span className="text-sm text-gray-600 w-12">
+                            {rating} stelle
+                          </span>
+                          <div className="flex-1 h-2 bg-gray-200 rounded-full overflow-hidden">
+                            <div 
+                              className="h-full bg-yellow-400"
+                              style={{ width: `${percentage}%` }}
+                            />
+                          </div>
+                          <span className="text-sm text-gray-600 w-8">
+                            {count}
+                          </span>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              )}
+            </div>
+
+            <div className="space-y-6">
+              {courseData.reviews.map((review, index) => (
+                <div key={index} className="bg-white rounded-lg border border-gray-200 p-6">
+                  <div className="flex items-start gap-4 mb-4">
+                    <div className="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center text-gray-700 font-semibold text-lg flex-shrink-0">
+                      {review.student_name.charAt(0).toUpperCase()}
+                    </div>
+                    <div className="flex-1">
+                      <div className="flex items-center justify-between mb-2">
+                        <h4 className="font-semibold text-gray-900">
+                          {review.student_name}
+                        </h4>
+                        <span className="text-sm text-gray-500">
+                          {review.date}
+                        </span>
+                      </div>
+                      <div className="flex items-center gap-1 mb-3">
+                        {[1, 2, 3, 4, 5].map((star) => (
+                          <Star 
+                            key={star}
+                            className={`w-4 h-4 ${
+                              star <= review.rating
+                                ? 'fill-yellow-400 text-yellow-400'
+                                : 'text-gray-300'
+                            }`}
+                          />
+                        ))}
+                      </div>
+                      <p className="text-gray-700 leading-relaxed">
+                        {review.comment}
+                      </p>
+                      {review.verified && (
+                        <div className="mt-3 inline-flex items-center gap-1 px-3 py-1 bg-green-100 text-green-800 rounded-full text-xs font-semibold border border-green-200">
+                          <CheckCircle className="w-3 h-3" />
+                          Acquisto verificato
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+};
+
+export default CourseDetailPage;
+
+=== src/components/CorporateTrainingPage.jsx ===
+import React from 'react';
+import { Building2, ArrowLeft, Users, MapPin, Clock, Target, CheckCircle, Briefcase, Zap } from 'lucide-react';
+
+const CorporateTrainingPage = ({ onBack, onCourseSelect }) => {
+  const trainingOptions = [
+    {
+      id: 'workshop-python-avanzato',
+      title: 'Workshop Python Avanzato',
+      description: 'Approfondimento su Python per Data Science: pandas, numpy, gestione dati complessi e best practices.',
+      duration: '1-2 giorni',
+      audience: 'Developer, Data Analyst',
+      topics: ['Pandas avanzato', 'NumPy', 'Data Cleaning', 'Performance optimization'],
+      icon: '🐍'
+    },
+    {
+      id: 'workshop-ml-fundamentals',
+      title: 'Machine Learning Fundamentals',
+      description: 'Introduzione pratica al Machine Learning: algoritmi supervisionati, unsupervised, valutazione modelli.',
+      duration: '2-3 giorni',
+      audience: 'Team tecnici, Manager',
+      topics: ['Supervised Learning', 'Unsupervised Learning', 'Model Evaluation', 'Scikit-learn'],
+      icon: '🤖'
+    },
+    {
+      id: 'workshop-deep-learning',
+      title: 'Deep Learning & Neural Networks',
+      description: 'Corso avanzato su reti neurali, CNN, RNN e applicazioni pratiche con TensorFlow/PyTorch.',
+      duration: '3-5 giorni',
+      audience: 'Data Scientists, ML Engineers',
+      topics: ['Neural Networks', 'CNN', 'RNN', 'Transfer Learning'],
+      icon: '🧠'
+    },
+    {
+      id: 'workshop-data-science-business',
+      title: 'Data Science per il Business',
+      description: 'Come tradurre dati in decisioni strategiche: analisi, visualizzazione e comunicazione efficace.',
+      duration: '1 giorno',
+      audience: 'Manager, Business Analyst',
+      topics: ['Business Analytics', 'Data Visualization', 'KPI', 'Storytelling con i dati'],
+      icon: '📊'
+    },
+    {
+      id: 'workshop-mlops',
+      title: 'MLOps & Production ML',
+      description: 'Best practices per portare modelli ML in produzione: deployment, monitoring, versioning.',
+      duration: '2 giorni',
+      audience: 'ML Engineers, DevOps',
+      topics: ['Model Deployment', 'CI/CD per ML', 'Monitoring', 'MLflow'],
+      icon: '⚙️'
+    },
+    {
+      id: 'workshop-bioinformatics-hpc',
+      title: 'Bioinformatics & HPC',
+      description: 'Analisi di dati biologici su larga scala con tecniche di High Performance Computing.',
+      duration: '2-3 giorni',
+      audience: 'Ricercatori, Bioinformatici',
+      topics: ['Transcriptomics', 'HPC', 'Parallel Computing', 'Data Analysis'],
+      icon: '🧬'
+    }
+  ];
+
+  const modalities = [
+    {
+      title: 'In Presenza',
+      icon: MapPin,
+      description: 'Formazione presso la vostra sede con massima interazione',
+      features: ['Ambiente familiare', 'Team building', 'Hands-on immediato']
+    },
+    {
+      title: 'Online Live',
+      icon: Zap,
+      description: 'Sessioni sincrone via videocall con interazione real-time',
+      features: ['Flessibilità geografica', 'Recording inclusi', 'Q&A in tempo reale']
+    },
+    {
+      title: 'Ibrido',
+      icon: Briefcase,
+      description: 'Mix di sessioni in presenza e online per massima flessibilità',
+      features: ['Best of both', 'Adattabile', 'Follow-up online']
+    }
+  ];
+
+  return (
+    <div className="min-h-screen bg-white">
+      <div className="container mx-auto px-3 sm:px-4 py-6 sm:py-12 max-w-6xl">
+        {/* Header */}
+        <div className="mb-8 sm:mb-12">
+          <button
+            onClick={onBack}
+            className="inline-flex items-center gap-2 text-gray-700 hover:text-gray-900 font-medium mb-4 sm:mb-6 text-sm sm:text-base"
+          >
+            <ArrowLeft className="w-4 h-4 sm:w-5 sm:h-5" />
+            Torna alla home
+          </button>
+          
+          <div className="flex items-center gap-3 sm:gap-4 mb-3 sm:mb-4">
+            <div className="p-2.5 sm:p-4 bg-gray-900 rounded-lg">
+              <Building2 className="text-white w-6 h-6 sm:w-10 sm:h-10" />
+            </div>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900">
+              Formazione Aziendale
+            </h1>
+          </div>
+          <p className="text-base sm:text-lg text-gray-600 sm:ml-20">
+            Workshop e percorsi formativi su misura per la tua organizzazione
+          </p>
+        </div>
+
+        {/* Value Proposition */}
+        <div className="mb-8 sm:mb-12 space-y-6">
+          <div className="text-center space-y-4">
+            <p className="text-2xl md:text-3xl font-bold text-gray-900 leading-tight">
+              Formazione che genera competenze concrete, non solo certificati
+            </p>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Ogni corso è personalizzato sulle esigenze della tua azienda, con un approccio 
+              pratico che bilancia teoria solida e hands-on intensivo
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div className="p-6 bg-gray-50 rounded-lg">
+              <div className="flex items-center gap-3 mb-3">
+                <Target className="w-6 h-6 text-gray-900" />
+                <h3 className="text-lg font-semibold text-gray-900">Contenuti su misura</h3>
+              </div>
+              <p className="text-gray-700">
+                Workshop progettati sulle specifiche esigenze del tuo team e del tuo settore
+              </p>
+            </div>
+            <div className="p-6 bg-gray-50 rounded-lg">
+              <div className="flex items-center gap-3 mb-3">
+                <Users className="w-6 h-6 text-gray-900" />
+                <h3 className="text-lg font-semibold text-gray-900">Piccoli gruppi</h3>
+              </div>
+              <p className="text-gray-700">
+                Sessioni con numeri ridotti per garantire attenzione individuale e interazione
+              </p>
+            </div>
+            <div className="p-6 bg-gray-50 rounded-lg">
+              <div className="flex items-center gap-3 mb-3">
+                <Zap className="w-6 h-6 text-gray-900" />
+                <h3 className="text-lg font-semibold text-gray-900">Risultati rapidi</h3>
+              </div>
+              <p className="text-gray-700">
+                Competenze immediatamente applicabili al termine di ogni sessione formativa
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Modalities */}
+        <div className="mb-8 sm:mb-12">
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6">
+            Modalità di Erogazione
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {modalities.map((modality, index) => {
+              const Icon = modality.icon;
+              return (
+                <div key={index} className="p-6 bg-gray-50 rounded-lg border border-gray-200">
+                  <div className="flex items-center gap-3 mb-3">
+                    <Icon className="w-6 h-6 text-gray-900" />
+                    <h3 className="text-lg font-semibold text-gray-900">{modality.title}</h3>
+                  </div>
+                  <p className="text-gray-700 mb-4">{modality.description}</p>
+                  <ul className="space-y-2">
+                    {modality.features.map((feature, idx) => (
+                      <li key={idx} className="flex items-center gap-2 text-sm text-gray-700">
+                        <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* Training Options */}
+        <div className="mb-8 sm:mb-12">
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6">
+            Workshop e Percorsi Disponibili
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {trainingOptions.map((training, index) => (
+              <div key={index} className="bg-gray-50 rounded-lg border border-gray-200 overflow-hidden">
+                <div className="p-6 bg-white border-b border-gray-200">
+                  <div className="flex items-center gap-4 mb-3">
+                    <span className="text-4xl">{training.icon}</span>
+                    <h3 className="text-xl font-semibold text-gray-900">{training.title}</h3>
+                  </div>
+                  <p className="text-gray-700">{training.description}</p>
+                </div>
+                
+                <div className="p-6">
+                  <div className="grid grid-cols-2 gap-4 mb-4">
+                    <div className="flex items-center gap-2">
+                      <Clock className="w-4 h-4 text-gray-900" />
+                      <span className="text-sm font-medium text-gray-700">{training.duration}</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Users className="w-4 h-4 text-gray-900" />
+                      <span className="text-sm font-medium text-gray-700">{training.audience}</span>
+                    </div>
+                  </div>
+                  
+                  <div className="mb-4">
+                    <p className="text-xs font-semibold text-gray-900 mb-2">Argomenti principali:</p>
+                    <div className="flex flex-wrap gap-2">
+                      {training.topics.map((topic, idx) => (
+                        <span key={idx} className="px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs font-medium border border-blue-200">
+                          {topic}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                  
+                  <button
+                    onClick={() => onCourseSelect(training.id)}
+                    className="w-full px-4 py-3 bg-gray-900 text-white text-sm font-semibold rounded-lg hover:bg-gray-800 transition-colors"
+                  >
+                    Scopri di più
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Philosophy */}
+        <div className="p-8 bg-gray-900 text-white rounded-lg mb-8">
+          <p className="text-lg leading-relaxed">
+            Il mio approccio formativo unisce rigore scientifico e pragmatismo: ogni sessione è 
+            fondata su solide basi teoriche ma orientata a risolvere problemi reali. Non offro 
+            scorciatoie o formule magiche, ma competenze autentiche che il tuo team potrà 
+            applicare immediatamente.
+          </p>
+        </div>
+
+        {/* CTA Section */}
+        <div className="bg-gray-50 rounded-lg p-6 sm:p-8 text-center border-2 border-gray-200">
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
+            Interessato? Parliamone!
+          </h2>
+          <p className="text-base sm:text-lg text-gray-700 mb-6 max-w-2xl mx-auto">
+            Ogni azienda ha esigenze uniche. Contattami per discutere un programma formativo 
+            personalizzato per il tuo team. Fissiamo una call conoscitiva gratuita.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="mailto:lorenzo.arcioni2000@gmail.com?subject=Richiesta Formazione Aziendale"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gray-900 text-white font-semibold rounded-lg hover:bg-gray-800 transition-colors"
+            >
+              Richiedi Preventivo
+            </a>
+            <a
+              href="#contatti"
+              onClick={(e) => {
+                e.preventDefault();
+                onBack();
+                setTimeout(() => {
+                  document.getElementById('contatti')?.scrollIntoView({ behavior: 'smooth' });
+                }, 100);
+              }}
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white border-2 border-gray-900 text-gray-900 font-semibold rounded-lg hover:bg-gray-50 transition-colors"
+            >
+              Prenota Consulenza Gratuita
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default CorporateTrainingPage;
+
+=== src/components/PortfolioHubSection.jsx ===
+import React from 'react';
+import { Rocket, FileText, Award, Share2 } from 'lucide-react';
+
+const PortfolioHubSection = ({ onNavigate }) => {
+  const sections = [
+    {
+      id: 'progetti',
+      title: 'Progetti',
+      icon: Rocket,
+      description: 'Esplora i miei progetti di Machine Learning e Data Science',
+      count: '5+'
+    },
+    {
+      id: 'pubblicazioni',
+      title: 'Pubblicazioni',
+      icon: FileText,
+      description: 'Scopri le mie ricerche pubblicate in ambito scientifico',
+      count: '1'
+    },
+    {
+      id: 'certificazioni',
+      title: 'Certificazioni',
+      icon: Award,
+      description: 'Visualizza le mie certificazioni professionali',
+      count: '5'
+    },
+    {
+      id: 'social',
+      title: 'Social & Community',
+      icon: Share2,
+      description: 'Le mie attività sui social e nella community tech',
+      count: '40+ ⭐'
+    }
+  ];
+
+  return (
+    <section className="py-16 px-4">
+      <div className="max-w-6xl mx-auto">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            Il Mio Portfolio
+          </h2>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            Progetti, ricerche, certificazioni e attività nella community
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {sections.map((section) => {
+            const Icon = section.icon;
+            return (
+              <button
+                key={section.id}
+                onClick={() => onNavigate(section.id)}
+                className="bg-gray-50 rounded-lg p-8 text-left border-2 border-gray-200 hover:border-gray-900 transition-colors"
+              >
+                <div className="flex items-start justify-between mb-6">
+                  <div className="p-4 bg-white rounded-lg border border-gray-200 inline-block">
+                    <Icon className="text-gray-900 w-10 h-10" />
+                  </div>
+                  <span className="px-4 py-2 bg-white rounded-full text-sm font-semibold text-gray-900 border border-gray-200">
+                    {section.count}
+                  </span>
+                </div>
+                
+                <h3 className="text-2xl font-semibold text-gray-900 mb-3">
+                  {section.title}
+                </h3>
+                
+                <p className="text-gray-700 text-base leading-relaxed mb-6">
+                  {section.description}
+                </p>
+                
+                <div className="flex items-center text-gray-900 font-medium">
+                  <span>Esplora</span>
+                  <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </div>
+              </button>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default PortfolioHubSection;
+
+=== src/components/ConsultingPage.jsx ===
+import React from 'react';
+import { Lightbulb, ArrowLeft, Code, Brain, LineChart, FileCode, Rocket, Shield, CheckCircle2 } from 'lucide-react';
+
+const ConsultingPage = ({ onBack }) => {
+  const services = [
+    {
+      title: 'Code Review & Ottimizzazione',
+      icon: Code,
+      description: 'Analisi approfondita del codice ML/Data Science con suggerimenti per performance, leggibilità e best practices.',
+      features: [
+        'Review completa del codice Python',
+        'Ottimizzazione algoritmi e performance',
+        'Refactoring con design patterns',
+        'Documentazione e testing'
+      ]
+    },
+    {
+      title: 'Architettura ML Systems',
+      icon: Brain,
+      description: 'Progettazione di architetture ML scalabili, dalla prototipazione al deployment in produzione.',
+      features: [
+        'Design architetturale end-to-end',
+        'Scelta tech stack ottimale',
+        'Scalabilità e performance',
+        'MLOps best practices'
+      ]
+    },
+    {
+      title: 'Analisi Dati & Strategia',
+      icon: LineChart,
+      description: 'Trasformo i tuoi dati in insight actionable per decisioni di business data-driven.',
+      features: [
+        'Analisi esplorativa (EDA)',
+        'Dashboard e visualizzazioni',
+        'Identificazione KPI rilevanti',
+        'Report strategici'
+      ]
+    },
+    {
+      title: 'Sviluppo Progetti ML',
+      icon: Rocket,
+      description: 'Supporto hands-on nello sviluppo di progetti ML completi, dall\'idea al deploy.',
+      features: [
+        'Prototipazione rapida',
+        'Feature engineering',
+        'Model selection & tuning',
+        'Deployment e monitoring'
+      ]
+    },
+    {
+      title: 'Mentorship 1-on-1',
+      icon: Shield,
+      description: 'Percorsi personalizzati di crescita professionale in ML e Data Science.',
+      features: [
+        'Sessioni individuali dedicate',
+        'Piano di studio personalizzato',
+        'Code review progetti personali',
+        'Career guidance'
+      ]
+    },
+    {
+      title: 'Revisione Paper & Ricerca',
+      icon: FileCode,
+      description: 'Supporto nella scrittura e revisione di paper scientifici in ambito ML e Bioinformatica.',
+      features: [
+        'Review metodologia e risultati',
+        'Feedback su chiarezza espositiva',
+        'Suggerimenti sperimentali',
+        'Preparazione submission'
+      ]
+    }
+  ];
+
+  const processSteps = [
+    {
+      number: '01',
+      title: 'Consulenza Iniziale Gratuita',
+      description: 'Call di 30 minuti per capire le tue esigenze e valutare se posso aiutarti'
+    },
+    {
+      number: '02',
+      title: 'Proposta & Preventivo',
+      description: 'Ricevi una proposta dettagliata con scope, tempistiche e costi'
+    },
+    {
+      number: '03',
+      title: 'Kick-off & Pianificazione',
+      description: 'Definiamo insieme gli obiettivi e il piano di lavoro operativo'
+    },
+    {
+      number: '04',
+      title: 'Esecuzione & Follow-up',
+      description: 'Lavoro sul progetto con aggiornamenti regolari e supporto continuo'
+    }
+  ];
+
+  return (
+    <div className="min-h-screen bg-white">
+      <div className="container mx-auto px-3 sm:px-4 py-6 sm:py-12 max-w-6xl">
+        {/* Header */}
+        <div className="mb-8 sm:mb-12">
+          <button
+            onClick={onBack}
+            className="inline-flex items-center gap-2 text-gray-700 hover:text-gray-900 font-medium mb-4 sm:mb-6 text-sm sm:text-base"
+          >
+            <ArrowLeft className="w-4 h-4 sm:w-5 sm:h-5" />
+            Torna alla home
+          </button>
+          
+          <div className="flex items-center gap-3 sm:gap-4 mb-3 sm:mb-4">
+            <div className="p-2.5 sm:p-4 bg-gray-900 rounded-lg">
+              <Lightbulb className="text-white w-6 h-6 sm:w-10 sm:h-10" />
+            </div>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900">
+              Consulenze
+            </h1>
+          </div>
+          <p className="text-base sm:text-lg text-gray-600 sm:ml-20">
+            Supporto tecnico e strategico per i tuoi progetti di Machine Learning e Data Science
+          </p>
+        </div>
+
+        {/* Hero Value Proposition */}
+        <div className="mb-8 sm:mb-12 space-y-6">
+          <div className="text-center space-y-4">
+            <p className="text-2xl md:text-3xl font-bold text-gray-900 leading-tight">
+              Oltre la teoria: soluzioni concrete per sfide reali
+            </p>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Esperienza pratica in Machine Learning, HPC e Bioinformatica per portare i tuoi progetti al livello successivo
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div className="p-6 bg-gray-50 rounded-lg border border-gray-200 text-center">
+              <div className="text-3xl font-bold text-gray-900 mb-1">5+</div>
+              <div className="text-sm text-gray-700">Anni di esperienza</div>
+            </div>
+            <div className="p-6 bg-gray-50 rounded-lg border border-gray-200 text-center">
+              <div className="text-3xl font-bold text-gray-900 mb-1">100%</div>
+              <div className="text-sm text-gray-700">Approccio pratico</div>
+            </div>
+            <div className="p-6 bg-gray-50 rounded-lg border border-gray-200 text-center">
+              <div className="text-3xl font-bold text-gray-900 mb-1">24h</div>
+              <div className="text-sm text-gray-700">Risposta media</div>
+            </div>
+          </div>
+        </div>
+
+        {/* Services Grid */}
+        <div className="mb-8 sm:mb-12">
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6">
+            Servizi di Consulenza
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {services.map((service, index) => {
+              const Icon = service.icon;
+              return (
+                <div 
+                  key={index}
+                  className="bg-gray-50 rounded-lg border border-gray-200 overflow-hidden"
+                >
+                  <div className="p-6 bg-white border-b border-gray-200">
+                    <Icon className="w-10 h-10 text-gray-900 mb-3" />
+                    <h3 className="text-xl font-semibold text-gray-900">{service.title}</h3>
+                  </div>
+                  
+                  <div className="p-6">
+                    <p className="text-gray-700 mb-4 text-sm leading-relaxed">
+                      {service.description}
+                    </p>
+                    <ul className="space-y-2">
+                      {service.features.map((feature, idx) => (
+                        <li key={idx} className="flex items-start gap-2 text-sm text-gray-700">
+                          <CheckCircle2 className="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" />
+                          <span>{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* Process */}
+        <div className="mb-8 sm:mb-12">
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6">
+            Come Funziona
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {processSteps.map((step, index) => (
+              <div key={index} className="relative">
+                <div className="bg-gray-50 rounded-lg border border-gray-200 p-6 h-full">
+                  <div className="text-5xl font-bold text-gray-200 mb-2">{step.number}</div>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">{step.title}</h3>
+                  <p className="text-sm text-gray-700">{step.description}</p>
+                </div>
+                {index < processSteps.length - 1 && (
+                  <div className="hidden lg:block absolute top-1/2 -right-3 w-6 h-0.5 bg-gray-300"></div>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Pricing Info */}
+        <div className="bg-gray-50 rounded-lg border-2 border-gray-200 p-6 sm:p-8 mb-8 sm:mb-12">
+          <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">
+            Modalità e Tariffe
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            <div className="bg-white rounded-lg border border-gray-200 p-6">
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">📞 Consulenza Oraria</h3>
+              <p className="text-gray-700 mb-4 text-sm">
+                Sessioni singole da 1-2 ore per questioni specifiche, code review, o supporto puntuale.
+              </p>
+              <p className="text-2xl font-bold text-gray-900">Su richiesta</p>
+            </div>
+            <div className="bg-white rounded-lg border border-gray-200 p-6">
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">🚀 Progetti</h3>
+              <p className="text-gray-700 mb-4 text-sm">
+                Collaborazione su progetti più ampi con preventivo personalizzato basato su scope e tempistiche.
+              </p>
+              <p className="text-2xl font-bold text-gray-900">Preventivo custom</p>
+            </div>
+          </div>
+          <p className="text-center text-gray-700 mt-6 text-sm">
+            💡 <strong>Prima consulenza sempre gratuita</strong> per valutare insieme se posso aiutarti
+          </p>
+        </div>
+
+        {/* Philosophy */}
+        <div className="p-8 bg-gray-900 text-white rounded-lg mb-8">
+          <p className="text-lg leading-relaxed">
+            Non ti offro solo consigli generici. Metto a disposizione la mia esperienza pratica per 
+            aiutarti a risolvere problemi concreti, ottimizzare il tuo codice, e portare i tuoi progetti 
+            al livello successivo. Ogni consulenza è guidata da rigore scientifico e orientata a 
+            risultati misurabili.
+          </p>
+        </div>
+
+        {/* CTA */}
+        <div className="bg-gray-50 rounded-lg border-2 border-gray-200 p-6 sm:p-8 text-center">
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
+            Hai un progetto in mente?
+          </h2>
+          <p className="text-base sm:text-lg text-gray-700 mb-6 max-w-2xl mx-auto">
+            Che tu abbia bisogno di una singola code review o di supporto continuativo, 
+            parliamone! Fissiamo una call gratuita di 30 minuti per capire come posso aiutarti.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="mailto:lorenzo.arcioni2000@gmail.com?subject=Richiesta Consulenza"
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gray-900 text-white font-semibold rounded-lg hover:bg-gray-800 transition-colors"
+            >
+              Scrivimi una Email
+            </a>
+            <a
+              href="#contatti"
+              onClick={(e) => {
+                e.preventDefault();
+                onBack();
+                setTimeout(() => {
+                  document.getElementById('contatti')?.scrollIntoView({ behavior: 'smooth' });
+                }, 100);
+              }}
+              className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white border-2 border-gray-900 text-gray-900 font-semibold rounded-lg hover:bg-gray-50 transition-colors"
+            >
+              Prenota Call Gratuita
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default ConsultingPage;
+
+=== src/components/CertificationsPage.jsx ===
+import React from 'react';
+import { Award, ExternalLink, ArrowLeft, Calendar, CheckCircle } from 'lucide-react';
+
+const CertificationsPage = ({ onBack }) => {
+  const certifications = [
+    {
+      title: 'Introduzione al Machine Learning',
+      issuer: 'Kaggle',
+      date: 'Feb 2023',
+      link: 'https://drive.google.com/file/d/1_KthHpXzeT6ec5f_kKwvx20SOzrhyjc1/view',
+      icon: '🤖',
+      skills: ['Supervised Learning', 'Model Evaluation', 'Python']
+    },
+    {
+      title: 'Pandas',
+      issuer: 'Kaggle',
+      date: 'Feb 2023',
+      link: 'https://drive.google.com/file/d/13nl3T5cwl8_T8bcaqGSq5d11TTN6MVUv/view',
+      icon: '🐼',
+      skills: ['Data Manipulation', 'Data Analysis', 'Python']
+    },
+    {
+      title: 'Data Science for Bioinformatics',
+      issuer: 'Deep Learning Italia',
+      date: 'Gen 2023',
+      link: '/images/lorenzo-arcioni-bio-certification.jpeg',
+      icon: '🧬',
+      skills: ['Bioinformatics', 'Data Science', 'Genomics']
+    },
+    {
+      title: 'Fondamenti di Python',
+      issuer: 'HackerRank',
+      date: 'Set 2020',
+      link: 'https://www.hackerrank.com/certificates/aa03010a7d90',
+      icon: '🐍',
+      skills: ['Python', 'Programming', 'Data Structures']
+    },
+    {
+      title: 'CISCO CCNA',
+      issuer: 'Cisco Networking Academy',
+      date: 'Set 2019',
+      icon: '🌐',
+      skills: ['Networking', 'TCP/IP', 'Routing']
+    }
+  ];
+
+  return (
+    <div className="min-h-screen bg-white">
+      <div className="container mx-auto px-3 sm:px-4 py-6 sm:py-12 max-w-6xl">
+        {/* Header */}
+        <div className="mb-8 sm:mb-12">
+          <button
+            onClick={onBack}
+            className="inline-flex items-center gap-2 text-gray-700 hover:text-gray-900 font-medium mb-4 sm:mb-6 text-sm sm:text-base"
+          >
+            <ArrowLeft className="w-4 h-4 sm:w-5 sm:h-5" />
+            Torna alla home
+          </button>
+          
+          <div className="flex items-center gap-3 sm:gap-4 mb-3 sm:mb-4">
+            <div className="p-2.5 sm:p-4 bg-gray-900 rounded-lg">
+              <Award className="text-white w-6 h-6 sm:w-10 sm:h-10" />
+            </div>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900">
+              Certificazioni
+            </h1>
+          </div>
+          <p className="text-base sm:text-lg text-gray-600 sm:ml-20">
+            Le mie certificazioni professionali e riconoscimenti nel campo tech
+          </p>
+        </div>
+
+        {/* Hero Statement */}
+        <div className="mb-8 sm:mb-12 text-center space-y-4">
+          <p className="text-2xl md:text-3xl font-bold text-gray-900 leading-tight">
+            Formazione continua: investire in competenze verificate
+          </p>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            Certificazioni che attestano competenze concrete in programmazione, data science e networking
+          </p>
+        </div>
+
+        {/* Certifications Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mb-8 sm:mb-12">
+          {certifications.map((cert, index) => (
+            <div 
+              key={index}
+              className="bg-gray-50 rounded-lg border border-gray-200 overflow-hidden"
+            >
+              {/* Header */}
+              <div className="relative h-24 sm:h-32 bg-gray-900 overflow-hidden">
+                <div className="relative h-full flex items-center justify-center">
+                  <span className="text-4xl sm:text-6xl">
+                    {cert.icon}
+                  </span>
+                </div>
+              </div>
+              
+              {/* Content */}
+              <div className="p-4 sm:p-6 bg-white">
+                <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-gray-900 mb-2 sm:mb-3">
+                  {cert.title}
+                </h3>
+                
+                <div className="flex items-center gap-2 text-gray-700 mb-3 sm:mb-4">
+                  <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-500" />
+                  <span className="font-medium text-sm sm:text-base">{cert.issuer}</span>
+                </div>
+                
+                <div className="flex items-center gap-2 text-gray-600 mb-3 sm:mb-4">
+                  <Calendar className="w-3 h-3 sm:w-4 sm:h-4" />
+                  <span className="text-xs sm:text-sm">Emesso {cert.date}</span>
+                </div>
+                
+                {/* Skills */}
+                <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-3 sm:mb-4">
+                  {cert.skills.map((skill, i) => (
+                    <span key={i} className="px-2 sm:px-3 py-0.5 sm:py-1 bg-blue-50 text-blue-700 border border-blue-200 rounded-full text-xs font-medium">
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+                
+                {/* Button */}
+                {cert.link && (
+                  <a 
+                    href={cert.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-2 w-full px-4 sm:px-6 py-2.5 sm:py-3 bg-gray-900 text-white text-sm sm:text-base font-semibold rounded-lg hover:bg-gray-800 transition-colors"
+                  >
+                    Mostra credenziale
+                    <ExternalLink className="w-4 h-4 sm:w-5 sm:h-5" />
+                  </a>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Stats Section */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 mb-8">
+          <div className="bg-gray-50 rounded-lg border border-gray-200 p-4 sm:p-6 text-center">
+            <div className="text-3xl sm:text-4xl font-bold text-gray-900 mb-1 sm:mb-2">5</div>
+            <div className="text-sm sm:text-base text-gray-700 font-medium">Certificazioni Ottenute</div>
+          </div>
+          <div className="bg-gray-50 rounded-lg border border-gray-200 p-4 sm:p-6 text-center">
+            <div className="text-3xl sm:text-4xl font-bold text-gray-900 mb-1 sm:mb-2">4</div>
+            <div className="text-sm sm:text-base text-gray-700 font-medium">Organizzazioni Riconosciute</div>
+          </div>
+          <div className="bg-gray-50 rounded-lg border border-gray-200 p-4 sm:p-6 text-center">
+            <div className="text-3xl sm:text-4xl font-bold text-gray-900 mb-1 sm:mb-2">2023</div>
+            <div className="text-sm sm:text-base text-gray-700 font-medium">Anno Ultima Certificazione</div>
+          </div>
+        </div>
+
+        {/* Philosophy */}
+        <div className="p-8 bg-gray-900 text-white rounded-lg">
+          <p className="text-lg leading-relaxed">
+            Le certificazioni rappresentano tappe concrete nel mio percorso di formazione continua. 
+            Ogni credenziale non è solo un riconoscimento formale, ma testimonia ore di studio, pratica 
+            e impegno per padroneggiare competenze specifiche. Dall'analisi dati con Pandas al networking 
+            con CCNA, ogni certificazione aggiunge strumenti concreti al mio toolkit professionale.
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default CertificationsPage;
+
+=== src/components/EducationSection.jsx ===
+import React from 'react';
+import { GraduationCap, Building2, Award, School } from 'lucide-react';
+
+const EducationSection = () => {
+  const education = [
+    {
+      icon: Building2,
+      institution: 'Università La Sapienza',
+      degree: 'Laurea Magistrale in Computer Science',
+      status: 'In corso',
+      period: '2023 - Presente'
+    },
+    {
+      icon: Award,
+      institution: 'Neural Academy',
+      degree: 'Master Professionale in Data Science',
+      period: '2023'
+    },
+    {
+      icon: Building2,
+      institution: 'Università La Sapienza',
+      degree: 'Laurea Triennale in Informatica',
+      grade: '110/110L',
+      period: '2020 - 2023'
+    },
+    {
+      icon: School,
+      institution: 'ITT LS B. Pascal - Roma',
+      degree: 'Diploma in Informatica e Telecomunicazioni',
+      grade: '100/100',
+      period: '2014 - 2019'
+    }
+  ];
+
+  return (
+    <section className="section-container" id="formazione">
+      <h2 className="section-title">
+        <div className="icon-wrapper">
+          <GraduationCap className="text-gray-900" size={36} />
+        </div>
+        Formazione
+      </h2>
+
+      <div className="space-y-6">
+        {education.map((edu, index) => {
+          const Icon = edu.icon;
+          return (
+            <div 
+              key={index}
+              className="p-6 bg-gray-50 rounded-lg flex gap-4"
+            >
+              <div className="flex-shrink-0">
+                <Icon className="w-12 h-12 text-gray-700" />
+              </div>
+              <div className="flex-1">
+                <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-1 mb-1">
+                  <h3 className="text-lg font-semibold text-gray-900">
+                    {edu.institution}
+                  </h3>
+                  <span className="text-sm text-gray-600">
+                    {edu.period}
+                  </span>
+                </div>
+                <p className="text-gray-700 mb-1">
+                  {edu.degree}
+                </p>
+                {edu.grade && (
+                  <p className="text-sm font-semibold text-gray-900">
+                    {edu.grade}
+                  </p>
+                )}
+                {edu.status && (
+                  <p className="text-sm text-gray-600">
+                    {edu.status}
+                  </p>
+                )}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </section>
+  );
+};
+
+export default EducationSection;
+
+=== src/components/SocialCommunityPage.jsx ===
+import React from 'react';
+import { Share2, ArrowLeft, BookOpen, Github, Linkedin, Award, TrendingUp, ExternalLink } from 'lucide-react';
+
+const SocialCommunityPage = ({ onBack }) => {
+  const mediumArticles = [
+    {
+      title: 'Deep Learning per la Classificazione sul Dataset RealWaste',
+      excerpt: 'Approccio innovativo usando transfer learning e CNN personalizzate per la classificazione dei rifiuti.',
+      link: 'https://medium.com/@lorenzo.arcioni2000/deep-learning-per-la-classificazione-sul-dataset-realwaste-db6367f5ab19',
+      date: '2024',
+      views: '1.2k',
+      image: 'https://cdn-images-1.medium.com/max/800/1*iAOh8xMffpG_9Rzl2ZsYXw.png'
+    },
+    {
+      title: 'HPC e Machine Learning: Accelerare l\'Annotazione del Trascrittoma',
+      excerpt: 'Come utilizzare supercomputer per ridurre i tempi di elaborazione da giorni a ore.',
+      link: '#',
+      date: '2024',
+      views: '850',
+      image: '/images/project-hpc-t-annotator.jpeg'
+    }
+  ];
+
+  const githubProjects = [
+    {
+      name: 'HPC-T-Annotator',
+      description: 'Tool HPC per annotazione parallela del trascrittoma',
+      stars: 15,
+      language: 'Python',
+      link: 'https://github.com/lorenzo-arcioni/HPC-T-Annotator'
+    },
+    {
+      name: 'ICR Age-Related Conditions',
+      description: 'Top 2% Kaggle - Medaglia d\'Argento',
+      stars: 8,
+      language: 'Python',
+      link: 'https://github.com/lorenzo-arcioni/icr-identify-age-related-conditions'
+    },
+    {
+      name: 'Water Potability Analysis',
+      description: 'ML per predire la potabilità dell\'acqua',
+      stars: 5,
+      language: 'Python',
+      link: 'https://github.com/lorenzo-arcioni/water-potability-analysis'
+    },
+    {
+      name: 'BioSwiftAnalytics',
+      description: 'Suite di notebook per analisi dati biologici',
+      stars: 12,
+      language: 'Jupyter Notebook',
+      link: 'https://github.com/lorenzo-arcioni/BioSwiftAnalytics'
+    }
+  ];
+
+  const kaggleAchievements = [
+    {
+      title: 'ICR - Identifying Age-Related Conditions',
+      achievement: 'Silver Medal - Top 2%',
+      rank: '85th / 6,436',
+      icon: '🥈'
+    },
+    {
+      title: 'Competitions Participated',
+      achievement: '5+ Competizioni',
+      rank: 'Expert Tier',
+      icon: '🏆'
+    }
+  ];
+
+  const stats = [
+    { label: 'GitHub Stars', value: '40+', icon: Github },
+    { label: 'Medium Followers', value: '500+', icon: BookOpen },
+    { label: 'Kaggle Rank', value: 'Top 2%', icon: Award },
+    { label: 'LinkedIn Connections', value: '1k+', icon: Linkedin }
+  ];
+
+  return (
+    <div className="min-h-screen bg-white">
+      <div className="container mx-auto px-3 sm:px-4 py-6 sm:py-12 max-w-6xl">
+        {/* Header */}
+        <div className="mb-8 sm:mb-12">
+          <button
+            onClick={onBack}
+            className="inline-flex items-center gap-2 text-gray-700 hover:text-gray-900 font-medium mb-4 sm:mb-6 text-sm sm:text-base"
+          >
+            <ArrowLeft className="w-4 h-4 sm:w-5 sm:h-5" />
+            Torna alla home
+          </button>
+          
+          <div className="flex items-center gap-3 sm:gap-4 mb-3 sm:mb-4">
+            <div className="p-2.5 sm:p-4 bg-gray-900 rounded-lg">
+              <Share2 className="text-white w-6 h-6 sm:w-10 sm:h-10" />
+            </div>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900">
+              Social & Community
+            </h1>
+          </div>
+          <p className="text-base sm:text-lg text-gray-600 sm:ml-20">
+            Le mie attività nella community tech: articoli, progetti open-source e competizioni
+          </p>
+        </div>
+
+        {/* Hero Statement */}
+        <div className="mb-8 sm:mb-12 text-center space-y-4">
+          <p className="text-2xl md:text-3xl font-bold text-gray-900 leading-tight">
+            Condividere conoscenza per far crescere la community
+          </p>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            Open-source, articoli tecnici e competizioni: ogni contributo è un'opportunità per imparare insieme
+          </p>
+        </div>
+
+        {/* Stats Overview */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8 sm:mb-12">
+          {stats.map((stat, index) => {
+            const Icon = stat.icon;
+            return (
+              <div key={index} className="bg-gray-50 border border-gray-200 rounded-lg p-6 text-center">
+                <Icon className="w-8 h-8 mx-auto mb-3 text-gray-900" />
+                <div className="text-3xl font-bold text-gray-900 mb-1">{stat.value}</div>
+                <div className="text-sm text-gray-600">{stat.label}</div>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Medium Articles */}
+        <div className="mb-8 sm:mb-12">
+          <div className="flex items-center gap-3 mb-6">
+            <BookOpen className="w-8 h-8 text-gray-900" />
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">
+              Articoli su Medium
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {mediumArticles.map((article, index) => (
+              <a
+                key={index}
+                href={article.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-gray-50 rounded-lg border border-gray-200 overflow-hidden hover:border-gray-300 transition-colors"
+              >
+                <div className="relative h-48 overflow-hidden">
+                  <img 
+                    src={article.image}
+                    alt={article.title}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                  <div className="absolute bottom-4 left-4 right-4">
+                    <span className="inline-block px-3 py-1 bg-white text-gray-900 text-xs font-semibold rounded-full border border-gray-200">
+                      {article.date} • {article.views} views
+                    </span>
+                  </div>
+                </div>
+                <div className="p-6 bg-white">
+                  <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                    {article.title}
+                  </h3>
+                  <p className="text-gray-700 text-sm mb-4 line-clamp-2">
+                    {article.excerpt}
+                  </p>
+                  <div className="flex items-center text-gray-900 font-semibold">
+                    <span>Leggi l'articolo</span>
+                    <ExternalLink className="w-4 h-4 ml-2" />
+                  </div>
+                </div>
+              </a>
+            ))}
+          </div>
+          <div className="mt-6 text-center">
+            <a
+              href="https://medium.com/@lorenzo.arcioni2000"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-gray-900 text-white font-semibold rounded-lg hover:bg-gray-800 transition-colors"
+            >
+              Vedi tutti gli articoli su Medium
+              <ExternalLink className="w-5 h-5" />
+            </a>
+          </div>
+        </div>
+
+        {/* GitHub Projects */}
+        <div className="mb-8 sm:mb-12">
+          <div className="flex items-center gap-3 mb-6">
+            <Github className="w-8 h-8 text-gray-900" />
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">
+              Progetti Open-Source
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {githubProjects.map((project, index) => (
+              <a
+                key={index}
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-gray-50 rounded-lg p-6 border border-gray-200 hover:border-gray-300 transition-colors"
+              >
+                <div className="flex items-start justify-between mb-3">
+                  <h3 className="text-lg font-semibold text-gray-900 flex-1">
+                    {project.name}
+                  </h3>
+                  <div className="flex items-center gap-1 text-yellow-500">
+                    <svg className="w-5 h-5 fill-current" viewBox="0 0 20 20">
+                      <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                    </svg>
+                    <span className="text-sm font-semibold text-gray-700">{project.stars}</span>
+                  </div>
+                </div>
+                <p className="text-gray-700 text-sm mb-4">{project.description}</p>
+                <div className="flex items-center justify-between">
+                  <span className="px-3 py-1 bg-blue-50 text-blue-700 border border-blue-200 rounded-full text-xs font-medium">
+                    {project.language}
+                  </span>
+                  <ExternalLink className="w-4 h-4 text-gray-900" />
+                </div>
+              </a>
+            ))}
+          </div>
+          <div className="mt-6 text-center">
+            <a
+              href="https://github.com/lorenzo-arcioni"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition-colors"
+            >
+              Vedi tutti i progetti su GitHub
+              <ExternalLink className="w-5 h-5" />
+            </a>
+          </div>
+        </div>
+
+        {/* Kaggle Achievements */}
+        <div className="mb-8 sm:mb-12">
+          <div className="flex items-center gap-3 mb-6">
+            <Award className="w-8 h-8 text-gray-900" />
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">
+              Competizioni Kaggle
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {kaggleAchievements.map((achievement, index) => (
+              <div
+                key={index}
+                className="bg-gray-50 rounded-lg border border-gray-200 p-6"
+              >
+                <div className="text-5xl mb-4">{achievement.icon}</div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">{achievement.title}</h3>
+                <p className="text-lg font-medium text-gray-700 mb-1">{achievement.achievement}</p>
+                <p className="text-sm text-gray-600">{achievement.rank}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-6 text-center">
+            <a
+              href="https://www.kaggle.com/lorenzoarcioni"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors"
+            >
+              Vedi profilo Kaggle
+              <ExternalLink className="w-5 h-5" />
+            </a>
+          </div>
+        </div>
+
+        {/* Philosophy */}
+        <div className="p-8 bg-gray-900 text-white rounded-lg mb-8">
+          <p className="text-lg leading-relaxed">
+            Credo fortemente nel valore della condivisione della conoscenza. Ogni progetto open-source, 
+            articolo o competizione rappresenta un'opportunità per contribuire alla community tech e 
+            crescere insieme. La collaborazione e il confronto sono fondamentali per l'innovazione.
+          </p>
+        </div>
+
+        {/* CTA */}
+        <div className="bg-gray-50 rounded-lg border-2 border-gray-200 p-6 sm:p-8 text-center">
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
+            Seguimi sui Social
+          </h2>
+          <p className="text-base sm:text-lg text-gray-700 mb-6 max-w-2xl mx-auto">
+            Condivido regolarmente contenuti su ML, Data Science e le mie esperienze in progetti reali. 
+            Connetti con me per rimanere aggiornato!
+          </p>
+          <div className="flex flex-wrap gap-4 justify-center">
+            <a
+              href="https://www.linkedin.com/in/lorenzo-arcioni-216b921b5/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-gray-900 text-white font-semibold rounded-lg hover:bg-gray-800 transition-colors"
+            >
+              <Linkedin className="w-5 h-5" />
+              LinkedIn
+            </a>
+            <a
+              href="https://github.com/lorenzo-arcioni"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition-colors"
+            >
+              <Github className="w-5 h-5" />
+              GitHub
+            </a>
+            <a
+              href="https://medium.com/@lorenzo.arcioni2000"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-white border-2 border-gray-900 text-gray-900 font-semibold rounded-lg hover:bg-gray-50 transition-colors"
+            >
+              <BookOpen className="w-5 h-5" />
+              Medium
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default SocialCommunityPage;
+
+=== src/components/Header.jsx ===
+import React, { useEffect, useRef } from 'react';
+import { Linkedin, Github, Instagram, BookOpen } from 'lucide-react';
+
+const NeuralNetwork = () => {
+  const canvasRef = useRef(null);
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+
+    const ctx = canvas.getContext('2d');
+    let animationFrameId;
+    let particles = [];
+
+    const resizeCanvas = () => {
+      const dpr = window.devicePixelRatio || 1;
+      const rect = canvas.getBoundingClientRect();
+      
+      canvas.width = rect.width * dpr;
+      canvas.height = rect.height * dpr;
+      
+      ctx.scale(dpr, dpr);
+      
+      canvas.style.width = rect.width + 'px';
+      canvas.style.height = rect.height + 'px';
+      
+      initParticles();
+    };
+
+    const initParticles = () => {
+      particles = [];
+      const rect = canvas.getBoundingClientRect();
+      const particleCount = Math.floor((rect.width * rect.height) / 10000);
+      
+      for (let i = 0; i < particleCount; i++) {
+        particles.push({
+          x: Math.random() * rect.width,
+          y: Math.random() * rect.height,
+          vx: (Math.random() - 0.5) * 0.5,
+          vy: (Math.random() - 0.5) * 0.5,
+          radius: Math.random() * 2 + 2
+        });
+      }
+    };
+
+    const drawParticles = () => {
+      const rect = canvas.getBoundingClientRect();
+      ctx.clearRect(0, 0, rect.width, rect.height);
+      
+      // Disegna le connessioni
+      ctx.lineWidth = 1;
+      
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const dx = particles[i].x - particles[j].x;
+          const dy = particles[i].y - particles[j].y;
+          const distance = Math.sqrt(dx * dx + dy * dy);
+          
+          if (distance < 200) {
+            const opacity = (1 - distance / 200) * 0.4;
+            ctx.strokeStyle = `rgba(255, 255, 255, ${opacity})`;
+            ctx.beginPath();
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.stroke();
+          }
+        }
+      }
+      
+      // Disegna i nodi
+      particles.forEach(particle => {
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.9)';
+        ctx.beginPath();
+        ctx.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
+        ctx.fill();
+        
+        // Aggiorna posizione
+        particle.x += particle.vx;
+        particle.y += particle.vy;
+        
+        // Rimbalzo sui bordi
+        if (particle.x < 0 || particle.x > rect.width) particle.vx *= -1;
+        if (particle.y < 0 || particle.y > rect.height) particle.vy *= -1;
+        
+        // Mantieni le particelle nei confini
+        particle.x = Math.max(0, Math.min(rect.width, particle.x));
+        particle.y = Math.max(0, Math.min(rect.height, particle.y));
+      });
+    };
+
+    const animate = () => {
+      drawParticles();
+      animationFrameId = requestAnimationFrame(animate);
+    };
+
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+    animate();
+
+    return () => {
+      window.removeEventListener('resize', resizeCanvas);
+      cancelAnimationFrame(animationFrameId);
+    };
+  }, []);
+
+  return (
+    <canvas
+      ref={canvasRef}
+      className="absolute inset-0 w-full h-full"
+      style={{ opacity: 0.6 }}
+    />
+  );
+};
+
+const Header = () => {
+  return (
+    <header className="relative text-white py-12 sm:py-16 md:py-24 shadow-2xl overflow-hidden" style={{ backgroundColor: '#383838' }}>
+      <NeuralNetwork />
+      
+      <div className="container mx-auto px-4 max-w-6xl relative z-10">
+        <div className="flex flex-col items-center text-center">
+          <div className="mb-6 sm:mb-8">
+            <img 
+              src="/images/selfie.jpeg" 
+              alt="Lorenzo Arcioni"
+              className="w-32 h-32 sm:w-44 sm:h-44 md:w-56 md:h-56 rounded-full object-cover border-4 border-white shadow-2xl"
+            />
+          </div>
+          
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-3 sm:mb-4 tracking-tight">
+            Lorenzo Arcioni
+          </h1>
+          
+          <p className="text-lg text-gray-100 max-w-2xl mx-auto mb-6">
+            Computer Scientist specializzato in Machine Learning e Data Science
+          </p>
+          
+          <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-6 sm:mb-8 px-4">
+            <span className="px-3 sm:px-4 md:px-6 py-2 sm:py-3 bg-white/20 rounded-full text-sm sm:text-base md:text-lg font-bold border border-white/30">
+              Machine Learning
+            </span>
+            <span className="px-3 sm:px-4 md:px-6 py-2 sm:py-3 bg-white/20 rounded-full text-sm sm:text-base md:text-lg font-bold border border-white/30">
+              Data Science
+            </span>
+            <span className="px-3 sm:px-4 md:px-6 py-2 sm:py-3 bg-white/20 rounded-full text-sm sm:text-base md:text-lg font-bold border border-white/30">
+              Bioinformatics
+            </span>
+          </div>
+          
+          <div className="flex space-x-3 sm:space-x-4 md:space-x-6">
+            <a 
+              href="https://www.linkedin.com/in/lorenzo-arcioni-216b921b5/" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-11 h-11 sm:w-12 sm:h-12 md:w-14 md:h-14 flex items-center justify-center bg-white/10 rounded-xl md:rounded-2xl border border-white/20 hover:bg-white/20 transition-colors"
+              aria-label="LinkedIn"
+            >
+              <Linkedin className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8" />
+            </a>
+            <a 
+              href="https://github.com/lorenzo-arcioni" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-11 h-11 sm:w-12 sm:h-12 md:w-14 md:h-14 flex items-center justify-center bg-white/10 rounded-xl md:rounded-2xl border border-white/20 hover:bg-white/20 transition-colors"
+              aria-label="GitHub"
+            >
+              <Github className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8" />
+            </a>
+            <a 
+              href="https://www.kaggle.com/lorenzoarcioni" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-11 h-11 sm:w-12 sm:h-12 md:w-14 md:h-14 flex items-center justify-center bg-white/10 rounded-xl md:rounded-2xl font-bold text-2xl sm:text-3xl md:text-4xl border border-white/20 hover:bg-white/20 transition-colors"
+              aria-label="Kaggle"
+            >
+              K
+            </a>
+            <a 
+              href="https://www.instagram.com/lorenzo_arcioni/" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-11 h-11 sm:w-12 sm:h-12 md:w-14 md:h-14 flex items-center justify-center bg-white/10 rounded-xl md:rounded-2xl border border-white/20 hover:bg-white/20 transition-colors"
+              aria-label="Instagram"
+            >
+              <Instagram className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8" />
+            </a>
+            <a 
+              href="https://medium.com/@lorenzo.arcioni2000/" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-11 h-11 sm:w-12 sm:h-12 md:w-14 md:h-14 flex items-center justify-center bg-white/10 rounded-xl md:rounded-2xl border border-white/20 hover:bg-white/20 transition-colors"
+              aria-label="Medium"
+            >
+              <BookOpen className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+  );
+};
+
+export default Header;
+
+=== src/components/PublicationsPage.jsx ===
+import React from 'react';
+import { FileText, ExternalLink, ArrowLeft } from 'lucide-react';
+
+const PublicationsPage = ({ onBack }) => {
+  return (
+    <div className="min-h-screen bg-white">
+      <div className="container mx-auto px-3 sm:px-4 py-6 sm:py-12 max-w-6xl">
+        {/* Header */}
+        <div className="mb-8 sm:mb-12">
+          <button
+            onClick={onBack}
+            className="inline-flex items-center gap-2 text-gray-700 hover:text-gray-900 font-medium mb-4 sm:mb-6 text-sm sm:text-base"
+          >
+            <ArrowLeft className="w-4 h-4 sm:w-5 sm:h-5" />
+            Torna alla home
+          </button>
+          
+          <div className="flex items-center gap-3 sm:gap-4 mb-3 sm:mb-4">
+            <div className="p-2.5 sm:p-4 bg-gray-900 rounded-lg">
+              <FileText className="text-white w-6 h-6 sm:w-10 sm:h-10" />
+            </div>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900">
+              Pubblicazioni
+            </h1>
+          </div>
+          <p className="text-base sm:text-lg text-gray-600 sm:ml-20">
+            I miei contributi alla ricerca scientifica in bioinformatica e HPC
+          </p>
+        </div>
+
+        {/* Hero Statement */}
+        <div className="mb-8 sm:mb-12 text-center space-y-4">
+          <p className="text-2xl md:text-3xl font-bold text-gray-900 leading-tight">
+            Ricerca che unisce rigore scientifico e innovazione tecnologica
+          </p>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            Dal supercomputing alla bioinformatica: soluzioni per accelerare la ricerca genomica
+          </p>
+        </div>
+
+        {/* Publication Card */}
+        <div className="bg-gray-50 rounded-lg border border-gray-200 overflow-hidden">
+          <div className="relative h-40 sm:h-56 md:h-64 bg-gray-900 overflow-hidden">
+            <div className="relative h-full flex items-center justify-center p-4 sm:p-8">
+              <div className="text-center text-white">
+                <FileText className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 mx-auto mb-2 sm:mb-4" />
+                <p className="text-lg sm:text-xl md:text-2xl font-bold">BMC Bioinformatics</p>
+                <p className="text-sm sm:text-base md:text-lg opacity-90">2024</p>
+              </div>
+            </div>
+          </div>
+          
+          <div className="p-4 sm:p-6 md:p-10 bg-white">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-gray-900 mb-4 sm:mb-6 leading-tight">
+              HPC-T-Annotator: an HPC tool for de novo transcriptome assembly annotation
+            </h2>
+            
+            <div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-4 sm:mb-6">
+              <div className="flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-blue-50 border border-blue-200 rounded-full">
+                <div className="w-2 sm:w-3 h-2 sm:h-3 bg-blue-500 rounded-full"></div>
+                <span className="text-blue-700 font-semibold text-xs sm:text-sm">Peer-Reviewed</span>
+              </div>
+              <span className="px-3 sm:px-4 py-1.5 sm:py-2 bg-green-50 border border-green-200 text-green-700 rounded-full font-semibold text-xs sm:text-sm">
+                Open Access
+              </span>
+            </div>
+            
+            <p className="text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed mb-6 sm:mb-8">
+              Un tool innovativo per l'annotazione parallela di trascrittomi che sfrutta architetture 
+              HPC per ridurre i tempi di elaborazione da giorni a ore, mantenendo alta accuratezza nei risultati.
+            </p>
+            
+            {/* Key Points */}
+            <div className="bg-gray-50 rounded-lg border border-gray-200 p-4 sm:p-6 md:p-8 mb-6 sm:mb-8">
+              <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-gray-900 mb-3 sm:mb-4">Punti chiave della ricerca</h3>
+              <ul className="space-y-2 sm:space-y-3">
+                <li className="flex items-start gap-2 sm:gap-3">
+                  <div className="w-1.5 sm:w-2 h-1.5 sm:h-2 bg-green-500 rounded-full mt-1.5 sm:mt-2 flex-shrink-0"></div>
+                  <span className="text-sm sm:text-base text-gray-700">Riduzione drastica dei tempi di elaborazione grazie al parallelismo HPC</span>
+                </li>
+                <li className="flex items-start gap-2 sm:gap-3">
+                  <div className="w-1.5 sm:w-2 h-1.5 sm:h-2 bg-green-500 rounded-full mt-1.5 sm:mt-2 flex-shrink-0"></div>
+                  <span className="text-sm sm:text-base text-gray-700">Sistema a code per gestione ottimizzata delle risorse computazionali</span>
+                </li>
+                <li className="flex items-start gap-2 sm:gap-3">
+                  <div className="w-1.5 sm:w-2 h-1.5 sm:h-2 bg-green-500 rounded-full mt-1.5 sm:mt-2 flex-shrink-0"></div>
+                  <span className="text-sm sm:text-base text-gray-700">Integrazione con strumenti di annotazione standard (Diamond, BLAST)</span>
+                </li>
+                <li className="flex items-start gap-2 sm:gap-3">
+                  <div className="w-1.5 sm:w-2 h-1.5 sm:h-2 bg-green-500 rounded-full mt-1.5 sm:mt-2 flex-shrink-0"></div>
+                  <span className="text-sm sm:text-base text-gray-700">Testato su supercomputer Leonardo e Galileo100 del CINECA</span>
+                </li>
+              </ul>
+            </div>
+            
+            {/* Tags */}
+            <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-6 sm:mb-8">
+              <span className="px-2.5 sm:px-4 py-1.5 sm:py-2 bg-blue-50 text-blue-700 border border-blue-200 rounded-full font-medium text-xs sm:text-sm">
+                Bioinformatica
+              </span>
+              <span className="px-2.5 sm:px-4 py-1.5 sm:py-2 bg-blue-50 text-blue-700 border border-blue-200 rounded-full font-medium text-xs sm:text-sm">
+                HPC
+              </span>
+              <span className="px-2.5 sm:px-4 py-1.5 sm:py-2 bg-blue-50 text-blue-700 border border-blue-200 rounded-full font-medium text-xs sm:text-sm">
+                Transcriptomics
+              </span>
+              <span className="px-2.5 sm:px-4 py-1.5 sm:py-2 bg-blue-50 text-blue-700 border border-blue-200 rounded-full font-medium text-xs sm:text-sm">
+                Parallel Computing
+              </span>
+            </div>
+            
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
+              <a 
+                href="https://bmcbioinformatics.biomedcentral.com/articles/10.1186/s12859-024-05887-3"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-gray-900 text-white font-semibold rounded-lg hover:bg-gray-800 transition-colors text-sm sm:text-base md:text-lg"
+              >
+                Leggi la pubblicazione
+                <ExternalLink className="w-4 h-4 sm:w-5 sm:h-5" />
+              </a>
+              
+              <a 
+                href="https://github.com/lorenzo-arcioni/HPC-T-Annotator"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition-colors text-sm sm:text-base md:text-lg"
+              >
+                Codice su GitHub
+                <ExternalLink className="w-4 h-4 sm:w-5 sm:h-5" />
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {/* Additional Info */}
+        <div className="mt-6 sm:mt-8 bg-gray-50 rounded-lg border border-gray-200 p-4 sm:p-6 md:p-8">
+          <p className="text-xs sm:text-sm md:text-base text-gray-700 text-center leading-relaxed">
+            <span className="font-semibold">Citazione:</span> Arcioni, L., Barghini, E., Giordani, T. et al. 
+            HPC-T-Annotator: an HPC tool for de novo transcriptome assembly annotation. 
+            BMC Bioinformatics 25, 267 (2024).
+          </p>
+        </div>
+
+        {/* Philosophy */}
+        <div className="mt-6 sm:mt-8 p-8 bg-gray-900 text-white rounded-lg">
+          <p className="text-lg leading-relaxed">
+            Questa pubblicazione rappresenta l'intersezione tra competenza informatica avanzata e 
+            applicazione pratica alla ricerca biologica. Ogni aspetto del tool è stato progettato 
+            per massimizzare l'efficienza computazionale mantenendo la precisione scientifica 
+            richiesta dalla comunità di ricerca genomica.
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default PublicationsPage;
+
+=== src/components/ProfileSection.jsx ===
+import React from 'react';
+import { User, Code, Lightbulb, Cpu, Dna } from 'lucide-react';
+
+const ProfileSection = () => {
+  return (
+    <section className="section-container" id="profilo">
+      <h2 className="section-title">
+        <div className="icon-wrapper">
+          <User className="text-gray-900" size={36} />
+        </div>
+        Chi Sono
+      </h2>
+      
+      <div className="space-y-12">
+        {/* Hero statement */}
+        <div className="text-center space-y-4">
+          <p className="text-2xl md:text-3xl font-bold text-gray-900 leading-tight">
+            Trasformo dati complessi in soluzioni intelligenti
+          </p>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            Computer Scientist specializzato in Machine Learning, Data Science e High Performance Computing
+          </p>
+        </div>
+
+        {/* Key areas */}
+        <div className="grid md:grid-cols-2 gap-6">
+          <div className="p-6 bg-gray-50 rounded-lg">
+            <div className="flex items-center gap-3 mb-3">
+              <Code className="w-6 h-6 text-gray-900" />
+              <h3 className="text-lg font-semibold text-gray-900">Sviluppo & Ricerca</h3>
+            </div>
+            <p className="text-gray-700">
+              Progetto e implemento sistemi di intelligenza artificiale scalabili, dall'ideazione 
+              alla produzione, con focus su performance e affidabilità.
+            </p>
+          </div>
+
+          <div className="p-6 bg-gray-50 rounded-lg">
+            <div className="flex items-center gap-3 mb-3">
+              <Lightbulb className="w-6 h-6 text-gray-900" />
+              <h3 className="text-lg font-semibold text-gray-900">Formazione</h3>
+            </div>
+            <p className="text-gray-700">
+              Insegno Python, Machine Learning e Data Science con un approccio che privilegia 
+              la comprensione profonda rispetto alla semplice esecuzione.
+            </p>
+          </div>
+
+          <div className="p-6 bg-gray-50 rounded-lg">
+            <div className="flex items-center gap-3 mb-3">
+              <Cpu className="w-6 h-6 text-gray-900" />
+              <h3 className="text-lg font-semibold text-gray-900">High Performance Computing</h3>
+            </div>
+            <p className="text-gray-700">
+              Esperienza su supercomputer CINECA (Leonardo, Galileo100) per calcolo parallelo 
+              e ottimizzazione di algoritmi su larga scala.
+            </p>
+          </div>
+
+          <div className="p-6 bg-gray-50 rounded-lg">
+            <div className="flex items-center gap-3 mb-3">
+              <Dna className="w-6 h-6 text-gray-900" />
+              <h3 className="text-lg font-semibold text-gray-900">Bioinformatica</h3>
+            </div>
+            <p className="text-gray-700">
+              Analisi e modellazione di dati biologici complessi, integrando competenze 
+              informatiche, statistiche e domain knowledge.
+            </p>
+          </div>
+        </div>
+
+        {/* Philosophy */}
+        <div className="p-8 bg-gray-900 text-white rounded-lg">
+          <p className="text-lg leading-relaxed">
+            Il mio approccio unisce rigore scientifico e pragmatismo: ogni soluzione è fondata 
+            su solide basi teoriche ma orientata a risolvere problemi reali. Credo nella 
+            comprensione profonda dei meccanismi, non nelle scorciatoie.
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default ProfileSection;
+
+=== src/components/Footer.jsx ===
+import React, { useEffect, useRef } from 'react';
+import { Heart, Linkedin, Github, Mail, Instagram, BookOpen } from 'lucide-react';
+
+const NeuralNetwork = () => {
+  const canvasRef = useRef(null);
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+
+    const ctx = canvas.getContext('2d');
+    let animationFrameId;
+    let particles = [];
+
+    const resizeCanvas = () => {
+      const dpr = window.devicePixelRatio || 1;
+      const rect = canvas.getBoundingClientRect();
+      
+      canvas.width = rect.width * dpr;
+      canvas.height = rect.height * dpr;
+      
+      ctx.scale(dpr, dpr);
+      
+      canvas.style.width = rect.width + 'px';
+      canvas.style.height = rect.height + 'px';
+      
+      initParticles();
+    };
+
+    const initParticles = () => {
+      particles = [];
+      const rect = canvas.getBoundingClientRect();
+      const particleCount = Math.floor((rect.width * rect.height) / 10000);
+      
+      for (let i = 0; i < particleCount; i++) {
+        particles.push({
+          x: Math.random() * rect.width,
+          y: Math.random() * rect.height,
+          vx: (Math.random() - 0.5) * 0.5,
+          vy: (Math.random() - 0.5) * 0.5,
+          radius: Math.random() * 2 + 2
+        });
+      }
+    };
+
+    const drawParticles = () => {
+      const rect = canvas.getBoundingClientRect();
+      ctx.clearRect(0, 0, rect.width, rect.height);
+      
+      // Disegna le connessioni
+      ctx.lineWidth = 1;
+      
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const dx = particles[i].x - particles[j].x;
+          const dy = particles[i].y - particles[j].y;
+          const distance = Math.sqrt(dx * dx + dy * dy);
+          
+          if (distance < 200) {
+            const opacity = (1 - distance / 200) * 0.4;
+            ctx.strokeStyle = `rgba(255, 255, 255, ${opacity})`;
+            ctx.beginPath();
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.stroke();
+          }
+        }
+      }
+      
+      // Disegna i nodi
+      particles.forEach(particle => {
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.9)';
+        ctx.beginPath();
+        ctx.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
+        ctx.fill();
+        
+        // Aggiorna posizione
+        particle.x += particle.vx;
+        particle.y += particle.vy;
+        
+        // Rimbalzo sui bordi
+        if (particle.x < 0 || particle.x > rect.width) particle.vx *= -1;
+        if (particle.y < 0 || particle.y > rect.height) particle.vy *= -1;
+        
+        // Mantieni le particelle nei confini
+        particle.x = Math.max(0, Math.min(rect.width, particle.x));
+        particle.y = Math.max(0, Math.min(rect.height, particle.y));
+      });
+    };
+
+    const animate = () => {
+      drawParticles();
+      animationFrameId = requestAnimationFrame(animate);
+    };
+
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+    animate();
+
+    return () => {
+      window.removeEventListener('resize', resizeCanvas);
+      cancelAnimationFrame(animationFrameId);
+    };
+  }, []);
+
+  return (
+    <canvas
+      ref={canvasRef}
+      className="absolute inset-0 w-full h-full"
+      style={{ opacity: 0.6 }}
+    />
+  );
+};
+
+const Footer = () => {
+  return (
+    <footer className="relative text-white py-8 sm:py-12 mt-12 sm:mt-16 overflow-hidden" style={{ backgroundColor: '#383838' }}>
+      <NeuralNetwork />
+      
+      <div className="container mx-auto px-4 max-w-6xl relative z-10">
+        <div className="flex flex-col items-center text-center space-y-6">
+          {/* Main content */}
+          <div className="space-y-3">
+            <p className="text-base sm:text-lg font-semibold">
+              © {new Date().getFullYear()} Lorenzo Arcioni
+            </p>
+            <p className="text-sm sm:text-base text-white/90 max-w-md mx-auto px-4">
+              Machine Learning Engineer, Data Scientist & Formatore
+            </p>
+          </div>
+          
+          {/* Social links */}
+          <div className="flex items-center gap-4 sm:gap-6">
+            <a 
+              href="https://www.linkedin.com/in/lorenzo-arcioni-216b921b5/" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-11 h-11 sm:w-12 sm:h-12 flex items-center justify-center bg-white/10 rounded-xl border border-white/20 hover:bg-white/20 transition-colors"
+              aria-label="LinkedIn"
+            >
+              <Linkedin className="w-5 h-5 sm:w-6 sm:h-6" />
+            </a>
+            <a 
+              href="https://github.com/lorenzo-arcioni" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-11 h-11 sm:w-12 sm:h-12 flex items-center justify-center bg-white/10 rounded-xl border border-white/20 hover:bg-white/20 transition-colors"
+              aria-label="GitHub"
+            >
+              <Github className="w-5 h-5 sm:w-6 sm:h-6" />
+            </a>
+            <a 
+              href="https://www.kaggle.com/lorenzoarcioni" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-11 h-11 sm:w-12 sm:h-12 flex items-center justify-center bg-white/10 rounded-xl border border-white/20 font-bold text-xl sm:text-2xl hover:bg-white/20 transition-colors"
+              aria-label="Kaggle"
+            >
+              K
+            </a>
+            <a 
+              href="https://www.instagram.com/lorenzo_arcioni/" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-11 h-11 sm:w-12 sm:h-12 flex items-center justify-center bg-white/10 rounded-xl border border-white/20 hover:bg-white/20 transition-colors"
+              aria-label="Instagram"
+            >
+              <Instagram className="w-5 h-5 sm:w-6 sm:h-6" />
+            </a>
+            <a 
+              href="https://medium.com/@lorenzo.arcioni2000/" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-11 h-11 sm:w-12 sm:h-12 flex items-center justify-center bg-white/10 rounded-xl border border-white/20 hover:bg-white/20 transition-colors"
+              aria-label="Medium"
+            >
+              <BookOpen className="w-5 h-5 sm:w-6 sm:h-6" />
+            </a>
+            <a 
+              href="mailto:lorenzo.arcioni2000@gmail.com"
+              className="w-11 h-11 sm:w-12 sm:h-12 flex items-center justify-center bg-white/10 rounded-xl border border-white/20 hover:bg-white/20 transition-colors"
+              aria-label="Email"
+            >
+              <Mail className="w-5 h-5 sm:w-6 sm:h-6" />
+            </a>
+          </div>
+          
+          {/* Made with love */}
+          <div className="flex items-center gap-2 text-sm sm:text-base text-white/80">
+            <span>Made with</span>
+            <Heart className="w-4 h-4 sm:w-5 sm:h-5 fill-red-400 text-red-400" />
+            <span>in Italy</span>
+          </div>
+          
+          {/* Bottom text */}
+          <p className="text-xs sm:text-sm text-white/70 px-4">
+            Tutti i diritti riservati
+          </p>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
+
+=== src/main.jsx ===
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './App.jsx';
+import './index.css';
+
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+);
+
+
+=== src/App.jsx ===
+import React, { useState, useRef, useEffect } from 'react';
+import Header from './components/Header';
+import ProfileSection from './components/ProfileSection';
+import EducationSection from './components/EducationSection';
+import ExperienceSection from './components/ExperienceSection';
+import ServicesHubSection from './components/ServicesHubSection';
+import PortfolioHubSection from './components/PortfolioHubSection';
+import CoursesPage from './components/CoursesPage';
+import CourseDetailPage from './components/CourseDetailPage';
+import CorporateTrainingPage from './components/CorporateTrainingPage';
+import ConsultingPage from './components/ConsultingPage';
+import ProjectsPage from './components/ProjectsPage';
+import PublicationsPage from './components/PublicationsPage';
+import CertificationsPage from './components/CertificationsPage';
+import SocialCommunityPage from './components/SocialCommunityPage';
+import ContactSection from './components/ContactSection';
+import Footer from './components/Footer';
+import FeaturedCoursesSection from './components/FeaturedCoursesSection';
+
+function App() {
+  const [currentPage, setCurrentPage] = useState('home');
+  const [selectedCourseId, setSelectedCourseId] = useState(null);
+  const servicesRef = useRef(null);
+  const portfolioRef = useRef(null);
+
+  // Gestione cronologia browser
+  useEffect(() => {
+    const handlePopState = (event) => {
+      if (event.state) {
+        setCurrentPage(event.state.page);
+        setSelectedCourseId(event.state.courseId || null);
+        setTimeout(() => {
+          window.scrollTo({ top: 0, behavior: 'instant' });
+        }, 0);
+      }
+    };
+
+    window.addEventListener('popstate', handlePopState);
+    
+    // Imposta stato iniziale
+    window.history.replaceState({ page: 'home' }, '', window.location.pathname);
+
+    return () => {
+      window.removeEventListener('popstate', handlePopState);
+    };
+  }, []);
+
+  const handleNavigate = (page) => {
+    setCurrentPage(page);
+    window.history.pushState({ page }, '', `#${page}`);
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: 'instant' });
+    }, 0);
+  };
+
+  const handleCourseNavigate = (courseId) => {
+    setSelectedCourseId(courseId);
+    setCurrentPage('course-detail');
+    window.history.pushState({ page: 'course-detail', courseId }, '', `#course/${courseId}`);
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: 'instant' });
+    }, 0);
+  };
+
+  const handleBackToServices = () => {
+    setCurrentPage('home');
+    window.history.pushState({ page: 'home' }, '', window.location.pathname);
+    setTimeout(() => {
+      if (servicesRef.current) {
+        servicesRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }, 100);
+  };
+
+  const handleBackToPortfolio = () => {
+    setCurrentPage('home');
+    window.history.pushState({ page: 'home' }, '', window.location.pathname);
+    setTimeout(() => {
+      if (portfolioRef.current) {
+        portfolioRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }, 100);
+  };
+
+  // Services pages
+  if (currentPage === 'corsi') {
+    return (
+      <div className="min-h-screen bg-gray-50">
+        <CoursesPage onBack={handleBackToServices} onCourseSelect={handleCourseNavigate} />
+        <Footer />
+      </div>
+    );
+  }
+
+  if (currentPage === 'course-detail') {
+    return (
+      <div className="min-h-screen bg-gray-50">
+        <CourseDetailPage 
+          courseId={selectedCourseId} 
+          onBack={() => {
+            window.history.back();
+          }} 
+        />
+        <Footer />
+      </div>
+    );
+  }
+
+  if (currentPage === 'formazione-aziendale') {
+    return (
+      <div className="min-h-screen bg-gray-50">
+        <CorporateTrainingPage onBack={handleBackToServices} onCourseSelect={handleCourseNavigate} />
+        <Footer />
+      </div>
+    );
+  }
+
+  if (currentPage === 'consulenze') {
+    return (
+      <div className="min-h-screen bg-gray-50">
+        <ConsultingPage onBack={handleBackToServices} />
+        <Footer />
+      </div>
+    );
+  }
+
+  // Portfolio pages
+  if (currentPage === 'progetti') {
+    return (
+      <div className="min-h-screen bg-gray-50">
+        <ProjectsPage onBack={handleBackToPortfolio} />
+        <Footer />
+      </div>
+    );
+  }
+
+  if (currentPage === 'pubblicazioni') {
+    return (
+      <div className="min-h-screen bg-gray-50">
+        <PublicationsPage onBack={handleBackToPortfolio} />
+        <Footer />
+      </div>
+    );
+  }
+
+  if (currentPage === 'certificazioni') {
+    return (
+      <div className="min-h-screen bg-gray-50">
+        <CertificationsPage onBack={handleBackToPortfolio} />
+        <Footer />
+      </div>
+    );
+  }
+
+  if (currentPage === 'social') {
+    return (
+      <div className="min-h-screen bg-gray-50">
+        <SocialCommunityPage onBack={handleBackToPortfolio} />
+        <Footer />
+      </div>
+    );
+  }
+
+  // Home page
+  return (
+    <div className="min-h-screen bg-gray-50">
+      <Header />
+      
+      <main className="container mx-auto px-4 py-12 max-w-6xl">
+        <ProfileSection />
+        <EducationSection />
+        <ExperienceSection />
+        
+        {/* Services Hub */}
+        <div ref={servicesRef}>
+          <ServicesHubSection onNavigate={handleNavigate} />
+        </div>
+
+        {/* Featured Courses - NUOVO! */}
+        <FeaturedCoursesSection 
+          onCourseSelect={(courseId) => {
+            if (courseId === 'all') {
+              handleNavigate('corsi');
+            } else {
+              handleCourseNavigate(courseId);
+            }
+          }} 
+        />
+        
+        {/* Portfolio Hub */}
+        <div ref={portfolioRef}>
+          <PortfolioHubSection onNavigate={handleNavigate} />
+        </div>
+        
+        <ContactSection />
+      </main>
+      
+      <Footer />
+    </div>
+  );
+}
+
+export default App;
