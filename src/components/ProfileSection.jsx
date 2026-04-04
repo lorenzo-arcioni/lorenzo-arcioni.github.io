@@ -15,7 +15,7 @@ const ProfileSection = () => {
         {/* Hero statement */}
         <div className="text-center space-y-4">
           <p className="text-2xl md:text-3xl font-bold text-gray-900 leading-tight">
-            Trasformo dati complessi in soluzioni intelligenti
+            Trasformo i dati in soluzioni
           </p>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Computer Scientist specializzato in Python, Machine Learning e Data Science
