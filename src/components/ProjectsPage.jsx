@@ -154,10 +154,7 @@ const ProjectsPage = ({ onBack }) => {
         {/* Philosophy */}
         <div className="mt-8 sm:mt-12 p-8 bg-gray-900 text-white rounded-lg">
           <p className="text-lg leading-relaxed">
-            Ogni progetto è un'opportunità per trasformare teoria in pratica. Dal machine learning 
-            applicato alla sanità, all'High Performance Computing per la bioinformatica, fino alla 
-            computer vision per sfide ambientali: ogni soluzione è guidata da rigore metodologico 
-            e orientata a risultati concreti e misurabili.
+            Ogni progetto è un'opportunità per trasformare la teoria in pratica.
           </p>
         </div>
       </div>

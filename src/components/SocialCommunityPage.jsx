@@ -56,7 +56,7 @@ const SocialCommunityPage = ({ onBack }) => {
     {
       title: 'ICR - Identifying Age-Related Conditions',
       achievement: 'Silver Medal - Top 2%',
-      rank: '85th / 6,436',
+      rank: '127th / 6,436',
       icon: '🥈'
     },
     {

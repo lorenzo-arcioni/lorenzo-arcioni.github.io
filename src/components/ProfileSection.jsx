@@ -18,7 +18,7 @@ const ProfileSection = () => {
             Trasformo dati complessi in soluzioni intelligenti
           </p>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Computer Scientist specializzato in Machine Learning, Data Science e High Performance Computing
+            Computer Scientist specializzato in Python, Machine Learning e Data Science
           </p>
         </div>
 
@@ -42,7 +42,7 @@ const ProfileSection = () => {
             </div>
             <p className="text-gray-700">
               Insegno Python, Machine Learning e Data Science con un approccio che privilegia 
-              la comprensione profonda rispetto alla semplice esecuzione.
+              la comprensione profonda rispetto alla semplice implementazione.
             </p>
           </div>
 
@@ -64,7 +64,7 @@ const ProfileSection = () => {
             </div>
             <p className="text-gray-700">
               Analisi e modellazione di dati biologici complessi, integrando competenze 
-              informatiche, statistiche e domain knowledge.
+              informatiche, statistiche e bioinformatiche.
             </p>
           </div>
         </div>
@@ -73,7 +73,7 @@ const ProfileSection = () => {
         <div className="p-8 bg-gray-900 text-white rounded-lg">
           <p className="text-lg leading-relaxed">
             Il mio approccio unisce rigore scientifico e pragmatismo: ogni soluzione è fondata 
-            su solide basi teoriche ma orientata a risolvere problemi reali. Credo nella 
+            su solide basi teoriche ma orientata verso la soluzione di problemi reali. Credo nella 
             comprensione profonda dei meccanismi, non nelle scorciatoie.
           </p>
         </div>

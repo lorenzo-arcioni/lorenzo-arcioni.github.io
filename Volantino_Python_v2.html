@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Volantino Python</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&family=DM+Mono:wght@400;500&display=swap');
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'DM Sans', sans-serif; background: #eceae4; display: flex; justify-content: center; align-items: flex-start; min-height: 100vh; padding: 20px; }
+
+  .flyer-root {
+    width: 210mm;
+    height: 297mm;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #d8d6d0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  @page { size: A4; margin: -0; }
+
+  .flyer-root::before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    width: 28mm; height: 28mm;
+    background: #eef5e8;
+    clip-path: polygon(100% 0, 100% 100%, 0 0);
+    pointer-events: none;
+  }
+
+  .flyer-body { flex: 1; padding: 7mm 10mm 5mm; display: flex; flex-direction: column; }
+
+  /* TOP BAR */
+  .top-bar { display: flex; align-items: center; gap: 8px; margin-bottom: 4mm; }
+  .tag { font-family: 'DM Mono', monospace; font-size: 9.5px; letter-spacing: 2px; text-transform: uppercase; color: #5a7a4a; border: 1px solid #5a7a4a; padding: 4px 10px; border-radius: 2px; }
+  .tag.online { color: #2a6496; border-color: #2a6496; background: #eef4fa; }
+  .line-h { flex: 1; height: 1px; background: #e0e0dc; }
+  .avail-note { font-family: 'DM Mono', monospace; font-size: 9px; color: #c0522a; letter-spacing: 0.5px; background: #fdf3ef; border: 1px solid #f0c4b0; padding: 4px 10px; border-radius: 2px; }
+
+  /* MAIN GRID */
+  .main-grid { display: grid; grid-template-columns: 1fr 52mm; gap: 8mm; margin-bottom: 4mm; align-items: start; }
+  .left-col { display: flex; flex-direction: column; }
+
+  /* HEADLINE */
+  .headline { margin-bottom: 4mm; }
+  .headline h1 { font-size: 36px; font-weight: 600; color: #1a1a18; line-height: 1.05; letter-spacing: -1.5px; }
+  .headline h1 span { color: #5a7a4a; }
+  .headline .sub { font-size: 12.5px; color: #666; font-weight: 300; margin-top: 6px; line-height: 1.5; }
+  .headline .sub strong { font-weight: 500; color: #444; }
+
+  /* FREE SESSION BOX — hero element */
+  .free-hero {
+    background: linear-gradient(135deg, #f6fbf2 0%, #eef5e8 100%);
+    border: 1.5px solid #5a7a4a;
+    border-radius: 5px;
+    padding: 3.5mm 4mm;
+    margin-bottom: 4mm;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .free-hero-icon {
+    width: 28px; height: 28px;
+    background: #5a7a4a;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .free-hero-icon svg { width: 14px; height: 14px; stroke: #fff; fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+  .free-hero-text .fh-title { font-size: 13px; font-weight: 600; color: #1a1a18; }
+  .free-hero-text .fh-title em { color: #5a7a4a; font-style: normal; }
+  .free-hero-text .fh-desc { font-size: 10.5px; color: #666; font-weight: 300; margin-top: 2px; line-height: 1.4; }
+
+  /* OFFER LIST */
+  .offer-list { list-style: none; display: flex; flex-direction: column; gap: 3mm; }
+  .offer-list li { display: flex; align-items: flex-start; gap: 10px; }
+  .offer-list .icon { width: 20px; height: 20px; background: #f0f5ec; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+  .offer-list .icon svg { width: 10px; height: 10px; stroke: #5a7a4a; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .offer-list .item-title { font-size: 12.5px; font-weight: 500; color: #1a1a18; display: block; }
+  .offer-list .item-desc { font-size: 10.5px; color: #888; font-weight: 300; line-height: 1.4; }
+  .offer-list .item-highlight { font-size: 11.5px; font-weight: 500; color: #5a7a4a; }
+
+  /* RIGHT COL */
+  .right-col { display: flex; flex-direction: column; gap: 3mm; align-items: center; }
+  .qr-wrap { display: flex; flex-direction: column; align-items: center; gap: 3px; }
+  .qr-wrap img { width: 44mm; height: 44mm; display: block; border: 1px solid #e0e0dc; border-radius: 4px; }
+  .qr-wrap .qr-label { font-size: 9px; color: #888; text-align: center; letter-spacing: 0.5px; text-transform: uppercase; font-family: 'DM Mono', monospace; }
+  .qr-phone { font-family: 'DM Mono', monospace; font-size: 16px; font-weight: 500; color: #1a1a18; letter-spacing: 0.5px; margin-top: 2px; text-align: center; }
+
+  /* QR activation hint */
+  .qr-hint {
+    font-family: 'DM Mono', monospace;
+    font-size: 8.5px;
+    color: #fff;
+    background: #5a7a4a;
+    border-radius: 3px;
+    padding: 3px 8px;
+    text-align: center;
+    line-height: 1.4;
+    margin-top: 2px;
+  }
+
+  /* CTA BAR */
+  .cta-bar { background: #1a1a18; border-radius: 4px; padding: 3.5mm 5mm; display: flex; align-items: center; justify-content: space-between; gap: 4mm; margin-bottom: 3.5mm; }
+  .cta-text { color: #fff; }
+  .cta-text .cta-main { font-size: 13.5px; font-weight: 500; line-height: 1.3; }
+  .cta-text .cta-main em { color: #a8c88a; font-style: normal; }
+  .cta-text .cta-sub { font-size: 10px; color: #888; margin-top: 2px; font-weight: 300; }
+  .cta-btn { text-decoration: none; font-family: 'DM Mono', monospace; font-size: 14px; background: #5a7a4a; color: #fff; border: none; padding: 7px 14px; border-radius: 3px; white-space: nowrap; letter-spacing: 0.5px; cursor: pointer; text-transform: uppercase; }
+
+  /* PRICING */
+  .pricing-block { margin-bottom: 3mm; }
+  .pricing-label { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase; color: #999; margin-bottom: 2.5mm; }
+  .pricing-row { display: flex; gap: 4mm; }
+  .price-card { flex: 1; border: 1px solid #e0e0dc; border-radius: 4px; padding: 3mm 4mm; position: relative; }
+  .price-card.highlight { border-color: #c5dab0; background: #f6fbf2; }
+  .price-card .p-type { font-size: 11px; font-weight: 500; color: #1a1a18; margin-bottom: 2px; }
+  .price-card .p-amount { font-family: 'DM Mono', monospace; font-size: 17px; font-weight: 500; color: #1a1a18; line-height: 1; }
+  .price-card .p-amount span { font-size: 11px; color: #888; font-weight: 400; }
+  .price-card .p-note { font-size: 10px; color: #888; margin-top: 2px; font-weight: 300; }
+  .popular-tag { position: absolute; top: -1px; right: 8px; font-family: 'DM Mono', monospace; font-size: 8px; background: #5a7a4a; color: #fff; padding: 2px 6px; border-radius: 0 0 3px 3px; letter-spacing: 0.5px; text-transform: uppercase; }
+
+  /* TESTIMONIALS — before/after format */
+  .testimonial-row { display: flex; flex-direction: row; gap: 0; margin-bottom: 3mm; align-items: stretch; }
+  .testi { flex: 1; background: #f8f8f5; border-left: 2px solid #c5dab0; padding: 3mm 4mm; border-radius: 0 3px 3px 0; }
+  .testi .t-quote { font-size: 10.5px; color: #444; font-weight: 300; line-height: 1.5; font-style: italic; margin-bottom: 4px; }
+  .testi .t-who { font-family: 'DM Mono', monospace; font-size: 8px; color: #888; letter-spacing: 0.3px; }
+  .testi-meta { display: flex; align-items: center; gap: 5px; margin-top: 4px; flex-wrap: wrap; }
+  .t-result { display: inline-block; font-family: 'DM Mono', monospace; font-size: 9px; background: #eef5e8; color: #3a6030; border: 1px solid #c5dab0; padding: 2px 6px; border-radius: 2px; }
+  .t-timeline { display: inline-block; font-family: 'DM Mono', monospace; font-size: 9px; background: #f4f4f0; color: #666; border: 1px solid #ddd; padding: 2px 6px; border-radius: 2px; }
+  .testi-sep { display: flex; align-items: center; justify-content: center; padding: 0 3mm; font-size: 16px; color: #bbb; flex-shrink: 0; }
+
+  /* TOPICS */
+  .topics-row { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 3mm; }
+  .topic-tag { font-family: 'DM Mono', monospace; font-size: 10px; color: #444; background: #f4f4f0; border: 1px solid #ddd; padding: 3px 9px; border-radius: 2px; letter-spacing: 0.3px; }
+  .topic-tag.green { color: #3a6030; background: #eef5e8; border-color: #c5dab0; }
+
+  /* LEVELS */
+  .levels-row { display: flex; gap: 6px; margin-bottom: 3mm; justify-content: center; align-items: center; }
+  .level-pill { font-family: 'DM Mono', monospace; font-size: 10.5px; color: #444; background: #f4f4f0; border: 1px solid #ddd; letter-spacing: 0.3px; padding: 3px 11px; border-radius: 2px; display: flex; align-items: center; gap: 5px; }
+  .level-pill .dot { width: 6px; height: 6px; border-radius: 50%; }
+  .level-adv { color: #c0522a; background: #fdf3ef; border: 1px solid #c2a2a2; }
+  .level-adv .dot { background: #c0522a; }
+  .level-base { color: #3a6030; background: #eef5e8; border: 1px solid #c5dab0; }
+  .level-base .dot { background: #5a7a4a; }
+  .level-mid { color: #1a1a18; background: #e4e4de; border: 1px solid #bbb; }
+  .level-mid .dot { background: #333; }
+
+  /* UNIV ROW */
+  .univ-row { text-align: center; font-size: 10px; color: #999; font-family: 'DM Mono', monospace; letter-spacing: 0.3px; margin-bottom: 3mm; }
+
+  /* BIO */
+  .contact-bar { background: #f0f0ec; border-radius: 4px; padding: 3.5mm 5mm; display: flex; align-items: flex-start; gap: 5mm; }
+  .bio-left { flex: 1; }
+  .bio-name { font-size: 13px; font-weight: 500; color: #1a1a18; margin-bottom: 2px; }
+  .bio-title { font-size: 10px; color: #5a7a4a; font-weight: 400; margin-bottom: 4px; }
+  .bio-desc { font-size: 10px; color: #666; font-weight: 300; line-height: 1.5; }
+  .badges { display: flex; flex-direction: column; gap: 4px; flex-shrink: 0; }
+  .badge { font-family: 'DM Mono', monospace; font-size: 9px; padding: 4px 8px; border-radius: 2px; white-space: nowrap; text-align: center; }
+  .badge-gray { background: #e8e8e4; color: #444; border: 1px solid #ccc; }
+  .badge-silver { background: #e4e4e0; color: #333; border: 1px solid #b0b0a8; display: flex; align-items: center; gap: 4px; justify-content: center; }
+  .badge-silver::before { content: ''; display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: #909090; flex-shrink: 0; }
+
+  @media screen { .flyer-root { width: 100%; max-width: 750px; } }
+</style>
+</head>
+<body>
+<div class="flyer-root">
+  <div class="flyer-body">
+
+    <!-- TOP BAR — scarsità menzionata una volta sola -->
+    <div class="top-bar">
+      <div class="tag">python</div>
+      <div class="tag">lezioni private 1:1</div>
+      <div class="tag online">Online via Google Meet</div>
+      <div class="avail-note">MAX 5 studenti/mese</div>
+    </div>
+
+    <!-- MAIN GRID -->
+    <div class="main-grid">
+
+      <div class="left-col">
+
+        <!-- HEADLINE — focalizzata su momento di massimo dolore -->
+        <div class="headline">
+          <h1>Esame di<br><span>Python</span> in arrivo?</h1>
+          <p class="sub">Lezioni individuali e di gruppo via Google Meet — dal tuo livello, al tuo ritmo.<br><strong>Preparazione esami · Progetti · Tesi di laurea.</strong></p>
+        </div>
+
+        <!-- FREE SESSION — hero, non più terzo bullet -->
+        <div class="free-hero">
+          <div class="free-hero-icon">
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <div class="free-hero-text">
+            <div class="fh-title"><em>Prima sessione gratuita</em> — 30 minuti, zero impegno</div>
+            <div class="fh-desc">Capiamo insieme di cosa hai bisogno e come posso aiutarti. Nessun costo, nessun obbligo.</div>
+          </div>
+        </div>
+
+        <!-- OFFER LIST -->
+        <ul class="offer-list">
+          <li>
+            <div class="icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <div>
+              <span class="item-title">Preparazione esami universitari</span>
+              <span class="item-desc">Esercizi reali delle prove d'esame della tua università. Ci fermiamo su ogni passaggio finché non è davvero chiaro. Nessuna fretta, nessun giudizio.</span>
+              <span class="item-highlight">Supera l'esame senza stress.</span>
+            </div>
+          </li>
+          <li>
+            <div class="icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <div>
+              <span class="item-title">Progetti, tesi e script</span>
+              <span class="item-desc">Dal problema al codice funzionante: automazione, analisi dati, elaborazione file, tesi di laurea e molto altro.</span>
+            </div>
+          </li>
+        </ul>
+
+      </div>
+
+      <!-- COLONNA DESTRA: logo + QR con hint di attivazione -->
+      <div class="right-col">
+        <img src="logo-python.png" alt="Python logo" style="width:36mm; height:36mm; object-fit:contain;" />
+        <div class="qr-wrap">
+          <image src="QR.jpeg" style="border:none;width:190px;height:190px;"></iframe>
+          <span class="qr-label">Scansiona → WhatsApp</span>
+          <span class="qr-hint">Scrivi "GRATIS" per<br>prenotare la tua sessione</span>
+          <span class="qr-phone">+39 329 698 6474</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- CTA BAR — scarsità menzionata una seconda (e ultima) volta -->
+    <div class="cta-bar">
+      <div class="cta-text">
+        <div class="cta-main">Scrivimi oggi — <em>la prima sessione è gratis.</em></div>
+        <div class="cta-sub">Posti limitati: max 5 nuovi studenti al mese. Rispondo prima possibile.</div>
+      </div>
+      <a class="cta-btn" href="https://wa.me/393296986474" target="_blank">WhatsApp →</a>
+    </div>
+
+    <!-- PRICING -->
+    <div class="pricing-block">
+      <div class="pricing-label">Tariffe</div>
+      <div class="pricing-row">
+        <div class="price-card">
+          <div class="p-type">Sessione 1:1</div>
+          <div class="p-amount">€30 <span>/ ora</span></div>
+          <div class="p-note">Lezione individuale</div>
+        </div>
+        <div class="price-card highlight">
+          <div class="popular-tag">più scelto</div>
+          <div class="p-type">Pacchetto 5 ore</div>
+          <div class="p-amount">€125 <span>/ pacchetto</span></div>
+          <div class="p-note">€25/ora · risparmio €25</div>
+        </div>
+        <div class="price-card">
+          <div class="p-type">Piccolo gruppo</div>
+          <div class="p-amount">€20 <span>/ ora</span></div>
+          <div class="p-note">2–3 persone · a testa</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TESTIMONIALS — formato prima/dopo con timeframe esplicito -->
+    <div class="testimonial-row">
+      <div class="testi">
+        <div style="color:#c09030;font-size:11px;margin-bottom:3px;">★★★★★</div>
+        <div class="t-quote">"Non avevo mai capito le classi in Python. Dopo due sessioni ho finalmente superato l'esame senza problemi. Spiega con una pazienza enorme."</div>
+        <div class="t-who">— Giulia R., Ingegneria Informatica, Politecnico di Milano</div>
+        <div class="testi-meta">
+          <span class="t-timeline">2 sessioni · 10 giorni prima</span>
+          <span class="t-result">28/30 ✓</span>
+        </div>
+      </div>
+      <div class="testi-sep">···</div>
+      <div class="testi">
+        <div style="color:#c09030;font-size:11px;margin-bottom:3px;">★★★★★</div>
+        <div class="t-quote">"Mi ha aiutato a finire la tesi in tempo. Paziente, preciso, spiega le cose infinitamente meglio dei professori universitari."</div>
+        <div class="t-who">— Marco T., Statistica, La Sapienza Roma</div>
+        <div class="testi-meta">
+          <span class="t-timeline">4 sessioni · tesi in 3 settimane</span>
+          <span class="t-result">tesi consegnata ✓</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- TOPICS -->
+    <div class="topics-row">
+      <span class="topic-tag green">Variabili e tipi</span>
+      <span class="topic-tag green">Liste e tuple</span>
+      <span class="topic-tag green">Dizionari e set</span>
+      <span class="topic-tag green">Funzioni e ricorsione</span>
+      <span class="topic-tag green">OOP e classi</span>
+      <span class="topic-tag">Algoritmi</span>
+      <span class="topic-tag">File I/O</span>
+      <span class="topic-tag">Debugging</span>
+      <span class="topic-tag">Pandas / NumPy</span>
+    </div>
+
+    <!-- LEVELS + UNIV NOTE -->
+    <div class="levels-row">
+      <div class="level-pill level-base"><div class="dot"></div>Base</div>
+      <div class="level-pill level-mid"><div class="dot"></div>Intermedio</div>
+      <div class="level-pill level-adv"><div class="dot"></div>Avanzato</div>
+    </div>
+    <div class="univ-row">Qualunque università · qualunque programma d'esame</div>
+
+    <!-- BIO -->
+    <div class="contact-bar">
+      <img src="https://lorenzo-arcioni.github.io/images/profile.jpeg" alt="Lorenzo Arcioni" style="width:30mm;height:30mm;object-fit:cover;border-radius:4px;flex-shrink:0;" />
+      <div class="bio-left">
+        <div class="bio-name">Lorenzo Arcioni</div>
+        <div class="bio-title">Laurea Informatica 110L · Computer Science — Sapienza Roma</div>
+        <div class="bio-desc">Insegno programmazione da oltre 10 anni online. Metodo strutturato, chiaro, adattato al tuo livello. Ogni studente che ha seguito le mie lezioni ha superato l'esame con profitto.</div>
+      </div>
+      <div class="badges">
+        <div class="badge badge-gray">110 con lode</div>
+        <div class="badge badge-gray">10+ anni insegnamento</div>
+        <div class="badge badge-silver">Kaggle Silver Medal</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</body>
+</html>

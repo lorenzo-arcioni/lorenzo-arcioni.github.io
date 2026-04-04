@@ -65,7 +65,7 @@ const EducationSection = () => {
                   {edu.degree}
                 </p>
                 {edu.grade && (
-                  <p className="text-sm font-semibold text-gray-900">
+                  <p className="text-md font-semibold text-gray-900">
                     {edu.grade}
                   </p>
                 )}

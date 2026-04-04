@@ -1,6 +1,18 @@
 import React from 'react';
 import { Rocket, FileText, Award, Share2 } from 'lucide-react';
 
+{/*
+
+{
+      id: 'social',
+      title: 'Social & Community',
+      icon: Share2,
+      description: 'Le mie attività sui social e nella community tech',
+      count: '40+ ⭐'
+    }
+
+*/}
+
 const PortfolioHubSection = ({ onNavigate }) => {
   const sections = [
     {
@@ -24,13 +36,7 @@ const PortfolioHubSection = ({ onNavigate }) => {
       description: 'Visualizza le mie certificazioni professionali',
       count: '5'
     },
-    {
-      id: 'social',
-      title: 'Social & Community',
-      icon: Share2,
-      description: 'Le mie attività sui social e nella community tech',
-      count: '40+ ⭐'
-    }
+  
   ];
 
   return (
