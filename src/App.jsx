@@ -13,6 +13,7 @@ import ProjectsPage from './components/ProjectsPage';
 import PublicationsPage from './components/PublicationsPage';
 import CertificationsPage from './components/CertificationsPage';
 import SocialCommunityPage from './components/SocialCommunityPage';
+import FormazionePage from './components/FormazionePage';
 import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
 import FeaturedCoursesSection from './components/FeaturedCoursesSection';
@@ -172,10 +173,10 @@ function App() {
     );
   }
 
-  if (currentPage === 'social') {
+  if (currentPage === 'formazione') {
     return (
       <div className="min-h-screen bg-gray-50">
-        <SocialCommunityPage onBack={handleBack} />
+        <FormazionePage onBack={handleBack} />
         <Footer />
       </div>
     );

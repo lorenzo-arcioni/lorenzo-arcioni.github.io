@@ -36,6 +36,13 @@ const PortfolioHubSection = ({ onNavigate }) => {
       description: 'Visualizza le mie certificazioni professionali',
       count: '5'
     },
+    {
+      id: 'formazione',
+      title: 'Formazione',
+      icon: Share2,
+      description: 'Tutte le mie attività di formazione',
+      count: '40+ ⭐'
+    }
   
   ];
 

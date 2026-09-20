@@ -139,6 +139,7 @@
   .topics-row { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 3mm; }
   .topic-tag { font-family: 'DM Mono', monospace; font-size: 10px; color: #444; background: #f4f4f0; border: 1px solid #ddd; padding: 3px 9px; border-radius: 2px; letter-spacing: 0.3px; }
   .topic-tag.green { color: #3a6030; background: #eef5e8; border-color: #c5dab0; }
+  .topic-tag.red { color: #c0522a; background: #fdf3ef; border-color: #c2a2a2; }
 
   /* LEVELS */
   .levels-row { display: flex; gap: 6px; margin-bottom: 3mm; justify-content: center; align-items: center; }
@@ -217,7 +218,9 @@
             <div class="icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
             <div>
               <span class="item-title">Progetti, tesi e script</span>
-              <span class="item-desc">Dal problema al codice funzionante: automazione, analisi dati, elaborazione file, tesi di laurea e molto altro.</span>
+              <span class="item-desc">Dal problema al codice funzionante: automazione, analisi dati, elaborazione file, tesi di laurea, 
+                articoli scientifici, progetti universitari/personali e molto altro. Ti aiuto nello sviluppo di un solido pensiero logico e algoritmico
+              che ti porta a risolvere con successo problemi complessi.</span>
             </div>
           </li>
         </ul>
@@ -264,7 +267,7 @@
         <div class="price-card">
           <div class="p-type">Piccolo gruppo</div>
           <div class="p-amount">€20 <span>/ ora</span></div>
-          <div class="p-note">2–3 persone · a testa</div>
+          <div class="p-note">2–5 persone · a testa</div>
         </div>
       </div>
     </div>
@@ -273,10 +276,10 @@
     <div class="testimonial-row">
       <div class="testi">
         <div style="color:#c09030;font-size:11px;margin-bottom:3px;">★★★★★</div>
-        <div class="t-quote">"Non avevo mai capito le classi in Python. Dopo due sessioni ho finalmente superato l'esame senza problemi. Spiega con una pazienza enorme."</div>
+        <div class="t-quote">"Non avevo mai capito le classi in Python. Dopo tre sessioni ho finalmente superato l'esame senza problemi. Spiega con una pazienza enorme."</div>
         <div class="t-who">— Giulia R., Ingegneria Informatica, Politecnico di Milano</div>
         <div class="testi-meta">
-          <span class="t-timeline">2 sessioni · 10 giorni prima</span>
+          <span class="t-timeline">3 sessioni · 10 giorni prima</span>
           <span class="t-result">28/30 ✓</span>
         </div>
       </div>
@@ -303,6 +306,9 @@
       <span class="topic-tag">File I/O</span>
       <span class="topic-tag">Debugging</span>
       <span class="topic-tag">Pandas / NumPy</span>
+      <span class="topic-tag red">Async</span>
+      <span class="topic-tag red">Decoratori</span>
+      <span class="topic-tag red">Generatori</span>
     </div>
 
     <!-- LEVELS + UNIV NOTE -->
@@ -315,11 +321,14 @@
 
     <!-- BIO -->
     <div class="contact-bar">
-      <img src="https://lorenzo-arcioni.github.io/images/profile.jpeg" alt="Lorenzo Arcioni" style="width:30mm;height:30mm;object-fit:cover;border-radius:4px;flex-shrink:0;" />
+      <img src="https://lorenzo-arcioni.github.io/images/profile.jpeg"
+     alt="Lorenzo Arcioni"
+     style="width:30mm;height:30mm;object-fit:cover;border-radius:4px;flex-shrink:0;
+            filter: brightness(1.3) contrast(0.8);" />
       <div class="bio-left">
         <div class="bio-name">Lorenzo Arcioni</div>
         <div class="bio-title">Laurea Informatica 110L · Computer Science — Sapienza Roma</div>
-        <div class="bio-desc">Insegno programmazione da oltre 10 anni online. Metodo strutturato, chiaro, adattato al tuo livello. Ogni studente che ha seguito le mie lezioni ha superato l'esame con profitto.</div>
+        <div class="bio-desc">Insegno programmazione da oltre 10 anni online. Metodo strutturato, chiaro, adattato al tuo livello. Ogni studente che ha seguito le mie lezioni ha superato l'esame con profitto e tranquillità. Ho esperienza nel settore accademico e ho pubblicato vari articoli scientifici con vari gruppi di ricerca su riviste internazionali.</div>
       </div>
       <div class="badges">
         <div class="badge badge-gray">110 con lode</div>
