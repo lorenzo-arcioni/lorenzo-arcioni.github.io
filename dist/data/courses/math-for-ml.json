@@ -1,0 +1,691 @@
+{
+  "title": "Mathematics for Machine Learning",
+  "description": "Fondamenti matematici essenziali per comprendere e applicare Machine Learning e Deep Learning",
+  "full_description": "Questo corso ti fornirà le basi matematiche solide necessarie per comprendere profondamente gli algoritmi di Machine Learning e Deep Learning. Partendo dai fondamenti di algebra lineare, calcolo e probabilità, costruirai la comprensione matematica che sta dietro a neural networks, optimization algorithms, e statistical learning.\n\nIl corso è progettato per essere accessibile ma rigoroso: ogni concetto matematico viene spiegato con esempi pratici e implementazioni in Python/NumPy. Non si tratta di matematica teorica fine a se stessa, ma di comprendere la matematica che serve davvero per fare ML professionalmente. Ideale per autodidatti che hanno imparato ML in modo pratico e vogliono colmare gap teorici, o per chi vuole iniziare ML con solide fondamenta.",
+  "instructor": "Lorenzo Arcioni",
+  "instructor_bio": "Machine Learning Engineer e Data Scientist con oltre 5 anni di esperienza. Specializzato in Python, Machine Learning e formazione tecnica avanzata.",
+  "instructor_image": "/images/profile.jpeg",
+  "duration": "8 settimane",
+  "level": "Intermedio",
+  "category": "Mathematics",
+  "price": "€599",
+  "image_url": "https://www.techslang.com/wp-content/uploads/2021/10/thinking-ai-humanoid-robot-analyzing-screen-mathematics-formula-science-e1634742458866.jpg",
+  "learning_objectives": [
+    {
+      "objective": "Algebra Lineare",
+      "description": "Vettori, matrici, operazioni, decomposizioni (SVD, eigenvalues)"
+    },
+    {
+      "objective": "Calcolo Differenziale",
+      "description": "Derivate, gradienti, chain rule, ottimizzazione"
+    },
+    {
+      "objective": "Probabilità e Statistica",
+      "description": "Distribuzioni, Bayes, maximum likelihood, inferenza"
+    },
+    {
+      "objective": "Optimization",
+      "description": "Gradient descent, convexity, constrained optimization"
+    },
+    {
+      "objective": "Implementazioni NumPy",
+      "description": "Tradurre matematica in codice efficiente"
+    },
+    {
+      "objective": "Connessioni a ML",
+      "description": "Come la matematica si applica ad algoritmi reali"
+    }
+  ],
+  "prerequisites": [
+    {
+      "title": "Matematica liceale",
+      "description": "Algebra base, trigonometria, funzioni",
+      "is_required": true
+    },
+    {
+      "title": "Python base",
+      "description": "Sintassi Python e programmazione di base",
+      "is_required": true
+    },
+    {
+      "title": "Familiarità con ML (opzionale)",
+      "description": "Utile ma non necessario aver già visto ML",
+      "is_required": false
+    }
+  ],
+  "modules": [
+    {
+      "id": 1,
+      "title": "Introduzione e Setup",
+      "description": "Panoramica e strumenti matematici",
+      "estimated_hours": "3 ore",
+      "lessons": [
+        {
+          "id": 1,
+          "title": "Perché matematica per ML",
+          "description": "Importanza delle fondamenta matematiche",
+          "duration": "30 min",
+          "is_free": true
+        },
+        {
+          "id": 2,
+          "title": "Panoramica del corso",
+          "description": "Cosa impareremo e come",
+          "duration": "25 min",
+          "is_free": true
+        },
+        {
+          "id": 3,
+          "title": "Setup: NumPy, matplotlib, SymPy",
+          "description": "Strumenti per matematica computazionale",
+          "duration": "30 min",
+          "is_free": false
+        },
+        {
+          "id": 4,
+          "title": "NumPy basics per matematica",
+          "description": "Array operations e broadcasting",
+          "duration": "45 min",
+          "is_free": false
+        },
+        {
+          "id": 5,
+          "title": "Visualizzare matematica",
+          "description": "Plotting con matplotlib",
+          "duration": "30 min",
+          "is_free": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Algebra Lineare I - Fondamenti",
+      "description": "Vettori e operazioni base",
+      "estimated_hours": "6 ore",
+      "lessons": [
+        {
+          "id": 6,
+          "title": "Vettori: definizione e geometria",
+          "description": "Cosa sono i vettori e come rappresentarli",
+          "duration": "45 min",
+          "is_free": false
+        },
+        {
+          "id": 7,
+          "title": "Operazioni tra vettori",
+          "description": "Somma, sottrazione, scalar multiplication",
+          "duration": "40 min",
+          "is_free": false
+        },
+        {
+          "id": 8,
+          "title": "Dot product",
+          "description": "Prodotto scalare: geometria e applicazioni",
+          "duration": "50 min",
+          "is_free": false
+        },
+        {
+          "id": 9,
+          "title": "Norme e distanze",
+          "description": "L1, L2 norm, distanza euclidea",
+          "duration": "45 min",
+          "is_free": false
+        },
+        {
+          "id": 10,
+          "title": "Cross product",
+          "description": "Prodotto vettoriale in 3D",
+          "duration": "35 min",
+          "is_free": false
+        },
+        {
+          "id": 11,
+          "title": "Implementazioni NumPy",
+          "description": "Operazioni vettoriali in Python",
+          "duration": "40 min",
+          "is_free": false
+        },
+        {
+          "id": 12,
+          "title": "Applicazione: similarity in ML",
+          "description": "Cosine similarity per recommendation",
+          "duration": "45 min",
+          "is_free": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Algebra Lineare II - Matrici",
+      "description": "Operazioni matriciali e trasformazioni",
+      "estimated_hours": "7 ore",
+      "lessons": [
+        {
+          "id": 13,
+          "title": "Matrici: definizione e notazione",
+          "description": "Cosa sono le matrici",
+          "duration": "35 min",
+          "is_free": false
+        },
+        {
+          "id": 14,
+          "title": "Operazioni matriciali",
+          "description": "Somma, moltiplicazione, trasposizione",
+          "duration": "55 min",
+          "is_free": false
+        },
+        {
+          "id": 15,
+          "title": "Matrix multiplication deep dive",
+          "description": "Perché si moltiplica così, interpretazioni",
+          "duration": "50 min",
+          "is_free": false
+        },
+        {
+          "id": 16,
+          "title": "Matrici speciali",
+          "description": "Identità, diagonali, simmetriche, orthogonali",
+          "duration": "45 min",
+          "is_free": false
+        },
+        {
+          "id": 17,
+          "title": "Determinante",
+          "description": "Cos'è e come calcolarlo",
+          "duration": "50 min",
+          "is_free": false
+        },
+        {
+          "id": 18,
+          "title": "Inversa di matrice",
+          "description": "Quando esiste e come calcolarla",
+          "duration": "45 min",
+          "is_free": false
+        },
+        {
+          "id": 19,
+          "title": "Sistemi lineari",
+          "description": "Ax = b e metodi di risoluzione",
+          "duration": "50 min",
+          "is_free": false
+        },
+        {
+          "id": 20,
+          "title": "Applicazione: Linear Regression",
+          "description": "Regressione lineare come algebra lineare",
+          "duration": "60 min",
+          "is_free": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Algebra Lineare III - Avanzato",
+      "description": "Eigenvalues, decomposizioni, spazi vettoriali",
+      "estimated_hours": "7 ore",
+      "lessons": [
+        {
+          "id": 21,
+          "title": "Spazi vettoriali",
+          "description": "Subspaces, span, linear independence",
+          "duration": "55 min",
+          "is_free": false
+        },
+        {
+          "id": 22,
+          "title": "Basis e dimensione",
+          "description": "Rappresentare spazi vettoriali",
+          "duration": "50 min",
+          "is_free": false
+        },
+        {
+          "id": 23,
+          "title": "Eigenvalues e eigenvectors",
+          "description": "Cos'è e perché è importante",
+          "duration": "65 min",
+          "is_free": false
+        },
+        {
+          "id": 24,
+          "title": "Eigendecomposition",
+          "description": "Diagonalizzazione di matrici",
+          "duration": "55 min",
+          "is_free": false
+        },
+        {
+          "id": 25,
+          "title": "Singular Value Decomposition (SVD)",
+          "description": "Una delle decomposizioni più utili",
+          "duration": "60 min",
+          "is_free": false
+        },
+        {
+          "id": 26,
+          "title": "Applicazione: PCA",
+          "description": "Principal Component Analysis da SVD",
+          "duration": "70 min",
+          "is_free": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Calcolo Differenziale",
+      "description": "Derivate e ottimizzazione",
+      "estimated_hours": "8 ore",
+      "lessons": [
+        {
+          "id": 27,
+          "title": "Review: funzioni e limiti",
+          "description": "Ripasso concetti fondamentali",
+          "duration": "40 min",
+          "is_free": false
+        },
+        {
+          "id": 28,
+          "title": "Derivate: definizione e geometria",
+          "description": "Cos'è una derivata",
+          "duration": "50 min",
+          "is_free": false
+        },
+        {
+          "id": 29,
+          "title": "Regole di derivazione",
+          "description": "Power rule, product, quotient, chain rule",
+          "duration": "60 min",
+          "is_free": false
+        },
+        {
+          "id": 30,
+          "title": "Derivate parziali",
+          "description": "Funzioni di più variabili",
+          "duration": "50 min",
+          "is_free": false
+        },
+        {
+          "id": 31,
+          "title": "Gradiente",
+          "description": "Vettore delle derivate parziali",
+          "duration": "55 min",
+          "is_free": false
+        },
+        {
+          "id": 32,
+          "title": "Chain rule multivariata",
+          "description": "Fondamentale per backpropagation",
+          "duration": "60 min",
+          "is_free": false
+        },
+        {
+          "id": 33,
+          "title": "Jacobian e Hessian",
+          "description": "Matrici di derivate",
+          "duration": "50 min",
+          "is_free": false
+        },
+        {
+          "id": 34,
+          "title": "Applicazione: Gradient descent",
+          "description": "Implementare gradient descent da zero",
+          "duration": "65 min",
+          "is_free": false
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Probabilità e Statistica I",
+      "description": "Fondamenti probabilistici",
+      "estimated_hours": "7 ore",
+      "lessons": [
+        {
+          "id": 35,
+          "title": "Probability basics",
+          "description": "Eventi, sample space, axioms",
+          "duration": "45 min",
+          "is_free": false
+        },
+        {
+          "id": 36,
+          "title": "Conditional probability",
+          "description": "P(A|B) e independence",
+          "duration": "50 min",
+          "is_free": false
+        },
+        {
+          "id": 37,
+          "title": "Bayes' theorem",
+          "description": "Teorema fondamentale per ML",
+          "duration": "55 min",
+          "is_free": false
+        },
+        {
+          "id": 38,
+          "title": "Random variables",
+          "description": "Discrete e continuous",
+          "duration": "50 min",
+          "is_free": false
+        },
+        {
+          "id": 39,
+          "title": "Distribuzioni comuni",
+          "description": "Bernoulli, Binomial, Normal, Poisson",
+          "duration": "60 min",
+          "is_free": false
+        },
+        {
+          "id": 40,
+          "title": "Expected value e variance",
+          "description": "Misure di tendenza centrale e dispersione",
+          "duration": "50 min",
+          "is_free": false
+        },
+        {
+          "id": 41,
+          "title": "Applicazione: Naive Bayes classifier",
+          "description": "Classificatore probabilistico",
+          "duration": "60 min",
+          "is_free": false
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Probabilità e Statistica II",
+      "description": "Inferenza e testing",
+      "estimated_hours": "6 ore",
+      "lessons": [
+        {
+          "id": 42,
+          "title": "Maximum Likelihood Estimation",
+          "description": "Stimare parametri da dati",
+          "duration": "60 min",
+          "is_free": false
+        },
+        {
+          "id": 43,
+          "title": "Maximum A Posteriori (MAP)",
+          "description": "Bayesian parameter estimation",
+          "duration": "50 min",
+          "is_free": false
+        },
+        {
+          "id": 44,
+          "title": "Central Limit Theorem",
+          "description": "Perché la normale è ovunque",
+          "duration": "45 min",
+          "is_free": false
+        },
+        {
+          "id": 45,
+          "title": "Confidence intervals",
+          "description": "Quantificare incertezza",
+          "duration": "45 min",
+          "is_free": false
+        },
+        {
+          "id": 46,
+          "title": "Hypothesis testing",
+          "description": "T-test, p-values, statistical significance",
+          "duration": "55 min",
+          "is_free": false
+        },
+        {
+          "id": 47,
+          "title": "Applicazione: A/B testing",
+          "description": "Test statistici per decisioni business",
+          "duration": "55 min",
+          "is_free": false
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Optimization Theory",
+      "description": "Teoria dell'ottimizzazione per ML",
+      "estimated_hours": "7 ore",
+      "lessons": [
+        {
+          "id": 48,
+          "title": "Optimization problems",
+          "description": "Formulation e tipi di problemi",
+          "duration": "45 min",
+          "is_free": false
+        },
+        {
+          "id": 49,
+          "title": "Convexity",
+          "description": "Funzioni e set convessi",
+          "duration": "55 min",
+          "is_free": false
+        },
+        {
+          "id": 50,
+          "title": "Gradient descent variants",
+          "description": "Batch, stochastic, mini-batch",
+          "duration": "60 min",
+          "is_free": false
+        },
+        {
+          "id": 51,
+          "title": "Momentum e adaptive methods",
+          "description": "SGD with momentum, RMSprop, Adam",
+          "duration": "60 min",
+          "is_free": false
+        },
+        {
+          "id": 52,
+          "title": "Learning rate scheduling",
+          "description": "Step decay, exponential, cosine annealing",
+          "duration": "45 min",
+          "is_free": false
+        },
+        {
+          "id": 53,
+          "title": "Constrained optimization",
+          "description": "Lagrange multipliers basics",
+          "duration": "50 min",
+          "is_free": false
+        },
+        {
+          "id": 54,
+          "title": "Applicazione: Training neural networks",
+          "description": "Come tutto si collega al training",
+          "duration": "65 min",
+          "is_free": false
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "title": "Mathematics of Neural Networks",
+      "description": "Matematica dietro deep learning",
+      "estimated_hours": "6 ore",
+      "lessons": [
+        {
+          "id": 55,
+          "title": "Forward propagation matematica",
+          "description": "Matrix multiplications e activations",
+          "duration": "55 min",
+          "is_free": false
+        },
+        {
+          "id": 56,
+          "title": "Backpropagation derivation",
+          "description": "Chain rule applicata a reti neurali",
+          "duration": "70 min",
+          "is_free": false
+        },
+        {
+          "id": 57,
+          "title": "Loss functions matematica",
+          "description": "MSE, cross-entropy, derivate",
+          "duration": "50 min",
+          "is_free": false
+        },
+        {
+          "id": 58,
+          "title": "Activation functions",
+          "description": "ReLU, sigmoid, tanh - proprietà matematiche",
+          "duration": "45 min",
+          "is_free": false
+        },
+        {
+          "id": 59,
+          "title": "Batch normalization matematica",
+          "description": "Perché funziona",
+          "duration": "50 min",
+          "is_free": false
+        },
+        {
+          "id": 60,
+          "title": "Progetto: Neural network da zero",
+          "description": "Implementare NN solo con NumPy",
+          "duration": "90 min",
+          "is_free": false
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "title": "Information Theory Basics",
+      "description": "Entropia e teoria dell'informazione",
+      "estimated_hours": "4 ore",
+      "lessons": [
+        {
+          "id": 61,
+          "title": "Entropy",
+          "description": "Misurare incertezza",
+          "duration": "50 min",
+          "is_free": false
+        },
+        {
+          "id": 62,
+          "title": "Cross-entropy",
+          "description": "Confrontare distribuzioni",
+          "duration": "45 min",
+          "is_free": false
+        },
+        {
+          "id": 63,
+          "title": "KL divergence",
+          "description": "Kullback-Leibler divergence",
+          "duration": "50 min",
+          "is_free": false
+        },
+        {
+          "id": 64,
+          "title": "Mutual information",
+          "description": "Informazione condivisa tra variabili",
+          "duration": "40 min",
+          "is_free": false
+        },
+        {
+          "id": 65,
+          "title": "Applicazioni in ML",
+          "description": "Come si usa in feature selection, VAE",
+          "duration": "45 min",
+          "is_free": false
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "title": "Final Projects",
+      "description": "Applicare matematica a problemi ML",
+      "estimated_hours": "8 ore",
+      "lessons": [
+        {
+          "id": 66,
+          "title": "Progetto 1: PCA da zero",
+          "description": "Implementare PCA usando solo algebra lineare",
+          "duration": "90 min",
+          "is_free": false
+        },
+        {
+          "id": 67,
+          "title": "Progetto 2: Logistic regression matematico",
+          "description": "Derivare e implementare da principi primi",
+          "duration": "100 min",
+          "is_free": false
+        },
+        {
+          "id": 68,
+          "title": "Progetto 3: Optimizer comparison",
+          "description": "Confrontare SGD, momentum, Adam matematicamente",
+          "duration": "90 min",
+          "is_free": false
+        },
+        {
+          "id": 69,
+          "title": "Progetto 4: Backprop visualization",
+          "description": "Visualizzare gradient flow in NN",
+          "duration": "80 min",
+          "is_free": false
+        },
+        {
+          "id": 70,
+          "title": "Recap e next steps",
+          "description": "Cosa hai imparato e come continuare",
+          "duration": "30 min",
+          "is_free": false
+        }
+      ]
+    }
+  ],
+  "certification": true,
+  "certificate_description": "Certificato digitale verificabile che attesta il completamento del corso e la comprensione dei fondamenti matematici per Machine Learning.",
+  "target_audience": [
+    "Autodidatti ML che vogliono capire la teoria",
+    "Data Scientists che vogliono approfondire matematica",
+    "Studenti che vogliono iniziare ML con basi solide",
+    "Professionisti che sentono gap matematici",
+    "Chiunque voglia comprendere profondamente ML"
+  ],
+  "tools_required": [
+    "Computer (Windows, Mac o Linux)",
+    "Python 3.8+",
+    "NumPy, matplotlib, SymPy",
+    "Jupyter Notebook",
+    "4GB RAM minimo",
+    "Conoscenza base di Python"
+  ],
+  "average_rating": 4.7,
+"reviews": [
+  {
+    "student_name": "Alessandro Caruso",
+    "rating": 5,
+    "date": "10 dicembre 2024",
+    "comment": "Questo corso ha riempito tutti i gap matematici che avevo. Avevo imparato ML in modo pratico ma non capivo veramente cosa succedesse sotto. Ora capisco backpropagation, perché funziona gradient descent, e posso leggere paper scientifici. Investimento che vale ogni centesimo.",
+    "verified": true
+  },
+  {
+    "student_name": "Martina Lombardi",
+    "rating": 5,
+    "date": "3 dicembre 2024",
+    "comment": "Eccellente per chi come me veniva da un background non matematico. Lorenzo spiega algebra lineare e calcolo in modo accessibile ma rigoroso. Le implementazioni NumPy aiutano a collegare teoria e pratica. Ora posso affrontare corsi avanzati di ML con sicurezza.",
+    "verified": true
+  },
+  {
+    "student_name": "Stefano Vitale",
+    "rating": 4,
+    "date": "27 novembre 2024",
+    "comment": "Molto completo e ben strutturato. La matematica dietro PCA, SVD e neural networks è spiegata chiaramente. Alcune parti sono impegnative (specialmente eigenvalues) ma ne vale la pena. Consiglio di prendersi tempo e fare tutti gli esercizi.",
+    "verified": true
+  },
+  {
+    "student_name": "Federica Bruno",
+    "rating": 5,
+    "date": "19 novembre 2024",
+    "comment": "Ho una laurea in economia e mi mancavano le basi matematiche per ML. Questo corso è stato perfetto per colmare il gap. La sezione su probabilità e statistiche è particolarmente utile. Implementare neural network da zero usando solo la matematica è stato illuminante.",
+    "verified": true
+  },
+  {
+    "student_name": "Giovanni Ferrara",
+    "rating": 4,
+    "date": "12 novembre 2024",
+    "comment": "Ottimo corso che ti fa capire veramente la matematica dietro ML. Non è un corso facile - richiede impegno e pratica - ma alla fine ti dà una comprensione profonda. Forse alcuni argomenti potrebbero essere approfonditi ulteriormente, ma nel complesso è eccellente.",
+    "verified": false
+  }
+]
+}

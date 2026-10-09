@@ -1,0 +1,691 @@
+{
+  "title": "Computer Vision",
+  "description": "Corso completo su Computer Vision: da image processing a deep learning per visione artificiale",
+  "full_description": "Questo corso ti guiderà attraverso l'intero ecosistema della Computer Vision moderna. Partendo dalle tecniche classiche di image processing, imparerai a utilizzare OpenCV per operazioni fondamentali, per poi passare alle architetture deep learning più avanzate per classification, detection, segmentation e generazione di immagini.\n\nIl corso bilancia teoria e pratica: capirai come funzionano le CNN, Vision Transformers e architetture moderne, ma soprattutto implementerai soluzioni su problemi reali. Include progetti su object detection, face recognition, image segmentation e generazione. Ideale per chi vuole specializzarsi in Computer Vision o per ML engineers che lavorano con dati visivi.",
+  "instructor": "Lorenzo Arcioni",
+  "instructor_bio": "Machine Learning Engineer e Data Scientist con oltre 5 anni di esperienza. Specializzato in Python, Machine Learning e formazione tecnica avanzata.",
+  "instructor_image": "/images/profile.jpeg",
+  "duration": "10 settimane",
+  "level": "Intermedio/Avanzato",
+  "category": "Computer Vision",
+  "price": "€799",
+  "image_url": "https://images.prismic.io/deepomatic/39df04f3-6712-4d1a-a840-bbfd4f5152d0_computer+vision.jpg?auto=compress,format",
+  "learning_objectives": [
+    {
+      "objective": "Image Processing classico",
+      "description": "OpenCV, filtri, edge detection, transformations"
+    },
+    {
+      "objective": "CNN per Computer Vision",
+      "description": "Architetture moderne e transfer learning"
+    },
+    {
+      "objective": "Object Detection",
+      "description": "YOLO, R-CNN, detection in tempo reale"
+    },
+    {
+      "objective": "Image Segmentation",
+      "description": "Semantic e instance segmentation con U-Net"
+    },
+    {
+      "objective": "Face Recognition",
+      "description": "Face detection, alignment, recognition systems"
+    },
+    {
+      "objective": "Vision Transformers",
+      "description": "ViT e architetture transformer-based"
+    }
+  ],
+  "prerequisites": [
+    {
+      "title": "Python avanzato",
+      "description": "Ottima conoscenza di Python e NumPy",
+      "is_required": true
+    },
+    {
+      "title": "Deep Learning basics",
+      "description": "Familiarità con neural networks e CNN",
+      "is_required": true
+    },
+    {
+      "title": "Machine Learning",
+      "description": "Esperienza con ML supervised/unsupervised",
+      "is_required": true
+    }
+  ],
+  "modules": [
+    {
+      "id": 1,
+      "title": "Image Processing Fundamentals",
+      "description": "Tecniche classiche con OpenCV",
+      "estimated_hours": "6 ore",
+      "lessons": [
+        {
+          "id": 1,
+          "title": "Introduzione a Computer Vision",
+          "description": "Storia, applicazioni e panoramica",
+          "duration": "30 min",
+          "is_free": true
+        },
+        {
+          "id": 2,
+          "title": "OpenCV setup e basics",
+          "description": "Leggere, visualizzare, salvare immagini",
+          "duration": "40 min",
+          "is_free": true
+        },
+        {
+          "id": 3,
+          "title": "Color spaces",
+          "description": "RGB, HSV, grayscale conversions",
+          "duration": "35 min",
+          "is_free": false
+        },
+        {
+          "id": 4,
+          "title": "Image transformations",
+          "description": "Resize, crop, rotate, flip",
+          "duration": "40 min",
+          "is_free": false
+        },
+        {
+          "id": 5,
+          "title": "Filtering e convolution",
+          "description": "Blur, sharpen, custom kernels",
+          "duration": "50 min",
+          "is_free": false
+        },
+        {
+          "id": 6,
+          "title": "Edge detection",
+          "description": "Canny, Sobel, Laplacian",
+          "duration": "45 min",
+          "is_free": false
+        },
+        {
+          "id": 7,
+          "title": "Progetto: Image enhancement",
+          "description": "Migliorare qualità immagini",
+          "duration": "60 min",
+          "is_free": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Feature Detection e Matching",
+      "description": "Identificare e confrontare features",
+      "estimated_hours": "5 ore",
+      "lessons": [
+        {
+          "id": 8,
+          "title": "Corner detection",
+          "description": "Harris, Shi-Tomasi corners",
+          "duration": "40 min",
+          "is_free": false
+        },
+        {
+          "id": 9,
+          "title": "SIFT e SURF",
+          "description": "Scale-invariant feature detection",
+          "duration": "50 min",
+          "is_free": false
+        },
+        {
+          "id": 10,
+          "title": "ORB",
+          "description": "Fast feature detection alternativa",
+          "duration": "35 min",
+          "is_free": false
+        },
+        {
+          "id": 11,
+          "title": "Feature matching",
+          "description": "Brute-force, FLANN matcher",
+          "duration": "45 min",
+          "is_free": false
+        },
+        {
+          "id": 12,
+          "title": "Homography e perspective",
+          "description": "Allineare immagini con transformazioni",
+          "duration": "50 min",
+          "is_free": false
+        },
+        {
+          "id": 13,
+          "title": "Progetto: Panorama stitching",
+          "description": "Creare panorami da immagini multiple",
+          "duration": "60 min",
+          "is_free": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "CNN per Image Classification",
+      "description": "Deep learning per classificazione",
+      "estimated_hours": "7 ore",
+      "lessons": [
+        {
+          "id": 14,
+          "title": "Review CNN architecture",
+          "description": "Conv, pooling, fully connected layers",
+          "duration": "40 min",
+          "is_free": false
+        },
+        {
+          "id": 15,
+          "title": "Data augmentation per vision",
+          "description": "Tecniche specifiche per immagini",
+          "duration": "45 min",
+          "is_free": false
+        },
+        {
+          "id": 16,
+          "title": "Classic architectures",
+          "description": "VGG, ResNet, Inception",
+          "duration": "55 min",
+          "is_free": false
+        },
+        {
+          "id": 17,
+          "title": "EfficientNet",
+          "description": "Scaling efficiente di CNN",
+          "duration": "45 min",
+          "is_free": false
+        },
+        {
+          "id": 18,
+          "title": "Transfer learning strategies",
+          "description": "Feature extraction vs fine-tuning",
+          "duration": "50 min",
+          "is_free": false
+        },
+        {
+          "id": 19,
+          "title": "Interpretabilità: GradCAM",
+          "description": "Visualizzare cosa guarda la rete",
+          "duration": "40 min",
+          "is_free": false
+        },
+        {
+          "id": 20,
+          "title": "Progetto: Custom image classifier",
+          "description": "Classificare dataset personalizzato",
+          "duration": "90 min",
+          "is_free": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Object Detection",
+      "description": "Rilevare e localizzare oggetti",
+      "estimated_hours": "8 ore",
+      "lessons": [
+        {
+          "id": 21,
+          "title": "Detection vs Classification",
+          "description": "Differenze e challenges",
+          "duration": "30 min",
+          "is_free": false
+        },
+        {
+          "id": 22,
+          "title": "R-CNN family",
+          "description": "R-CNN, Fast R-CNN, Faster R-CNN",
+          "duration": "60 min",
+          "is_free": false
+        },
+        {
+          "id": 23,
+          "title": "YOLO (You Only Look Once)",
+          "description": "Real-time object detection",
+          "duration": "60 min",
+          "is_free": false
+        },
+        {
+          "id": 24,
+          "title": "YOLOv5, YOLOv8",
+          "description": "Versioni moderne e implementazione",
+          "duration": "55 min",
+          "is_free": false
+        },
+        {
+          "id": 25,
+          "title": "SSD e RetinaNet",
+          "description": "Alternative architetture",
+          "duration": "45 min",
+          "is_free": false
+        },
+        {
+          "id": 26,
+          "title": "Annotation e dataset creation",
+          "description": "LabelImg, CVAT per creare dataset",
+          "duration": "40 min",
+          "is_free": false
+        },
+        {
+          "id": 27,
+          "title": "Metriche: IoU, mAP",
+          "description": "Valutare performance detection",
+          "duration": "35 min",
+          "is_free": false
+        },
+        {
+          "id": 28,
+          "title": "Progetto: Object detector custom",
+          "description": "Allenare YOLO su dataset personalizzato",
+          "duration": "95 min",
+          "is_free": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Image Segmentation",
+      "description": "Segmentazione pixel-level",
+      "estimated_hours": "7 ore",
+      "lessons": [
+        {
+          "id": 29,
+          "title": "Semantic vs Instance segmentation",
+          "description": "Differenze e use cases",
+          "duration": "35 min",
+          "is_free": false
+        },
+        {
+          "id": 30,
+          "title": "U-Net architecture",
+          "description": "Encoder-decoder per segmentation",
+          "duration": "55 min",
+          "is_free": false
+        },
+        {
+          "id": 31,
+          "title": "FCN (Fully Convolutional Networks)",
+          "description": "Prima architettura per segmentation",
+          "duration": "45 min",
+          "is_free": false
+        },
+        {
+          "id": 32,
+          "title": "DeepLab e Atrous convolutions",
+          "description": "Multi-scale features",
+          "duration": "50 min",
+          "is_free": false
+        },
+        {
+          "id": 33,
+          "title": "Mask R-CNN",
+          "description": "Instance segmentation",
+          "duration": "55 min",
+          "is_free": false
+        },
+        {
+          "id": 34,
+          "title": "Loss functions per segmentation",
+          "description": "Dice loss, Focal loss",
+          "duration": "40 min",
+          "is_free": false
+        },
+        {
+          "id": 35,
+          "title": "Progetto: Medical image segmentation",
+          "description": "Segmentare organi o lesioni",
+          "duration": "80 min",
+          "is_free": false
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Face Recognition Systems",
+      "description": "Riconoscimento facciale end-to-end",
+      "estimated_hours": "6 ore",
+      "lessons": [
+        {
+          "id": 36,
+          "title": "Face detection",
+          "description": "Haar cascades, MTCNN, RetinaFace",
+          "duration": "50 min",
+          "is_free": false
+        },
+        {
+          "id": 37,
+          "title": "Face alignment",
+          "description": "Landmark detection e normalizzazione",
+          "duration": "45 min",
+          "is_free": false
+        },
+        {
+          "id": 38,
+          "title": "Face embeddings",
+          "description": "FaceNet, ArcFace, feature extraction",
+          "duration": "55 min",
+          "is_free": false
+        },
+        {
+          "id": 39,
+          "title": "Verification vs Identification",
+          "description": "1:1 vs 1:N matching",
+          "duration": "40 min",
+          "is_free": false
+        },
+        {
+          "id": 40,
+          "title": "Triplet loss",
+          "description": "Training per embeddings discriminativi",
+          "duration": "45 min",
+          "is_free": false
+        },
+        {
+          "id": 41,
+          "title": "Progetto: Face recognition system",
+          "description": "Sistema completo detection + recognition",
+          "duration": "85 min",
+          "is_free": false
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Vision Transformers",
+      "description": "Transformer architecture per vision",
+      "estimated_hours": "5 ore",
+      "lessons": [
+        {
+          "id": 42,
+          "title": "Vision Transformer (ViT)",
+          "description": "Applicare transformers alle immagini",
+          "duration": "60 min",
+          "is_free": false
+        },
+        {
+          "id": 43,
+          "title": "Patch embeddings",
+          "description": "Come trasformare immagini in sequenze",
+          "duration": "40 min",
+          "is_free": false
+        },
+        {
+          "id": 44,
+          "title": "Swin Transformer",
+          "description": "Hierarchical vision transformer",
+          "duration": "50 min",
+          "is_free": false
+        },
+        {
+          "id": 45,
+          "title": "DETR (Detection Transformer)",
+          "description": "Object detection con transformers",
+          "duration": "50 min",
+          "is_free": false
+        },
+        {
+          "id": 46,
+          "title": "ViT vs CNN",
+          "description": "Quando usare uno o l'altro",
+          "duration": "35 min",
+          "is_free": false
+        },
+        {
+          "id": 47,
+          "title": "Implementazione pratica",
+          "description": "Fine-tuning ViT su custom dataset",
+          "duration": "65 min",
+          "is_free": false
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Generative Models",
+      "description": "Generare immagini con AI",
+      "estimated_hours": "6 ore",
+      "lessons": [
+        {
+          "id": 48,
+          "title": "Autoencoders per immagini",
+          "description": "Compressione e ricostruzione",
+          "duration": "45 min",
+          "is_free": false
+        },
+        {
+          "id": 49,
+          "title": "VAE (Variational Autoencoders)",
+          "description": "Generazione probabilistica",
+          "duration": "50 min",
+          "is_free": false
+        },
+        {
+          "id": 50,
+          "title": "GANs basics",
+          "description": "Generator vs Discriminator",
+          "duration": "55 min",
+          "is_free": false
+        },
+        {
+          "id": 51,
+          "title": "DCGAN",
+          "description": "Deep Convolutional GANs",
+          "duration": "50 min",
+          "is_free": false
+        },
+        {
+          "id": 52,
+          "title": "StyleGAN",
+          "description": "Generazione immagini alta qualità",
+          "duration": "45 min",
+          "is_free": false
+        },
+        {
+          "id": 53,
+          "title": "Diffusion Models overview",
+          "description": "Stable Diffusion e DALL-E",
+          "duration": "40 min",
+          "is_free": false
+        },
+        {
+          "id": 54,
+          "title": "Progetto: Image generation",
+          "description": "Generare immagini con GAN",
+          "duration": "75 min",
+          "is_free": false
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "title": "Video Analysis",
+      "description": "Computer vision per video",
+      "estimated_hours": "5 ore",
+      "lessons": [
+        {
+          "id": 55,
+          "title": "Video processing basics",
+          "description": "Leggere, processare, salvare video",
+          "duration": "40 min",
+          "is_free": false
+        },
+        {
+          "id": 56,
+          "title": "Optical flow",
+          "description": "Tracking movimento tra frame",
+          "duration": "45 min",
+          "is_free": false
+        },
+        {
+          "id": 57,
+          "title": "Object tracking",
+          "description": "SORT, DeepSORT algorithms",
+          "duration": "55 min",
+          "is_free": false
+        },
+        {
+          "id": 58,
+          "title": "Action recognition",
+          "description": "3D CNN, Two-stream networks",
+          "duration": "50 min",
+          "is_free": false
+        },
+        {
+          "id": 59,
+          "title": "Progetto: Video object tracking",
+          "description": "Tracking oggetti in video",
+          "duration": "70 min",
+          "is_free": false
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "title": "Deployment e Optimization",
+      "description": "CV in produzione",
+      "estimated_hours": "5 ore",
+      "lessons": [
+        {
+          "id": 60,
+          "title": "Model optimization per CV",
+          "description": "Quantization, pruning specifici per vision",
+          "duration": "50 min",
+          "is_free": false
+        },
+        {
+          "id": 61,
+          "title": "Edge deployment",
+          "description": "Modelli su dispositivi embedded",
+          "duration": "45 min",
+          "is_free": false
+        },
+        {
+          "id": 62,
+          "title": "TensorRT per GPU inference",
+          "description": "Ottimizzare per NVIDIA GPUs",
+          "duration": "45 min",
+          "is_free": false
+        },
+        {
+          "id": 63,
+          "title": "Real-time processing",
+          "description": "Strategie per bassa latenza",
+          "duration": "40 min",
+          "is_free": false
+        },
+        {
+          "id": 64,
+          "title": "Batch processing pipelines",
+          "description": "Processare grandi volumi di immagini",
+          "duration": "40 min",
+          "is_free": false
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "title": "Capstone Project",
+      "description": "Progetto CV end-to-end",
+      "estimated_hours": "10 ore",
+      "lessons": [
+        {
+          "id": 65,
+          "title": "Project selection",
+          "description": "Scegliere problema CV da risolvere",
+          "duration": "30 min",
+          "is_free": false
+        },
+        {
+          "id": 66,
+          "title": "Dataset creation",
+          "description": "Raccolta e annotation dati",
+          "duration": "100 min",
+          "is_free": false
+        },
+        {
+          "id": 67,
+          "title": "Model development",
+          "description": "Implementare e allenare modello",
+          "duration": "150 min",
+          "is_free": false
+        },
+        {
+          "id": 68,
+          "title": "Optimization",
+          "description": "Tuning e miglioramento performance",
+          "duration": "100 min",
+          "is_free": false
+        },
+        {
+          "id": 69,
+          "title": "Deployment",
+          "description": "Preparare per produzione",
+          "duration": "90 min",
+          "is_free": false
+        },
+        {
+          "id": 70,
+          "title": "Final presentation",
+          "description": "Demo e presentazione risultati",
+          "duration": "60 min",
+          "is_free": false
+        }
+      ]
+    }
+  ],
+  "certification": true,
+  "certificate_description": "Certificato digitale verificabile che attesta il completamento del corso e le competenze specialistiche acquisite in Computer Vision.",
+  "target_audience": [
+    "ML Engineers che vogliono specializzarsi in CV",
+    "Computer Vision Engineers",
+    "Robotics Engineers",
+    "Data Scientists con focus su immagini",
+    "Sviluppatori di app con funzionalità vision"
+  ],
+  "tools_required": [
+    "Computer con GPU (consigliato)",
+    "Python 3.8+",
+    "OpenCV, TensorFlow/PyTorch",
+    "Google Colab per GPU cloud",
+    "16GB RAM minimo",
+    "Esperienza con Deep Learning"
+  ],
+"average_rating": 4.8,
+"reviews": [
+  {
+    "student_name": "Daniele Costa",
+    "rating": 5,
+    "date": "11 dicembre 2024",
+    "comment": "Fantastico per chi vuole specializzarsi in Computer Vision. Parte da OpenCV classico e arriva a Vision Transformers. I progetti su object detection e face recognition sono molto pratici. Ho implementato un sistema di riconoscimento facciale per la mia startup grazie a questo corso.",
+    "verified": true
+  },
+  {
+    "student_name": "Sara Battaglia",
+    "rating": 5,
+    "date": "4 dicembre 2024",
+    "comment": "Corso completo che bilancia perfettamente teoria e pratica. La sezione su YOLO è spiegata benissimo e il progetto su custom object detector è stato illuminante. La parte su segmentation con U-Net è particolarmente utile. Contenuto aggiornato con le ultime architetture.",
+    "verified": true
+  },
+  {
+    "student_name": "Antonio Serra",
+    "rating": 5,
+    "date": "27 novembre 2024",
+    "comment": "Lavoravo già con immagini ma in modo superficiale. Questo corso mi ha dato una comprensione profonda. Il modulo su GANs e image generation è affascinante. Apprezzo molto la sezione su deployment e optimization - aspetti spesso trascurati ma essenziali per produzione.",
+    "verified": true
+  },
+  {
+    "student_name": "Elisa Monti",
+    "rating": 4,
+    "date": "20 novembre 2024",
+    "comment": "Ottimo corso con progetti molto pratici. La spiegazione delle CNN e delle varie architetture è chiara. L'unico appunto è che alcuni moduli richiedono una GPU potente (ho usato Colab). Ma la qualità del contenuto vale assolutamente il prezzo.",
+    "verified": true
+  },
+  {
+    "student_name": "Francesco Grassi",
+    "rating": 5,
+    "date": "13 novembre 2024",
+    "comment": "Il corso che cercavo per specializzarmi in CV. Copre tutto: dalle basi di image processing alle architetture transformer per vision. I progetti sono vari e interessanti. La sezione su video analysis è un bonus fantastico. Ora mi sento pronto per ruoli specializzati in Computer Vision.",
+    "verified": false
+  }
+]
+}

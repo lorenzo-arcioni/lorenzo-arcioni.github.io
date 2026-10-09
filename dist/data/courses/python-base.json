@@ -1,0 +1,728 @@
+{
+  "title": "Programmazione in Python - Base",
+  "description": "Corso completo di introduzione alla programmazione con Python",
+  "full_description": "Questo corso completo di 13 settimane ti porterà da zero alla capacità di programmare autonomamente in Python. Partendo dalle basi assolute (variabili, tipi di dati, operatori), costruirai progressivamente competenze sempre più avanzate fino alla programmazione orientata agli oggetti e alla creazione di applicazioni complete.\n\nCon oltre 5000 studenti e una valutazione media di 4.7 stelle, il corso è progettato per principianti assoluti ma mantiene un ritmo che ti sfiderà costantemente. Ogni modulo include esercizi pratici, progetti hands-on e quiz per consolidare l'apprendimento. Alla fine del corso avrai costruito un portfolio di progetti che dimostrano le tue competenze e sarai pronto per specializzarti in Data Science, Web Development, Automation o qualsiasi altra area.",
+  "instructor": "Lorenzo Arcioni",
+  "instructor_bio": "Machine Learning Engineer e Data Scientist con oltre 5 anni di esperienza. Specializzato in Python, Machine Learning e formazione tecnica avanzata.",
+  "instructor_image": "/images/profile.jpeg",
+  "duration": "13 settimane",
+  "level": "Principiante",
+  "category": "Programmazione",
+  "price": "€399",
+  "image_url": "https://www.python.org/static/community_logos/python-logo-master-v3-TM.png",
+  "learning_objectives": [
+    {
+      "objective": "Variabili e tipi di dati",
+      "description": "Gestire numeri, stringhe, liste, dizionari e altri tipi fondamentali"
+    },
+    {
+      "objective": "Strutture di controllo",
+      "description": "If/else, loop (for, while), logica condizionale"
+    },
+    {
+      "objective": "Funzioni",
+      "description": "Creare, chiamare e organizzare codice con funzioni"
+    },
+    {
+      "objective": "Programmazione orientata agli oggetti",
+      "description": "Classi, oggetti, ereditarietà, polimorfismo"
+    },
+    {
+      "objective": "Gestione file",
+      "description": "Leggere e scrivere file di testo, CSV, JSON"
+    },
+    {
+      "objective": "Algoritmi di base",
+      "description": "Ricerca, ordinamento, algoritmi comuni"
+    },
+    {
+      "objective": "Applicazioni pratiche",
+      "description": "Costruire programmi reali e utili"
+    },
+    {
+      "objective": "Progetti portfolio",
+      "description": "Portfolio di progetti per dimostrare competenze"
+    }
+  ],
+  "prerequisites": [
+    {
+      "title": "Nessuna esperienza di programmazione",
+      "description": "Il corso parte dalle basi assolute",
+      "is_required": false
+    },
+    {
+      "title": "Uso base del computer",
+      "description": "Saper navigare file system e usare applicazioni",
+      "is_required": true
+    },
+    {
+      "title": "Voglia di imparare",
+      "description": "Motivazione e dedizione per completare 13 settimane",
+      "is_required": true
+    }
+  ],
+  "modules": [
+    {
+      "id": 1,
+      "title": "Introduzione a Python",
+      "description": "Setup e primi passi nella programmazione",
+      "estimated_hours": "4 ore",
+      "lessons": [
+        {
+          "id": 1,
+          "title": "Benvenuto e panoramica del corso",
+          "description": "Cosa imparerai e come organizzare lo studio",
+          "duration": "20 min",
+          "is_free": true
+        },
+        {
+          "id": 2,
+          "title": "Cos'è Python e perché impararlo",
+          "description": "Storia, applicazioni e opportunità di carriera",
+          "duration": "25 min",
+          "is_free": true
+        },
+        {
+          "id": 3,
+          "title": "Installazione Python e IDE",
+          "description": "Setup ambiente di sviluppo (VS Code, PyCharm)",
+          "duration": "30 min",
+          "is_free": true
+        },
+        {
+          "id": 4,
+          "title": "Il tuo primo programma",
+          "description": "Hello World e struttura base",
+          "duration": "25 min",
+          "is_free": true
+        },
+        {
+          "id": 5,
+          "title": "Variabili e tipi di dati primitivi",
+          "description": "Int, float, string, boolean",
+          "duration": "40 min",
+          "is_free": false
+        },
+        {
+          "id": 6,
+          "title": "Input/Output di base",
+          "description": "print() e input() per interagire con l'utente",
+          "duration": "30 min",
+          "is_free": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Operatori e Espressioni",
+      "description": "Calcoli e manipolazione dati",
+      "estimated_hours": "3 ore",
+      "lessons": [
+        {
+          "id": 7,
+          "title": "Operatori aritmetici",
+          "description": "+, -, *, /, //, %, **",
+          "duration": "30 min",
+          "is_free": false
+        },
+        {
+          "id": 8,
+          "title": "Operatori di confronto",
+          "description": "==, !=, <, >, <=, >=",
+          "duration": "25 min",
+          "is_free": false
+        },
+        {
+          "id": 9,
+          "title": "Operatori logici",
+          "description": "and, or, not",
+          "duration": "30 min",
+          "is_free": false
+        },
+        {
+          "id": 10,
+          "title": "Manipolazione stringhe",
+          "description": "Concatenazione, slicing, metodi comuni",
+          "duration": "40 min",
+          "is_free": false
+        },
+        {
+          "id": 11,
+          "title": "Progetto: Calcolatrice base",
+          "description": "Creare una calcolatrice interattiva",
+          "duration": "45 min",
+          "is_free": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Strutture di Controllo",
+      "description": "Decisioni e ripetizioni nel codice",
+      "estimated_hours": "5 ore",
+      "lessons": [
+        {
+          "id": 12,
+          "title": "If, elif, else",
+          "description": "Prendere decisioni nel codice",
+          "duration": "40 min",
+          "is_free": false
+        },
+        {
+          "id": 13,
+          "title": "Nested conditions",
+          "description": "Condizioni dentro condizioni",
+          "duration": "35 min",
+          "is_free": false
+        },
+        {
+          "id": 14,
+          "title": "For loops",
+          "description": "Iterare su sequenze",
+          "duration": "45 min",
+          "is_free": false
+        },
+        {
+          "id": 15,
+          "title": "While loops",
+          "description": "Ripetere finché una condizione è vera",
+          "duration": "40 min",
+          "is_free": false
+        },
+        {
+          "id": 16,
+          "title": "Break, continue, pass",
+          "description": "Controllare il flusso dei loop",
+          "duration": "30 min",
+          "is_free": false
+        },
+        {
+          "id": 17,
+          "title": "Progetto: Gioco numero indovinato",
+          "description": "Creare un gioco interattivo",
+          "duration": "50 min",
+          "is_free": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Strutture Dati",
+      "description": "Liste, tuple, set e dizionari",
+      "estimated_hours": "6 ore",
+      "lessons": [
+        {
+          "id": 18,
+          "title": "Liste: creazione e accesso",
+          "description": "La struttura dati più usata in Python",
+          "duration": "40 min",
+          "is_free": false
+        },
+        {
+          "id": 19,
+          "title": "Metodi delle liste",
+          "description": "append, extend, insert, remove, sort",
+          "duration": "45 min",
+          "is_free": false
+        },
+        {
+          "id": 20,
+          "title": "List comprehension",
+          "description": "Creare liste in modo conciso",
+          "duration": "35 min",
+          "is_free": false
+        },
+        {
+          "id": 21,
+          "title": "Tuple",
+          "description": "Liste immutabili",
+          "duration": "30 min",
+          "is_free": false
+        },
+        {
+          "id": 22,
+          "title": "Set",
+          "description": "Collezioni non ordinate di elementi unici",
+          "duration": "35 min",
+          "is_free": false
+        },
+        {
+          "id": 23,
+          "title": "Dizionari",
+          "description": "Coppie chiave-valore",
+          "duration": "50 min",
+          "is_free": false
+        },
+        {
+          "id": 24,
+          "title": "Progetto: Sistema di gestione contatti",
+          "description": "Applicazione con tutte le strutture dati",
+          "duration": "60 min",
+          "is_free": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Funzioni",
+      "description": "Organizzare e riutilizzare codice",
+      "estimated_hours": "5 ore",
+      "lessons": [
+        {
+          "id": 25,
+          "title": "Definire e chiamare funzioni",
+          "description": "def, parametri, return",
+          "duration": "40 min",
+          "is_free": false
+        },
+        {
+          "id": 26,
+          "title": "Parametri e argomenti",
+          "description": "Posizionali, keyword, default values",
+          "duration": "45 min",
+          "is_free": false
+        },
+        {
+          "id": 27,
+          "title": "*args e **kwargs",
+          "description": "Numero variabile di argomenti",
+          "duration": "35 min",
+          "is_free": false
+        },
+        {
+          "id": 28,
+          "title": "Scope delle variabili",
+          "description": "Local vs global scope",
+          "duration": "35 min",
+          "is_free": false
+        },
+        {
+          "id": 29,
+          "title": "Lambda functions",
+          "description": "Funzioni anonime per operazioni rapide",
+          "duration": "30 min",
+          "is_free": false
+        },
+        {
+          "id": 30,
+          "title": "Progetto: Libreria di utility functions",
+          "description": "Creare modulo riutilizzabile",
+          "duration": "55 min",
+          "is_free": false
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Moduli e Packages",
+      "description": "Organizzare codice in progetti più grandi",
+      "estimated_hours": "3 ore",
+      "lessons": [
+        {
+          "id": 31,
+          "title": "Import e moduli standard",
+          "description": "math, random, datetime",
+          "duration": "40 min",
+          "is_free": false
+        },
+        {
+          "id": 32,
+          "title": "Creare moduli custom",
+          "description": "Organizzare il proprio codice",
+          "duration": "35 min",
+          "is_free": false
+        },
+        {
+          "id": 33,
+          "title": "Packages e __init__.py",
+          "description": "Strutturare progetti complessi",
+          "duration": "40 min",
+          "is_free": false
+        },
+        {
+          "id": 34,
+          "title": "pip e librerie esterne",
+          "description": "Installare e usare librerie di terze parti",
+          "duration": "35 min",
+          "is_free": false
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Gestione File",
+      "description": "Leggere e scrivere dati su disco",
+      "estimated_hours": "4 ore",
+      "lessons": [
+        {
+          "id": 35,
+          "title": "Leggere e scrivere file di testo",
+          "description": "open(), read(), write(), with statement",
+          "duration": "45 min",
+          "is_free": false
+        },
+        {
+          "id": 36,
+          "title": "Lavorare con CSV",
+          "description": "Modulo csv per dati tabulari",
+          "duration": "40 min",
+          "is_free": false
+        },
+        {
+          "id": 37,
+          "title": "JSON per configurazioni",
+          "description": "Salvare e caricare dati strutturati",
+          "duration": "40 min",
+          "is_free": false
+        },
+        {
+          "id": 38,
+          "title": "Gestione percorsi con pathlib",
+          "description": "Lavorare con file system in modo moderno",
+          "duration": "35 min",
+          "is_free": false
+        },
+        {
+          "id": 39,
+          "title": "Progetto: Analizzatore log file",
+          "description": "Processare e analizzare file di log",
+          "duration": "60 min",
+          "is_free": false
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Gestione Errori ed Eccezioni",
+      "description": "Scrivere codice robusto",
+      "estimated_hours": "3 ore",
+      "lessons": [
+        {
+          "id": 40,
+          "title": "Try, except, finally",
+          "description": "Catturare e gestire errori",
+          "duration": "40 min",
+          "is_free": false
+        },
+        {
+          "id": 41,
+          "title": "Tipi di eccezioni comuni",
+          "description": "ValueError, TypeError, FileNotFoundError",
+          "duration": "35 min",
+          "is_free": false
+        },
+        {
+          "id": 42,
+          "title": "Raise e eccezioni custom",
+          "description": "Lanciare eccezioni personalizzate",
+          "duration": "35 min",
+          "is_free": false
+        },
+        {
+          "id": 43,
+          "title": "Best practices error handling",
+          "description": "Quando e come gestire errori",
+          "duration": "40 min",
+          "is_free": false
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "title": "Programmazione Orientata agli Oggetti (OOP)",
+      "description": "Pensare in termini di oggetti",
+      "estimated_hours": "7 ore",
+      "lessons": [
+        {
+          "id": 44,
+          "title": "Introduzione alla OOP",
+          "description": "Concetti: classi, oggetti, attributi, metodi",
+          "duration": "40 min",
+          "is_free": false
+        },
+        {
+          "id": 45,
+          "title": "Creare classi",
+          "description": "__init__, self, attributi di istanza",
+          "duration": "50 min",
+          "is_free": false
+        },
+        {
+          "id": 46,
+          "title": "Metodi e properties",
+          "description": "Instance methods, class methods, static methods",
+          "duration": "45 min",
+          "is_free": false
+        },
+        {
+          "id": 47,
+          "title": "Ereditarietà",
+          "description": "Riutilizzare e estendere classi",
+          "duration": "50 min",
+          "is_free": false
+        },
+        {
+          "id": 48,
+          "title": "Polimorfismo",
+          "description": "Stesso interfaccia, comportamenti diversi",
+          "duration": "40 min",
+          "is_free": false
+        },
+        {
+          "id": 49,
+          "title": "Encapsulation",
+          "description": "Public, private, protected attributes",
+          "duration": "35 min",
+          "is_free": false
+        },
+        {
+          "id": 50,
+          "title": "Magic methods",
+          "description": "__str__, __repr__, __len__ e altri",
+          "duration": "40 min",
+          "is_free": false
+        },
+        {
+          "id": 51,
+          "title": "Progetto: Sistema biblioteca OOP",
+          "description": "Applicazione completa object-oriented",
+          "duration": "80 min",
+          "is_free": false
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "title": "Algoritmi di Ricerca e Ordinamento",
+      "description": "Algoritmi fondamentali per programmatori",
+      "estimated_hours": "4 ore",
+      "lessons": [
+        {
+          "id": 52,
+          "title": "Ricerca lineare",
+          "description": "L'algoritmo di ricerca più semplice",
+          "duration": "30 min",
+          "is_free": false
+        },
+        {
+          "id": 53,
+          "title": "Ricerca binaria",
+          "description": "Ricerca efficiente in liste ordinate",
+          "duration": "40 min",
+          "is_free": false
+        },
+        {
+          "id": 54,
+          "title": "Bubble Sort",
+          "description": "Algoritmo di ordinamento semplice",
+          "duration": "35 min",
+          "is_free": false
+        },
+        {
+          "id": 55,
+          "title": "Selection Sort e Insertion Sort",
+          "description": "Altri algoritmi di ordinamento",
+          "duration": "40 min",
+          "is_free": false
+        },
+        {
+          "id": 56,
+          "title": "Big O notation",
+          "description": "Analizzare efficienza degli algoritmi",
+          "duration": "45 min",
+          "is_free": false
+        },
+        {
+          "id": 57,
+          "title": "Esercizi pratici",
+          "description": "Implementare e testare algoritmi",
+          "duration": "50 min",
+          "is_free": false
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "title": "Progetti Pratici",
+      "description": "Applicazioni del mondo reale",
+      "estimated_hours": "8 ore",
+      "lessons": [
+        {
+          "id": 58,
+          "title": "Progetto 1: Todo List App",
+          "description": "Applicazione gestione task con persistenza",
+          "duration": "90 min",
+          "is_free": false
+        },
+        {
+          "id": 59,
+          "title": "Progetto 2: Password Generator & Manager",
+          "description": "Generare e salvare password sicure",
+          "duration": "80 min",
+          "is_free": false
+        },
+        {
+          "id": 60,
+          "title": "Progetto 3: Expense Tracker",
+          "description": "Tracciare spese con grafici",
+          "duration": "90 min",
+          "is_free": false
+        },
+        {
+          "id": 61,
+          "title": "Progetto 4: Web Scraper base",
+          "description": "Estrarre dati da siti web (requests, BeautifulSoup)",
+          "duration": "100 min",
+          "is_free": false
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "title": "Best Practices e Debugging",
+      "description": "Scrivere codice professionale",
+      "estimated_hours": "3 ore",
+      "lessons": [
+        {
+          "id": 62,
+          "title": "PEP 8 Style Guide",
+          "description": "Convenzioni di stile Python",
+          "duration": "35 min",
+          "is_free": false
+        },
+        {
+          "id": 63,
+          "title": "Documentazione e docstrings",
+          "description": "Commentare e documentare codice",
+          "duration": "30 min",
+          "is_free": false
+        },
+        {
+          "id": 64,
+          "title": "Debugging techniques",
+          "description": "print debugging, debugger, logging",
+          "duration": "45 min",
+          "is_free": false
+        },
+        {
+          "id": 65,
+          "title": "Version control con Git (intro)",
+          "description": "Basics di Git per programmatori",
+          "duration": "40 min",
+          "is_free": false
+        },
+        {
+          "id": 66,
+          "title": "Virtual environments",
+          "description": "Gestire dipendenze con venv",
+          "duration": "30 min",
+          "is_free": false
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "title": "Progetto Finale e Next Steps",
+      "description": "Capstone project e direzioni future",
+      "estimated_hours": "6 ore",
+      "lessons": [
+        {
+          "id": 67,
+          "title": "Scelta progetto finale",
+          "description": "Idee e requisiti per capstone project",
+          "duration": "30 min",
+          "is_free": false
+        },
+        {
+          "id": 68,
+          "title": "Pianificazione progetto",
+          "description": "Design e architettura",
+          "duration": "40 min",
+          "is_free": false
+        },
+        {
+          "id": 69,
+          "title": "Implementazione guidata",
+          "description": "Sviluppo del progetto con supporto",
+          "duration": "150 min",
+          "is_free": false
+        },
+        {
+          "id": 70,
+          "title": "Code review e ottimizzazione",
+          "description": "Migliorare e raffinare il codice",
+          "duration": "60 min",
+          "is_free": false
+        },
+        {
+          "id": 71,
+          "title": "Costruire portfolio GitHub",
+          "description": "Presentare i tuoi progetti online",
+          "duration": "40 min",
+          "is_free": false
+        },
+        {
+          "id": 72,
+          "title": "Percorsi futuri: Data Science, Web Dev, Automation",
+          "description": "Dove specializzarsi dopo questo corso",
+          "duration": "30 min",
+          "is_free": false
+        }
+      ]
+    }
+  ],
+  "certification": true,
+  "certificate_description": "Certificato digitale verificabile che attesta il completamento del corso e le competenze fondamentali acquisite in programmazione Python.",
+  "target_audience": [
+    "Principianti assoluti senza esperienza di programmazione",
+    "Professionisti che vogliono aggiungere Python alle loro competenze",
+    "Studenti che vogliono prepararsi per corsi avanzati",
+    "Career changers verso tech",
+    "Chiunque voglia imparare a programmare"
+  ],
+  "tools_required": [
+    "Computer (Windows, Mac o Linux)",
+    "Python 3.8+ (installazione guidata nel corso)",
+    "Editor di testo o IDE (VS Code consigliato)",
+    "4GB RAM minimo",
+    "Connessione internet"
+  ],
+  "average_rating": 4.7,
+"reviews": [
+  {
+    "student_name": "Marco Bellini",
+    "rating": 5,
+    "date": "18 dicembre 2024",
+    "comment": "Corso eccellente per chi inizia con Python! Le spiegazioni sono chiare e gli esempi pratici mi hanno aiutato a capire concetti che sembravano complessi. Il progetto finale è stato molto stimolante e ora mi sento sicuro nell'usare Python per i miei progetti personali.",
+    "verified": true
+  },
+  {
+    "student_name": "Giulia Rossi",
+    "rating": 5,
+    "date": "10 dicembre 2024",
+    "comment": "Ho seguito molti corsi online ma questo è decisamente tra i migliori. L'istruttore spiega con passione e competenza, gli esercizi sono ben strutturati e la community è molto attiva. In poche settimane sono passata da zero a scrivere i miei primi script automatizzati. Consigliatissimo!",
+    "verified": true
+  },
+  {
+    "student_name": "Alessandro Conti",
+    "rating": 4,
+    "date": "5 dicembre 2024",
+    "comment": "Ottimo corso per principianti. Le prime lezioni sono molto accessibili e il ritmo è graduale. L'unica cosa che migliorerei sarebbe aggiungere più esercizi avanzati nella parte finale, ma nel complesso sono molto soddisfatto dell'acquisto. Il supporto via Q&A è stato prezioso quando avevo dubbi.",
+    "verified": true
+  },
+  {
+    "student_name": "Sofia Martini",
+    "rating": 5,
+    "date": "28 novembre 2024",
+    "comment": "Dopo aver provato ad imparare Python da sola con tutorial YouTube, questo corso ha fatto la differenza. Finalmente ho una comprensione solida delle basi e delle best practices. I moduli su data structures e OOP sono spiegati in modo cristallino. Vale ogni centesimo!",
+    "verified": true
+  },
+  {
+    "student_name": "Luca Ferrari",
+    "rating": 4,
+    "date": "22 novembre 2024",
+    "comment": "Corso molto ben fatto con contenuti di qualità. Ho apprezzato particolarmente i video brevi e mirati, perfetti per chi come me studia la sera dopo il lavoro. Le risorse scaricabili sono utili per ripassare. Unico suggerimento: sarebbe bello avere più progetti pratici intermedi oltre al progetto finale.",
+    "verified": false
+  }
+]
+}

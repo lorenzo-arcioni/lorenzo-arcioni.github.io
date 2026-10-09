@@ -1,0 +1,226 @@
+{
+  "title": "Workshop Python Avanzato",
+  "description": "Approfondimento su Python per Data Science: pandas, numpy, gestione dati complessi e best practices",
+  "full_description": "Questo workshop intensivo di 1-2 giorni ti porterà oltre le basi di Python per Data Science, concentrandosi su tecniche avanzate e ottimizzazioni professionali. Approfondirai pandas e NumPy con casi d'uso complessi, imparerai strategie di data cleaning per dataset reali e scoprirai come ottimizzare le performance del tuo codice.\n\nIl workshop è strutturato per massimizzare il tempo: sessioni pratiche intensive con esercizi hands-on su problemi reali che affronterai nel tuo lavoro quotidiano. Ideale per chi già conosce le basi e vuole portare le proprie competenze al livello successivo.",
+  "instructor": "Lorenzo Arcioni",
+  "instructor_bio": "Machine Learning Engineer e Data Scientist con oltre 5 anni di esperienza. Specializzato in Python, Machine Learning e formazione tecnica avanzata.",
+  "instructor_image": "/images/profile.jpeg",
+  "duration": "1-2 giorni",
+  "level": "Avanzato",
+  "category": "Data Science",
+  "price": "€299",
+  "image_url": "https://miro.medium.com/v2/resize:fit:1400/1*ycIMlwgwicqlO6PcFRA-Iw.png",
+  "learning_objectives": [
+    {
+      "objective": "Pandas avanzato",
+      "description": "MultiIndex, operazioni complesse, ottimizzazione memoria e performance"
+    },
+    {
+      "objective": "NumPy avanzato",
+      "description": "Broadcasting avanzato, algebra lineare, operazioni vettoriali ottimizzate"
+    },
+    {
+      "objective": "Data Cleaning professionale",
+      "description": "Strategie per pulire e validare dataset complessi del mondo reale"
+    },
+    {
+      "objective": "Performance optimization",
+      "description": "Profiling, vectorizzazione, e tecniche per codice efficiente"
+    },
+    {
+      "objective": "Best practices",
+      "description": "Design patterns, gestione memoria, codice production-ready"
+    },
+    {
+      "objective": "Debugging avanzato",
+      "description": "Strumenti e tecniche per identificare e risolvere problemi complessi"
+    }
+  ],
+  "prerequisites": [
+    {
+      "title": "Conoscenza solida di Python",
+      "description": "Sintassi, strutture dati, funzioni, OOP",
+      "is_required": true
+    },
+    {
+      "title": "Esperienza con pandas e NumPy",
+      "description": "Aver già utilizzato pandas DataFrame e NumPy array",
+      "is_required": true
+    },
+    {
+      "title": "Esperienza pratica con dati",
+      "description": "Aver lavorato su progetti di analisi dati",
+      "is_required": false
+    }
+  ],
+  "modules": [
+    {
+      "id": 1,
+      "title": "Pandas Avanzato",
+      "description": "Tecniche avanzate per manipolazione dati complessi",
+      "estimated_hours": "3 ore",
+      "lessons": [
+        {
+          "id": 1,
+          "title": "MultiIndex e operazioni gerarchiche",
+          "description": "Gestire DataFrame con indici multipli",
+          "duration": "45 min",
+          "is_free": false
+        },
+        {
+          "id": 2,
+          "title": "Operazioni window e rolling",
+          "description": "Moving averages, calcoli temporali avanzati",
+          "duration": "40 min",
+          "is_free": false
+        },
+        {
+          "id": 3,
+          "title": "Ottimizzazione memoria",
+          "description": "Ridurre l'uso di memoria con categorical e dtype optimization",
+          "duration": "35 min",
+          "is_free": false
+        },
+        {
+          "id": 4,
+          "title": "Vectorizzazione vs apply",
+          "description": "Quando e come evitare loop per performance ottimali",
+          "duration": "40 min",
+          "is_free": false
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "NumPy Avanzato",
+      "description": "Operazioni numeriche complesse e ottimizzazioni",
+      "estimated_hours": "2 ore",
+      "lessons": [
+        {
+          "id": 5,
+          "title": "Broadcasting avanzato",
+          "description": "Regole complesse e casi d'uso pratici",
+          "duration": "35 min",
+          "is_free": false
+        },
+        {
+          "id": 6,
+          "title": "Algebra lineare per ML",
+          "description": "Operazioni matriciali essenziali per Machine Learning",
+          "duration": "40 min",
+          "is_free": false
+        },
+        {
+          "id": 7,
+          "title": "Universal functions (ufunc)",
+          "description": "Creare e utilizzare ufunc personalizzate",
+          "duration": "35 min",
+          "is_free": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Data Cleaning Professionale",
+      "description": "Strategie per dataset del mondo reale",
+      "estimated_hours": "2.5 ore",
+      "lessons": [
+        {
+          "id": 8,
+          "title": "Validazione dati automatica",
+          "description": "Creare pipeline di validazione robuste",
+          "duration": "40 min",
+          "is_free": false
+        },
+        {
+          "id": 9,
+          "title": "Gestione outliers avanzata",
+          "description": "Metodi statistici per identificare e trattare anomalie",
+          "duration": "45 min",
+          "is_free": false
+        },
+        {
+          "id": 10,
+          "title": "Text cleaning e parsing",
+          "description": "Regular expressions e tecniche per dati testuali",
+          "duration": "40 min",
+          "is_free": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Performance Optimization",
+      "description": "Rendere il codice veloce ed efficiente",
+      "estimated_hours": "2 ore",
+      "lessons": [
+        {
+          "id": 11,
+          "title": "Profiling e benchmarking",
+          "description": "Identificare colli di bottiglia nel codice",
+          "duration": "35 min",
+          "is_free": false
+        },
+        {
+          "id": 12,
+          "title": "Numba e compilazione JIT",
+          "description": "Accelerare codice Python con compilazione",
+          "duration": "40 min",
+          "is_free": false
+        },
+        {
+          "id": 13,
+          "title": "Parallel processing con Dask",
+          "description": "Scalare oltre la memoria RAM",
+          "duration": "45 min",
+          "is_free": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Best Practices e Progetto",
+      "description": "Applicazione pratica su caso reale",
+      "estimated_hours": "2.5 ore",
+      "lessons": [
+        {
+          "id": 14,
+          "title": "Design patterns per Data Science",
+          "description": "Architetture comuni e best practices",
+          "duration": "35 min",
+          "is_free": false
+        },
+        {
+          "id": 15,
+          "title": "Testing e debugging",
+          "description": "Unit test per codice di analisi dati",
+          "duration": "40 min",
+          "is_free": false
+        },
+        {
+          "id": 16,
+          "title": "Progetto pratico",
+          "description": "Ottimizzazione di un pipeline dati reale",
+          "duration": "60 min",
+          "is_free": false
+        }
+      ]
+    }
+  ],
+  "certification": true,
+  "certificate_description": "Certificato digitale verificabile che attesta il completamento del workshop e le competenze avanzate acquisite in Python per Data Science.",
+  "target_audience": [
+    "Developer con esperienza Python",
+    "Data Analyst che vogliono migliorare le performance",
+    "Data Scientists junior/mid-level",
+    "Professionisti che lavorano con grandi dataset",
+    "Team tecnici che necessitano ottimizzazione"
+  ],
+  "tools_required": [
+    "Computer (Windows, Mac o Linux)",
+    "Python 3.8+",
+    "Jupyter Notebook/Lab",
+    "8GB RAM minimo (16GB consigliato)",
+    "Familiarità con pandas e NumPy"
+  ]
+}
