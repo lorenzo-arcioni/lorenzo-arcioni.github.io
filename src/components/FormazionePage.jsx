@@ -56,15 +56,15 @@ const OFFERS = [
 const EXAM_SETS = [
   { title: "Prove d'esame reali", desc: "Tracce di anni diversi, organizzate per argomento e difficoltà." },
   { title: "Soluzioni commentate", desc: "Non solo il codice: il ragionamento passo passo per arrivarci." },
-  { title: "Simulazioni a tempo", desc: "Prova completa con cronometro, poi correzione insieme." },
+  { title: "Simulazioni a tempo", desc: "Prova completa con cronometro, poi correzione insieme. Per prepararti esattamente alla prestazione dell'esame e rimuovere l'ansia." },
   { title: "Errori più comuni", desc: "Le trappole in cui cadono quasi tutti, così le eviti il giorno dell'esame." },
 ];
 
 const INCLUDED = [
-  "Materiale di studio e set di esercizi inclusi",
+  "Materiale di studio e set di esercizi mirati per il tuo esame",
   "Feedback dettagliato sul tuo codice",
   "Supporto su WhatsApp tra una lezione e l'altra",
-  "Set di esami pronti da esercizi d'esame reali",
+  "Dispense personalizzate preparate da me personalmente",
   "Orari flessibili tra le 15 e le 19, anche nel weekend",
   "Si parte dal tuo livello, anche da zero",
 ];
@@ -79,7 +79,7 @@ const FOR_YOU = [
   "Hai un esame di Python e non sai da dove cominciare",
   "Capisci la teoria ma davanti a un esercizio resti bloccato",
   "Hai già provato da solo/a con video e tutorial senza risultati",
-  "Devi finire una tesi o un progetto che richiede codice",
+  "Devi finire una tesi o un progetto che richiede codice perfetto",
   "Hai poco tempo e vuoi studiare solo ciò che serve",
 ];
 
@@ -91,12 +91,12 @@ const PRICING = [
 
 const TESTIMONIALS = [
   {
-    quote: "Non avevo mai capito bene le classi in Python. Dopo tre sessioni ho superato l'esame senza problemi.",
+    quote: "Non avevo mai capito bene le classi in Python. Dopo tre sessioni, oltre ad averle capite, ho superato l'esame senza problemi.",
     who: "Giulia R., Ingegneria Informatica, Politecnico di Milano",
     meta: "3 sessioni · 28/30",
   },
   {
-    quote: "Mi ha aiutato a finire la tesi in tempo, spiegando le cose molto meglio di quanto riuscissi a capirle da sola.",
+    quote: "Mi ha aiutato a finire la tesi in tempo, spiegando le cose molto meglio dei prof e di quanto riuscissi a capirle da solo.",
     who: "Marco T., Statistica, La Sapienza Roma",
     meta: "4 sessioni · tesi consegnata",
   },
@@ -108,21 +108,63 @@ const TESTIMONIALS = [
 const MORE_TESTIMONIALS = [];
 
 const TOPICS = [
+  // =========================
+  // BASE
+  // =========================
+  { label: "Introduzione a Python", level: "base" },
   { label: "Variabili e tipi", level: "base" },
+  { label: "Operatori ed espressioni", level: "base" },
+  { label: "Input e output", level: "base" },
+  { label: "Stringhe e formattazione", level: "base" },
   { label: "Cicli e condizioni", level: "base" },
-  { label: "Liste e dizionari", level: "base" },
-  { label: "Stringhe e file", level: "base" },
+  { label: "Liste e metodi", level: "base" },
+  { label: "Tuple e set", level: "base" },
+  { label: "Dizionari", level: "base" },
+  { label: "Comprehension", level: "base" },
   { label: "Funzioni e ricorsione", level: "base" },
+  { label: "Lambda e funzioni anonime", level: "base" },
+  { label: "Scope e parametri delle funzioni", level: "base" },
+  { label: "Moduli e package", level: "base" },
+  { label: "Gestione file", level: "base" },
+  { label: "CSV e JSON", level: "base" },
+  { label: "Gestione percorsi con pathlib", level: "base" },
+  { label: "Eccezioni ed error handling", level: "base" },
   { label: "OOP e classi", level: "base" },
+  { label: "Ereditarietà e polimorfismo", level: "base" },
+  { label: "Metodi speciali e properties", level: "base" },
+
+  // =========================
+  // INTERMEDIO
+  // =========================
   { label: "Algoritmi e strutture dati", level: "mid" },
+  { label: "Ricerca e ordinamento", level: "mid" },
+  { label: "Complessità computazionale (Big O)", level: "mid" },
   { label: "Pandas / NumPy", level: "mid" },
   { label: "Matplotlib", level: "mid" },
   { label: "Debugging", level: "mid" },
   { label: "Testing", level: "mid" },
+  { label: "PEP 8 e clean code", level: "mid" },
+  { label: "Documentazione e docstrings", level: "mid" },
+  { label: "Logging", level: "mid" },
+  { label: "Git e GitHub", level: "mid" },
+  { label: "Ambienti virtuali e pip", level: "mid" },
+  { label: "Requests e API", level: "mid" },
+  { label: "Web scraping", level: "mid" },
+  { label: "Progettazione e organizzazione dei progetti", level: "mid" },
+  { label: "Refactoring e ottimizzazione", level: "mid" },
+
+  // =========================
+  // AVANZATO
+  // =========================
   { label: "Machine Learning", level: "adv" },
-  { label: "Async", level: "adv" },
+  { label: "Deep Learning", level: "adv" },
+  { label: "Async e programmazione concorrente", level: "adv" },
   { label: "Decoratori", level: "adv" },
-  { label: "Generatori", level: "adv" },
+  { label: "Generatori e iteratori", level: "adv" },
+  { label: "Context manager", level: "adv" },
+  { label: "Type hints e typing avanzato", level: "adv" },
+  { label: "Testing avanzato e mocking", level: "adv" },
+  { label: "Performance e profiling", level: "adv" },
 ];
 
 const FAQ = [
@@ -154,16 +196,16 @@ const FAQ = [
 
 const BADGES = [
   "110L e lode",
-  "10+ anni di insegnamento",
+  "5+ anni di insegnamento",
   "Kaggle Silver Medal",
   "Articoli scientifici pubblicati",
   "Esperienza in gruppi di ricerca",
   "Python per Data Science",
   "Machine Learning",
-  "Lezioni su Discord",
-  "Primo incontro gratuito",
-  "Esami di tantissime facoltà",
-  "Orari flessibili dalle 15 alle 19",
+  //"Lezioni su Discord",
+  //"Primo incontro gratuito",
+  //"Esami di tantissime facoltà",
+  //"Orari flessibili dalle 15 alle 19",
 ];
 
 function CheckIcon() {
@@ -927,14 +969,14 @@ export default function FormazionePage() {
           <span className="fz-free-dot" aria-hidden="true" />
           <div>
             <strong>Prima sessione gratuita: 30 minuti, zero impegno</strong>
-            <span>Capiamo insieme di cosa hai bisogno e come posso aiutarti, prima di deciderne insieme.</span>
+            <span>Capiamo prima insieme di cosa hai bisogno e come posso aiutarti.</span>
           </div>
         </div>
 
         <div className="fz-method">
           <div className="fz-method-text">
             <h3>Studia con me</h3>
-            <p>Un metodo efficace e testato, che ti fa risparmiare un sacco di tempo e di frustrazioni.</p>
+            <p>Un metodo efficace e testato, che ti fa risparmiare un sacco di tempo e di frustrazioni!</p>
           </div>
           <PythonAtComputer />
         </div>
@@ -952,7 +994,7 @@ export default function FormazionePage() {
 
         <div className="fz-sets">
           <div className="fz-sets-head">
-            <h3>Set di esami già pronti, da esercizi d'esame reali</h3>
+            <h3>Set di esami già pronti, da esercizi d'esame reali!</h3>
             <span className="fz-sets-count">Programma tra i più completi in Italia</span>
           </div>
           <p className="fz-sets-lead">
@@ -1045,7 +1087,7 @@ export default function FormazionePage() {
         <div className="fz-cta">
           <div className="fz-cta-copy">
             <p>Scrivimi oggi: la prima sessione è gratis.</p>
-            <p>Massimo 5 nuovi studenti al mese, rispondo appena posso.</p>
+            <p>Massimo 5 nuovi studenti al mese, rispondo prima possibile.</p>
           </div>
           <a className="fz-cta-btn" href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
             <WhatsAppIcon /> Scrivimi su WhatsApp
@@ -1122,7 +1164,7 @@ export default function FormazionePage() {
           <SnakeField />
           <span className="fz-final-grid" aria-hidden="true" />
           <div className="fz-final-body">
-          <h3>La {EXAM_SESSION_LABEL} si avvicina: ogni settimana conta.</h3>
+          <h3>La {EXAM_SESSION_LABEL} si avvicina: ogni giorno conta.</h3>
           <p>Scrivimi oggi, la prima sessione è gratuita e ti lascia comunque un piano di studio concreto.</p>
           <a className="fz-cta-btn" href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
             <WhatsAppIcon /> Prenota la sessione gratuita
@@ -1137,9 +1179,9 @@ export default function FormazionePage() {
             <div className="fz-bio-name">Lorenzo Arcioni</div>
             <div className="fz-bio-title">Laurea in Informatica 110L e lode, Sapienza, Roma</div>
             <p className="fz-bio-desc">
-              Insegno programmazione online da oltre 10 anni, con un metodo strutturato e adattato al livello
+              Insegno programmazione online da oltre 5 anni, con un metodo strutturato e adattato al livello
               di ognuno. Ho esperienza accademica e ho collaborato alla pubblicazione di articoli scientifici
-              con diversi gruppi di ricerca.
+              con diversi gruppi di ricerca nazionali ed internazionali.
             </p>
           </div>
           <div className="fz-badges">
