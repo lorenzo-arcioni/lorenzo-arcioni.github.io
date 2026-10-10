@@ -22,7 +22,7 @@ const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent
 
 // ⚠️ NUMERI DA SOSTITUIRE CON QUELLI REALI (devono corrispondere al vero)
 const REVIEWS_TOTAL = 40;          // totale recensioni che hai davvero ricevuto
-const RATING_AVERAGE = "4,9";      // media reale
+const RATING_AVERAGE = "5";      // media reale
 const STUDENTS_TOTAL = "100+";     // studenti seguiti in totale
 const EXAM_SETS_COUNT = "30+";     // quanti set di esami hai pronti
 
